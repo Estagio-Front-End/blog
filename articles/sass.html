@@ -41,8 +41,94 @@
             <h2 class="conteudo__titulo">SASS</h2>
             
             <span class="artigo__tag artigo__tag--css-basico">CSS BÁSICO</span>
+            <!--Import, Variáveis, Encadeamentos, Funções, Mixins-->
+            <p class="conteudo__texto">O SASS é um pré processador CSS, sendo atualmente um dos mais utilizados, que permite adicionar funcionalidades ao código de estilização a fim de otimizar o código em termos de concisão, manutenibilidade e reutilização. Hoje, a sintaxe mais utilizada do SASS é a SCSS, que se assemelha bastante ao CSS puro, gerando menos esforço de adequação do código ao pré processador. As funcionalidades, adicionais ou melhoradas, mais utilizadas são os imports, as variáveis, os encadeamentos, mixins e funções.</p>
+
+            <h3>Imports</h3>
+            <p class="conteudo__texto">Semelhante ao CSS puro, recursos dentro da própria pasta do projeto ou recursos externos podem ser importados à folha de estilo SCSS. Muito utilizada para organização de código e importação de fontes externas, a sintaxe de importação é exibida nas imagens a seguir.</p>
             
-            <p class="conteudo__texto">Texto aqui</p>
+            <div class="conteudo__figuras">
+                <figure>
+                    <img src="../images/import-normal.png" alt="Imagem com fundo preto e código SCSS escrito para importação de folhas de estilo dentro da pasta do projeto.">
+                    <figcaption><code>@import</code> utilizado para importar outras folhas de estilo na pasta do projeto.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/import-externo.png" alt="Imagem com fundo preto e código SCSS escrito para importação de fontes externas.">
+                    <figcaption><code>@import</code> utilizado para importar fontes externas.</figcaption>
+                </figure>
+            </div>
+
+            <p class="conteudo__texto">Para organização do código, é comum a estilização ser criada por componente em um arquivo "parcial" que depois é importado em uma folha de estilo global que será pré processada. Para imports dessa natureza, o arquivo deve conter um underline no início do nome, por exemplo, <code>_componente.scss</code>. No arquivo global, cujo nome não possui underline, ele é importado no formato da primeira imagem exibida anteriormente, apenas com o titulo do arquivo, no caso do exemplo: <code>@import "componente";</code>.</p>
+            
+            <h3>Variáveis</h3>
+            <p class="conteudo__texto">As variáveis em SCSS são mais intuitivamente criadas e utilizadas quando em comparação ao CSS puro. Para tal, basta colocar um cifrão ( <code>$</code> ), o nome da variável e atribuir seu valor. Para utilização da variável, é necessário apenas escrever o nome da variável com o cifrão no início como valor da propriedade a ser utilizada. Cores, fontes e dimensões que se repetem muito ao longo do código podem ser transformadas em variáveis para melhor manutenibilidade do código.</p>
+
+            <div class="conteudo__figuras">
+                <figure>
+                    <img src="../images/variáveis.png" alt="Imagem com fundo preto e código em SCSS escrito para definição de várias variáveis de cor e fonte.">
+                    <figcaption>Declaração de variáveis.</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="../images/variaveis-scss-utilizacao.png" alt="Imagem com fundo preto e código em SCSS escrito para utilização de duas variáveis de cor nas propriedades background e color.">
+                    <figcaption>Utilização de variáveis nas propriedades <code>background</code> e <code>color</code>.</figcaption>
+                </figure>
+            </div>
+            
+            <h3>Encadeamentos</h3>
+            <p class="conteudo__texto">Apesar de já existir em versões mais atuais do CSS puro, os encadeamentos (ou aninhamentos) são muito mais intuitivos no SCSS. Para o encadeamento de seletores acontecer, basta que, dentro do par de chaves do seletor inicial, crie-se o bloco de código do seletor secundário. É indicado que, para melhor legibilidade do código, sejam feitos encadeamentos de, no máximo, 3 níveis.</p>
+
+            <figure>
+                <img src="../images/aninhamento.png" alt="Imagem em fundo preto com código escrito em SCSS para aninhamentos de seletores a serem estilizados.">
+                <figcaption>Aninhamento de seletores.</figcaption>
+            </figure>
+
+            <p class="conteudo__texto">Com o encadeamento utilizado na figura anterior, foi possível criar a estilização que, no CSS puro, seria criada em 4 blocos de códigos diferentes: <code>.listagem-artigos__card a</code>, <code>.listagem-artigos__card a h2</code>, <code>.listagem-artigos__card a >img</code> e <code>.listagem-artigos__card span</code>.</p>
+            
+            <h3>Mixins</h3>
+            <p class="conteudo__texto">Mixins são formas mais organizadas de criar blocos de código que serão repetidos várias vezes no código. Em vez de repetir as mesmas propriedades várias vezes ao longo do código, cria-se um mixin com as propriedades utilizadas e, em uma linha apenas, se inclui as propriedades no bloco de código do seletor desejado.</p>
+
+            <p class="conteudo__texto">Para a criação de um mixin, é necessário adicionar <code>@mixin</code>, o nome pelo qual o mixin será identificado, os argumentos entre parêntesis (se existirem) e o par de chaves para delimitar o bloco de código. Se não houverem argumentos a serem passados, os parêntesis podem ser omitidos.</p>
+
+            <div class="conteudo__figuras">
+                <figure>
+                    <img src="../images/mixins.png" alt="Imagem em fundo preto com código escrito em SCSS para criação de um mixin de media queries.">
+                    <figcaption>Criação de um mixin para media queries de diferentes breakpoints.</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="../images/include.png" alt="Imagem em fundo preto com código escrito em SCSS para utilização de um mixin de media queries, juntamente com uma função de tamanho de texto.">
+                    <figcaption>Utilização de um mixin de media queries para alterar o tamanho da fonte de acordo com o tamanho do dispositivo.</figcaption>
+                </figure>
+            </div>
+
+            <p class="conteudo__texto">Para a utilização de um mixin, é necessário apenas incluir, no bloco de código do seletor escolhido, a regra <code>@include</code> juntamente com o nome do mixin e passar os argumentos necessários, se existirem. A regra <code>@content</code> é utilizada quando se tem estruturas que se repetem, porém conteúdos diferentes. Muito utilizada em mixins de media queries e animações, faz com que o código fique mais conciso sem perder sua adaptabilidade ao que se deseja realizar.</p>
+
+            <p class="conteudo__texto">Os mixins também são muito utilizados para incluir os chamados vendor prefixes, que são os prefixos para compatibilidade de certas propriedades em diferentes navegadores. O valor <code>sticky</code>, da propriedade <code>position</code>, é um exemplo de valor que necessita desses prefixos para operar bem em todos os navegadores. Deste modo, é possível criar um mixin que, em uma só linha, possua as propriedades com seus valores compatíveis utilizando os prefixos <code>-webkit-</code>, <code>-moz-</code>, <code>-ms-</code> e <code>-o-</code>, além da propriedade original.</p>
+            
+            <h3>Funções</h3>
+            <p class="conteudo__texto">Assim como em linguagens de programação, no SCSS, funções são blocos de código que são executados e, neste contexto, possuem um retorno obrigatório. A criação de uma função inicia com a regra <code>@function</code>, o nome da função, os argumentos que ela receberá entre parêntesis, as chaves delimitando o bloco de código e, dentro das chaves, a regra <code>@return</code> indicando o retorno final da função.</p>
+
+            <p class="conteudo__texto">É possível passar mais de um argumento, desde que estes sejam separados por vírgula. Para argumentos que originalmente possuem vírgula, mas devem ser reconhecidos como apenas um argumento, como sombras diferentes em uma mesma propriedade <code>box-shadow</code>, é possível indicar na assinatura da função com <code>...</code> após o nome do argumento que terá este comportamento. Desta forma, o argumento na assinatura da função é escrito como <code>($argumentos...)</code> e os valores de argumento separados por vírgula na chamada da função serão interpretados como um só argumento.</p>
+
+            <figure>
+                <img src="../images/funcao.png" alt="Imagem em fundo preto com código escrito em SCSS para criação de uma função que retorna o tamanho de fonte a depender do dispositivo indicado.">
+                <figcaption>Criação de uma função que retorna uma dimensão de acordo com o tamanho do dispositivo selecionado.</figcaption>
+            </figure>
+
+            <p class="conteudo__texto">A utilização de uma função se dá pela chamada do seu nome, com os argumentos a serem passados entre parêntesis, na propriedade em que se deseja utilizar o valor de retorno da função.</p>
+
+            <p class="conteudo__texto">O SASS também possui módulos com funções nativas que podem ser utilizadas pelo desenvolvedor. Alguns dos módulos mais importantes são:</p>
+
+            <ul class="conteudo__texto">
+                <li><span>math module:</span> com funções que operam números como <code>ceil()</code>, <code>floor()</code>, <code>round()</code>, <code>max()</code> e <code>abs()</code>, além de funções para potência, raiz quadrada e funções trigonométricas.</li>
+                <li><span>string module:</span> possui funções utilizadas para combinar, separar ou modificar elementos do tipo string como <code>insert()</code>, <code>length()</code>, <code>slice()</code> e <code>to-upper-case()</code>.</li>
+                <li><span>color module:</span> possui funções utilizadas para obter informações de ou manipular cores como <code>red()</code>, <code>green()</code>, <code>blue()</code> e <code>adjust()</code>.</li>
+                <li><span>list module:</span> possui funções para manipulação de listas como <code>append()</code>, <code>slice()</code> e <code>nth()</code>.</li>
+            </ul>
+
+            <p class="conteudo__texto">Também são módulos do SASS o map module, selector module e meta module. A <a href="https://sass-lang.com/documentation/modules/">documentação oficial</a> traz todos os módulos, assim como todas as funções e explicações de como utilizá-las.</p>
                    
             <div class="artigo__info">
                 <div class="artigo__info__autor">
