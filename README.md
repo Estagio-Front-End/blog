@@ -8,4 +8,5 @@ Este repositório contém um blog com conteúdo didático sobre os principais co
 ## Tecnologias
 - HTML
 - SCSS
+- JavaScript
 
