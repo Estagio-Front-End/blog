@@ -87,6 +87,67 @@
                 </figure>
             </div>
 
+            <p class="conteudo__texto">Como exemplo de como o resultado das media queries são visualizadas, temos a própria página inicial deste blog com 3 diferenças principais entre elas: o menu de navegação, a barra de pesquisa e a quantidade de cards de artigos por linha.</p>
+
+            <div class="conteudo__figuras">
+                <figure>
+                    <img src="../images/index-mobile.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão mobile.">
+                    <figcaption>Visualização da página inicial do CSS blog em um dispositivo mobile.</figcaption>
+                </figure>
+    
+                <figure>
+                    <img src="../images/index-tablet.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão tablet.">
+                    <figcaption>Visualização da página inicial do CSS blog em um dispositivo tablet.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/index-desktop.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão desktop.">
+                    <figcaption>Visualização da página inicial do CSS blog em uma tela desktop.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/index-full-hd.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão full HD.">
+                    <figcaption>Visualização da página inicial do CSS blog em uma tela full HD.</figcaption>
+                </figure>
+            </div>
+
+            <p class="conteudo__texto">Para a criação destas diferentes visualizações, foi criado um mixin em SCSS com as media queries necessárias para cada breakpoint (mobile, tablet e full HD) e, para cada ponto do site mencionado anteriormente, as devidas alterações nas propriedades de estilização foram aplicadas. O site do CSS blog foi criado com a abordagem desktop-first, portanto, não há uma media query para o tamanho em desktop, visto que a estilização inicial foi feita para este tamanho de dispositivo.</p>
+            
+            <figure>
+                <img src="../images/mixins.png" alt="Imagem em fundo preto com código escrito em SCSS para criação de um mixin de media queries.">
+                <figcaption>Mixin de media queries.</figcaption>
+            </figure>
+
+            <p class="conteudo__texto">Em tamanhos de tela menores, o menu de navegação ficaria muito apertado ou de difícil leitura, portanto, foi criado um novo menu de navegação em que os tópicos seriam exibidos em coluna a partir do clique em um botão. Em telas maiores, o menu por meio do botão é escondido e o menu original fica em evidência. Em telas menores, o contrário é verdadeiro. Estas alterações são realizadas por meio da modificação na propriedade <code>display</code> dos menus.</p>
+
+            <div class="conteudo__figuras">
+                <figure>
+                    <img src="../images/mq-index-menu-og.png" alt="Imagem com fundo preto e código SCSS escrito em azul, rosa, vermelho e verde visando esconder o menu original em dispositivos de tamanho tablet e mobile.">
+                    <figcaption>Alterações no menu de navegação original.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/mq-index-menu-resp.png" alt="Imagem com fundo preto e código SCSS escrito em azul, rosa, vermelho e verde visando evidenciar o menu via botão em dispositivos de tamanho tablet e mobile.">
+                    <figcaption>Alterações no menu de navegação criado para atender à responsividade.</figcaption>
+                </figure>
+            </div>
+
+            <p class="conteudo__texto">Em telas de tamanho mobile, o tamanho da barra de pesquisa geraria um efeito indesejável de criação de uma barra de scroll horizontal. Desta forma, com a modificação da propriedade <code>width</code> na media query para dispositivos mobile, foi possível evitar este efeito.</p>
+            
+            <figure>
+                <img src="../images/mq-index-pesquisa.png" alt="Imagem com fundo preto e código SCSS escrito em diferentes cores visando diminuir o tamanho da barra de pesquisa em dispositivos mobile.">
+                <figcaption>Alterações na barra de pesquisa.</figcaption>
+            </figure>
+            
+            <p class="conteudo__texto">Quanto menor o tamanho da tela, menor a quantidade de cards de artigo que ficariam legíveis e agradavelmente dispostos por fila da tela inicial. Diante disto, a modificação do grid template da listagem de artigos por meio da propriedade <code>grid-template-columns</code> foi essencial para que, de acordo com o tamanho do dispositivo, os cards não ficassem nem ilegíveis, nem grandes demais.</p>
+
+            <figure>
+                <img src="../images/mq-index-grid.png" alt="Imagem com fundo preto e código SCSS escrito em azul, vermelho e verde visando alterar a quantidade de colunas do grid template da listagem de artigos de acordo com o dispositivo do usuário.">
+                <figcaption>Alterações na disposição dos cards de artigos.</figcaption>
+            </figure>
+
+            <p class="conteudo__texto">Portanto, com a aplicação das media queries descritas, foi possível adequar o layout de pontos da tela inicial que, sem a responsividade, tornariam a experiência do usuário mais dificultosa e menos agradável.</p>
+
             <div class="artigo__info">
                 <div class="artigo__info__autor">
                     <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
