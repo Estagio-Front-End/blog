@@ -13,3 +13,33 @@ function mudarMenu () {
        menuAberto = false;
     }  
 };
+
+const containerJustifyContent = document.querySelector(".conteudo__demonstracao__justify-content");
+
+function justifyContent(value) {
+    containerJustifyContent.style.justifyContent = value;
+}
+
+const containerAlignItems = document.querySelector(".conteudo__demonstracao__align-items");
+
+function alignItems(value) {
+    containerAlignItems.style.alignItems = value;
+}
+
+const containerAlignContent = document.querySelector(".conteudo__demonstracao__align-content");
+
+function alignContent(value) {
+    containerAlignContent.style.alignContent = value;
+}
+
+const containerFlexWrap = document.querySelector(".conteudo__demonstracao__flex-wrap");
+
+function flexWrap(value) {
+    containerFlexWrap.style.flexWrap = value;
+}
+
+const itemAlignSelf = document.querySelector("#align-self-item");
+
+function alignSelf(value) {
+    itemAlignSelf.style.alignSelf = value;
+}

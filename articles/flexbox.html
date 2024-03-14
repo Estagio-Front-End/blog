@@ -68,12 +68,104 @@
 
             <ul class="conteudo__texto">
                 <li><span>flex-direction:</span> define qual o eixo principal do container, horizontal (<code>row</code>) ou vertical (<code>column</code>). Se o eixo horizontal é o principal, automaticamente o eixo vertical se torna o secundário e vice-versa. Há também os valores <code>row-reverse</code> e <code>column-reverse</code>, que definem, além do eixo principal, que a ordem de posicionamento dos itens será inversa à sua ordem no <abbr title="Document Object Model">DOM</abbr>.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__direction--row">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__direction--column">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__direction--row-reverse">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__direction--column-reverse">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                    </div>
+                </li>
+                <li class="conteudo__legenda">Exemplos visuais para as flex-directions <code>row</code>, <code>column</code>, <code>row-reverse</code> e <code>column-reverse</code>, respectivamente.</li>
                 
                 <li><span>justify-content:</span> esta propriedade define como os elementos serão justificados no seu eixo principal. Pode ter valores como <code>center</code>, <code>flex-start</code>, <code>flex-end</code>, <code>space-around</code>, <code>space-between</code> e <code>space-evenly</code>.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__justify-content">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="justify-content">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <select name="justify-content" id="justify-content" onchange="justifyContent(this.value)">
+                            <option value="flex-start">flex-start</option>
+                            <option value="center">center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                    </div>
+                </li>
                 
                 <li><span>align-items:</span> esta propriedade define como os elementos serão alinhados no seu eixo secundário. Pode ter valores como <code>center</code>, <code>flex-start</code>, <code>flex-end</code> e <code>stretch</code>.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__align-items">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="align-items">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <select name="align-items" id="align-items" onchange="alignItems(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="center">center</option>
+                            <option value="flex-end">flex-end</option>
+                        </select>
+                    </div>
+                </li>
                 
                 <li><span>align-content:</span> esta propriedade define o espaçamento entre os flex items no seu eixo secundário. Pode ter valores como <code>center</code>, <code>flex-start</code>, <code>flex-end</code>, <code>stretch</code>, <code>space-around</code> e <code>space-between</code>.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__align-content">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                        <div class="conteudo__demonstracao__item">7</div>
+                        <div class="conteudo__demonstracao__item">8</div>
+                        <div class="conteudo__demonstracao__item">9</div>
+                        <div class="conteudo__demonstracao__item">10</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="align-content">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <select name="align-content" id="align-content" onchange="alignContent(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="center">center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                        </select>
+                    </div>
+                </li>
                 
                 <figure class="conteudo__figuras--em-coluna">
                     <img src="../images/flexbox-1.png" alt="Imagem ilustrativa dos valores possíveis para as propriedades de flex-direction, justify-content, align-items e align-content.">
@@ -82,6 +174,29 @@
 
                 <li><span>flex-wrap:</span> esta propriedade define se, caso a soma dos tamanhos dos itens ultrapasse o <i>main size</i> disponível, se os itens poderão ou não ser quebrados em novas linhas/colunas. Possui valores de <code>wrap</code> (pode quebrar), <code>nowrap</code> (não pode quebrar) e <code>wrap-reverse</code> (pode quebrar e os elementos são posicionados na ordem reversa ao normal).</li> 
                 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__flex-wrap">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                        <div class="conteudo__demonstracao__item">7</div>
+                        <div class="conteudo__demonstracao__item">8</div>
+                        <div class="conteudo__demonstracao__item">9</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="flex-wrap">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <select name="flex-wrap" id="flex-wrap" onchange="flexWrap(this.value)">
+                            <option value="wrap">wrap</option>
+                            <option value="nowrap">nowrap</option>
+                            <option value="wrap-reverse">wrap-reverse</option>
+                        </select>
+                    </div>
+                </li>
+
                 <figure>
                     <img src="https://triangulo.dev/posts/introducao-flexbox/flex-wrap.png" alt="Imagem ilustrativa dos valores possíveis para a propriedade flex-wrap.">
                     <figure>Imagem ilustrativa dos valores possíveis para a propriedade <code>flex-wrap</code>.</figure>
@@ -91,12 +206,51 @@
                 
                 <li><span>gap:</span> define um valor de espaçamento entre flex items, assumindo valores numéricos com unidade. Caso sejam definidos 2 valores, como em <code>gap: 10px 30px</code>, o primeiro valor é o espaçamento entre ramificações do eixo principal e, o segundo, entre ramificações do eixo secundário.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__gap-1">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__gap-2">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+                </li>
+                <li class="conteudo__legenda">Exemplos visuais para gaps com 1 valor (<code>1 rem</code>) e 2 valores (<code>1rem 2 rem</code>), respectivamente.</li>
+
                 <figure>
                     <img src="../images/flexbox-gap.png" alt="Imagem ilustrativa dos valores possíveis para a propriedade gap.">
                     <figure>Imagem ilustrativa dos valores possíveis para a propriedade <code>gap</code>.</figure>
                 </figure>
                 
                 <li><span>align-self:</span> esta propriedade, quando aplicada no bloco de código de estilização de um flex item, sobrescreve a propriedade <code>align-items</code> para aquele item em específico. Deste modo, possui a mesma função e valores possíveis de <code>align-items</code>, mas só é aplicada naqueles que possuírem esta propriedade no código.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__align-self">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item" id="align-self-item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="align-self">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <select name="align-self" id="align-self" onchange="alignSelf(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="center">center</option>
+                            <option value="flex-end">flex-end</option>
+                        </select>
+                    </div>
+                </li>
 
                 <figure>
                     <img src="https://triangulo.dev/posts/introducao-flexbox/align-self.png" alt="Imagem ilustrativa dos valores possíveis para a propriedade align-self.">
