@@ -106,8 +106,8 @@
                     </div>
 
                     <div class="conteudo__demonstracao__selecao">
-                        <label for="justify-content">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
-                        <select name="justify-content" id="justify-content" onchange="justifyContent(this.value)">
+                        <label for="justify-content">Clique no valor da propriedade <code>justify-content</code> para visualizá-lo na demonstração.</label>
+                        <select name="justify-content" id="justify-content" onchange="justifyContent(this.value, document.getElementsByClassName('conteudo__demonstracao__justify-content'))">
                             <option value="flex-start">flex-start</option>
                             <option value="center">center</option>
                             <option value="flex-end">flex-end</option>
@@ -128,7 +128,7 @@
                     </div>
 
                     <div class="conteudo__demonstracao__selecao">
-                        <label for="align-items">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <label for="align-items">Clique no valor da propriedade <code>align-items</code> para visualizá-lo na demonstração.</label>
                         <select name="align-items" id="align-items" onchange="alignItems(this.value)">
                             <option value="stretch">stretch</option>
                             <option value="flex-start">flex-start</option>
@@ -155,7 +155,7 @@
                     </div>
 
                     <div class="conteudo__demonstracao__selecao">
-                        <label for="align-content">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <label for="align-content">Clique no valor da propriedade <code>align-content</code> para visualizá-lo na demonstração.</label>
                         <select name="align-content" id="align-content" onchange="alignContent(this.value)">
                             <option value="stretch">stretch</option>
                             <option value="flex-start">flex-start</option>
@@ -188,10 +188,10 @@
                     </div>
 
                     <div class="conteudo__demonstracao__selecao">
-                        <label for="flex-wrap">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <label for="flex-wrap">Clique no valor da propriedade <code>flex-wrap</code> para visualizá-lo na demonstração.</label>
                         <select name="flex-wrap" id="flex-wrap" onchange="flexWrap(this.value)">
-                            <option value="wrap">wrap</option>
                             <option value="nowrap">nowrap</option>
+                            <option value="wrap">wrap</option>
                             <option value="wrap-reverse">wrap-reverse</option>
                         </select>
                     </div>
@@ -242,7 +242,7 @@
                     </div>
 
                     <div class="conteudo__demonstracao__selecao">
-                        <label for="align-self">Clique no valor da propriedade para visualizá-lo na demonstração.</label>
+                        <label for="align-self">Clique no valor da propriedade <code>align-self</code> para visualizá-lo na demonstração.</label>
                         <select name="align-self" id="align-self" onchange="alignSelf(this.value)">
                             <option value="stretch">stretch</option>
                             <option value="flex-start">flex-start</option>
@@ -259,7 +259,27 @@
                 
                 <li><span>flex-grow:</span> aplicada no flex item, esta propriedade define um fator de crescimento de um flex item, especificando quanto de espaço dentro do flex container esse item irá ocupar em relação aos demais items. Esta propriedade assume valores numéricos sem unidade e seu valor padrão é 0.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__flex-grow">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--2">2</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--3">3</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">O primeiro item possui <code>flex-grow</code> default, o segundo, <code>flex-grow: 2</code> e o terceiro, <code>flex-grow: 3</code>.</li>
+
                 <li><span>flex-shrink:</span> é uma propriedade análoga ao <code>flex-grow</code>, porém, por sua vez, define um fator de encolhimento.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__flex-shrink">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--2">2</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--3">3</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">O primeiro item possui <code>flex-shrink</code> default, o segundo, <code>flex-shrink: 2</code> e o terceiro, <code>flex-shrink: 3</code>.</li>
 
                 <figure>
                     <img src="https://dev-to-uploads.s3.amazonaws.com/i/z094e3wehsoe8z6lsxnz.png" alt="Imagem ilustrativa das propriedades flex-grow e flex-shrink.">
@@ -267,6 +287,16 @@
                 </figure>
                 
                 <li><span>flex-basis:</span> esta propriedade define o valor base para a dimensão no eixo principal de um flex item, antes de qualquer ação das propriedades <code>flex-wrap</code>, <code>flex-grow</code> ou <code>flex-shrink</code>, ou seja, antes que o espaço remanescente do container seja distribuído.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__flex-basis">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--2">2</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--3">3</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">O primeiro item possui <code>flex-basis</code> default, o segundo, <code>flex-basis: 150px</code> e o terceiro, <code>flex-basis: 100px</code>.</li>
 
                 <figure>
                     <img src="https://www.programiz.com/sites/tutorial2program/files/css-flex-basis-example.png" alt="Imagem ilustrativa da propriedade flex-basis.">
@@ -277,11 +307,23 @@
                 
                 <li><span>order:</span> aplicada nos flex items, é uma propriedade que define a ordem na qual os elementos serão renderizados. Recebe valores numéricos e sem unidade, indicando, de forma crescente, a ordem de cada elemento ou uma priorização de um elemento específico. Vale ressaltar que a ordem dos elementos no DOM não é alterada por esta propriedade, apenas a ordem de renderização.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__order">
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--1">1<br><code>order: 2</code></div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--2">2<br><code>order: 3</code></div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--3">3<br><code>order: 1</code></div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">O primeiro item possui <code>order: 2</code>, o segundo, <code>order: 3</code> e o terceiro, <code>order: 1</code>.</li>
+
                 <figure>
                     <img src="https://www.programiz.com/sites/tutorial2program/files/css-order-property-example.png" alt="Imagem ilustrativa da propriedade order.">
                     <figure>Imagem ilustrativa da propriedade <code>order</code>.</figure>
                 </figure>              
             </ul>
+
+            <p class="conteudo__texto"> É importante salientar que, pra que a propriedade <code>order</code> funcione da maneira esperada, é necessário que todos os itens possuam uma ordem definida. Isto é necessário porque o valor default para esta propriedade é 0, de modo que qualquer item com ordem não explicitada terá prioridade na renderização, em vez de um item com <code>order: 1</code>, por exemplo.</p>
 
             <p class="conteudo__texto">As propriedades supracitadas podem ser utilizadas a fim de montar layouts flexíveis e responsivos. É importante pontuar que, já que o flexbox é um modelo com suas próprias propriedades, as propriedades <code>float</code>, <code>clear</code> e <code>vertical-align</code> não têm efeito em flex items. Além disso, somente a hierarquia pai-filho é visualizada no CSS, de modo que itens "netos" não possuirão propriedades flex aplicadas para elementos filhos. Para tal, é necessário que o elemento filho no qual o elemento neto está contido também possua <code>display: flex</code> e as propriedades a serem aplicadas em seu bloco de código.</p>
 
