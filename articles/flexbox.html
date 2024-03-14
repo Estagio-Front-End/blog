@@ -70,30 +70,23 @@
                 <li><span>flex-direction:</span> define qual o eixo principal do container, horizontal (<code>row</code>) ou vertical (<code>column</code>). Se o eixo horizontal é o principal, automaticamente o eixo vertical se torna o secundário e vice-versa. Há também os valores <code>row-reverse</code> e <code>column-reverse</code>, que definem, além do eixo principal, que a ordem de posicionamento dos itens será inversa à sua ordem no <abbr title="Document Object Model">DOM</abbr>.</li>
 
                 <li class="conteudo__demonstracao">
-                    <div class="conteudo__demonstracao__direction--row">
+                    <div class="conteudo__demonstracao__flex-direction">
                         <div class="conteudo__demonstracao__item">1</div>
                         <div class="conteudo__demonstracao__item">2</div>
                         <div class="conteudo__demonstracao__item">3</div>
                     </div>
 
-                    <div class="conteudo__demonstracao__direction--column">
-                        <div class="conteudo__demonstracao__item">1</div>
-                        <div class="conteudo__demonstracao__item">2</div>
-                        <div class="conteudo__demonstracao__item">3</div>
-                    </div>
-
-                    <div class="conteudo__demonstracao__direction--row-reverse">
-                        <div class="conteudo__demonstracao__item">1</div>
-                        <div class="conteudo__demonstracao__item">2</div>
-                        <div class="conteudo__demonstracao__item">3</div>
-                    </div>
-
-                    <div class="conteudo__demonstracao__direction--column-reverse">
-                        <div class="conteudo__demonstracao__item">1</div>
-                        <div class="conteudo__demonstracao__item">2</div>
-                        <div class="conteudo__demonstracao__item">3</div>
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="flex-direction">Clique no valor da propriedade <code>flex-direction</code> para visualizá-lo na demonstração.</label>
+                        <select name="flex-direction" id="flex-direction" onchange="flexDirection(this.value)">
+                            <option value="row">row</option>
+                            <option value="column">column</option>
+                            <option value="row-reverse">row-reverse</option>
+                            <option value="column-reverse">column-reverse</option>
+                        </select>
                     </div>
                 </li>
+
                 <li class="conteudo__legenda">Exemplos visuais para as flex-directions <code>row</code>, <code>column</code>, <code>row-reverse</code> e <code>column-reverse</code>, respectivamente.</li>
                 
                 <li><span>justify-content:</span> esta propriedade define como os elementos serão justificados no seu eixo principal. Pode ter valores como <code>center</code>, <code>flex-start</code>, <code>flex-end</code>, <code>space-around</code>, <code>space-between</code> e <code>space-evenly</code>.</li>
@@ -107,7 +100,7 @@
 
                     <div class="conteudo__demonstracao__selecao">
                         <label for="justify-content">Clique no valor da propriedade <code>justify-content</code> para visualizá-lo na demonstração.</label>
-                        <select name="justify-content" id="justify-content" onchange="justifyContent(this.value, document.getElementsByClassName('conteudo__demonstracao__justify-content'))">
+                        <select name="justify-content" id="justify-content" onchange="justifyContent(this.value)">
                             <option value="flex-start">flex-start</option>
                             <option value="center">center</option>
                             <option value="flex-end">flex-end</option>

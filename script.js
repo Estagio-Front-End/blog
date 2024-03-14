@@ -21,6 +21,7 @@ let containerAlignContent;
 let itemAlignSelf;
 
 //Propriedades exclusivas do flexbox
+const containerFlexDirection = document.querySelector(".conteudo__demonstracao__flex-direction");
 const containerFlexWrap = document.querySelector(".conteudo__demonstracao__flex-wrap");
 
 let artigoAtual = location.pathname;
@@ -32,6 +33,10 @@ if (artigoAtual.includes('/articles/flexbox.html')) {
     itemAlignSelf = document.querySelector("#align-self-item");
 } else if (artigoAtual.includes('/articles/grid.html')) {
     //Classes no artigo de grid para as propriedades que se repetem.
+}
+
+function flexDirection(value) {
+    containerFlexDirection.style.flexDirection = value;
 }
 
 function justifyContent(value) {
