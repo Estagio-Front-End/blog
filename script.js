@@ -27,6 +27,7 @@ const containerFlexWrap = document.querySelector(".conteudo__demonstracao__flex-
 //Propriedades do grid
 const containerJustifyItems = document.querySelector(".conteudo__demonstracao__justify-items--grid");
 const itemJustifySelf = document.querySelector("#justify-self-grid-item");
+const containerGridAutoFlow = document.querySelector(".conteudo__demonstracao__grid-auto-flow");
 
 let artigoAtual = location.pathname;
 
@@ -72,4 +73,8 @@ function justifyItems(value) {
 
 function justifySelf(value) {
     itemJustifySelf.style.justifySelf = value;
+}
+
+function gridAutoFlow(value){
+    containerGridAutoFlow.style.gridAutoFlow = value;
 }
