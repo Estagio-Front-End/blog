@@ -277,6 +277,14 @@
                         <div class="conteudo__demonstracao__item">3</div>
                         <div class="conteudo__demonstracao__item">4</div>
                         <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                        <div class="conteudo__demonstracao__item">7</div>
+                        <div class="conteudo__demonstracao__item">8</div>
+                        <div class="conteudo__demonstracao__item">9</div>
+                        <div class="conteudo__demonstracao__item">10</div>
+                        <div class="conteudo__demonstracao__item">11</div>
+                        <div class="conteudo__demonstracao__item">12</div>
+                        <div class="conteudo__demonstracao__item">13</div>
                     </div>
 
                     <div class="conteudo__demonstracao__selecao">
@@ -284,7 +292,6 @@
                         <select name="grid-auto-flow" id="grid-auto-flow" onchange="gridAutoFlow(this.value)">
                             <option value="row">row</option>
                             <option value="column">column</option>
-                            <option value="dense">dense</option>
                             <option value="column dense">column dense</option>
                             <option value="row dense">row dense</option>
                         </select>
@@ -334,6 +341,18 @@
                 <li>A propriedade <code>grid-area</code> também pode servir como um shorthand global de definição de posição por grid lines no modelo a seguir: <code>grid-area: grid-row-start / grid-column start / grid-row-end / grid-column-end</code>.</li>
 
                 <li><span>order:</span> esta propriedade permite o controle da ordem na qual os elementos são posicionados dentro do grid. Assume valores numéricos sem unidade e, quanto menor o número, maior a prioridade de posicionamento do item. Assim como no modelo flexbox, esta propriedade não altera a ordem dos elementos no DOM, apenas na exibição.</li> 
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__order--grid">
+                        <div class="conteudo__demonstracao__item">1<br><code>order: 2</code></div>
+                        <div class="conteudo__demonstracao__item">2<br><code>order: 3</code></div>
+                        <div class="conteudo__demonstracao__item">3<br><code>order: 5</code></div>
+                        <div class="conteudo__demonstracao__item">4<br><code>order: 1</code></div>
+                        <div class="conteudo__demonstracao__item">5<br><code>order: 4</code></div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Grid criado com definindo as ordens para todos os itens com a propriedade <code>order</code>.</li>
 
                 <figure>
                     <img src="../images/grid-order.png" alt="Imagem de fundo branco e 5 retângulos alaranjados numerados de 1 a 5 e desordenados.">
@@ -399,8 +418,8 @@
                     <div class="conteudo__demonstracao__selecao">
                         <label for="align-content-grid">Clique no valor da propriedade <code>align-content</code> para visualizá-lo na demonstração.</label>
                         <select name="align-content-grid" id="align-content-grid" onchange="alignContent(this.value)">
-                            <option value="start">start</option>
                             <option value="stretch">stretch</option>
+                            <option value="start">start</option>
                             <option value="center">center</option>
                             <option value="end">end</option>
                             <option value="space-between">space-between</option>

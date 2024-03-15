@@ -1056,13 +1056,13 @@ label {
   color: #232323;
 }
 
-.conteudo__demonstracao__template-rows, .conteudo__demonstracao__template-columns, .conteudo__demonstracao__template-areas, .conteudo__demonstracao__template, .conteudo__demonstracao__row-gap, .conteudo__demonstracao__column-gap, .conteudo__demonstracao__gap, .conteudo__demonstracao__auto-rows, .conteudo__demonstracao__auto-columns, .conteudo__demonstracao__justify-content--grid, .conteudo__demonstracao__align-content--grid, .conteudo__demonstracao__justify-items--grid, .conteudo__demonstracao__align-items--grid, .conteudo__demonstracao__justify-self--grid, .conteudo__demonstracao__align-self--grid, .conteudo__demonstracao__grid-column, .conteudo__demonstracao__grid-auto-flow {
+.conteudo__demonstracao__template-rows, .conteudo__demonstracao__template-columns, .conteudo__demonstracao__template-areas, .conteudo__demonstracao__template, .conteudo__demonstracao__row-gap, .conteudo__demonstracao__column-gap, .conteudo__demonstracao__gap, .conteudo__demonstracao__auto-rows, .conteudo__demonstracao__auto-columns, .conteudo__demonstracao__justify-content--grid, .conteudo__demonstracao__align-content--grid, .conteudo__demonstracao__justify-items--grid, .conteudo__demonstracao__align-items--grid, .conteudo__demonstracao__justify-self--grid, .conteudo__demonstracao__align-self--grid, .conteudo__demonstracao__grid-column, .conteudo__demonstracao__grid-auto-flow, .conteudo__demonstracao__order--grid {
   width: 20rem;
   height: 20rem;
   display: grid;
   border: 1px solid #232323;
 }
-.conteudo__demonstracao__template-rows div, .conteudo__demonstracao__template-columns div, .conteudo__demonstracao__template-areas div, .conteudo__demonstracao__template div, .conteudo__demonstracao__row-gap div, .conteudo__demonstracao__column-gap div, .conteudo__demonstracao__gap div, .conteudo__demonstracao__auto-rows div, .conteudo__demonstracao__auto-columns div, .conteudo__demonstracao__justify-content--grid div, .conteudo__demonstracao__align-content--grid div, .conteudo__demonstracao__justify-items--grid div, .conteudo__demonstracao__align-items--grid div, .conteudo__demonstracao__justify-self--grid div, .conteudo__demonstracao__align-self--grid div, .conteudo__demonstracao__grid-column div, .conteudo__demonstracao__grid-auto-flow div {
+.conteudo__demonstracao__template-rows div, .conteudo__demonstracao__template-columns div, .conteudo__demonstracao__template-areas div, .conteudo__demonstracao__template div, .conteudo__demonstracao__row-gap div, .conteudo__demonstracao__column-gap div, .conteudo__demonstracao__gap div, .conteudo__demonstracao__auto-rows div, .conteudo__demonstracao__auto-columns div, .conteudo__demonstracao__justify-content--grid div, .conteudo__demonstracao__align-content--grid div, .conteudo__demonstracao__justify-items--grid div, .conteudo__demonstracao__align-items--grid div, .conteudo__demonstracao__justify-self--grid div, .conteudo__demonstracao__align-self--grid div, .conteudo__demonstracao__grid-column div, .conteudo__demonstracao__grid-auto-flow div, .conteudo__demonstracao__order--grid div {
   border: 1px solid #232323;
   text-align: center;
 }
@@ -1135,20 +1135,12 @@ label {
 }
 
 .conteudo__demonstracao__grid-auto-flow {
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
 }
-.conteudo__demonstracao__grid-auto-flow div:first-child {
-  grid-row: 1/2;
-  grid-column: 1;
-}
-.conteudo__demonstracao__grid-auto-flow div:nth-child(2) {
-  grid-row: 2;
-  grid-column: 2;
-}
-.conteudo__demonstracao__grid-auto-flow div:last-child {
-  grid-row: 1/3;
-  grid-column: 5;
+.conteudo__demonstracao__grid-auto-flow div:nth-child(3), .conteudo__demonstracao__grid-auto-flow div:nth-child(5), .conteudo__demonstracao__grid-auto-flow div:nth-child(8), .conteudo__demonstracao__grid-auto-flow div:nth-child(13) {
+  grid-column: span 3;
+  grid-row: span 2;
 }
 
 .conteudo__demonstracao__grid-column {
@@ -1214,6 +1206,25 @@ label {
 }
 .conteudo__demonstracao__grid-column div:nth-child(12) {
   background-color: #DE212F;
+}
+
+.conteudo__demonstracao__order--grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+.conteudo__demonstracao__order--grid div:nth-child(1) {
+  order: 2;
+}
+.conteudo__demonstracao__order--grid div:nth-child(2) {
+  order: 3;
+}
+.conteudo__demonstracao__order--grid div:nth-child(3) {
+  order: 5;
+}
+.conteudo__demonstracao__order--grid div:nth-child(4) {
+  order: 1;
+}
+.conteudo__demonstracao__order--grid div:nth-child(5) {
+  order: 4;
 }
 
 .conteudo__demonstracao__justify-content--grid, .conteudo__demonstracao__justify-items--grid, .conteudo__demonstracao__justify-self--grid {
