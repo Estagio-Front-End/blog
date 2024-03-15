@@ -1,4 +1,4 @@
-.conteudo__demonstracao__template-rows, .conteudo__demonstracao__template-columns, .conteudo__demonstracao__template-areas, .conteudo__demonstracao__template, .conteudo__demonstracao__row-gap, .conteudo__demonstracao__column-gap, .conteudo__demonstracao__gap, .conteudo__demonstracao__auto-rows, .conteudo__demonstracao__auto-columns {
+.conteudo__demonstracao__template-rows, .conteudo__demonstracao__template-columns, .conteudo__demonstracao__template-areas, .conteudo__demonstracao__template, .conteudo__demonstracao__row-gap, .conteudo__demonstracao__column-gap, .conteudo__demonstracao__gap, .conteudo__demonstracao__auto-rows, .conteudo__demonstracao__auto-columns, .conteudo__demonstracao__justify-content--grid, .conteudo__demonstracao__align-content--grid, .conteudo__demonstracao__justify-items--grid, .conteudo__demonstracao__align-items--grid, .conteudo__demonstracao__justify-self--grid {
     width: 20rem;
     height: 20rem;
     display: grid;
@@ -84,3 +84,15 @@
         grid-column: 3;
     }
 }
+
+//grid-auto-flow
+
+.conteudo__demonstracao__justify-content--grid, .conteudo__demonstracao__justify-items--grid, .conteudo__demonstracao__justify-self--grid {
+    grid-template-columns: 5rem minmax(5rem, auto);
+}
+
+.conteudo__demonstracao__align-content--grid, .conteudo__demonstracao__align-items--grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 5rem) minmax(5rem, auto);
+}
+

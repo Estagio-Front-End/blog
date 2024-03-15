@@ -308,6 +308,30 @@
             <ul class="conteudo__texto">
                 <li><span>justify-content:</span> esta propriedade alinha o bloco de conteúdo de um grid container ao longo do eixo das linhas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code>, <code>end</code>, <code>space-between</code>, <code>space-around</code> e <code>space-evenly</code>.</li>
 
+                <li class="conteudo__demonstracao">
+                        <div class="conteudo__demonstracao__justify-content--grid">
+                            <div class="conteudo__demonstracao__item">1</div>
+                            <div class="conteudo__demonstracao__item">2</div>
+                            <div class="conteudo__demonstracao__item">3</div>
+                            <div class="conteudo__demonstracao__item">4</div>
+                            <div class="conteudo__demonstracao__item">5</div>
+                            <div class="conteudo__demonstracao__item">6</div>
+                        </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="justify-content-grid">Clique no valor da propriedade <code>justify-content</code> para visualizá-lo na demonstração.</label>
+                        <select name="justify-content-grid" id="justify-content-grid" onchange="justifyContent(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                            <option value="start">start</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                    </div>
+                </li>
+
                 <div class="conteudo__figuras">
                     <figure>
                         <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/justify-content-valores.svg" alt="Imagem no fundo branco com 4 seções mostrando os alinhamentos de 4 elementos conforme os valores de justify content.">
@@ -321,6 +345,30 @@
                 </div>
 
                 <li><span>align-content:</span> esta propriedade alinha o bloco de conteúdo de um grid container ao longo do eixo das colunas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code>, <code>end</code>, <code>space-between</code>, <code>space-around</code> e <code>space-evenly</code>. </li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__align-content--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="align-content-grid">Clique no valor da propriedade <code>align-content</code> para visualizá-lo na demonstração.</label>
+                        <select name="align-content-grid" id="align-content-grid" onchange="alignContent(this.value)">
+                            <option value="start">start</option>
+                            <option value="stretch">stretch</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                    </div>
+                </li>
 
                 <div class="conteudo__figuras">
                     <figure>
@@ -338,12 +386,54 @@
 
                 <li><span>justify-items:</span> esta propriedade alinha os itens de um grid container, dentro de suas células, ao longo do eixo das linhas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code> e <code>end</code>.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__justify-items--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="justify-items-grid">Clique no valor da propriedade <code>justify-items</code> para visualizá-lo na demonstração.</label>
+                        <select name="justify-items-grid" id="justify-items-grid" onchange="justifyItems(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="start">start</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                        </select>
+                    </div>
+                </li>
+
                 <figure>
                     <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/justify-items-valores.svg" alt="Imagem com fundo branco e 4 seções alinhando itens em grids 2x2 a depender do valor da propriedade justify items.">
                     <figcaption>Imagem ilustrativa dos resultados da aplicação da propriedade <code>justify-items</code>.</figcaption>
                 </figure>
                 
                 <li><span>align-items:</span> esta propriedade alinha os itens de um grid container, dentro de suas células, ao longo do eixo das colunas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code> e <code>end</code>.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__align-items--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="align-items-grid">Clique no valor da propriedade <code>align-items</code> para visualizá-lo na demonstração.</label>
+                        <select name="align-items-grid" id="align-items-grid" onchange="alignItems(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="start">start</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                        </select>
+                    </div>
+                </li>
 
                 <figure>
                     <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/align-items-valores.svg" alt="Imagem com fundo branco e 4 seções alinhando itens em grids 2x2 a depender do valor da propriedade align items.">
@@ -353,6 +443,27 @@
                 <li><span>place-items:</span> shorthand para as propriedades <code>align-items</code> e <code>justify-items</code>, nesta ordem. Deste modo, seus valores possíveis são as combinações dos valores das duas propriedades. Caso se use apenas um valor, este será aplicado para ambas as propriedades.</li>
 
                 <li><span>justify-self:</span> esta propriedade alinha um item dentro de uma célula do grid ao longo do eixo das linhas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code> e <code>end</code>.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__justify-self--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item" id="justify-self-grid-item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="justify-self-grid">Clique no valor da propriedade <code>justify-self</code> para visualizá-lo na demonstração.</label>
+                        <select name="justify-self-grid" id="justify-self-grid" onchange="justifySelf(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="start">start</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                        </select>
+                    </div>
+                </li>
 
                 <figure>
                     <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/justify-self-valores.svg" alt="Imagem com fundo branco e 4 seções alinhando itens em grids 2x2 a depender do valor da propriedade justify self.">

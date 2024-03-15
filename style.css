@@ -1056,13 +1056,13 @@ label {
   color: #232323;
 }
 
-.conteudo__demonstracao__template-rows, .conteudo__demonstracao__template-columns, .conteudo__demonstracao__template-areas, .conteudo__demonstracao__template, .conteudo__demonstracao__row-gap, .conteudo__demonstracao__column-gap, .conteudo__demonstracao__gap, .conteudo__demonstracao__auto-rows, .conteudo__demonstracao__auto-columns {
+.conteudo__demonstracao__template-rows, .conteudo__demonstracao__template-columns, .conteudo__demonstracao__template-areas, .conteudo__demonstracao__template, .conteudo__demonstracao__row-gap, .conteudo__demonstracao__column-gap, .conteudo__demonstracao__gap, .conteudo__demonstracao__auto-rows, .conteudo__demonstracao__auto-columns, .conteudo__demonstracao__justify-content--grid, .conteudo__demonstracao__align-content--grid, .conteudo__demonstracao__justify-items--grid, .conteudo__demonstracao__align-items--grid, .conteudo__demonstracao__justify-self--grid {
   width: 20rem;
   height: 20rem;
   display: grid;
   border: 1px solid #232323;
 }
-.conteudo__demonstracao__template-rows div, .conteudo__demonstracao__template-columns div, .conteudo__demonstracao__template-areas div, .conteudo__demonstracao__template div, .conteudo__demonstracao__row-gap div, .conteudo__demonstracao__column-gap div, .conteudo__demonstracao__gap div, .conteudo__demonstracao__auto-rows div, .conteudo__demonstracao__auto-columns div {
+.conteudo__demonstracao__template-rows div, .conteudo__demonstracao__template-columns div, .conteudo__demonstracao__template-areas div, .conteudo__demonstracao__template div, .conteudo__demonstracao__row-gap div, .conteudo__demonstracao__column-gap div, .conteudo__demonstracao__gap div, .conteudo__demonstracao__auto-rows div, .conteudo__demonstracao__auto-columns div, .conteudo__demonstracao__justify-content--grid div, .conteudo__demonstracao__align-content--grid div, .conteudo__demonstracao__justify-items--grid div, .conteudo__demonstracao__align-items--grid div, .conteudo__demonstracao__justify-self--grid div {
   border: 1px solid #232323;
   text-align: center;
 }
@@ -1132,6 +1132,15 @@ label {
 }
 .conteudo__demonstracao__auto-columns .conteudo__demonstracao__item--4 {
   grid-column: 3;
+}
+
+.conteudo__demonstracao__justify-content--grid, .conteudo__demonstracao__justify-items--grid, .conteudo__demonstracao__justify-self--grid {
+  grid-template-columns: 5rem minmax(5rem, auto);
+}
+
+.conteudo__demonstracao__align-content--grid, .conteudo__demonstracao__align-items--grid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 5rem) minmax(5rem, auto);
 }
 
 /*# sourceMappingURL=style.css.map */
