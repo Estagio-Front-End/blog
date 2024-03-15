@@ -81,6 +81,28 @@
                 
                 <li><span>grid-template-rows:</span> define a quantidade e o tamanho das linhas dentro de um grid template. Quando utilizada junto à propriedade <code>grid-template-columns</code>, gera um <i>grid explícito</i>, com linhas e colunas definidas.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__template-columns">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__template-rows">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">O grid da esquerda foi criado com <code>grid-template-columns: repeat(3, 1fr)</code> e o da direita, com <code>grid-template-columns: repeat(2, 1fr)</code> e <code>grid-template-rows: 25px 1fr minmax(60px, 1fr)</code>.</li>
+
                 <div class="conteudo__figuras">
                     <figure>
                         <img src="../images/grid-template-columns.png" alt="Imagem com fundo branco e quadrados alaranjados, numerados de 1 a 10, dispostos em 5 colunas e 2 linhas, cada coluna com tamanhos diferentes">
@@ -96,6 +118,18 @@
                 <li><span>grid-template-areas:</span> define áreas nomeadas dentro de um grid template. É uma forma mais intuitiva de definir onde cada elemento será posicionado. É utilizado em conjunto com a propriedade <code>grid-area</code>.</li>
                 
                 <li><span>grid-area:</span> aplicada nos grid items, define um nome para o elemento para que ele seja intuitivamente posicionado no <code>grid-template-areas</code>. Esta propriedade também pode ter o comportamento de shorthand para outras propriedades, mas isto será abordado posteriormente.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__template-areas">
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--logo">logo</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--nav">nav</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--search">search</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--content">content</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--footer">footer</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Grid criado com base no layout do CSS Blog, utilizando as propriedades <code>grid-area</code> e <code>grid-template-areas</code>.</li>
 
                 <div class="conteudo__figuras">
                     <figure>
@@ -116,6 +150,18 @@
 
                 <li><span>grid-template:</span> shorthand que agrupa as propriedades <code>grid-template-columns</code>, <code>grid-template-rows</code> e <code>grid-template-areas</code>. Os tamanhos de linhas são definidos ao lado da definição das áreas de cada linha e os tamanhos das colunas são definidos no final, separados por um símbolo <code>/</code> do restante do código da propriedade.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__template">
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--logo">logo</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--nav">nav</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--search">search</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--content">content</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--footer">footer</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Grid criado com base no layout do CSS Blog, utilizando as propriedades <code>grid-area</code> e <code>grid-template</code>.</li>
+
                 <div class="conteudo__figuras">
                     <figure>
                         <img src="../images/grid-template code.png" alt="Imagem com fundo preto com código CSS escrito em roxo, verde e laranja definindo uma grid template.">
@@ -133,6 +179,37 @@
                 <li><span>grid-column-gap / column-gap:</span> esta propriedade cria um espaçamento entre colunas de um grid. Pode receber valores numéricos com unidade ou em porcentagem.</li>
                 
                 <li><span>grid-gap / gap:</span> shorthand que agrupa as propriedades <code>grid-row-gap</code> e <code>grid-column-gap</code>. Quando utilizado 1 valor, este será aplicado para ambas as propriedades. Quando utilizados 2 valores distintos, o primeiro será aplicado no espaçamento entre linhas e o segundo, entre colunas.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__row-gap">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__column-gap">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__gap">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">O primeiro grid foi criado com <code>row-gap: 1rem</code>, o segundo com <code>column-gap: 1rem</code> e o terceiro, com <code>gap: 1rem 2rem</code>.</li>
 
                 <li>O prefixo <code>grid</code> para estas propriedades foi depreciado, mas, para manter a compatibilidade com sites legados, os navegadores ainda aceitam as propriedades com o prefixo. Dessa forma, para desenvolvimentos mais atuais, são utilizadas as propriedades <code>row-gap</code>, <code>column-gap</code> e o shorthand <code>gap</code>.</li>
 
@@ -156,6 +233,28 @@
                 <li><span>grid-auto-rows:</span> define o tamanho de linhas criadas implicitamente, ou seja, quando há mais elementos do que o definido no grid template. Pode receber valores numéricos com unidade, porcentagens ou unidades fracionais.</li>
                 
                 <li><span>grid-auto-columns:</span> define o tamanho de colunas criadas implicitamente, ou seja, quando há mais elementos do que o definido no grid template. Pode receber valores numéricos com unidade, porcentagens ou unidades fracionais.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__auto-rows">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__auto-columns">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--4">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Ambos os grids foram criados com dimensões 2x2. O primeiro grid foi criado com <code>grid-auto-rows: 2.5rem</code> e o segundo, com <code>grid-auto-columns: 2.5rem</code>, além do item 4 definido com <code>grid-column: 3</code>, coluna esta que não era definida no grid original.</li>
                 
                 <div class="conteudo__figuras">
                     <figure>
