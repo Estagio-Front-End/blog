@@ -81,6 +81,28 @@
                 
                 <li><span>grid-template-rows:</span> define a quantidade e o tamanho das linhas dentro de um grid template. Quando utilizada junto à propriedade <code>grid-template-columns</code>, gera um <i>grid explícito</i>, com linhas e colunas definidas.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__template-columns">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__template-rows">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">O grid da esquerda foi criado com <code>grid-template-columns: repeat(3, 1fr)</code> e o da direita, com <code>grid-template-columns: repeat(2, 1fr)</code> e <code>grid-template-rows: 25px 1fr minmax(60px, 1fr)</code>.</li>
+
                 <div class="conteudo__figuras">
                     <figure>
                         <img src="../images/grid-template-columns.png" alt="Imagem com fundo branco e quadrados alaranjados, numerados de 1 a 10, dispostos em 5 colunas e 2 linhas, cada coluna com tamanhos diferentes">
@@ -96,6 +118,18 @@
                 <li><span>grid-template-areas:</span> define áreas nomeadas dentro de um grid template. É uma forma mais intuitiva de definir onde cada elemento será posicionado. É utilizado em conjunto com a propriedade <code>grid-area</code>.</li>
                 
                 <li><span>grid-area:</span> aplicada nos grid items, define um nome para o elemento para que ele seja intuitivamente posicionado no <code>grid-template-areas</code>. Esta propriedade também pode ter o comportamento de shorthand para outras propriedades, mas isto será abordado posteriormente.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__template-areas">
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--logo">logo</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--nav">nav</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--search">search</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--content">content</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--footer">footer</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Grid criado com base no layout do CSS Blog, utilizando as propriedades <code>grid-area</code> e <code>grid-template-areas</code>.</li>
 
                 <div class="conteudo__figuras">
                     <figure>
@@ -116,6 +150,18 @@
 
                 <li><span>grid-template:</span> shorthand que agrupa as propriedades <code>grid-template-columns</code>, <code>grid-template-rows</code> e <code>grid-template-areas</code>. Os tamanhos de linhas são definidos ao lado da definição das áreas de cada linha e os tamanhos das colunas são definidos no final, separados por um símbolo <code>/</code> do restante do código da propriedade.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__template">
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--logo">logo</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--nav">nav</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--search">search</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--content">content</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--footer">footer</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Grid criado com base no layout do CSS Blog, utilizando as propriedades <code>grid-area</code> e <code>grid-template</code>.</li>
+
                 <div class="conteudo__figuras">
                     <figure>
                         <img src="../images/grid-template code.png" alt="Imagem com fundo preto com código CSS escrito em roxo, verde e laranja definindo uma grid template.">
@@ -133,6 +179,37 @@
                 <li><span>grid-column-gap / column-gap:</span> esta propriedade cria um espaçamento entre colunas de um grid. Pode receber valores numéricos com unidade ou em porcentagem.</li>
                 
                 <li><span>grid-gap / gap:</span> shorthand que agrupa as propriedades <code>grid-row-gap</code> e <code>grid-column-gap</code>. Quando utilizado 1 valor, este será aplicado para ambas as propriedades. Quando utilizados 2 valores distintos, o primeiro será aplicado no espaçamento entre linhas e o segundo, entre colunas.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__row-gap">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__column-gap">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__gap">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">O primeiro grid foi criado com <code>row-gap: 1rem</code>, o segundo com <code>column-gap: 1rem</code> e o terceiro, com <code>gap: 1rem 2rem</code>.</li>
 
                 <li>O prefixo <code>grid</code> para estas propriedades foi depreciado, mas, para manter a compatibilidade com sites legados, os navegadores ainda aceitam as propriedades com o prefixo. Dessa forma, para desenvolvimentos mais atuais, são utilizadas as propriedades <code>row-gap</code>, <code>column-gap</code> e o shorthand <code>gap</code>.</li>
 
@@ -156,6 +233,28 @@
                 <li><span>grid-auto-rows:</span> define o tamanho de linhas criadas implicitamente, ou seja, quando há mais elementos do que o definido no grid template. Pode receber valores numéricos com unidade, porcentagens ou unidades fracionais.</li>
                 
                 <li><span>grid-auto-columns:</span> define o tamanho de colunas criadas implicitamente, ou seja, quando há mais elementos do que o definido no grid template. Pode receber valores numéricos com unidade, porcentagens ou unidades fracionais.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__auto-rows">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__auto-columns">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item conteudo__demonstracao__item--4">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Ambos os grids foram criados com dimensões 2x2. O primeiro grid foi criado com <code>grid-auto-rows: 2.5rem</code> e o segundo, com <code>grid-auto-columns: 2.5rem</code>, além do item 4 definido com <code>grid-column: 3</code>, coluna esta que não era definida no grid original.</li>
                 
                 <div class="conteudo__figuras">
                     <figure>
@@ -170,6 +269,34 @@
                 </div>
 
                 <li><span>grid-auto-flow:</span> define como elementos cujo posicionamento não está definido irão popular o grid, estejam eles em linhas/colunas explícitas ou implícitas. Pode receber os valores <code>row</code>, <code>column</code>, <code>column dense</code> ou <code>row dense</code>. O valor <code>dense</code> indica ao algoritmo de posicionamento que tente preencher espaços vazios, de modo que pode deixar o layout desordenado, de forma que seu uso não é muito recomendado.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__grid-auto-flow">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                        <div class="conteudo__demonstracao__item">7</div>
+                        <div class="conteudo__demonstracao__item">8</div>
+                        <div class="conteudo__demonstracao__item">9</div>
+                        <div class="conteudo__demonstracao__item">10</div>
+                        <div class="conteudo__demonstracao__item">11</div>
+                        <div class="conteudo__demonstracao__item">12</div>
+                        <div class="conteudo__demonstracao__item">13</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="grid-auto-flow">Clique no valor da propriedade <code>grid-auto-flow</code> para visualizá-lo na demonstração.</label>
+                        <select name="grid-auto-flow" id="grid-auto-flow" onchange="gridAutoFlow(this.value)">
+                            <option value="row">row</option>
+                            <option value="column">column</option>
+                            <option value="column dense">column dense</option>
+                            <option value="row dense">row dense</option>
+                        </select>
+                    </div>
+                </li>
                 
                 <div class="conteudo__figuras">
                     <figure>
@@ -185,7 +312,26 @@
 
                 <li><span>grid-row:</span> define em quais grid lines do eixo das linhas o elemento inicia e termina, atuando como shorthand das propriedades <code>grid-row-start</code> e <code>grid-row-end</code>. Os valores assumidos são numéricos sem unidades ou pode ser utilizada a palavra reservada <code>span</code>, sendo os dois valores separados pelo símbolo <code>/</code>.  Nesse contexto de grid, o <code>span</code> representa "quantas grid lines à frente de onde o elemento inicia". Desta forma, por exemplo, se temos um elemento que inicia na grid line 1 e aplicamos <code>span 2</code> como segundo valor do seu <code>grid-row</code>, o elemento terminará na grid line 3, ocupando as linhas 1 e 2.</li>
 
-                <li><span>grid-column:</span> define em quais grid lines do eixo das colunas o elemento inicia e termina, atuando como shorthand das propriedades <code>grid-column-start</code> e <code>grid-column-end</code>. Os valores assumidos são numéricos sem unidades ou pode ser utilizada a palavra reservada <code>span</code>, sendo os dois valores separados pelo símbolo <code>/</code>.</li>          
+                <li><span>grid-column:</span> define em quais grid lines do eixo das colunas o elemento inicia e termina, atuando como shorthand das propriedades <code>grid-column-start</code> e <code>grid-column-end</code>. Os valores assumidos são numéricos sem unidades ou pode ser utilizada a palavra reservada <code>span</code>, sendo os dois valores separados pelo símbolo <code>/</code>.</li>     
+                
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__grid-column">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">CSS Grid Layout</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                        <div class="conteudo__demonstracao__item">7</div>
+                        <div class="conteudo__demonstracao__item">8</div>
+                        <div class="conteudo__demonstracao__item">9</div>
+                        <div class="conteudo__demonstracao__item">10</div>
+                        <div class="conteudo__demonstracao__item">11</div>
+                        <div class="conteudo__demonstracao__item">12</div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Grid criado com a definição de <code>grid-row</code> e <code>grid-column</code> para alguns dos itens exibidos. As propriedades foram definidas tanto com 1 valor, representando as grid tracks quanto com 2 valores, representando as grid lines.</li>
 
                 <figure>
                     <img src="../images/grid-row-grid-column.png" alt="Imagem com fundo branco e 2 quadrados alaranjados identificados de 1 e 2, posicionados com grid row e grid column">
@@ -195,6 +341,18 @@
                 <li>A propriedade <code>grid-area</code> também pode servir como um shorthand global de definição de posição por grid lines no modelo a seguir: <code>grid-area: grid-row-start / grid-column start / grid-row-end / grid-column-end</code>.</li>
 
                 <li><span>order:</span> esta propriedade permite o controle da ordem na qual os elementos são posicionados dentro do grid. Assume valores numéricos sem unidade e, quanto menor o número, maior a prioridade de posicionamento do item. Assim como no modelo flexbox, esta propriedade não altera a ordem dos elementos no DOM, apenas na exibição.</li> 
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__order--grid">
+                        <div class="conteudo__demonstracao__item">1<br><code>order: 2</code></div>
+                        <div class="conteudo__demonstracao__item">2<br><code>order: 3</code></div>
+                        <div class="conteudo__demonstracao__item">3<br><code>order: 5</code></div>
+                        <div class="conteudo__demonstracao__item">4<br><code>order: 1</code></div>
+                        <div class="conteudo__demonstracao__item">5<br><code>order: 4</code></div>
+                    </div>
+                </li>
+
+                <li class="conteudo__legenda">Grid criado com definindo as ordens para todos os itens com a propriedade <code>order</code>.</li>
 
                 <figure>
                     <img src="../images/grid-order.png" alt="Imagem de fundo branco e 5 retângulos alaranjados numerados de 1 a 5 e desordenados.">
@@ -209,6 +367,30 @@
             <ul class="conteudo__texto">
                 <li><span>justify-content:</span> esta propriedade alinha o bloco de conteúdo de um grid container ao longo do eixo das linhas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code>, <code>end</code>, <code>space-between</code>, <code>space-around</code> e <code>space-evenly</code>.</li>
 
+                <li class="conteudo__demonstracao">
+                        <div class="conteudo__demonstracao__justify-content--grid">
+                            <div class="conteudo__demonstracao__item">1</div>
+                            <div class="conteudo__demonstracao__item">2</div>
+                            <div class="conteudo__demonstracao__item">3</div>
+                            <div class="conteudo__demonstracao__item">4</div>
+                            <div class="conteudo__demonstracao__item">5</div>
+                            <div class="conteudo__demonstracao__item">6</div>
+                        </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="justify-content-grid">Clique no valor da propriedade <code>justify-content</code> para visualizá-lo na demonstração.</label>
+                        <select name="justify-content-grid" id="justify-content-grid" onchange="justifyContent(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                            <option value="start">start</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                    </div>
+                </li>
+
                 <div class="conteudo__figuras">
                     <figure>
                         <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/justify-content-valores.svg" alt="Imagem no fundo branco com 4 seções mostrando os alinhamentos de 4 elementos conforme os valores de justify content.">
@@ -222,6 +404,30 @@
                 </div>
 
                 <li><span>align-content:</span> esta propriedade alinha o bloco de conteúdo de um grid container ao longo do eixo das colunas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code>, <code>end</code>, <code>space-between</code>, <code>space-around</code> e <code>space-evenly</code>. </li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__align-content--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="align-content-grid">Clique no valor da propriedade <code>align-content</code> para visualizá-lo na demonstração.</label>
+                        <select name="align-content-grid" id="align-content-grid" onchange="alignContent(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="start">start</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                    </div>
+                </li>
 
                 <div class="conteudo__figuras">
                     <figure>
@@ -239,12 +445,54 @@
 
                 <li><span>justify-items:</span> esta propriedade alinha os itens de um grid container, dentro de suas células, ao longo do eixo das linhas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code> e <code>end</code>.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__justify-items--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="justify-items-grid">Clique no valor da propriedade <code>justify-items</code> para visualizá-lo na demonstração.</label>
+                        <select name="justify-items-grid" id="justify-items-grid" onchange="justifyItems(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="start">start</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                        </select>
+                    </div>
+                </li>
+
                 <figure>
                     <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/justify-items-valores.svg" alt="Imagem com fundo branco e 4 seções alinhando itens em grids 2x2 a depender do valor da propriedade justify items.">
                     <figcaption>Imagem ilustrativa dos resultados da aplicação da propriedade <code>justify-items</code>.</figcaption>
                 </figure>
                 
                 <li><span>align-items:</span> esta propriedade alinha os itens de um grid container, dentro de suas células, ao longo do eixo das colunas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code> e <code>end</code>.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__align-items--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="align-items-grid">Clique no valor da propriedade <code>align-items</code> para visualizá-lo na demonstração.</label>
+                        <select name="align-items-grid" id="align-items-grid" onchange="alignItems(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="start">start</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                        </select>
+                    </div>
+                </li>
 
                 <figure>
                     <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/align-items-valores.svg" alt="Imagem com fundo branco e 4 seções alinhando itens em grids 2x2 a depender do valor da propriedade align items.">
@@ -255,12 +503,54 @@
 
                 <li><span>justify-self:</span> esta propriedade alinha um item dentro de uma célula do grid ao longo do eixo das linhas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code> e <code>end</code>.</li>
 
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__justify-self--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item" id="justify-self-grid-item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="justify-self-grid">Clique no valor da propriedade <code>justify-self</code> para visualizá-lo na demonstração.</label>
+                        <select name="justify-self-grid" id="justify-self-grid" onchange="justifySelf(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="start">start</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                        </select>
+                    </div>
+                </li>
+
                 <figure>
                     <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/justify-self-valores.svg" alt="Imagem com fundo branco e 4 seções alinhando itens em grids 2x2 a depender do valor da propriedade justify self.">
                     <figcaption>Imagem ilustrativa dos resultados da aplicação da propriedade <code>justify-self</code>.</figcaption>
                 </figure>
 
                 <li><span>align-self:</span> esta propriedade alinha um item dentro de uma célula do grid ao longo do eixo das colunas, quando o tamanho do conteúdo não preenche todo o espaço disponível. Seu valor padrão é <code>stretch</code>, mas pode assumir valores como <code>center</code>, <code>start</code> e <code>end</code>.</li>
+
+                <li class="conteudo__demonstracao">
+                    <div class="conteudo__demonstracao__align-self--grid">
+                        <div class="conteudo__demonstracao__item">1</div>
+                        <div class="conteudo__demonstracao__item">2</div>
+                        <div class="conteudo__demonstracao__item">3</div>
+                        <div class="conteudo__demonstracao__item">4</div>
+                        <div class="conteudo__demonstracao__item">5</div>
+                        <div class="conteudo__demonstracao__item" id="align-self-grid-item">6</div>
+                    </div>
+
+                    <div class="conteudo__demonstracao__selecao">
+                        <label for="align-self-grid">Clique no valor da propriedade <code>align-self</code> para visualizá-lo na demonstração.</label>
+                        <select name="align-self-grid" id="align-self-grid" onchange="alignSelf(this.value)">
+                            <option value="stretch">stretch</option>
+                            <option value="start">start</option>
+                            <option value="center">center</option>
+                            <option value="end">end</option>
+                        </select>
+                    </div>
+                </li>
 
                 <figure>
                     <img src="https://triangulo.dev/posts/css-grid-alinhando-elementos-na-pratica/align-self-valores.svg" alt="Imagem com fundo branco e 4 seções alinhando itens em grids 2x2 a depender do valor da propriedade align self.">
