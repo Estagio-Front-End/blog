@@ -41,6 +41,10 @@ footer {
     flex-direction: column;
 }
 
+.artigo__tag--html {
+    background-color: corTag("html");
+}
+
 .artigo__tag--css-basico {
     background-color: corTag("css-basico");
 }
@@ -55,6 +59,10 @@ footer {
 
 .artigo__tag--responsividade {
     background-color: corTag("responsividade");
+}
+
+.artigo__tag--javascript {
+    background-color: corTag("javascript");
 }
 
 .navegacao {
