@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Acessibilidade em CSS</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+   
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Acessibilidade em CSS</h2>
+            <span class="artigo__tag artigo__tag--html">HTML</span>
+            
+            <article>
+                <p class="conteudo__texto">A acessibilidade pode ser definida como:</p>
+                
+                <blockquote>"A possibilidade e condição de alcance, percepção e entendimento para a utilização, em igualdade de oportunidades, com segurança e autonomia, do meio físico, do transporte, da informação e da comunicação, inclusive dos sistemas e tecnologias de informação e comunicação, bem como de outros serviços e instalações."</blockquote>
+                
+                <p class="conteudo__texto">Para o desenvolvimento de sites e aplicações, esta definição se traduz em garantir com que o máximo de pessoas consiga utilizar aquilo que foi desenvolvido. Os tipos de deficiência são categorizados em 5 grupos e, inicialmente, existem cuidados básicos para cada grupo:</p>
+    
+                <ul class="conteudo__texto">
+                    <li><span>Deficiência auditiva:</span> pessoas com perda total ou parcial da audição. É importante transcrever audios e gerar legendas para vídeos.</li>
+                    
+                    <li><span>Deficiência cognitiva, de aprendizado e neurológica:</span> pessoas que podem ter dificuldades com o entendimento de informações. É importante que o conteúdo da aplicação esteja claro, bem estruturado e com links previsíveis.</li>
+                    
+                    <li><span>Deficiência física:</span> pessoas com limitações no controle de músculos, com distúrbios articulares ou com membros faltantes. É importante que elementos clicáveis possuam uma área considerável para facilitar o clique e que o site ou aplicação suporte reconhecimento de voz em campos aplicáveis.</li>
+                    
+                    <li><span>Deficiência de fala:</span> pessoas com dificuldades de fala ou que não conseguem falar. É importante que o site ou aplicação não tenha funcionalidades ativadas somente por voz.</li>
+                    
+                    <li><span>Deficiência visual:</span> pessoas com perda parcial ou total da visão, ou com baixa acuidade visual. É importante se atentar aos contrastes de cor da página, garantir que textos e imagens possam ser aumentados em tamanho e que o site ou aplicação suporte leitores de tela.</li>
+                </ul>    
+                
+                <p class="conteudo__texto">Além dos cuidados básicos mencionados anteriormente, é possível, na própria escrita do código, utilizar técnicas e adicionar elementos que permitirão e facilitarão o uso do site por pessoas com algum tipo de deficiência. Alguns destes elementos e técnicas são:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>Texto alternativo em imagens:</span> </li>
+
+                    <li>
+                        <div class="conteudo__figuras">
+                            <figure>
+                                <img src="../images/alt-text-código.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/alt-text-resultado.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+                        </div>
+                    </li>
+
+                    <li><span>Utilização de HTML semântico:</span> </li>
+
+                    <li>
+                        <div class="conteudo__figuras">
+                            <figure>
+                                <img src="../images/html-semantico-codigo.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/html-semantico-resultado.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+                        </div>
+                    </li>
+
+                    <li><span>Uso de labels para elementos de formulário:</span> </li>
+
+                    <li>
+                        <div class="conteudo__figuras">
+                            <figure>
+                                <img src="../images/form-label-codigo.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/form-label-resultado.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+                        </div>
+                    </li>
+
+                    <li><span>Utilização de hierarquia de títulos:</span> </li>
+
+                    <li><span>Contraste de cores na página:</span> </li>
+
+                    <li>
+                        <div class="conteudo__figuras">
+                            <figure>
+                                <img src="../images/contraste-bom.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/contraste-ruim.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+                        </div>
+                    </li>
+
+                    <li><span>Utilização de <code>aria-label</code> em elementos não semânticos:</span> </li>
+
+                    <li>
+                        <div class="conteudo__figuras">
+                            <figure>
+                                <img src="../images/aria-label-sem.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/aria-label-codigo.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/aria-label-resultado.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+                        </div>
+                    </li>
+
+                    <li><span>Uso de <code>aria-hidden</code> para imagens decorativas:</span> </li>
+
+                    <li><span>Uso de unidades relativas no tamanho de texto:</span> </li>
+
+                    <li>
+                        <div class="conteudo__figuras">
+                            <figure>
+                                <img src="../images/unidades-relativas-codigo.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/unidades-relativas-escolha.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/unidades-relativas-medio.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/unidades-relativas-mtgrande.png" alt="">
+                                <figcaption></figcaption>
+                            </figure>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <p class="conteudo__texto">O Chrome DevTools é uma ferramenta para desenvolvedores que possui uma seção de diagnóstico do site em algumas frentes, uma delas sendo acessibilidade. A depender da nota (que vai de 0 a 100), o site pode estar bem adaptado para diferentes necessidades de usuários ou ter pontos de melhoria. É possível abrir o DevTools por meio da tecla F12 (Windows) ou clicando na página com o botão direito e selecionando a opção "Inspecionar". No menu de opções superior, é possível encontrar o "Lighthouse" e, para gerar o relatório, clicar em "Analyze page load".</p>
+
+                <figure>
+                    <img src="../images/lighthouse.png" alt="Imagem com fundo preto mostrando um score de 100 para a Acessibilidade do site CSS Blog">
+                    <figcaption>Visão do resultado de acessibilidade do CSS Blog no Lighthouse.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">A imagem anterior mostra o padrão de visualização dos resultados no Lighthouse. O relatório traz tanto os pontos nos quais o site foi testado e aprovado, pontos de melhoria (se existirem) e, no caso da acessibilidade, pontos que não são possíveis de cobrir no teste do Lighthouse, mas que são importantes de serem testados manualmente como o uso de labels, ARIA roles, HTML semântico, entre outros. Desse modo, um score de 100 não indica que o site está 100% adaptado, mas é um bom indicativo de que se está no caminho certo.</p>
+
+                <p class="conteudo__texto">A acessibilidade no desenvolvimento é um tema amplo, mas de suma importância para que o desenvolvedor crie aplicações que possam ser utilizadas por todos.</p>
+            </article>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>20 Mar</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="../script.js"></script>
+</html>
