@@ -4,10 +4,12 @@
 $cor-fundo-principal: #f6f6f6;
 $cor-fonte-principal: #232323;
 $cor-fonte-sec: #5b5b5b;
+$cor-tag-html: #E5532D;
 $cor-tag-css-basico: #0095DA;
 $cor-tag-posicionamento: #FF8F7C;
 $cor-tag-animacoes: #F39200;
 $cor-tag-responsividade: #1BB2BB;
+$cor-tag-javascript: #F7E025;
 $fonte-titulos: 'Roboto Slab', serif;
 $fonte-tags: 'Space Mono', sans-serif;
 
@@ -91,6 +93,10 @@ $fonte-tags: 'Space Mono', sans-serif;
         @return $cor-tag-animacoes;
     } @else if $tag == "responsividade" {
         @return $cor-tag-responsividade;
+    } @else if $tag == "html" {
+        @return $cor-tag-html;
+    } @else if $tag == "javascript" {
+        @return $cor-tag-javascript;
     }
 }
 
