@@ -84,6 +84,10 @@ footer {
   flex-direction: column;
 }
 
+.artigo__tag--html {
+  background-color: #E5532D;
+}
+
 .artigo__tag--css-basico {
   background-color: #0095DA;
 }
@@ -98,6 +102,10 @@ footer {
 
 .artigo__tag--responsividade {
   background-color: #1BB2BB;
+}
+
+.artigo__tag--javascript {
+  background-color: #F7E025;
 }
 
 .navegacao {

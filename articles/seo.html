@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma página de blog sobre o que é e como utilizar o SEO no desenvolvimento front-end.">
+    <link rel="stylesheet" href="../style.css">
+    <title>SEO no Front-End</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+    
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">SEO no Front-End</h2>
+            <span class="artigo__tag artigo__tag--html">HTML</span>
+            
+            <article>
+                <p class="conteudo__texto">O <abbr title="Search Engine Optmization">SEO</abbr> pode ser descrito como o conjunto de ações que serão tomadas em um site para aumentar sua visibilidade em mecanismos de busca como Google, Bing, entre outros. Quanto melhor o SEO do site, mais facilmente ele será encontrado em buscas e mais facilmente pessoas irão visitá-lo e possivelmente se tornarão consumidores dos produtos, serviços ou informações que o site oferece.</p>
+
+                <p class="conteudo__texto">Subdivisões de SEO</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>On-page SEO:</span> </li>
+                    <li><span>Off-page SEO:</span> </li>
+                    <li><span>Technical SEO:</span> </li>
+                </ul>
+
+                <p class="conteudo__texto">Como a pesquisa do google funciona</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>Rastreamento:</span> </li>
+                    <li><span>Indexação:</span> </li>
+                    <li><span>Exibição dos resultados:</span> </li>
+                </ul>
+
+                <p class="conteudo__texto">Melhores práticas</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>Manter o código limpo:</span></li>
+                    <li><span>Manter o tempo de carregamento rápido:</span></li>
+                    <li><span>Otimizar a tag <code>title</code>:</span></li>
+                    <li><span>Utilizar a meta-tag <code>description</code>:</span></li>
+                    <li><span>Adicionar um sitemap:</span></li>
+                    <li><span>Certificar-se de que o site está responsivo para dispositivos mobile:</span></li>
+                    <li><span>Implementar dados estruturados:</span></li>
+                    <li><span>Utilizar o atributo <code>alt</code> de imagens:</span></li>
+                    <li><span>Otimizar URLs:</span></li>
+                    <li><span>Verificar que os textos escritos no site são de qualidade e livres de erros ortográficos:</span></li>
+                    <li><span>Evitar anúncios que distraiam os usuários:</span></li>
+                    <li><span>Otimizar o uso de tags <code>a</code>:</span></li>
+                </ul>
+
+                <p class="conteudo__texto">O Chrome DevTools é uma ferramenta para desenvolvedores do Google Chrome que possui uma seção de diagnóstico do site em algumas frentes, uma delas sendo SEO. A depender da nota (que vai de 0 a 100), o site pode estar seguindo as melhores práticas de SEO ou ter pontos de melhoria. É possível abrir o DevTools por meio da tecla F12 (Windows) ou clicando na página com o botão direito e selecionando a opção "Inspecionar". No menu de opções superior, é possível encontrar o "Lighthouse" e, para gerar o relatório, clicar em "Analyze page load".</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/lighthouse-desktop.png" alt="Imagem com fundo cinza escuro e texto em cinza claro contendo o score de SEO da página (90) e indicando um ponto de melhoria: adicionar uma meta description à página.">
+                        <figcaption>Resultado do Lighthouse para as páginas do CSS Blog em dispositivos desktop.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/lighthouse-mobile.png" alt="Imagem com fundo cinza escuro e texto em cinza claro contendo o score de SEO da página (82) e indicando pontos de melhoria: adicionar uma meta description à página, ter cuidados com tamanho de fonte e tamanho de alvos de clique.">
+                        <figcaption>Resultado do Lighthouse para as páginas do CSS Blog em dispositivos mobile.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/lighthouse-pós.png" alt="Imagem com fundo cinza escuro e texto em cinza claro contendo o score de SEO da página (100) e indicando um ponto a ser testado manualmente: a validez dos dados estruturados.">
+                        <figcaption>Resultado do Lighthouse para a página deste artigo no CSS Blog em dispositivos desktop, após a atuação no ponto de melhoria de meta description.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Pelas imagens anteriores, é possível verificar que é possível ter scores diferentes para dispositivos diferentes, por isso é bom sempre estar atento às adequações para diferentes dispositivos. Também é possível visualizar que a atuação nos pontos de melhoria reflete uma melhora imediata no score e o aumenta. Apesar disso, scores de 100 não significam necessariamente que seu site está o mais otimizado possível em termos de SEO, visto que há outros pontos que influenciam nisso além dos auditados pelo Lighthouse, mas é um bom indicativo de que se está no caminho certo.</p>
+
+                <p class="conteudo__texto">O SEO é um conteúdo bastante amplo e denso, mas é importantíssimo que desenvolvedores conheçam, pelo menos, os conceitos básicos, visto que alterações básicas no código podem significar melhorias expressivas na otimização do site.</p>
+
+            </article>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>21 Mar</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="../script.js"></script>
+</html>
