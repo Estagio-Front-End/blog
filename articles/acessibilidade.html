@@ -67,117 +67,129 @@
                 <p class="conteudo__texto">Além dos cuidados básicos mencionados anteriormente, é possível, na própria escrita do código, utilizar técnicas e adicionar elementos que permitirão e facilitarão o uso do site por pessoas com algum tipo de deficiência. Alguns destes elementos e técnicas são:</p>
 
                 <ul class="conteudo__texto">
-                    <li><span>Texto alternativo em imagens:</span> </li>
+                    <li><span>Texto alternativo em imagens:</span> além de gerar um texto explicativo da imagem para situações em que há um problema de carregamento, o atributo <code>alt</code> da tag <code>img</code> é como o leitor de tela irá apresentar a imagem ao usuário, sendo indispensável para imagens com significado como imagens de produtos em um e-commerce.</li>
 
                     <li>
                         <div class="conteudo__figuras">
                             <figure>
-                                <img src="../images/alt-text-código.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/alt-text-código.png" alt="Imagem com fundo preto e código HTML em verde e azul adicionando uma imagem com seus atributos src e alt.">
+                                <figcaption>Como o atributo <code>alt</code> é inserido.</figcaption>
                             </figure>
 
                             <figure>
-                                <img src="../images/alt-text-resultado.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/alt-text-resultado.png" alt='Imagem com fundo branco, um ícone de erro de carregamento de imagem e o texto alternativo para a imagem em questão que diz "Imagem com fundo preto mostrando um score de 100 para a Acessibilidade do site CSS Blog".'>
+                                <figcaption>Como o atributo <code>alt</code> é exibido em uma falha de carregamento. Este texto é o que o leitor de tela irá reproduzir para o usuário.</figcaption>
                             </figure>
                         </div>
                     </li>
 
-                    <li><span>Utilização de HTML semântico:</span> </li>
+                    <li><span>Utilização de HTML semântico:</span> O HTML semântico, além de dar mais sentido ao código, possui identificação semântica também na árvore de acessibilidade. No leitor de tela, a tag <code>header</code> possui a identificação de banner, a tag <code>nav</code> possui identificação de navigation, entre outras tags e seus identificadores. Isto vai facilitar o entendimento pelo usuário do que aquele bloco de links ou textos significa.</li>
 
                     <li>
                         <div class="conteudo__figuras">
                             <figure>
-                                <img src="../images/html-semantico-codigo.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/html-semantico-codigo.png" alt="Imagem com fundo preto e código em HTML escrito para o desenvolvimento do header do CSS Blog.">
+                                <figcaption>Header do CSS Blog utilizando HTML semântico.</figcaption>
                             </figure>
 
                             <figure>
-                                <img src="../images/html-semantico-resultado.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/html-semantico-resultado.png" alt="Imagem com fundo preto mostrando como o código do header do CSS Blog é visto na árvore de acessibilidade.">
+                                <figcaption>Como o header do CSS Blog é visto na árvore de acessibilidade.</figcaption>
                             </figure>
                         </div>
                     </li>
 
-                    <li><span>Uso de labels para elementos de formulário:</span> </li>
+                    <li><span>Uso de labels para elementos de formulário:</span> a tag <code>label</code> serve como um identificador para os elementos de formulário, facilitando o entendimento de para que serve aquele campo específico. Label e input são conectados por meio do atributo <code>for</code> de <code>label</code> tendo o mesmo valor que o atributo <code>id</code> do <code>input</code>.</li>
 
                     <li>
                         <div class="conteudo__figuras">
                             <figure>
-                                <img src="../images/form-label-codigo.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/form-label-codigo.png" alt="Imagem com fundo preto e código HTML escrito para criação de um input de texto com label 'Caixa de texto'.">
+                                <figcaption>Criação de um <code>input</code> de texto com <code>label</code>.</figcaption>
                             </figure>
 
                             <figure>
-                                <img src="../images/form-label-resultado.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/form-label-resultado.png" alt="Imagem com fundo branco mostrando um input de texto com label 'Caixa de texto'.">
+                                <figcaption>Resultado do código da imagem anterior.</figcaption>
                             </figure>
                         </div>
                     </li>
 
-                    <li><span>Utilização de hierarquia de títulos:</span> </li>
-
-                    <li><span>Contraste de cores na página:</span> </li>
+                    <li><span>Utilização de hierarquia de títulos:</span> com a utilização das tags <code>h1</code> à <code>h6</code> é possível, para o leitor de tela, identificar qual o nível do título que está escrito. Desta forma, é possível navegar o site pelos títulos e subtítulos de modo a se encontrar o que se precisa ou quer ler sem a necessidade de passar pelo site por completo. Caso a hierarquia não fosse utilizada e todos os textos fossem escritos com a tag <code>p</code>, por exemplo, o leitor de tela não consegue diferenciar os textos, mesmo com estilização diferenciada no CSS. Isso faz com que usuários de leitor de tela tenham que passar pelo site por completo para buscar o que precisam, o que não é adequado.</li>
 
                     <li>
                         <div class="conteudo__figuras">
                             <figure>
-                                <img src="../images/contraste-bom.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/hierarquia-titulo-bom.png" alt="Imagem com fundo branco mostrando títulos, subtítulos e textos com tamanho diferenciados, com distinção de hierarquia, desenvolvidos com as tag HTML de título 1, 2 e 3.">
+                                <figcaption>Esqueleto de blog utilizando as tags <code>h1</code>, <code>h2</code> e <code>h3</code>.</figcaption>
                             </figure>
 
                             <figure>
-                                <img src="../images/contraste-ruim.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/hierarquia-titulo-ruim.png" alt="Imagem com fundo branco mostrando títulos, subtítulos e textos com o mesmo tamanho, sem distinção entre eles, todos desenvolvidos com a tag HTML de parágrafo.">
+                                <figcaption>Esqueleto de blog utilizando a tag <code>p</code>.</figcaption>
                             </figure>
                         </div>
                     </li>
 
-                    <li><span>Utilização de <code>aria-label</code> em elementos não semânticos:</span> </li>
+                    <li><span>Contraste de cores na página:</span> a depender das cores utilizadas na aplicação, pessoas com distúrbios de visão ou baixa visão podem não conseguir distinguir textos e imagens. Várias ferramentas na internet como o <a href="https://www.siegemedia.com/contrast-ratio">Contrast Ratio do Siegemedia</a> indicam a razão de contraste entre duas cores. Quanto menor o contraste, maior a possibilidade de algum usuário não conseguir realizar a leitura. É possível perceber nas imagens a seguir que a cor de fonte deste texto com a cor de fundo deste blog passam no teste, mas no caso de um "dark mode" com fundo mais escuro, seria necessário trocar a cor da fonte pois o contraste não estaria adequado.</li>
 
                     <li>
                         <div class="conteudo__figuras">
                             <figure>
-                                <img src="../images/aria-label-sem.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/contraste-bom.png" alt="Imagem mostra a razão de contraste entre as cores #f6f6f6 (cor de fundo do site) e #5b5b5b (cor do texto do site). A nota mostrada é de 6.28 em um fundo verde, indicando ser uma boa nota.">
+                                <figcaption>Teste de razão de contraste para as cores #f6f6f6 (cor de fundo do site) e #5b5b5b (cor do texto do site).</figcaption>
                             </figure>
 
                             <figure>
-                                <img src="../images/aria-label-codigo.png" alt="">
-                                <figcaption></figcaption>
-                            </figure>
-
-                            <figure>
-                                <img src="../images/aria-label-resultado.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/contraste-ruim.png" alt="Imagem mostra a razão de contraste entre as cores #232323 (cor de fundo escura) e #5b5b5b (cor do texto do site). A nota mostrada é de 2.31 em um fundo vermelho, indicando ser uma nota ruim.">
+                                <figcaption>Teste de razão de contraste para as cores #232323 (cor de fundo escura) e #5b5b5b (cor do texto do site).</figcaption>
                             </figure>
                         </div>
                     </li>
 
-                    <li><span>Uso de <code>aria-hidden</code> para imagens decorativas:</span> </li>
-
-                    <li><span>Uso de unidades relativas no tamanho de texto:</span> </li>
+                    <li><span>Utilização de <code>aria-label</code> em elementos não semânticos:</span> alguns elementos HTML como <code>span</code> e <code>div</code> não possuem valor semântico, de modo que são inseridos com identificação genérica na árvore de acessibilidade, tornando dificultosa a interpretação de o que aquele texto significa. O atributo <code>aria-label</code> auxilia nesse ponto, dando um sentido àquilo que, normalmente, seria percebido como um texto solto.</li>
 
                     <li>
                         <div class="conteudo__figuras">
                             <figure>
-                                <img src="../images/unidades-relativas-codigo.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/aria-label-sem.png" alt="Imagem com fundo preto e código em azul e vermelho exibindo que a tag do artigo é lida como "Static Text: HTML" na árvore de acessibilidade, sem nenhum significado.">
+                                <figcaption>Como a tag "HTML" do artigo é vista na árvore de acessibilidade sem <code>aria-label</code>.</figcaption>
                             </figure>
 
                             <figure>
-                                <img src="../images/unidades-relativas-escolha.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/aria-label-codigo.png" alt="Imagem com fundo preto e código HTML escrito inserido uma aria-label com o nome Tag do Artigo na tag span com conteúdo de texto HTML">
+                                <figcaption>Inserção da <code>aria-label</code> no elemento.</figcaption>
                             </figure>
 
                             <figure>
-                                <img src="../images/unidades-relativas-medio.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/aria-label-resultado.png" alt="Imagem com fundo preto e código em azul e vermelho exibindo que a tag do artigo é lida como "Generic: Tag do Artigo e Static Text: HTML" na árvore de acessibilidade, com o indicativo do que aquele texto significa.">
+                                <figcaption>Como a tag "HTML" do artigo é vista na árvore de acessibilidade com <code>aria-label</code>.</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+
+                    <li><span>Uso de unidades relativas no tamanho de texto:</span> a unidade px, bastante utilizada em desenvolvimento, é uma unidade absoluta. Deste modo, para que o usuário possa aumentar o tamanho de textos e imagens, ele devem utilizar o zoom da página. As configurações de aparência de navegadores possibilitam um "zoom automático" no tamanho de texto de sites, porém, se tratando de sites com dimensões em px, essa configuração não os afetará. A solução para isto é utilizar unidades relativas como em, rem e %, em que os sites poderão ser aumentados ou diminuídos tanto com zoom, quando com as configurações de aparência do navegador, dando maior autonomia aos usuários.</li>
+
+                    <li>
+                        <div class="conteudo__figuras">
+                            <figure>
+                                <img src="../images/unidades-relativas-codigo.png" alt="Imagem com fundo preto e código CSS escrito modificando o tamanho do texto do site para 1.6rem.">
+                                <figcaption>Utilização de unidades relativas no tamanho do texto do site.</figcaption>
                             </figure>
 
                             <figure>
-                                <img src="../images/unidades-relativas-mtgrande.png" alt="">
-                                <figcaption></figcaption>
+                                <img src="../images/unidades-relativas-escolha.png" alt="Imagem das configurações de aparência do Google Chrome com a caixa de seleção de tamanho de fonte aberta, mostrando as opções muito pequeno, pequeno, médio, grande e muito grande">
+                                <figcaption>Opções de tamanho de fonte na aba de aparência das configurações do Google Chrome.</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/unidades-relativas-medio.png" alt="Imagem com fundo branco e texto no tamanho padrão do navegador por estar com configuração de tamanho de texto no médio.">
+                                <figcaption>Artigo de Media Queries no CSS Blog com tamanho de fonte no "médio" nas configurações do Google Chrome.</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="../images/unidades-relativas-mtgrande.png" alt="Imagem com fundo branco e texto em tamanho bem maior que o padrão do navegador por estar com configuração de tamanho de texto no muito grande.">
+                                <figcaption>Artigo de Media Queries no CSS Blog com tamanho de fonte no "muito grande" nas configurações do Google Chrome.</figcaption>
                             </figure>
                         </div>
                     </li>
