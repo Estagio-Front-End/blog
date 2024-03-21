@@ -53,7 +53,7 @@
                 <p class="conteudo__texto">Para o desenvolvimento de sites e aplicações, esta definição se traduz em garantir com que o máximo de pessoas consiga utilizar aquilo que foi desenvolvido. Os tipos de deficiência são categorizados em 5 grupos e, inicialmente, existem cuidados básicos para cada grupo:</p>
     
                 <ul class="conteudo__texto">
-                    <li><span>Deficiência auditiva:</span> pessoas com perda total ou parcial da audição. É importante transcrever audios e gerar legendas para vídeos.</li>
+                    <li><span>Deficiência auditiva:</span> pessoas com perda total ou parcial da audição. É importante transcrever audios e gerar legendas para vídeos utilizados no site.</li>
                     
                     <li><span>Deficiência cognitiva, de aprendizado e neurológica:</span> pessoas que podem ter dificuldades com o entendimento de informações. É importante que o conteúdo da aplicação esteja claro, bem estruturado e com links previsíveis.</li>
                     
@@ -64,7 +64,7 @@
                     <li><span>Deficiência visual:</span> pessoas com perda parcial ou total da visão, ou com baixa acuidade visual. É importante se atentar aos contrastes de cor da página, garantir que textos e imagens possam ser aumentados em tamanho e que o site ou aplicação suporte leitores de tela.</li>
                 </ul>    
                 
-                <p class="conteudo__texto">Além dos cuidados básicos mencionados anteriormente, é possível, na própria escrita do código, utilizar técnicas e adicionar elementos que permitirão e facilitarão o uso do site por pessoas com algum tipo de deficiência. Alguns destes elementos e técnicas são:</p>
+                <p class="conteudo__texto">Além dos cuidados básicos mencionados anteriormente, é possível, na própria escrita do código, utilizar técnicas e adicionar elementos que permitirão e/ou facilitarão o uso do site por pessoas com algum tipo de deficiência. Alguns destes elementos e técnicas são:</p>
 
                 <ul class="conteudo__texto">
                     <li><span>Texto alternativo em imagens:</span> além de gerar um texto explicativo da imagem para situações em que há um problema de carregamento, o atributo <code>alt</code> da tag <code>img</code> é como o leitor de tela irá apresentar a imagem ao usuário, sendo indispensável para imagens com significado como imagens de produtos em um e-commerce.</li>
@@ -73,7 +73,7 @@
                         <div class="conteudo__figuras">
                             <figure>
                                 <img src="../images/alt-text-código.png" alt="Imagem com fundo preto e código HTML em verde e azul adicionando uma imagem com seus atributos src e alt.">
-                                <figcaption>Como o atributo <code>alt</code> é inserido.</figcaption>
+                                <figcaption>Como o atributo <code>alt</code> é inserido no código HTML.</figcaption>
                             </figure>
 
                             <figure>
@@ -110,12 +110,12 @@
 
                             <figure>
                                 <img src="../images/form-label-resultado.png" alt="Imagem com fundo branco mostrando um input de texto com label 'Caixa de texto'.">
-                                <figcaption>Resultado do código da imagem anterior.</figcaption>
+                                <figcaption>Resultado do código da imagem anterior: uma caixa de texto com a label "Caixa de texto".</figcaption>
                             </figure>
                         </div>
                     </li>
 
-                    <li><span>Utilização de hierarquia de títulos:</span> com a utilização das tags <code>h1</code> à <code>h6</code> é possível, para o leitor de tela, identificar qual o nível do título que está escrito. Desta forma, é possível navegar o site pelos títulos e subtítulos de modo a se encontrar o que se precisa ou quer ler sem a necessidade de passar pelo site por completo. Caso a hierarquia não fosse utilizada e todos os textos fossem escritos com a tag <code>p</code>, por exemplo, o leitor de tela não consegue diferenciar os textos, mesmo com estilização diferenciada no CSS. Isso faz com que usuários de leitor de tela tenham que passar pelo site por completo para buscar o que precisam, o que não é adequado.</li>
+                    <li><span>Utilização de hierarquia de títulos:</span> com a utilização das tags <code>h1</code> à <code>h6</code> é possível, para o leitor de tela, identificar qual o nível do título que está escrito. Desta forma, é possível navegar o site pelos títulos e subtítulos de modo a se encontrar o que se precisa ou quer ler sem a necessidade de passar pelo site por completo. Caso a hierarquia não fosse utilizada e todos os textos fossem escritos com a tag <code>p</code>, por exemplo, o leitor de tela não conseguiria diferenciar os textos, mesmo com estilização diferenciada no CSS. Isso faz com que usuários de leitor de tela tenham que passar pelo site por completo para buscar o que precisam, o que não é adequado.</li>
 
                     <li>
                         <div class="conteudo__figuras">
@@ -131,7 +131,7 @@
                         </div>
                     </li>
 
-                    <li><span>Contraste de cores na página:</span> a depender das cores utilizadas na aplicação, pessoas com distúrbios de visão ou baixa visão podem não conseguir distinguir textos e imagens. Várias ferramentas na internet como o <a href="https://www.siegemedia.com/contrast-ratio">Contrast Ratio do Siegemedia</a> indicam a razão de contraste entre duas cores. Quanto menor o contraste, maior a possibilidade de algum usuário não conseguir realizar a leitura. É possível perceber nas imagens a seguir que a cor de fonte deste texto com a cor de fundo deste blog passam no teste, mas no caso de um "dark mode" com fundo mais escuro, seria necessário trocar a cor da fonte pois o contraste não estaria adequado.</li>
+                    <li><span>Contraste de cores na página:</span> a depender das cores utilizadas na aplicação, pessoas com distúrbios de visão ou baixa visão podem não conseguir distinguir textos e imagens. Várias ferramentas na internet como o <a href="https://www.siegemedia.com/contrast-ratio">Contrast Ratio do Siegemedia</a> indicam a razão de contraste entre duas cores. Quanto menor o contraste, maior a possibilidade de algum usuário não conseguir realizar a leitura. É possível perceber nas imagens a seguir que a cor de fonte deste texto com a cor de fundo deste blog passam no teste, mas no caso de um "dark mode", com fundo mais escuro, seria necessário trocar a cor da fonte, pois o contraste não estaria adequado.</li>
 
                     <li>
                         <div class="conteudo__figuras">
@@ -147,7 +147,7 @@
                         </div>
                     </li>
 
-                    <li><span>Utilização de <code>aria-label</code> em elementos não semânticos:</span> alguns elementos HTML como <code>span</code> e <code>div</code> não possuem valor semântico, de modo que são inseridos com identificação genérica na árvore de acessibilidade, tornando dificultosa a interpretação de o que aquele texto significa. O atributo <code>aria-label</code> auxilia nesse ponto, dando um sentido àquilo que, normalmente, seria percebido como um texto solto.</li>
+                    <li><span>Utilização de <code>aria-label</code> e <code>aria-labelledby</code> em elementos não semânticos:</span> alguns elementos HTML, como <code>span</code> e <code>div</code>, não possuem valor semântico, de modo que são inseridos com identificação genérica na árvore de acessibilidade. Isto torna dificultosa a leitura e a interpretação de o que aquele texto significa. O atributo <code>aria-label</code> auxilia nesse ponto com a inserção de um rótulo ao texto, dando um sentido àquilo que, normalmente, seria percebido como um texto solto. Caso tivéssemos uma <code>div</code> com um título <code>h1</code>, seria possível utilizar a <code>aria-label</code> na div, ou um <code>aria-labelledby</code> indicando a id do <code>h1</code>. Desta forma, a identificação deste bloco na árvore de acessibilidade seria o texto contido no título de nível 1.</li>
 
                     <li>
                         <div class="conteudo__figuras">
@@ -168,7 +168,7 @@
                         </div>
                     </li>
 
-                    <li><span>Uso de unidades relativas no tamanho de texto:</span> a unidade px, bastante utilizada em desenvolvimento, é uma unidade absoluta. Deste modo, para que o usuário possa aumentar o tamanho de textos e imagens, ele devem utilizar o zoom da página. As configurações de aparência de navegadores possibilitam um "zoom automático" no tamanho de texto de sites, porém, se tratando de sites com dimensões em px, essa configuração não os afetará. A solução para isto é utilizar unidades relativas como em, rem e %, em que os sites poderão ser aumentados ou diminuídos tanto com zoom, quando com as configurações de aparência do navegador, dando maior autonomia aos usuários.</li>
+                    <li><span>Uso de unidades relativas no tamanho de texto:</span> a unidade px, bastante utilizada em desenvolvimento, é uma unidade absoluta. Utilizando esta unidade, para que o usuário possa aumentar o tamanho de textos e imagens, ele deve utilizar o zoom do navegador. As configurações de aparência de navegadores possibilitam um "zoom automático" no tamanho de texto de sites, porém, se tratando de sites com dimensões em px, essa configuração não os afetará. A solução para isto é utilizar unidades relativas como em, rem e %, em que os sites poderão ser aumentados ou diminuídos tanto com zoom, quando com as configurações de aparência do navegador, dando maior autonomia de escolha aos usuários.</li>
 
                     <li>
                         <div class="conteudo__figuras">
@@ -196,16 +196,16 @@
 
                 </ul>
 
-                <p class="conteudo__texto">O Chrome DevTools é uma ferramenta para desenvolvedores que possui uma seção de diagnóstico do site em algumas frentes, uma delas sendo acessibilidade. A depender da nota (que vai de 0 a 100), o site pode estar bem adaptado para diferentes necessidades de usuários ou ter pontos de melhoria. É possível abrir o DevTools por meio da tecla F12 (Windows) ou clicando na página com o botão direito e selecionando a opção "Inspecionar". No menu de opções superior, é possível encontrar o "Lighthouse" e, para gerar o relatório, clicar em "Analyze page load".</p>
+                <p class="conteudo__texto">O Chrome DevTools é uma ferramenta para desenvolvedores do Google Chrome que possui uma seção de diagnóstico do site em algumas frentes, uma delas sendo acessibilidade. A depender da nota (que vai de 0 a 100), o site pode estar bem adaptado para diferentes necessidades de usuários ou ter pontos de melhoria. É possível abrir o DevTools por meio da tecla F12 (Windows) ou clicando na página com o botão direito e selecionando a opção "Inspecionar". No menu de opções superior, é possível encontrar o "Lighthouse" e, para gerar o relatório, clicar em "Analyze page load".</p>
 
                 <figure>
                     <img src="../images/lighthouse.png" alt="Imagem com fundo preto mostrando um score de 100 para a Acessibilidade do site CSS Blog">
                     <figcaption>Visão do resultado de acessibilidade do CSS Blog no Lighthouse.</figcaption>
                 </figure>
 
-                <p class="conteudo__texto">A imagem anterior mostra o padrão de visualização dos resultados no Lighthouse. O relatório traz tanto os pontos nos quais o site foi testado e aprovado, pontos de melhoria (se existirem) e, no caso da acessibilidade, pontos que não são possíveis de cobrir no teste do Lighthouse, mas que são importantes de serem testados manualmente como o uso de labels, ARIA roles, HTML semântico, entre outros. Desse modo, um score de 100 não indica que o site está 100% adaptado, mas é um bom indicativo de que se está no caminho certo.</p>
+                <p class="conteudo__texto">A imagem anterior mostra o padrão de visualização dos resultados no Lighthouse. O relatório traz tanto os pontos nos quais o site foi testado e aprovado, pontos de melhoria (se existirem) e, no caso da acessibilidade, pontos que não são possíveis de cobrir no teste do Lighthouse, mas que são importantes de serem testados manualmente. Alguns destes pontos são: o uso de labels em inputs, ARIA labels, HTML semântico, entre outros. Deste modo, um score de 100 não indica que o site está 100% adaptado, mas é um bom indicativo de que se está no caminho certo.</p>
 
-                <p class="conteudo__texto">A acessibilidade no desenvolvimento é um tema amplo, mas de suma importância para que o desenvolvedor crie aplicações que possam ser utilizadas por todos.</p>
+                <p class="conteudo__texto">Portanto, é possível perceber que a acessibilidade no desenvolvimento é um tema amplo, mas de suma importância para que o desenvolvedor crie aplicações que possam ser utilizadas por todos.</p>
             </article>
     
             <div class="artigo__info">
