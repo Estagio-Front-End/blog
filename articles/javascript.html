@@ -138,36 +138,24 @@
                 <label for="numero2-operacoes">Digite outro número</label>
                 <input type="text" id="numero2-operacoes"/>
 
-                <button class="conteudo__demonstracao__botao">Calcular</button>
+                <button class="conteudo__demonstracao__botao" id="calcular-number">Calcular</button>
             </div>
 
             <p class="conteudo__texto" id="resultado-operacoes-number"></p>
 
-            <p class="conteudo__texto">Teste aqui as operações com strings:</p>
-            <div class="conteudo__demonstracao">
-                <label for="string1">Digite uma string</label>
-                <input type="number" id="string1"/>
+            <p class="conteudo__texto">Existem também os operadores unários, sendo eles o <code>-</code>, <code>+</code>, <code>--</code> e <code>++</code>. A seguir, a função de cada um:</p>
 
-                <div class="conteudo__demonstracao__selecao">
-                    <select name="operacoes-aritmeticas" id="operacoes-aritmeticas">
-                        <option value="soma">+ (soma)</option>
-                        <option value="subtracao">- (subtração)</option>
-                        <option value="multiplicacao">* (multiplicação)</option>
-                        <option value="divisao">/ (divisão)</option>
-                        <option value="resto">% (resto de divisão)</option>
-                        <option value="exponencial">** (exponencial)</option>
-                    </select>
-                </div>
+            <ul class="conteudo__texto">
+                <li><span>-:</span> Converte um operando em um número e o negativa. Por exemplo, se temos uma variável <code>var</code> com a string <code>"10"</code> como seu valor, escrevendo <code>-var</code>, teríamos o numero <code>-10</code> como resultado. É o mesmo que utilizar a função <code>Number()</code> colocando o sinal de menos antes da função.</li>
+                
+                <li><span>+:</span> Converte um operando em um número. Por exemplo, se temos uma variável <code>var</code> com a string <code>"10"</code> como seu valor, escrevendo <code>+var</code>, teríamos o numero <code>10</code> como resultado. É o mesmo que utilizar a função <code>Number()</code>.</li>
+                
+                <li><span>--:</span> Descresce o valor de um operando em uma unidade. Por exemplo, se temos uma variável <code>var</code> com o número <code>10</code> como seu valor, escrevendo <code>var--</code>, teríamos o numero <code>9</code> como resultado. É o mesmo que escrever <code>var = var - 1</code> ou <code>var -= 1</code>.</li>
+                
+                <li><span>++:</span> Acresce o valor de um operando em uma unidade. Por exemplo, se temos uma variável <code>var</code> com o número <code>10</code> como seu valor, escrevendo <code>var++</code>, teríamos o numero <code>11</code> como resultado. É o mesmo que escrever <code>var = var + 1</code> ou <code>var += 1</code>.</li>
+            </ul>
 
-                <label for="string2">Digite outra string</label>
-                <input type="number" id="string2"/>
-
-                <div id="resultado-operacoes-number"></div>
-
-                <button class="conteudo__demonstracao__botao">Calcular</button>
-            </div>
-
-            <p class="conteudo__texto" id="resultado-operacoes-string"></p>
+            <p class="conteudo__texto">É importante lembrar que, em operações aritméticas em expressões matemáticas, assim como na matemática usual, a ordem importa. Deste modo, operações aritméticas em Javascript seguem a mesma prioridade em expressões: parênteses, potências, multiplicações e divisões e adição e subtração.</p>
             
             <div class="artigo__info">
                 <div class="artigo__info__autor">

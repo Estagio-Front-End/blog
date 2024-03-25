@@ -103,5 +103,58 @@ function testeTipo(value) {
 const inputNumber1 = document.querySelector("#numero1-operacoes");
 const inputNumber2 = document.querySelector("#numero2-operacoes");
 const selectOperacoesAritmeticas = document.querySelector("#operacoes-aritmeticas");
+const botaoOperacoesAritmeticas = document.querySelector("#calcular-number");
 const exibeResultadoOperacoesNumber = document.querySelector("#resultado-operacoes-number");
+
+botaoOperacoesAritmeticas.addEventListener('click', calculaResultadoOperacao);
+
+function calculaResultadoOperacao() {
+    let operando1 = Number(inputNumber1.value);
+    let operando2 = Number(inputNumber2.value);
+    
+    if (operando1 != "" && Number.isNaN(operando1) == false && operando2 != "" && Number.isNaN(operando2)== false) {
+        switch (selectOperacoesAritmeticas.value) {
+                case "soma":
+                    exibeResultadoOperacoesNumber.innerHTML = `<b>O resultado da soma de ${operando1} com ${operando2} é: ${operando1 + operando2}</b>`;
+                    
+                    inputNumber1.value = "";
+                    inputNumber2.value = "";
+                    break;
+                case "subtracao":
+                    exibeResultadoOperacoesNumber.innerHTML = `<b>O resultado da subtração de ${operando1} por ${operando2} é: ${operando1 - operando2}</b>`;
+
+                    inputNumber1.value = "";
+                    inputNumber2.value = "";
+                    break;
+                case "multiplicacao":
+                    exibeResultadoOperacoesNumber.innerHTML = `<b>O resultado da multiplicação entre ${operando1} e ${operando2} é: ${operando1 * operando2}</b>`;
+
+                    inputNumber1.value = "";
+                    inputNumber2.value = "";
+                    break;
+                case "divisao":
+                    exibeResultadoOperacoesNumber.innerHTML = `<b>O resultado da divisão de ${operando1} por ${operando2} é: ${operando1 / operando2}</b>`;
+
+                    inputNumber1.value = "";
+                    inputNumber2.value = "";
+                    break;
+                case "resto":
+                    exibeResultadoOperacoesNumber.innerHTML = `<b>O resultado do resto de divisão de ${operando1} por ${operando2} é: ${operando1 % operando2}</b>`;
+
+                    inputNumber1.value = "";
+                    inputNumber2.value = "";
+                    break;
+                case "exponencial":
+                    exibeResultadoOperacoesNumber.innerHTML = `<b>O resultado da potência de ${operando1} elevado à ${operando2} é: ${operando1 ** operando2}</b>`;
+
+                    inputNumber1.value = "";
+                    inputNumber2.value = "";
+                    break; 
+        }    
+    } else {
+        alert("Um dos valores está vazio ou não contém um número, tente novamente!");
+    }
+}
+
+
 
