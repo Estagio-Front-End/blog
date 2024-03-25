@@ -91,6 +91,10 @@ footer {
   flex-direction: column;
 }
 
+.artigo__tag--html {
+  background-color: #E5532D;
+}
+
 .artigo__tag--css-basico {
   background-color: #0095DA;
 }
@@ -105,6 +109,10 @@ footer {
 
 .artigo__tag--responsividade {
   background-color: #1BB2BB;
+}
+
+.artigo__tag--javascript {
+  background-color: #F7E025;
 }
 
 .navegacao {
@@ -400,6 +408,12 @@ code {
   border-radius: 0.3rem;
 }
 
+input {
+  border-radius: 0.5rem;
+  border: 1px solid #5b5b5b;
+  padding: 0.8rem 0;
+}
+
 .conteudo {
   display: flex;
   flex-direction: column;
@@ -440,6 +454,15 @@ code {
 
 .artigo__info__autor__nome p {
   margin: 0;
+}
+
+.conteudo__demonstracao__botao {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-family: "Space Mono", sans-serif;
+  background-color: #F7E025;
+  border: 1px solid #5b5b5b;
 }
 
 .conteudo__botao {
@@ -963,6 +986,7 @@ label {
   display: flex;
   gap: 2rem;
   justify-content: center;
+  align-items: center;
 }
 .conteudo__demonstracao .conteudo__demonstracao__item {
   background-color: #4FD1C5;

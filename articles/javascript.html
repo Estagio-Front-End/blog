@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Javascript</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Javascript</h2>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+
+            <!-- O que é JavaScript, Variáveis, Tipos de dados, Números e Operadores (aritméticos, igualdade, atribuição)-->
+            
+            <p class="conteudo__texto">O Javascript é uma linguagem de programação interpretada que, junto ao HTML e CSS, integra a tríade básica do desenvolvimento web. O HTML é utilizado para a marcação da página, o CSS para sua estilização e, o Javascript, para tornar a página interativa. Desta forma, é possível que ações do usuário, como o clique de um botão ou o scroll pelo conteúdo, reflitam em alguma modificação na página, como alterações no próprio HTML ou CSS, alertas, entre outras.</p>
+
+            <p class="conteudo__texto">Por ser muito popular, o Javascript possui muitas funcionalidades desenvolvidas para sua melhoria como APIs, bibliotecas e frameworks. Estas funcionalidades tornam o desenvolvimento em Javascript mais robusto e acelerado, sendo amplamente utilizadas.</p>
+
+            <p class="conteudo__texto">Para que um código Javascript seja aplicado em uma página, é necessário utilizar a tag <code>script</code> no documento HTML, podendo esta utilização ser de duas formas e em duas localidades diferentes.</p>
+
+            <p class="conteudo__texto">Em termos de forma, podemos ter o Javascript dentro do próprio documento, assim como um CSS interno, escrevendo todo o código dentro de uma tag script. Podemos, também, ter um arquivo com extensão <code>.js</code> à parte do documento HTML, que será linkado ao documento por meio do atributo <code>src</code> da tag <code>script</code>. A principal diferença entre estas duas formas é que, tendo o script interno, ele só será aplicado àquela página em específico, ao passo que com o script externo, é possível linkar esse arquivo de tal forma que um só bloco de código atue em várias páginas diferentes.</p>
+
+            <p class="conteudo__texto">Em relação à localização da tag <code>src</code>, ela poderá estar logo após a tag <code>head</code>, ou logo antes do fechamento da tag <code>body</code>. A principal diferença entre essas localizações é que, devido ao documento HTML ser lido na ordem em que é escrito, caso o script necessite que o HTML esteja totalmente carregado para operar e esteja escrito antes do body, problemas ocorrerão e o script atuará. Desta forma, se o script necessitar do HTML carregado, ele deve estar antes do fechamento da tag <code>body</code>, caso contrário, ele pode ser linkado ou escrito após a tag <code>head</code>.</p>
+
+            <div>
+                <figure>
+                    <img src="" alt="">
+                    <figcaption>Javascript interno, localizado logo após a tag <code>head</code>.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="" alt="">
+                    <figcaption>Javascript externo, localizado antes do fechamento da tag <code>body</code>.</figcaption>
+                </figure>
+            </div>
+
+            <p class="conteudo__texto">Para programar em Javascript, é necessário conhecer sua sintaxe básica como declaração de variáveis, os tipos de dados e principais operadores.</p>
+
+            <h3>Variáveis</h3>
+            
+            <p class="conteudo__texto">Existem 3 palavras reservadas para a declaração de variáveis em Javascript: <code>var</code>, <code>let</code> e <code>const</code>. Clique em uma das opções para mostrar a explicação sobre declaração, atribuição e alteração de cada um dos tipos de variáveis.</p>
+
+            <div class="conteudo__demonstracao">
+                <label for="var"><code>var</code></label>
+                <input type="radio" id="var" name="variaveis"/>
+                <label for="let"><code>let</code></label>
+                <input type="radio" id="let" name="variaveis"/>
+                <label for="const"><code>const</code></label>
+                <input type="radio" id="const" name="variaveis"/>
+              
+            </div>
+            
+            <div id="resultado-variaveis"></div>
+
+            <p class="conteudo__texto">É importante ressaltar que a principal diferença entre variáveis declaradas com <code>var</code> e <code>let</code> é seu escopo. Variáveis declaradas com <code>var</code> terão escopo global, ou seja, ao longo do código, uma variável declarada com var permanecerá coom seu valor, exceto se reatribuída. Variáveis declaradas com let possuem escopo local, de modo que, se uma variável foi declarada dentro de uma função, condicional ou loop, fora desses blocos de código ela não existirá e seu valor não poderá ser acessado, exceto em casos em que uma função retorne o seu valor.</p>
+
+            <figure>
+                <img src="" alt="">
+                <figcaption>Exemplo de escopo para lucidar diferença entre <code>var</code> e <code>let</code>.</figcaption>
+            </figure>
+
+            <h3>Tipos de dados</h3>
+
+            <p class="conteudo__texto">Em Javascript, temos alguns tipos de dados como <code>number</code>, <code>string</code>, <code>object</code>, <code>boolean</code>, <code>array</code>, <code>null</code> e <code>undefined</code>. Escolha um tipo na caixa de seleção para ter mais informações e exemplos de cada tipo.</p>
+
+            <div class="conteudo__demonstracao">
+                <div class="conteudo__demonstracao__selecao">
+                    <select name="tiposDeDados" id="tiposDeDados" onchange="testeTipo(this.value)">
+                        <option value="inicial"><label for="tiposDeDados">Selecione um tipo:</label></option>
+                        <option value="number">number</option>
+                        <option value="string">string</option>
+                        <option value="object">object</option>
+                        <option value="boolean">boolean</option>
+                        <option value="array">array</option>
+                        <option value="null">null</option>
+                        <option value="undefined">undefined</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="resultado-tiposDeDados"></div>
+
+            <h3>Operadores</h3>
+
+            <p class="conteudo__texto">Os operadores são símbolos utilizados para realizar operações entre números, strings ou números e string. Clique em cada botão de "mostrar" para visualizar mais informações e exemplos de cada operador.</p>
+
+            <p class="conteudo__texto">Teste aqui as operações aritméticas:</p>
+            <div class="conteudo__demonstracao">
+                <label for="numero1-operacoes">Digite um número</label>
+                <input type="text" id="numero1-operacoes"/>
+
+                <div class="conteudo__demonstracao__selecao">
+                    <select name="operacoes-aritmeticas" id="operacoes-aritmeticas">
+                        <option value="soma">+ (soma)</option>
+                        <option value="subtracao">- (subtração)</option>
+                        <option value="multiplicacao">* (multiplicação)</option>
+                        <option value="divisao">/ (divisão)</option>
+                        <option value="resto">% (resto de divisão)</option>
+                        <option value="exponencial">** (exponencial)</option>
+                    </select>
+                </div>
+
+                <label for="numero2-operacoes">Digite outro número</label>
+                <input type="text" id="numero2-operacoes"/>
+
+                <button class="conteudo__demonstracao__botao">Calcular</button>
+            </div>
+
+            <p class="conteudo__texto" id="resultado-operacoes-number"></p>
+
+            <p class="conteudo__texto">Teste aqui as operações com strings:</p>
+            <div class="conteudo__demonstracao">
+                <label for="string1">Digite uma string</label>
+                <input type="number" id="string1"/>
+
+                <div class="conteudo__demonstracao__selecao">
+                    <select name="operacoes-aritmeticas" id="operacoes-aritmeticas">
+                        <option value="soma">+ (soma)</option>
+                        <option value="subtracao">- (subtração)</option>
+                        <option value="multiplicacao">* (multiplicação)</option>
+                        <option value="divisao">/ (divisão)</option>
+                        <option value="resto">% (resto de divisão)</option>
+                        <option value="exponencial">** (exponencial)</option>
+                    </select>
+                </div>
+
+                <label for="string2">Digite outra string</label>
+                <input type="number" id="string2"/>
+
+                <div id="resultado-operacoes-number"></div>
+
+                <button class="conteudo__demonstracao__botao">Calcular</button>
+            </div>
+
+            <p class="conteudo__texto" id="resultado-operacoes-string"></p>
+            
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>25 Mar</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../script.js"></script>
+    <script src="../scripts/javascript.js"></script>
+</body>
+</html>

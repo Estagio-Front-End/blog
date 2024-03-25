@@ -45,6 +45,12 @@ code {
     border-radius: 0.3rem;
 }
 
+input {
+    border-radius: 0.5rem;
+    border: 1px solid $cor-fonte-sec;
+    padding: 0.8rem 0;  
+}
+
 .conteudo {
     display: flex;
     flex-direction: column;
@@ -83,4 +89,13 @@ code {
 
 .artigo__info__autor__nome p{
     margin: 0;
+}
+
+.conteudo__demonstracao__botao {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-family: $fonte-tags;
+    background-color: $cor-tag-javascript;
+    border: 1px solid $cor-fonte-sec;
 }
