@@ -1,10 +1,10 @@
 @mixin line-height ($tamanho-fonte-px) {
     @if ($tamanho-fonte-px: 32) {
-        line-height: 1.22 * $tamanho-fonte-px;
+        line-height: $fator-line-height * $tamanho-fonte-px;
     } @else if ($tamanho-fonte-px: 28) {
-        line-height: 1.22 * $tamanho-fonte-px;
+        line-height: $fator-line-height * $tamanho-fonte-px;
     } @else if ($tamanho-fonte-px: 24) {
-        line-height: 1.22 * $tamanho-fonte-px;
+        line-height: $fator-line-height * $tamanho-fonte-px;
     } @else {
         line-height: 1.36 * $tamanho-fonte-px;
     }
