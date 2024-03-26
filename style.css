@@ -429,6 +429,7 @@ dl dd {
   margin-top: -0.5rem;
   color: #5b5b5b;
   display: none;
+  text-align: justify;
 }
 dl .aberto {
   display: block;

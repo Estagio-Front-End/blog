@@ -4,18 +4,15 @@ const botaoLet = document.getElementById("let");
 const botaoConst = document.getElementById("const");
 const exibeResultadoVariaveis = document.querySelector("#resultado-variaveis"); 
 
-
 const listaBotoes = [botaoLet, botaoVar, botaoConst];
 
-listaBotoes.forEach(botao => {
-    botao.addEventListener('click', mostraResultado);
-});
+listaBotoes.forEach(botao => botao.addEventListener('click', mostraResultado));
 
 function mostraResultado() {
     if (botaoVar.checked) {
         var var1 = "Esta é uma variável declarada com var";
         
-        exibeResultadoVariaveis.innerHTML = `<p class="conteudo__texto">A forma de se declarar uma variável com <code>var</code> é: <code>var nome_variavel</code>. A atribuição de valor pode ser feita na hora da declaração com o sinal de atribuição (<code>=</code>) ou em outra linha de código, da seguinte forma: <code>nome_variavel = valor_variavel</code>, sendo esse valor arbitrário. Para utilizar esta variável, é necessário apenas utilizar o nome declarado na operação que irá ser realizada. Uma variável chamada var1 foi declarada nesta página utilizando a palavra reservada var e o valor desta variável é: <b>${var1}</b>.</p>`;
+        exibeResultadoVariaveis.innerHTML = `<p class="conteudo__texto">A forma de se declarar uma variável com <code>var</code> é: <code>var nome_variavel</code>. A atribuição de valor pode ser feita na hora da declaração com o sinal de atribuição (<code>=</code>) ou em outra linha de código, da seguinte forma: <code>nome_variavel = valor_variavel</code>, sendo esse valor arbitrário. Para utilizar esta variável, é necessário apenas utilizar o nome declarado na operação que irá ser realizada. Uma variável chamada var1 foi declarada nesta página utilizando a palavra reservada <code>var</code> e o valor desta variável é: <b>${var1}</b>.</p>`;
         
         var1 = "A variável var1 foi alterada";
         
@@ -24,7 +21,7 @@ function mostraResultado() {
     } else if (botaoLet.checked) {
         let var2 = "Esta é uma variável declarada com let";
         
-        exibeResultadoVariaveis.innerHTML = `<p class="conteudo__texto">A forma de se declarar uma variável com <code>let</code> é: <code>let nome_variavel</code>. A atribuição de valor pode ser feita na hora da declaração com o sinal de atribuição (<code>=</code>) ou em outra linha de código, da seguinte forma: <code>nome_variavel = valor_variavel</code>, sendo esse valor arbitrário. Para utilizar esta variável, é necessário apenas utilizar o nome declarado na operação que irá ser realizada. Uma variável chamada var2 foi declarada nesta página utilizando a palavra reservada let e o valor desta variável é: <b>${var2}</b>.</p>`
+        exibeResultadoVariaveis.innerHTML = `<p class="conteudo__texto">A forma de se declarar uma variável com <code>let</code> é: <code>let nome_variavel</code>. A atribuição de valor pode ser feita na hora da declaração com o sinal de atribuição (<code>=</code>) ou em outra linha de código, da seguinte forma: <code>nome_variavel = valor_variavel</code>, sendo esse valor arbitrário. Para utilizar esta variável, é necessário apenas utilizar o nome declarado na operação que irá ser realizada. Uma variável chamada var2 foi declarada nesta página utilizando a palavra reservada <code>let</code> e o valor desta variável é: <b>${var2}</b>.</p>`
 
         var2 = "A variável var2 foi alterada";
         
@@ -33,9 +30,9 @@ function mostraResultado() {
         
         const var3 = "Esta é uma variável declarada com const";
 
-        exibeResultadoVariaveis.innerHTML = `<p class="conteudo__texto">A forma de se declarar uma variável com <code>const</code> é: <code>const nome_variavel</code>. A atribuição de valor pode ser feita na hora da declaração com o sinal de atribuição (<code>=</code>) ou em outra linha de código, da seguinte forma: <code>nome_variavel = valor_variavel</code>, sendo esse valor arbitrário. Para utilizar esta variável, é necessário apenas utilizar o nome declarado na operação que irá ser realizada. Uma variável chamada var3 foi declarada nesta página utilizando a palavra reservada const e o valor desta variável é: <b>${var3}</b>.</p>`
+        exibeResultadoVariaveis.innerHTML = `<p class="conteudo__texto">A forma de se declarar uma variável com <code>const</code> é: <code>const nome_variavel</code>. A atribuição de valor pode ser feita na hora da declaração com o sinal de atribuição (<code>=</code>) ou em outra linha de código, da seguinte forma: <code>nome_variavel = valor_variavel</code>, sendo esse valor arbitrário. Para utilizar esta variável, é necessário apenas utilizar o nome declarado na operação que irá ser realizada. Uma variável chamada var3 foi declarada nesta página utilizando a palavra reservada <code>const</code> e o valor desta variável é: <b>${var3}</b>.</p>`
         
-        exibeResultadoVariaveis.innerHTML += `<p class="conteudo__texto">Visto que a palavra reservada code>const</code> representa valores constantes, não é possível alterar valores declarados desta forma. Qualquer tentativa disto gerará um erro de <i>Assignment to constant variable</i>, ou seja, atribuição à variável constante.</p>`
+        exibeResultadoVariaveis.innerHTML += `<p class="conteudo__texto">Visto que a palavra reservada <code>const</code> representa valores constantes, não é possível alterar valores declarados desta forma. Qualquer tentativa disto gerará um erro de <i>Assignment to constant variable</i>, ou seja, atribuição à variável constante.</p>`
 
     } else {
         exibeResultadoVariaveis.innerHTML = ""
@@ -84,7 +81,7 @@ function testeTipo(value) {
             tipoVar = "object";
             exemploVar1 = { nome: "Camila", idade: 29, cargo: "Estagiária"};
             
-            exibeResultadoTiposDeDados.innerHTML = `<p class="conteudo__texto">Tudo em Javascript é considerado um objeto, porém, quando se fala de objeto, é comum pensar na estrutura de propriedade/valor. Nesta estrutura, o objeto é inicializado com um par de chaves (<code>{}</code>), onde serão inseridos os pares propriedade/valor com a sintaxe <code>propriedade: valor,</code>. As vírgula no final da linha é obrigatória caso haja mais propriedades a serem relacionadas dentro do par de chaves. Um exemplos do tipo ${tipoVar} deste tipo é <code>${JSON.stringify(exemploVar1)}</code>.</p>`;
+            exibeResultadoTiposDeDados.innerHTML = `<p class="conteudo__texto">Tudo em Javascript é considerado um objeto, porém, quando se fala de objeto, é comum pensar na estrutura de propriedade/valor. Nesta estrutura, o objeto é inicializado com um par de chaves (<code>{}</code>), onde serão inseridos os pares propriedade/valor com a sintaxe <code>propriedade: valor,</code>. As vírgula no final da linha é obrigatória caso haja mais propriedades a serem relacionadas dentro do par de chaves. Um exemplos do tipo ${tipoVar} com esta estrutura é <code>${JSON.stringify(exemploVar1)}</code>.</p>`;
             break; 
         case "null":         
             exibeResultadoTiposDeDados.innerHTML = `<p class="conteudo__texto">O tipo <code>null</code> se refere à ausência de valor. Por exemplo, se tentamos acessar um elemento no document (árvore do HTML) que não existe por meio da função <code>querySelector</code>, teremos <b>${document.querySelector("#inexistente")}</b>.</p>`;

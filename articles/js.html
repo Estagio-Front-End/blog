@@ -53,9 +53,9 @@
 
             <p class="conteudo__texto">Para que um código Javascript seja aplicado em uma página, é necessário utilizar a tag <code>script</code> no documento HTML, podendo esta utilização ser de duas formas e em duas localidades diferentes.</p>
 
-            <p class="conteudo__texto">Em termos de forma, podemos ter o Javascript dentro do próprio documento, assim como um CSS interno, escrevendo todo o código dentro de uma tag script. Podemos, também, ter um arquivo com extensão <code>.js</code> à parte do documento HTML, que será linkado ao documento por meio do atributo <code>src</code> da tag <code>script</code>. A principal diferença entre estas duas formas é que, tendo o script interno, ele só será aplicado àquela página em específico, ao passo que com o script externo, é possível linkar esse arquivo de tal forma que um só bloco de código atue em várias páginas diferentes.</p>
+            <p class="conteudo__texto">Em termos de forma, podemos ter o Javascript dentro do próprio documento, assim como um CSS interno, escrevendo todo o código dentro de uma tag <code>script</code>. Podemos, também, ter um arquivo com extensão <code>.js</code> à parte do documento HTML, que será linkado ao documento por meio do atributo <code>src</code> da tag <code>script</code>. A principal diferença entre estas duas formas é que, tendo o script interno, ele só será aplicado àquela página em específico, ao passo que com o script externo, é possível linkar esse arquivo de tal forma que um só bloco de código atue em várias páginas diferentes.</p>
 
-            <p class="conteudo__texto">Em relação à localização da tag <code>src</code>, ela poderá estar logo após a tag <code>head</code>, ou logo antes do fechamento da tag <code>body</code>. A principal diferença entre essas localizações é que, devido ao documento HTML ser lido na ordem em que é escrito, caso o script necessite que o HTML esteja totalmente carregado para operar e esteja escrito antes do body, problemas ocorrerão e o script atuará. Desta forma, se o script necessitar do HTML carregado, ele deve estar antes do fechamento da tag <code>body</code>, caso contrário, ele pode ser linkado ou escrito após a tag <code>head</code>.</p>
+            <p class="conteudo__texto">Em relação à localização da tag <code>script</code>, ela poderá estar logo após a tag <code>head</code>, ou logo antes do fechamento da tag <code>body</code>. A principal diferença entre essas localizações é que, devido ao documento HTML ser lido na ordem em que é escrito, caso o script necessite que o HTML esteja totalmente carregado para operar e esteja escrito antes do body, problemas ocorrerão e o script não atuará. Desta forma, se o script necessitar do HTML carregado, ele deve estar antes do fechamento da tag <code>body</code>, caso contrário, ele pode ser linkado ou escrito após a tag <code>head</code>.</p>
 
             <div>
                 <figure>
@@ -76,20 +76,19 @@
             <p class="conteudo__texto">Existem 3 palavras reservadas para a declaração de variáveis em Javascript: <code>var</code>, <code>let</code> e <code>const</code>. Clique em uma das opções para mostrar a explicação sobre declaração, atribuição e alteração de cada um dos tipos de variáveis.</p>
 
             <div class="conteudo__demonstracao">
-                <label for="var"><code>var</code></label>
                 <input type="radio" id="var" name="variaveis"/>
+                <label for="var"><code>var</code></label>
                 
-                <label for="let"><code>let</code></label>
                 <input type="radio" id="let" name="variaveis"/>
+                <label for="let"><code>let</code></label>
                 
-                <label for="const"><code>const</code></label>
                 <input type="radio" id="const" name="variaveis"/>
-              
+                <label for="const"><code>const</code></label>
             </div>
             
             <div id="resultado-variaveis"></div>
 
-            <p class="conteudo__texto">É importante ressaltar que a principal diferença entre variáveis declaradas com <code>var</code> e <code>let</code> é seu escopo. Variáveis declaradas com <code>var</code> terão escopo global, ou seja, ao longo do código, uma variável declarada com var permanecerá coom seu valor, exceto se reatribuída. Variáveis declaradas com let possuem escopo local, de modo que, se uma variável foi declarada dentro de uma função, condicional ou loop, fora desses blocos de código ela não existirá e seu valor não poderá ser acessado, exceto em casos em que uma função retorne o seu valor.</p>
+            <p class="conteudo__texto">É importante ressaltar que a principal diferença entre variáveis declaradas com <code>var</code> e <code>let</code> é seu escopo. Variáveis declaradas com <code>var</code> terão escopo global, ou seja, ao longo do código, uma variável declarada com var permanecerá com seu valor, exceto se reatribuída. Variáveis declaradas com let possuem escopo local, de modo que, se uma variável foi declarada dentro de uma função, condicional ou loop, fora desses blocos de código ela não existirá e seu valor não poderá ser acessado, exceto em casos em que uma função retorne o seu valor.</p>
 
             <figure>
                 <img src="../images/escopo-var-let.png" alt="Imagem com fundo preto e código CSS escrito para explicitar o caráter global de variáveis declaradas com var e o caráter local de variáveis declaradas com let.">
@@ -126,17 +125,17 @@
 
             <h3>Operadores</h3>
 
-            <p class="conteudo__texto">Os operadores são símbolos utilizados para realizar operações entre números, strings ou números e string. Clique em cada botão de "mostrar" para visualizar mais informações e exemplos de cada operador.</p>
+            <p class="conteudo__texto">Os operadores são símbolos utilizados para realizar operações entre números, strings ou números e strings. Clique em cada botão de "mostrar" para visualizar mais informações de cada operador.</p>
 
             <dl class="conteudo__texto">
                 <dt>Operador de soma (+) <button class="conteudo__texto__botao" id="botao-operacao-soma">mostrar</button></dt>
-                <dd id="explicacao-operacao-soma" class="">O operador <code>+</code> realiza operações de soma entre números, um operador incrementado a outro. Em operações entre números e strings, strings contendo números e strings contendo texto os operandos são concatenados. Desta forma, uma operação de soma entre <code>"5"</code> e <code>5</code> terá 55 (e tipo string) como resultado sendo string somente o primeiro operando, somente o segundo operando ou os dois operandos. Da mesma forma, uma operação de soma entre <code>"Palavra"</code> e <code>"Chave"</code> terá como resultado <code>"PalavraChave"</code>.</dd>
+                <dd id="explicacao-operacao-soma" class="">O operador <code>+</code> realiza operações de soma entre números, um operando incrementado a outro. Em operações entre números e strings, strings contendo números e strings contendo texto os operandos são concatenados. Desta forma, uma operação de soma entre <code>"5"</code> e <code>5</code> terá 55 (e tipo string) como resultado sendo string somente o primeiro operando, somente o segundo operando ou os dois operandos. Da mesma forma, uma operação de soma entre <code>"Palavra"</code> e <code>"Chave"</code> terá como resultado <code>"PalavraChave"</code>.</dd>
                 
                 <dt>Operador de subtração (-) <button class="conteudo__texto__botao" id="botao-operacao-subtracao">mostrar</button></dt>
-                <dd id="explicacao-operacao-subtracao">O operador <code>-</code> realiza operações de subtração entre números diminuindo um operador do outro. Em operações entre números e strings contendo números ou entre duas strings contendo números, os operandos serão "convertidos" em dados do tipo number, gerando um resultado da operação do tipo number. Subtrações entre strings contendo texto gerarão um resultado "NaN" que significa "Not a Number", em português: não é um número.</dd>
+                <dd id="explicacao-operacao-subtracao">O operador <code>-</code> realiza operações de subtração entre números diminuindo um operando do outro. Em operações entre números e strings contendo números ou entre duas strings contendo números, os operandos serão "convertidos" em dados do tipo number, gerando um resultado da operação do tipo number. Subtrações entre strings contendo texto gerarão um resultado "NaN" que significa "Not a Number", em português: não é um número.</dd>
                 
                 <dt>Operador de multiplicação (*) <button class="conteudo__texto__botao" id="botao-operacao-multiplicacao">mostrar</button></dt>
-                <dd id="explicacao-operacao-multiplicacao">O operador <code>*</code> realiza operações de multiplicação entre números, um operando multiplicado pelo outro, em que a ordem dos fatores não alterará o resultado. Tentativas de multiplicação entre números e strings ou entre strings contendo texto gerarão um resultado "NaN" que significa "Not a Number", em português: não é um número. Em multiplicações entre duas string contendo números, o código é "convertido" em número e a operação será realizada, gerando um número com o resultado da multiplicação.</dd>
+                <dd id="explicacao-operacao-multiplicacao">O operador <code>*</code> realiza operações de multiplicação entre números, um operando multiplicado pelo outro, em que a ordem dos fatores não alterará o resultado. Tentativas de multiplicação entre números e strings ou entre duas strings contendo texto gerarão um resultado "NaN" que significa "Not a Number", em português: não é um número. Em multiplicações entre duas string contendo números, o código é "convertido" em número e a operação será realizada, gerando um número com o resultado da multiplicação.</dd>
                 
                 <dt>Operador de divisão (/) <button class="conteudo__texto__botao" id="botao-operacao-divisao">mostrar</button></dt>
                 <dd id="explicacao-operacao-divisao">O operador <code>/</code> realiza operações de divisão entre números, ou seja, o resultado da divisão de um operando por outro operando. Importante lembrar que, como na matemática, divisões por zero não são permitidas em código e gerarão erros. Tentativas de divisão entre números e strings ou entre strings contendo texto gerarão um resultado "NaN" que significa "Not a Number", em português: não é um número. Em divisões entre duas string contendo números, o código é "convertido" em número e a operação será realizada, gerando um número com o resultado da divisão.</dd>
