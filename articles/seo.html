@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma página de blog sobre o que é e como utilizar o SEO no desenvolvimento front-end.">
+    <link rel="stylesheet" href="../style.css">
+    <title>SEO no Front-End</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+    
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">SEO no Front-End</h2>
+            <span class="artigo__tag artigo__tag--html">HTML</span>
+            
+            <article>
+                <p class="conteudo__texto">O <abbr title="Search Engine Optmization">SEO</abbr> pode ser descrito como o conjunto de ações que serão tomadas em um site para aumentar sua visibilidade em mecanismos de busca como Google, Bing, entre outros. Quanto melhor o SEO do site, mais facilmente ele será encontrado em buscas e pessoas irão visitá-lo, possivelmente tornando-se consumidores dos produtos, serviços ou informações que o site oferece.</p>
+
+                <p class="conteudo__texto">Para definir quais as melhores práticas de otimização do site em mecanismos de busca, é de suma importância saber, primeiramente, como funcionam os estes mecanismos. O Google, mecanismo de busca mais popular atualmente, funciona com base no seguintes estágios: </p>
+
+                <ul class="conteudo__texto">
+                    <li><span>Rastreamento:</span> neste estágio, o Google inicia com uma etapa de URL discovery, que consiste em descobrir novas páginas na web. Esta descoberta pode ser feita por meio de novos links em páginas já descobertas ou quando um sitemap (lista de páginas) é submetido diretamente para que o Google rastreie. Um vez que uma URL foi descoberta, os Googlebots (robôs rastreadores) são utilizados para rastrear a página e descobrir seu conteúdo. A página então é renderizada e todo o Javascript presente nela é executado, a fim de que todo o conteúdo da página seja detectado.</li>
+                    
+                    <li><span>Indexação:</span> Após o rastreamento, o Google processa e analisa conteúdos da página como a tag <code>title</code>, imagens e seus textos alternativos, meta description, entre outros. Estas informações são armazenadas no índice do Google, que atua como um grande banco de dados da web.</li>
+                    
+                    <li><span>Exibição dos resultados:</span> Quando há uma pesquisa, o Google retorna as páginas com conteúdo de maior qualidade e maior relevância com aquilo que está sendo pesquisado. A relevância é definida como base em vários fatores como a própria escrita da pesquisa, localização do usuário, dispositivo sendo utilizado, entre outros.</li>
+                </ul>
+
+                <p class="conteudo__texto">São muitos os fatores que são levados em consideração na facilitação do descobrimento da URL, na otimização do conteúdo para uma indexação e no aumento da relevância do site para que ele seja melhor ranqueado em pesquisas. Com o objetivo de tornar mais fácil a compreensão destes fatores, o SEO é subdividido em três grupos: o on-page SEO, o off-page SEO e o technical SEO. Cada um possui sua "área" de atuação e ações para a otimização como um todo.</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>On-page SEO:</span> ou SEO na página, se refere à otimização do conteúdo de uma página para usuários e mecanismos de busca. Aqui entram ações como revisão de qualidade dos textos em termos de originalidade, legibilidade e relevância, além de elementos do próprio HTML como título da página, textos alternativos de imagens e descrições na tag <code>meta</code>.</li>
+                    
+                    <li><span>Off-page SEO:</span> ou SEO fora da página, se refere à promoção do site fora dele, ou seja, marketing em redes sociais, aparições em outros sites renomados e fortalecimento da marca.</li>
+                    
+                    <li><span>Technical SEO:</span> ou SEO técnico, se refere à ações que tornem o site fácil de ser rastreado pelos mecanismos de busca e fácil de ser utilizado por usuários. Ações como otimização da arquitetura do site, responsividade e usabilidade, além do uso de dados estruturados estão associados ao SEO técnico. </li>
+                </ul>
+
+                <p class="conteudo__texto">Focando nos SEO technical e on-page, que são onde os desenvolvedores mais atuam, temos algumas melhores práticas importantes quando se busca fazer com que a página seja melhor rastreada e ranqueada. São elas:</p>
+
+                <ul class="conteudo__texto">                  
+                    <li><span>Manter o tempo de carregamento do site rápido:</span> Usuários não tendem a esperar muito tempo caso uma página não carregue rapidamente. Quanto maior o tempo de carregamento, maior a taxa de rejeição deste site por usuários e menor o ranking em um mecanismo de busca. O <a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a> é uma ferramenta que gera um relatório de diagnóstico do carregamento da página, indicando possíveis pontos de melhoria do site. </li>
+
+                    <figure>
+                        <img src="../images/pagespeed.png" alt="Visualização da parte inicial do resultado do diagnóstico do PageSpeed Insights para o CSS Blog. Possui a nota geral (85) em amarelo, indicando um resultado mediano, uma imagem do site analisado e algumas das métricas de desempenho.">
+                        <figcaption>Resultado do PageSpeed Insights para a página inicial do CSS Blog.</figcaption>
+                    </figure>
+                    
+                    <li><span>Otimizar a tag <code>title</code>:</span> Os títulos das páginas devem representar bem o conteúdo da página e deve-se buscar sempre sua precisão e originalidade. Em um resultado por meio de pesquisa em mecanismo de busca, o título fará parte do link no qual o usuário poderá clicar e entrar na página.</li>
+                    
+                    <li><span>Utilizar a meta-tag <code>description</code>:</span> Assim como nos títulos, deve-se buscar pela precisão e originalidade também na descrição da página. Caso um site tenha várias páginas, é preciso criar uma descrição diferente para cada página a fim de que ela seja exclusiva e reflita bem o conteúdo da página em questão. Em um resultado por meio de pesquisa em mecanismo de busca, a descrição também fará parte do link no qual o usuário poderá clicar e entrar na página.</li>
+
+                    <div class="conteudo__figuras">
+                        <figure>
+                            <img src="../images/title-meta-codigo.png" alt="Imagem com fundo preto e código em HTML definindo o titulo e a meta description de uma página.">
+                            <figcaption>Inserção das tags <code>title</code> e <code>meta name="description"</code> dentro da tag <code>head</code> de uma página HTML.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="../images/title-meta-google.png" alt="Imagem com fundo preto mostrando um resultado de pesquisa em um mecanismo de busca e quais elementos possívelmente estariam atrelados à tag title e à meta description.">
+                            <figcaption>Possíveis conteúdos das tags <code>title</code> e <code>meta name="description"</code> de um site encontrado via mecanismo de busca.</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <li><span>Adicionar um sitemap:</span> Um sitemap é um arquivo XML com uma listagem de todas as URLs presentes dentro do site, ou seja, é um mapeamento da sua estrutura. Esta listagem facilita o trabalho dos robôs rastreadores dos mecanismos de pesquisa pois permite que eles naveguem por todo o site de forma mais rápida, em comparação à ter que ir em todas as páginas e clicar em todos os links disponíveis. Além disto, o sitemap pode dar informações ao mecanismo de busca como frequencia de atualização das páginas e prioridade das páginas em relação as outras no mesmo site, o que pode levar à um melhor ranqueamento.</li>
+
+                    <figure>
+                        <img src="https://diib.com/learn/wp-content/uploads/2022/08/xml-sitemap-example.jpg.webp" alt="Imagem em fundo branco e código em vermelho e azul, codificando um sitemap na linguagem XML com indicativo em amarelo de cada parte da informação: url, frequência de atualização da página, última atualização e importância da página no site.">
+                        <figcaption>Exemplo de um sitemap</figcaption>
+                    </figure>
+                    
+                    <li><span>Certificar-se de que o site está responsivo para dispositivos mobile:</span> No Brasil, 62% da população utiliza a internet exclusivamente pelo celular. No mundo todo, a utilização de dispositivos mobile é crescente. Não ter sites responsivos impacta diretamente na sua usabilidade e pode motivar mecanismos de busca a gerar rankings mais baixos para o site.</li>
+                    
+                    <li><span>Implementar dados estruturados:</span> Os dados estruturados são uma forma de facilitar o entendimento e classificação do conteúdo do site para os mecanismos de busca. Eles possuem uma sintaxe própria são implementados no documento HTML da página. Sua utilização pode auxiliar os sites a tanto a conseguirem melhores ranqueamentos, quanto ser exibidos em resultados de pesquisa diferenciados, como resultados com imagens em carrosséis, com vídeos, em um painel de informações, entre outros.</li>
+
+                    <div>
+                        <figure>
+                            <img src="../images/dados-estruturados-codigo.png" alt="Imagem com fundo preto e código em vermelho e verde mostrando os dados estruturados de uma página de receita de bolo de chocolate.">
+                            <figcaption>Visualização de dados estruturados em uma página de receita de bolo de chocolate.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="../images/dados-estruturados.png" alt="Página de resultados da pesquisa "bolo de chocolate" no Google, indicando quais informações poderiam ser provenientes de dados estruturados.">
+                            <figcaption>Os dados estruturados existentes possibilitaram a presença da avaliação e do tempo de preparo no resultado principal da página de receita, assim como sua exibição em um modelo de resultado com mídia. Na lateral direita, temos um painel de informações exibindo um site da Wikipédia, que provavelmente também possui seus próprios dados estruturados para possibilitar essa exibição.</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <li><span>Otimizar as imagens do site:</span> Ações como utilizar as tags <code>img</code> e <code>picture</code>, fornecer nomes e textos alternados descritivos para imagens e criar uma sitemap para imagens do site são facilitadoras para os robôs rastejadores de mecanismos de busca, propiciando um melhor entendimento deste tipo de conteúdo dentro do site.</li>
+
+                    <div>
+                        <figure>
+                            <img src="../images/img-seo-ruim.png" alt="Imagem de fundo preto e código em azul e verde adicionando uma imagem com nome "imagem1" à página e sem texto alternativo">
+                            <figcaption>Imagem menos otimizada, sem texto alternativo e sem nome descritivo.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="../images/img-seo-bom.png" alt="Imagem de fundo preto e código em azul e verde adicionando uma imagem com nome "dados-estruturados" à página e com texto alternativo">
+                            <figcaption>Imagem mais otimizada, com texto alternativo e nome descritivo.</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <li><span>Otimizar URLs:</span> Ter URLs mais descritivas e curtas ajuda na organização do site, é melhor visto pelos usuários e é mais facilmente entendido pelos robôs rastejadores dos mecanismos de pesquisa. Desta forma, em vez de nomes genéricos nos documentos como "artigo1", é recomendado usar títulos que sejam mais associados ao conteúdo e gerem URLs mais entendíveis.</li>
+
+                    <figure>
+                        <img src="https://api.backlinko.com/app/uploads/2019/02/enticing-url.png" alt="Imagem com fundo azul e uma janela de navegador simulando a página de resultados do Google. São exibidos dois resultados, um com a URL otimizada e outro com uma URL não descritiva.">
+                        <figcaption>Exemplo de uma URL otimizada e uma URL não descritiva. É bem mais provável que o usuário clique no primeiro link pois a URL já descreve o conteúdo da página.</figcaption>
+                    </figure>
+                    
+                    <li><span>Verificar que os textos escritos no site são de qualidade e livres de erros ortográficos:</span> Quando os mecanismos de pesquisa avaliarem o conteúdo da página, ela deve ter boa qualidade para que sua relevância seja aumentada e, por consequencia, seu ranking seja maior. Textos mal escritos, copiados ou com erros ortográficos são detratores da qualidade da página, devendo ser evitados.</li>
+                    
+                    <li><span>Evitar anúncios que distraiam os usuários:</span> Anúncios são permitidos, porém anúncios que impedem a visualização do conteúdo da página e dificultam a usabilidade devem ser evitados. O uso de páginas intersticiais, como são chamadas as páginas mais utilizadas para anúncios, é benéfico em alguns casos, como para solicitar os cookies do usuário, porém são detratores de SEO quando o Google entende que estas estão quebrando a experiência do usuário.</li>
+                    
+                    <div>
+                        <figure>
+                            <img src="https://www.disruptivos.com/wp-content/uploads/2017/02/pop-up-interstitial_02.jpg" alt="Imagem com fundo branco e 6 telas de celulares divididas em 2 grupos, um que possui os dizeres ESTO NO abaixo, sugerindo páginas instersticiais não adequadas e outro com ESTO SI abaixo, sugerindo páginas instersticiais adequadas.">
+                            <figcaption>Do lado esquerdo, 3 exemplos de páginas intersticiais que seriam detratoras em SEO. Do lado direito, 3 exemplos que não seriam vistas como quebra de UX. </figcaption>
+                        </figure>
+                    </div>
+                </ul>
+
+                <p class="conteudo__texto">O Chrome DevTools é uma ferramenta para desenvolvedores do Google Chrome que possui uma seção de diagnóstico do site em algumas frentes, uma delas sendo SEO. A depender da nota (que vai de 0 a 100), o site pode estar seguindo as melhores práticas de SEO ou ter pontos de melhoria. É possível abrir o DevTools por meio da tecla F12 (Windows) ou clicando na página com o botão direito e selecionando a opção "Inspecionar". No menu de opções superior, é possível encontrar o "Lighthouse" e, para gerar o relatório, clicar em "Analyze page load".</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/lighthouse-desktop.png" alt="Imagem com fundo cinza escuro e texto em cinza claro contendo o score de SEO da página (90) e indicando um ponto de melhoria: adicionar uma meta description à página.">
+                        <figcaption>Resultado do Lighthouse para as páginas do CSS Blog em dispositivos desktop.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/lighthouse-mobile.png" alt="Imagem com fundo cinza escuro e texto em cinza claro contendo o score de SEO da página (82) e indicando pontos de melhoria: adicionar uma meta description à página, ter cuidados com tamanho de fonte e tamanho de alvos de clique.">
+                        <figcaption>Resultado do Lighthouse para as páginas do CSS Blog em dispositivos mobile.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/lighthouse-pós.png" alt="Imagem com fundo cinza escuro e texto em cinza claro contendo o score de SEO da página (100) e indicando um ponto a ser testado manualmente: a validez dos dados estruturados.">
+                        <figcaption>Resultado do Lighthouse para a página deste artigo no CSS Blog em dispositivos desktop, após a atuação no ponto de melhoria de meta description.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Pelas imagens anteriores, é possível verificar que é possível ter scores diferentes para dispositivos diferentes, por isso é bom sempre estar atento às adequações para diferentes dispositivos. Também é possível visualizar que a atuação nos pontos de melhoria reflete uma melhora imediata no score e o aumenta. Apesar disso, scores de 100 não significam necessariamente que seu site está o mais otimizado possível em termos de SEO, visto que há outros pontos que influenciam nisso além dos auditados pelo Lighthouse, mas é um bom indicativo de que se está no caminho certo.</p>
+
+                <p class="conteudo__texto">O SEO é um conteúdo bastante amplo e denso, mas é importantíssimo que desenvolvedores conheçam, pelo menos, os conceitos básicos, visto que alterações básicas no código podem significar melhorias expressivas na otimização do site.</p>
+
+            </article>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>21 Mar</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="../script.js"></script>
+</html>
