@@ -64,7 +64,7 @@ function testeTipo(value) {
             exemploVar1 = "Palavra";
             exemploVar2 = "Uma frase completa"; 
             
-            exibeResultadoTiposDeDados.innerHTML = `<p class="conteudo__texto">Strings são conjuntos de textos. Para criar uma string, 3 formas podem ser utilizadas: aspas simples (<code>''</code>), aspas duplas (<code>""</code>) ou crases (<code>``</code>). Esta última bastante utilizada para criar as chamadas template strings, em que texto e variáveis podem ser escritos sem necessidade de operadores de concatenação. É importante notar que, caso seja necessário utilizar aspas como um elemento textual dentro de uma string, as aspas utilizadas dentro do texto devem ser de um tipo diferente das utilizadas para criar a string. Exemplos do tipo ${tipoVar} são <code>${exemploVar1}</code> e <code>${exemploVar2}</code>.</p>`;
+            exibeResultadoTiposDeDados.innerHTML = `<p class="conteudo__texto">Strings são conjuntos de textos. Para criar uma string, 3 formas podem ser utilizadas: aspas simples, aspas duplas ou crases. Esta última bastante utilizada para criar as chamadas template strings, em que texto e variáveis podem ser escritos sem necessidade de operadores de concatenação. É importante notar que, caso seja necessário utilizar aspas como um elemento textual dentro de uma string, as aspas utilizadas dentro do texto devem ser de um tipo diferente das utilizadas para criar a string. Exemplos do tipo ${tipoVar} são <code>${exemploVar1}</code> e <code>${exemploVar2}</code>.</p>`;
             break;
         case "array":
             tipoVar = "array";
