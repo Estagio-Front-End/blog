@@ -100,6 +100,27 @@ function testeTipo(value) {
 }
 
 //Operações
+const botaoOperadorSoma = document.querySelector("#botao-operacao-soma");
+const botaoOperadorSubtracao = document.querySelector("#botao-operacao-subtracao");
+const botaoOperadorMultiplicacao = document.querySelector("#botao-operacao-multiplicacao");
+const botaoOperadorDivisao = document.querySelector("#botao-operacao-divisao");
+const botaoOperadorResto = document.querySelector("#botao-operacao-resto");
+const botaoOperadorPotencia = document.querySelector("#botao-operacao-potencia");
+
+const botoesOperadores = [botaoOperadorSoma, botaoOperadorSubtracao, botaoOperadorMultiplicacao, botaoOperadorDivisao, botaoOperadorResto, botaoOperadorPotencia];
+
+botoesOperadores.forEach(botao => botao.addEventListener('click', mostraExplicacaoOperador));
+
+function mostraExplicacaoOperador (evento) {
+    let operacaoSelecionada = evento.target.id.split("-")[2];
+    document.getElementById(`explicacao-operacao-${operacaoSelecionada}`).classList.toggle("aberto");
+    if (document.getElementById(`explicacao-operacao-${operacaoSelecionada}`).classList.length != 0) {
+        document.getElementById(`botao-operacao-${operacaoSelecionada}`).textContent = "ESCONDER"
+    } else {
+        document.getElementById(`botao-operacao-${operacaoSelecionada}`).textContent = "MOSTRAR"
+    }
+}  
+
 const inputNumber1 = document.querySelector("#numero1-operacoes");
 const inputNumber2 = document.querySelector("#numero2-operacoes");
 const selectOperacoesAritmeticas = document.querySelector("#operacoes-aritmeticas");
@@ -155,6 +176,3 @@ function calculaResultadoOperacao() {
         alert("Um dos valores está vazio ou não contém um número, tente novamente!");
     }
 }
-
-
-

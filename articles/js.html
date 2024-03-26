@@ -90,8 +90,8 @@
             <p class="conteudo__texto">É importante ressaltar que a principal diferença entre variáveis declaradas com <code>var</code> e <code>let</code> é seu escopo. Variáveis declaradas com <code>var</code> terão escopo global, ou seja, ao longo do código, uma variável declarada com var permanecerá coom seu valor, exceto se reatribuída. Variáveis declaradas com let possuem escopo local, de modo que, se uma variável foi declarada dentro de uma função, condicional ou loop, fora desses blocos de código ela não existirá e seu valor não poderá ser acessado, exceto em casos em que uma função retorne o seu valor.</p>
 
             <figure>
-                <img src="" alt="">
-                <figcaption>Exemplo de escopo para lucidar diferença entre <code>var</code> e <code>let</code>.</figcaption>
+                <img src="../images/escopo-var-let.png" alt="Imagem com fundo preto e código CSS escrito para explicitar o caráter global de variáveis declaradas com var e o caráter local de variáveis declaradas com let.">
+                <figcaption>Exemplo de escopo para lucidar diferença entre <code>var</code> e <code>let</code>. O primeiro console.log mostrará 25 porque, dentro do escopo da condicional, variavel = 25. O segundo mostrará 14 pois, no escopo global da função, variavel = 14.</figcaption>
             </figure>
 
             <h3>Tipos de dados</h3>
@@ -118,6 +118,21 @@
             <h3>Operadores</h3>
 
             <p class="conteudo__texto">Os operadores são símbolos utilizados para realizar operações entre números, strings ou números e string. Clique em cada botão de "mostrar" para visualizar mais informações e exemplos de cada operador.</p>
+
+            <dl class="conteudo__texto">
+                <dt>Operador de soma (+) <button class="conteudo__texto__botao" id="botao-operacao-soma">mostrar</button></dt>
+                <dd id="explicacao-operacao-soma" class="">aqui o operador</dd>
+                <dt>Operador de subtração (-) <button class="conteudo__texto__botao" id="botao-operacao-subtracao">mostrar</button></dt>
+                <dd id="explicacao-operacao-subtracao">oi</dd>
+                <dt>Operador de multiplicação (*) <button class="conteudo__texto__botao" id="botao-operacao-multiplicacao">mostrar</button></dt>
+                <dd id="explicacao-operacao-multiplicacao">oi</dd>
+                <dt>Operador de divisão (/) <button class="conteudo__texto__botao" id="botao-operacao-divisao">mostrar</button></dt>
+                <dd id="explicacao-operacao-divisao">oi</dd>
+                <dt>Operador de resto de divisão (%) <button class="conteudo__texto__botao" id="botao-operacao-resto">mostrar</button></dt>
+                <dd id="explicacao-operacao-resto">oi</dd>
+                <dt>Operador de potência (**) <button class="conteudo__texto__botao" id="botao-operacao-potencia">mostrar</button></dt>
+                <dd id="explicacao-operacao-potencia">oi</dd>
+            </dl>
 
             <p class="conteudo__texto">Teste aqui as operações aritméticas:</p>
             <div class="conteudo__demonstracao">

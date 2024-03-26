@@ -52,6 +52,29 @@ input {
     font-family: "Open Sans", sans-serif; 
 }
 
+dl {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    dt {
+        display: flex;
+        gap: 2rem;
+        font-weight: 700;
+    }
+    
+    dd {
+        margin-top: -1rem;
+        color: $cor-fonte-sec;
+        display: none;
+    }
+
+    .aberto {
+        display: block;
+    }
+}
+
+
 .conteudo {
     display: flex;
     flex-direction: column;
@@ -96,8 +119,17 @@ input {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    text-transform: uppercase;
     font-family: $fonte-tags;
     background-color: $cor-tag-javascript;
     border: 1px solid $cor-fonte-sec;
+    text-transform: uppercase;
+}
+
+.conteudo__texto__botao {
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid $cor-fonte-sec;
+    text-transform: uppercase;
+    font-family: $fonte-tags;
+    cursor: pointer;
 }
