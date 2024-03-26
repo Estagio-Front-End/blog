@@ -1,0 +1,122 @@
+@mixin line-height ($tamanho-fonte-px) {
+    @if ($tamanho-fonte-px: 32) {
+        line-height: $fator-line-height * $tamanho-fonte-px;
+    } @else if ($tamanho-fonte-px: 28) {
+        line-height: $fator-line-height * $tamanho-fonte-px;
+    } @else if ($tamanho-fonte-px: 24) {
+        line-height: $fator-line-height * $tamanho-fonte-px;
+    } @else {
+        line-height: 1.36 * $tamanho-fonte-px;
+    }
+}
+
+@mixin headline-primary-semibold($tamanho-fonte-px, $text-align: left) {
+    font-family: $fonte-headline;
+    font-size: (($tamanho-fonte-px)/10) + "rem";
+    @include line-height($tamanho-fonte-px);  
+    font-weight: 600;
+    text-align: $text-align;  
+}
+
+@mixin headline-primary-bold($tamanho-fonte-px, $text-align: left) {
+    font-family: $fonte-headline;
+    font-size: ($tamanho-fonte-px)/10 + "rem";
+    @include line-height($tamanho-fonte-px);  
+    font-weight: 700;  
+    text-align: $text-align;  
+}
+
+@mixin body-system-regular($tamanho-fonte-px, $text-align: left) {
+    font-family: $fonte-body;
+    font-size: ($tamanho-fonte-px)/10 + "rem";
+    @include line-height($tamanho-fonte-px);  
+    font-weight: 400;
+    text-align: $text-align;  
+}
+
+@mixin body-system-semibold($tamanho-fonte-px, $text-align: left) {
+    font-family: $fonte-body;
+    font-size: ($tamanho-fonte-px)/10 + "rem";
+    @include line-height($tamanho-fonte-px);  
+    font-weight: 600;
+    text-align: $text-align;  
+}
+
+@mixin body-system-bold($tamanho-fonte-px, $text-align: left) {
+    font-family: $fonte-body;
+    font-size: ($tamanho-fonte-px)/10 + "rem";
+    @include line-height($tamanho-fonte-px);  
+    font-weight: 700;
+    text-align: $text-align;  
+}
+
+@mixin responsividade ($dispositivo) {
+    @if $dispositivo == "mobile" {
+        @media screen and (max-width: 767px) {
+            @content;
+        }
+    } @else if $dispositivo == "tablet" {
+        @media screen and (768px <= width <= 1023px) {
+            @content;
+        }       
+    } @else if $dispositivo == "desktop" {
+        @media screen and (1024px <= width <= 1365px) {
+            @content;
+        }
+    }  
+} 
+
+@mixin flex ($justificado, $alinhado: normal) {
+    display: flex;
+    justify-content: $justificado;
+    align-items: $alinhado;
+}
+
+@mixin sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    position: -ms-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+}
+
+@mixin animation ($animacao) {
+    animation: $animacao;
+    -webkit-animation: $animacao;
+    -moz-animation: $animacao;
+    -o-animation: $animacao;
+}
+
+@mixin keyframes ($nome) {
+    @keyframes #{$nome} {
+        @content;
+    }
+    
+    @-webkit-keyframes #{$nome} {
+        @content;
+    }
+
+    @-moz-keyframes #{$nome} {
+        @content;
+    }
+
+    @-o-keyframes #{$nome} {
+        @content;
+    }
+}
+
+@mixin transform ($transformacao) { 
+    transform: $transformacao;
+    -webkit-transform: $transformacao;
+    -ms-transform: $transformacao;
+    -moz-transform: $transformacao;
+    -o-transform: $transformacao;
+}
+
+@mixin box-shadow ($sombras...) {
+    box-shadow: $sombras;
+    -webkit-box-shadow: $sombras;
+    -moz-box-shadow: $sombras;
+    -ms-box-shadow: $sombras;
+    -o-box-shadow: $sombras;
+}

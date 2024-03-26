@@ -1,0 +1,58 @@
+:root {
+    font-size: 62.5%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+$cor-primaria: #1F2041;
+$cor-secundaria: #F39200;
+$cor-neutra-1: #FFFFFF;
+$cor-neutra-2: #EBEBEB;
+$cor-neutra-3: #C2C2C2;
+$cor-neutra-4: #999999;
+$cor-neutra-5: #707070;
+
+$cor-tag-tecnologia: #6DBEFF;
+$cor-tag-designux: #FF8F7C;
+$cor-tag-people: #89E581;
+$cor-tag-marketing: $cor-tag-people;
+$cor-tag-natureza: $cor-tag-people;
+$cor-tag-livros: #FFD169;
+$cor-tag-filmes: #999999;
+$cor-tag-frontend: $cor-tag-tecnologia;
+$cor-tag-backend: $cor-tag-tecnologia;
+$cor-tag-dados: $cor-tag-livros;
+$cor-tag-ia: $cor-tag-designux;
+
+$gradiente-1: linear-gradient(349.83deg, #0095DA 33.33%, #0D3342 95.94%);
+
+$fonte-headline: 'Montserrat', sans-serif;
+$fonte-body: 'Open Sans', sans-serif;
+
+$fator-line-height: 1.22;
+
+$espacamento1: 0.4rem;
+$espacamento2: 0.8rem;
+$espacamento3: 1.2rem;
+$espacamento4: 1.6rem;
+$espacamento5: 2rem;
+$espacamento6: 2.4rem;
+$espacamento7: 2.8rem;
+$espacamento8: 3.2rem;
+$espacamento9: 3.6rem;
+$espacamento10: 4rem;
+$espacamento11: 4.4rem;
+$espacamento12: 4.8rem;
+$espacamento13: 5.2rem;
+$espacamento14: 5.6rem;
+$espacamento15: 6rem;
+$espacamento16: 6.4rem;
+$espacamento17: 6.8rem;
+$espacamento18: 7.2rem;
+$espacamento19: 7.6rem;
+$espacamento20: 8rem;
+$espacamento21: 8.4rem;
+$espacamento22: 8.8rem;
+$espacamento23: 9.2rem;
+$espacamento24: 9.6rem;
+$espacamento25: 10rem;
