@@ -78,8 +78,10 @@
             <div class="conteudo__demonstracao">
                 <label for="var"><code>var</code></label>
                 <input type="radio" id="var" name="variaveis"/>
+                
                 <label for="let"><code>let</code></label>
                 <input type="radio" id="let" name="variaveis"/>
+                
                 <label for="const"><code>const</code></label>
                 <input type="radio" id="const" name="variaveis"/>
               
@@ -102,12 +104,19 @@
                 <div class="conteudo__demonstracao__selecao">
                     <select name="tiposDeDados" id="tiposDeDados" onchange="testeTipo(this.value)">
                         <option value="inicial"><label for="tiposDeDados">Selecione um tipo:</label></option>
+                        
                         <option value="number">number</option>
+                        
                         <option value="string">string</option>
+                        
                         <option value="object">object</option>
+                        
                         <option value="boolean">boolean</option>
+                        
                         <option value="array">array</option>
+                        
                         <option value="null">null</option>
+                        
                         <option value="undefined">undefined</option>
                     </select>
                 </div>
@@ -121,17 +130,22 @@
 
             <dl class="conteudo__texto">
                 <dt>Operador de soma (+) <button class="conteudo__texto__botao" id="botao-operacao-soma">mostrar</button></dt>
-                <dd id="explicacao-operacao-soma" class="">aqui o operador</dd>
+                <dd id="explicacao-operacao-soma" class="">O operador <code>+</code> realiza operações de soma entre números, um operador incrementado a outro. Em operações entre números e strings, strings contendo números e strings contendo texto os operandos são concatenados. Desta forma, uma operação de soma entre <code>"5"</code> e <code>5</code> terá 55 (e tipo string) como resultado sendo string somente o primeiro operando, somente o segundo operando ou os dois operandos. Da mesma forma, uma operação de soma entre <code>"Palavra"</code> e <code>"Chave"</code> terá como resultado <code>"PalavraChave"</code>.</dd>
+                
                 <dt>Operador de subtração (-) <button class="conteudo__texto__botao" id="botao-operacao-subtracao">mostrar</button></dt>
-                <dd id="explicacao-operacao-subtracao">oi</dd>
+                <dd id="explicacao-operacao-subtracao">O operador <code>-</code> realiza operações de subtração entre números diminuindo um operador do outro. Em operações entre números e strings contendo números ou entre duas strings contendo números, os operandos serão "convertidos" em dados do tipo number, gerando um resultado da operação do tipo number. Subtrações entre strings contendo texto gerarão um resultado "NaN" que significa "Not a Number", em português: não é um número.</dd>
+                
                 <dt>Operador de multiplicação (*) <button class="conteudo__texto__botao" id="botao-operacao-multiplicacao">mostrar</button></dt>
-                <dd id="explicacao-operacao-multiplicacao">oi</dd>
+                <dd id="explicacao-operacao-multiplicacao">O operador <code>*</code> realiza operações de multiplicação entre números, um operando multiplicado pelo outro, em que a ordem dos fatores não alterará o resultado. Tentativas de multiplicação entre números e strings ou entre strings contendo texto gerarão um resultado "NaN" que significa "Not a Number", em português: não é um número. Em multiplicações entre duas string contendo números, o código é "convertido" em número e a operação será realizada, gerando um número com o resultado da multiplicação.</dd>
+                
                 <dt>Operador de divisão (/) <button class="conteudo__texto__botao" id="botao-operacao-divisao">mostrar</button></dt>
-                <dd id="explicacao-operacao-divisao">oi</dd>
+                <dd id="explicacao-operacao-divisao">O operador <code>/</code> realiza operações de divisão entre números, ou seja, o resultado da divisão de um operando por outro operando. Importante lembrar que, como na matemática, divisões por zero não são permitidas em código e gerarão erros. Tentativas de divisão entre números e strings ou entre strings contendo texto gerarão um resultado "NaN" que significa "Not a Number", em português: não é um número. Em divisões entre duas string contendo números, o código é "convertido" em número e a operação será realizada, gerando um número com o resultado da divisão.</dd>
+                
                 <dt>Operador de resto de divisão (%) <button class="conteudo__texto__botao" id="botao-operacao-resto">mostrar</button></dt>
-                <dd id="explicacao-operacao-resto">oi</dd>
+                <dd id="explicacao-operacao-resto">O operador <code>%</code> realiza operações de resto da divisão entre números, ou seja, dividindo um operando pelo outro, qual será o resto desta divisão. Importante lembrar que, como na matemática, divisões por zero não são permitidas em código e gerarão erros. Este operador é muito utilizado em validações de números pares/ímpares.</dd>
+                
                 <dt>Operador de potência (**) <button class="conteudo__texto__botao" id="botao-operacao-potencia">mostrar</button></dt>
-                <dd id="explicacao-operacao-potencia">oi</dd>
+                <dd id="explicacao-operacao-potencia">O operador <code>**</code> realiza operações de potência entre números, ou seja, um operando elevado à potência de um segundo operando.</dd>
             </dl>
 
             <p class="conteudo__texto">Teste aqui as operações aritméticas:</p>
@@ -142,10 +156,15 @@
                 <div class="conteudo__demonstracao__selecao">
                     <select name="operacoes-aritmeticas" id="operacoes-aritmeticas">
                         <option value="soma">+ (soma)</option>
+                        
                         <option value="subtracao">- (subtração)</option>
+                        
                         <option value="multiplicacao">* (multiplicação)</option>
+                        
                         <option value="divisao">/ (divisão)</option>
+                        
                         <option value="resto">% (resto de divisão)</option>
+                        
                         <option value="exponencial">** (exponencial)</option>
                     </select>
                 </div>
