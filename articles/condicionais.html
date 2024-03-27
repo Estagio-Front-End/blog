@@ -70,21 +70,21 @@
                 <li><span>Estruturas somente com <code>if</code></span> testam somente uma expressão de condição (valor dentro dos parêntesis) e explicitam o código a ser executado apenas para o caso de a condição ser verdadeira.</li>
                 <li><span>Estruturas com <code>if</code> e <code>else</code></span> testam somente uma expressão de condição e explicitam o código a ser executado para o caso de a condição ser verdadeira (bloco de código dentro do par de chaves após o <code>if</code>) e para o caso de a condição ser falsa (bloco de código dentro do par de chaves após o <code>else</code>). Estruturas condicionais não podem ter mais de um <code>else</code>, portanto, caso seja necessário avaliar outras expressões, é necessário utilizar outras estruturas.</li>
                 <li><span>Estruturas com <code>if</code> e <code>else if</code></span> podem testar mais de uma expressão de condição, porém com a obrigatoriedade de que, para que a condição do <code>else if</code> seja avaliada, a condição do <code>if</code> deve ser falsa. Mais de um <code>else if</code> pode ser utilizado, até que todas as expressões a serem avaliadas sejam contempladas. No final deste tipo de estrutura, é possível, também, finalizar com um <code>else</code>, para contemplar casos em que nenhuma das condições avaliadas seja verdadeira.</li>
-                <li><span>Estruturas com ifs aninhados</span> podem testar mais de uma expressão de condição, porém com a obrigatoriedade de que, para que a condição do if mais interno seja avaliada, a condição do if mais externo deve ser verdadeira. Este tipo de estrutura também pode ser combinada com else if e else, a depender do tipo de condições a serem avaliadas.</li>
+                <li><span>Estruturas com <code>if</code> aninhados</span> podem testar mais de uma expressão de condição, porém com a obrigatoriedade de que, para que a condição do <code>if</code> mais interno seja avaliada, a condição do <code>if</code> mais externo deve ser verdadeira. Este tipo de estrutura também pode ser combinada com <code>else if</code> e <code>else</code>, a depender do tipo de condições a serem avaliadas.</li>
             </ul>
 
             <h3>Operadores de comparação</h3>
 
-            <p class="conteudo__texto">Os operadores de comparação são muito utilizados para criar expressões a serem avaliadas. Os principais operadores de comparação são:</p>
+            <p class="conteudo__texto">Os operadores de comparação são muito utilizados para criar expressões a serem avaliadas nas estruturas condicionais. São exemplos destes operadores:</p>
 
             <ul class="conteudo__texto">
-                <li><span>></span> avalia se um valor é maior que outro.</li>
-                <li><span><</span> avalia se um valor é menor que outro.</li>
-                <li><span>>=</span> avalia se um valor é maior ou igual a outro.</li>
-                <li><span><=</span> avalia se um valor é menor que outro.</li>
-                <li><span>!==</span> avalia se um valor é diferente de outro.</li>
-                <li><span>===</span> chamado de igualdade estrita, avalia se um valor é igual a outro. Ese operador é quase sempre a operação de comparação correta a se usar.</li>
-                <li><span>==</span> chamado de igualdade ampla, avalia se um valor é igual a outro após a conversão dos valores para um tipo comum. Desta forma <code>"10" == 10</code> geraria um resultado <code>true</code>.</li>
+                <li><span>Maior que - <code>></code></span> avalia se um valor é maior que outro.</li>
+                <li><span>Menor que - <code><</code></span> avalia se um valor é menor que outro.</li>
+                <li><span>Maior ou igual a - <code>>=</code></span> avalia se um valor é maior ou igual a outro.</li>
+                <li><span>Menor ou igual a - <code><=</code></span> avalia se um valor é menor que outro.</li>
+                <li><span>Desigualdade - <code>!==</code></span> avalia se um valor é diferente de outro.</li>
+                <li><span>Igualdade estrita - <code>===</code></span> avalia se um valor é igual a outro. Ese operador é quase sempre o operador de igualdade correto a se usar.</li>
+                <li><span>Igualdade ampla - <code>==</code></span> avalia se um valor é igual a outro após a conversão dos valores para um tipo comum. Desta forma <code>"10" == 10</code> geraria um resultado <code>true</code>.</li>
             </ul>
 
             <p class="conteudo__texto">Teste aqui os operadores de comparação</p>
@@ -122,12 +122,12 @@
             <p class="conteudo__texto">Os operadores lógicos são utilizados para junção de expressões a serem avaliadas, podendo, em alguns casos, substituir aninhamentos de estruturas com <code>if</code>. Os operadores lógicos são:</p>
 
             <ul class="conteudo__texto">
-                <li><span>AND - <code>&&</code></span> atua como o conector "e", em que expressões conectadas por este operador devem todas retornar true individualmente para que a expressão seja considerada true.</li>
-                <li><span>OR - <code>||</code></span> atua como o conector "ou", em que pelo menos uma das expressões conectadas por este operador deve retornar true individualmente para que a expressão seja considerada true.</li>
-                <li><span>NOT - <code>!</code></span> atua como o operador "não", em que, expressões precedidas por <code>!</code> terão seu valor negado. Caso a expressão seja true, ela retornará false e vice-versa.</li>
+                <li><span>AND - <code>&&</code></span> atua como o conector "e", em que expressões conectadas por este operador devem todas retornar <code>true</code> individualmente para que a expressão completa seja considerada <code>true</code>.</li>
+                <li><span>OR - <code>||</code></span> atua como o conector "ou", em que pelo menos uma das expressões conectadas por este operador deve retornar <code>true</code> individualmente para que a expressão completa seja considerada <code>true</code>.</li>
+                <li><span>NOT - <code>!</code></span> atua como o operador "não", em que, expressões precedidas por <code>!</code> terão seu valor negado. Caso a expressão seja <code>true</code>, ela retornará <code>false</code> e vice-versa.</li>
             </ul>
 
-            <p class="conteudo__texto">Na condicional a seguir, temos: <br>
+            <p class="conteudo__texto">Considerando a condicional a seguir: <br>
             <code>if ((x === 5 || y >= 5) && !(z < 10)) { <br> &nbsp; //bloco de código <br> }</code>
             </p>
 
@@ -138,7 +138,7 @@
                 <li>- No segundo parêntesis, devido ao operador <code>!</code>, a expressão z < 10 deve retornar <code>false</code> para que, com o operador de negação, a expressão total retorne <code>true</code>.</li>
             </ul>
 
-            <p class="conteudo__texto">Teste aqui valores para que a condição retorne <code>true</code>.</p>
+            <p class="conteudo__texto">Teste aqui valores para que a condição retorne <code>true</code> e o bloco de código seja executado.</p>
 
             <div class="conteudo__demonstracao">
                 <label for="input-x">Valor de x</label>
