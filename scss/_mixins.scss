@@ -10,44 +10,66 @@
     }
 }
 
-@mixin headline-primary-semibold($tamanho-fonte-px, $text-align: left) {
+@mixin headline-primary-regular($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
+    font-family: $fonte-headline;
+    font-size: (($tamanho-fonte-px)/10) + "rem";
+    @include line-height($tamanho-fonte-px);  
+    font-weight: 500;
+    text-align: $text-align;
+    text-transform: $text-transform;
+    color: $color;   
+}
+
+@mixin headline-primary-semibold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-headline;
     font-size: (($tamanho-fonte-px)/10) + "rem";
     @include line-height($tamanho-fonte-px);  
     font-weight: 600;
-    text-align: $text-align;  
+    text-align: $text-align;
+    text-transform: $text-transform;
+    color: $color;   
 }
 
-@mixin headline-primary-bold($tamanho-fonte-px, $text-align: left) {
+@mixin headline-primary-bold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-headline;
     font-size: ($tamanho-fonte-px)/10 + "rem";
     @include line-height($tamanho-fonte-px);  
     font-weight: 700;  
-    text-align: $text-align;  
+    text-align: $text-align;
+    text-transform: $text-transform;
+    color: $color;   
 }
 
-@mixin body-system-regular($tamanho-fonte-px, $text-align: left) {
+@mixin body-system-regular($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-body;
     font-size: ($tamanho-fonte-px)/10 + "rem";
     @include line-height($tamanho-fonte-px);  
     font-weight: 400;
-    text-align: $text-align;  
+    text-align: $text-align;
+    text-transform: $text-transform;
+    color: $color;   
 }
 
-@mixin body-system-semibold($tamanho-fonte-px, $text-align: left) {
+@mixin body-system-semibold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-body;
     font-size: ($tamanho-fonte-px)/10 + "rem";
     @include line-height($tamanho-fonte-px);  
     font-weight: 600;
-    text-align: $text-align;  
+    text-align: $text-align;
+    text-transform: $text-transform;
+    color: $color;
+    text-transform: $text-transform;
+    color: $color;   
 }
 
-@mixin body-system-bold($tamanho-fonte-px, $text-align: left) {
+@mixin body-system-bold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-body;
     font-size: ($tamanho-fonte-px)/10 + "rem";
     @include line-height($tamanho-fonte-px);  
     font-weight: 700;
-    text-align: $text-align;  
+    text-align: $text-align;
+    text-transform: $text-transform;
+    color: $color;   
 }
 
 @mixin responsividade ($dispositivo) {
@@ -61,6 +83,10 @@
         }       
     } @else if $dispositivo == "desktop" {
         @media screen and (1024px <= width <= 1365px) {
+            @content;
+        }
+    } @else if $dispositivo == "HD" {
+        @media screen and (width >= 1366px) {
             @content;
         }
     }  

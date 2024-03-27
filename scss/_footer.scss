@@ -1,0 +1,42 @@
+footer {
+    padding: 11.278rem 14.3rem;
+    background-color: rgba(255,255,255, 0.08);
+    color: $cor-neutra-1;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    @include responsividade ("desktop") {
+        padding: $espacamento-20;
+    }
+
+    @include responsividade ("tablet") {
+        padding: $espacamento-20;
+    }
+
+    @include responsividade ("mobile") {
+        padding: $espacamento-20 $espacamento-6;
+    }
+}
+
+.footer__listas {}
+.footer__listagem {}
+.footer__listagem__titulo {}
+.footer__listagem__item {}
+.footer__redes {
+    
+    p {
+        @include headline-primary-regular(14, uppercase, $cor-secundaria);
+        letter-spacing: 0.13em;
+    }
+
+    div {
+        display: flex;
+        gap: $espacamento-4;
+    }
+}
+
+.footer__codigo-conduta {
+    @include headline-primary-bold(12, center, $cor-neutra-5);
+    letter-spacing: 0.05em;
+}
