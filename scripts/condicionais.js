@@ -25,8 +25,8 @@ function mostraEstruturaCondicional () {
 }
 
 //Operadores de comparação
-const inputNumber1 = document.querySelector("#numero1-comparacao");
-const inputNumber2 = document.querySelector("#numero2-comparacao");
+const inputNumero1 = document.querySelector("#numero1-comparacao");
+const inputNumero2 = document.querySelector("#numero2-comparacao");
 const selectOperacoesComparacao = document.querySelector("#operacoes-comparacao");
 const botaoOperacoesComparacao = document.querySelector("#comparar-number");
 const exibeResultadoOperacoesComparacao = document.querySelector("#resultado-operacao-comparacao");
@@ -34,35 +34,38 @@ const exibeResultadoOperacoesComparacao = document.querySelector("#resultado-ope
 botaoOperacoesComparacao.addEventListener('click', comparaNumeros);
 
 function comparaNumeros() {
-    let valor1 = Number(inputNumber1.value);
-    let valor2 = Number(inputNumber2.value);
+    let valor1 = Number(inputNumero1.value);
+    let valor2 = Number(inputNumero2.value);
     
-    if (valor1 != "" && Number.isNaN(valor1) == false && valor2 != "" && Number.isNaN(valor2)== false) {
+    if (valor1 != "" && Number.isNaN(valor1) == false && valor2 != "" && Number.isNaN(valor2) == false) {
         switch (selectOperacoesComparacao.value) {
-                case "maior":
-                    exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} > ${valor2} é: ${valor1 > valor2}</b></p>`;
-                    break;
-                case "menor":
-                    exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} < ${valor2} é: ${valor1 < valor2}</b></p>`;
-                    break;
-                case "maior-igual":
-                    exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} >= ${valor2} é: ${valor1 >= valor2}</b></p>`;
-                    break;
-                case "menor-igual":
-                    exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} <= ${valor2} é: ${valor1 <= valor2}</b></p>`;
-                    break;
-                case "diferente":
-                    exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} !== ${valor2} é: ${valor1 !== valor2}</b></p>`;
-                    break;
-                case "igual":
-                    exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} === ${valor2} é: ${valor1 === valor2}</b></p>`;
-                    break; 
+            case "maior":
+                exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} > ${valor2} é: ${valor1 > valor2}</b></p>`;
+                break;
+            case "menor":
+                exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} < ${valor2} é: ${valor1 < valor2}</b></p>`;
+                break;
+            case "maior-igual":
+                exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} >= ${valor2} é: ${valor1 >= valor2}</b></p>`;
+                break;
+            case "menor-igual":
+                exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} <= ${valor2} é: ${valor1 <= valor2}</b></p>`;
+                break;
+            case "diferente":
+                exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} !== ${valor2} é: ${valor1 !== valor2}</b></p>`;
+                break;
+            case "igual":
+                exibeResultadoOperacoesComparacao.innerHTML = `<p class="conteudo__texto"><b>O resultado da comparação ${valor1} === ${valor2} é: ${valor1 === valor2}</b></p>`;
+                break;
+            default:
+                exibeResultadoOperacoesComparacao.innerHTML = "";
+                break;
         }    
     } else {
         alert("Um dos valores está vazio ou não contém um número, tente novamente!");
     }
-    inputNumber1.value = "";
-    inputNumber2.value = "";
+    inputNumero1.value = "";
+    inputNumero2.value = "";
 }
 
 //Operadores lógicos
