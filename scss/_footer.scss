@@ -1,8 +1,37 @@
+$largura-container: 100%;
+$gutter: $espacamento-6;
+$margem-lateral: $espacamento-12;
+$colunas: 12;
+
+@include responsividade ("mobile") { 
+    $colunas: 4; 
+    $gutter: $espacamento-4;
+}
+
+@include responsividade ("tablet") { $colunas: 8; }
+@include responsividade ("desktop") { $colunas: 8; }
+
+@function grid ($coluna) {
+    $largura-coluna: ($coluna / $colunas) * $largura-container;
+    $largura-coluna-interna: calc(#{$largura-coluna} - #{$gutter});
+    @if ($offset == offset) {
+        $gutter: $gutter / 2;
+        $largura-coluna-interna: calc(#{$largura-coluna} + #{$gutter});
+    }
+    @return $largura-coluna-interna;
+}
+
+@mixin estrutura-grid {
+    float: left;
+    margin: 0 ($gutter / 2);
+
+    @include responsividade ("mobile") { float: none; }
+}
+
 footer {
     padding: 11.278rem 14.3rem;
     background-color: rgba(255,255,255, 0.08);
     color: $cor-neutra-1;
-
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 
