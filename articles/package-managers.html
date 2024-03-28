@@ -46,7 +46,36 @@
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
             <article>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Package managers, em português, gerenciadores de pacotes, são ferramentas que auxiliam a instalação de pacotes ou módulos no sistema, facilitando o compartilhamento de código entre desenvolvedores e o reuso destes códigos. Estes pacotes ou módulos, em geral, são bibliotecas desenvolvidas para contribuir com um desenvolvimento mais rápido. Em Javascript, os dois gerenciadores mais utilizados são o npm e o yarn.</p>
+
+                <h3>npm</h3>
+                <h4>Como instalar o npm</h4>
+                <p class="conteudo__texto">O npm, ou Node Package Manager, é o gerenciador atrelado ao NodeJS. Sua instalação é realizada por meio da instalação do próprio NodeJS, em que o npm é também instalado como um "pacote adicional". Assim que a instalação do NodeJS termina, é possível verificar, por meio do terminal de comando, se a instalação do npm foi concluída com sucesso. Utilizando os comandos <code>npm -v</code> ou <code>npm --version</code>, caso o terminal retorne a versão do npm instalada e não gere erros, está tudo certo. Por meio do site <a href="https://www.npmjs.com/">npmjs.com</a> é possível buscar e verificar informações de instalação e uso dos pacotes e módulos como express, swiper e axios.</p>
+
+                <p class="conteudo__texto">No terminal de comando, digitando <code>npm</code> ou <code>npm help</code>, é possível visualizar todos os comandos disponíveis para o npm.</p>
+
+                <h4>Como inicializar o npm na aplicação</h4>
+
+                <p class="conteudo__texto">Com o comando <code>npm init</code> dentro da sua aplicação, é automaticamente gerado um arquivo chamado package.json, que contém todos os pacotes e suas versões cuja aplicação utiliza. Deste modo, movendo a aplicação ou realizando seu deploy, é possível sinalizar quais pacotes o projeto usa. Após digitar o comando mencionado, algumas perguntas acerca do projeto como nome do projeto, versão, autor, licença, entre outras, irão ser realizadas. Respondidas as perguntas, o terminal irá mostrar um resumo das respostas e perguntará se está tudo certo para continuar. Digitando <code>yes</code>, o arquivo package.json aparecerá no diretório do projeto.</p>
+
+                <figure>
+                    <img src="" alt="Processo de criação do arquivo package.json por meio do comando npm init no terminal.">
+                    <figcaption>Processo de criação do arquivo package.json por meio do comando npm init no terminal.</figcaption>
+                </figure>
+
+                <h4>Como instalar e desinstalar pacotes</h4>
+
+                <p class="conteudo__texto">Feito este processo, é possível instalar pacotes e salvá-los como dependências no arquivo package.json. Para tal, é só procurar o pacote que se deseja instalar no npmjs.com e verificar o comando de instalação no lado direito da tela. Feito isso, é só digitar o comando no terminal de comando dentro da pasta da sua aplicação, lembrando de incluir <code>--save</code> após o comando. Isto garantirá que o pacote será salvo no arquivo package.json. Em geral, para instalar pacotes o comando é <code>npm i pacote</code> (lembrando do <code>--save</code>) e, para desinstalar, <code>npm uninstall pacote</code>, <code>npm un pacote</code>, <code>npm remove pacote</code> ou <code>npm rm pacote</code> (também utilizando o <code>--save</code>, para salvar o package.json sem a dependência).</p>
+
+                <p class="conteudo__texto">Ao instalar um pacote pela primeira vez, a pasta node_modules e o arquivo package-lock.json são automaticamente criados. A pasta node_modules conterá todo o código do pacote instalado e o arquivo package-lock.json terá informações sobre o pacote para que, entre outros propósitos, desenvolvedores em projetos compartilhados possam instalar as exatas mesmas dependências. O package-lock.json será atualizado em toda operação que modificar a pasta node_modules ou o arquivo package.json.</p>
+
+                <p class="conteudo__texto">Ao instalar dependências que serão utilizadas apenas no desenvolvimento e não serão necessárias em produção, utiliza-se o <code>--save-dev</code> após o comando de instalação. Deste modo, a dependência será uma dev dependency, e será identificada no package.json como tal.</p>
+
+                <h4>Pontos positivos do uso de <code>--save</code></h4>
+
+                <p class="conteudo__texto">Uma das grandes razões para o uso do <code>--save</code> ou <code>--save-dev</code> é para o caso em que algum desenvolvedor clone o seu projeto sem a pasta node_modules, mas com o arquivo package.json com todas as dependências utilizadas, é só digitar o comando <code>node install</code> que os pacotes utilizados serão automaticamente instalados. Sem o <code>--save</code> e sem as dependências no package.json, o comando só geraria um erro e a aplicação não poderia rodar normalmente.</p>
+
+              
 
             </article>
     
@@ -59,7 +88,7 @@
                     </div>
                 </div>
                 <div class="artigo__data">
-                    <p>20 Mar</p>
+                    <p>28 Mar</p>
                 </div>
             </div>
         </section>
