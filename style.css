@@ -387,6 +387,11 @@ h3 {
   margin: 2rem 0 0.5rem 0;
 }
 
+h4 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
 ul, ol {
   list-style: none;
 }
