@@ -1,5 +1,5 @@
 footer {
-    background-color: rgba(31, 32, 65, 0.5);      
+    background-color: $cor-footer;      
     color: $cor-neutra-1;
     padding: 11.278rem $espacamento-12;
     
@@ -18,7 +18,7 @@ footer {
 
 .footer__listas {
     @include estrutura-grid(12, $espacamento-6);
-    
+    background-color: $cor-footer;     
     @for $i from 1 through 5 {
         ul:nth-child(#{$i}) {
             grid-column: $i*2 / span 2;  
@@ -55,13 +55,16 @@ footer {
 }
 
 .footer__listagem {
+    background-color: $cor-footer; 
     .footer__listagem__titulo, .footer__listagem__titulo a {
+        background-color: $cor-footer;      
         margin-bottom: $espacamento-6;
         @include headline-primary-bold(14, left, uppercase);
         letter-spacing: 0.05rem;
     }
     
-    .footer__listagem__item, .footer__listagem__item a {
+    .footer__listagem__item, .footer__listagem__item a { 
+        background-color: $cor-footer;     
         margin-bottom: $espacamento-3;
         @include headline-primary-regular(14, left, uppercase);
         letter-spacing: 0.05rem;
@@ -70,8 +73,10 @@ footer {
 
 .footer__redes {
     @include estrutura-grid(12, $espacamento-6);
-    margin-bottom: $espacamento-20; 
+    margin-bottom: $espacamento-20;
+    background-color: $cor-footer;  
     p {
+        background-color: $cor-footer; 
         @include headline-primary-regular(14, left, uppercase, $cor-secundaria);
         letter-spacing: 0.13rem;
         margin-bottom: $espacamento-3;
@@ -79,6 +84,15 @@ footer {
     }
 
     div {
+        a { 
+            background-color: $cor-footer;
+        }
+
+        a img {
+            background-color: $cor-footer; 
+        }        
+        
+        background-color: $cor-footer; 
         display: flex;
         gap: $espacamento-4;
         grid-column: 2 / span 2;
@@ -86,6 +100,7 @@ footer {
 }
 
 .footer__codigo-conduta {
+    background-color: $cor-footer; 
     @include headline-primary-bold(12, center, initial, $cor-neutra-5);
     letter-spacing: 0.05rem;
 }

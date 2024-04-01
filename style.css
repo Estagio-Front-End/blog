@@ -14,7 +14,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #FFFFFF;
   background-color: #1F2041;
 }
 
@@ -321,7 +320,7 @@ blockquote {
   font-weight: 800;
 }
 .artigo__info__autor__nome span {
-  color: #5b5b5b;
+  color: #999999;
 }
 
 .artigo__data {
@@ -1266,7 +1265,7 @@ label {
 }
 
 footer {
-  background-color: rgba(31, 32, 65, 0.5);
+  background-color: #313250;
   color: #FFFFFF;
   padding: 11.278rem 4.8rem;
 }
@@ -1290,6 +1289,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 2.4rem;
+  background-color: #313250;
 }
 .footer__listas ul:nth-child(1) {
   grid-column: 2/span 2;
@@ -1340,7 +1340,11 @@ footer {
   }
 }
 
+.footer__listagem {
+  background-color: #313250;
+}
 .footer__listagem .footer__listagem__titulo, .footer__listagem .footer__listagem__titulo a {
+  background-color: #313250;
   margin-bottom: 2.4rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
@@ -1352,6 +1356,7 @@ footer {
   letter-spacing: 0.05rem;
 }
 .footer__listagem .footer__listagem__item, .footer__listagem .footer__listagem__item a {
+  background-color: #313250;
   margin-bottom: 1.2rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
@@ -1368,8 +1373,10 @@ footer {
   grid-template-columns: repeat(12, 1fr);
   column-gap: 2.4rem;
   margin-bottom: 8rem;
+  background-color: #313250;
 }
 .footer__redes p {
+  background-color: #313250;
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
   line-height: 1.708rem;
@@ -1382,12 +1389,20 @@ footer {
   grid-column: 2/span 2;
 }
 .footer__redes div {
+  background-color: #313250;
   display: flex;
   gap: 1.6rem;
   grid-column: 2/span 2;
 }
+.footer__redes div a {
+  background-color: #313250;
+}
+.footer__redes div a img {
+  background-color: #313250;
+}
 
 .footer__codigo-conduta {
+  background-color: #313250;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   line-height: 1.464rem;
