@@ -27,20 +27,7 @@ h4 {
     margin-top: 2rem;
 }
 
-ul, ol {
-    list-style: none;
-    
-    li {
-        color: $cor-fonte-sec;
-        
-        span {
-            font-weight: 800;
-        }
-    }
-}
-
 p, li {
-    margin: 1rem 0;
     text-align: justify;
 }
 
