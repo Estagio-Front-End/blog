@@ -77,7 +77,7 @@
 
                     <figure>
                         <img src="../images/install-swiper.png" alt="Imagem da tela do terminal de comando com a realização dos comandos de instalação do swiper, desinstação do swiper e nova instalação com a bandeira --save.">
-                        <figcaption>Comandos de instalação do swiper, desinstação do swiper e nova instalação com a bandeira --save.</figcaption>
+                        <figcaption>Comandos de instalação do swiper, desinstação do swiper e nova instalação com a bandeira <code>--save</code>.</figcaption>
                     </figure>
                 </div>
 
@@ -98,16 +98,51 @@
                 <p class="conteudo__texto">Dentro do arquivo package.json existe um objeto entitulado "scripts". Estes scripts são "atalhos" para realizar ações como rodar a aplicação, testar a aplicação, entre outras. Um atalho muito comum é o "start" para rodar a aplicação, em que se indica o arquivo .js principal da aplicação.</p>
                 
                 <h3>yarn</h3>
+                
                 <h4>Como instalar o yarn</h4>
-                <p>O <a href="https://classic.yarnpkg.com/">site oficial do Yarn</a> contém uma parte de instalação completa de acordo com cada sistema operacional. Para Windows, é possível baixar um instalador e executá-lo. Para verificar se a instalação ocorreu sem problemas, é só digitar o comando <code>yarn -v</code> no terminal de comando. Caso o terminal retorne a versão do yarn instalada, a instalação ocorreu sem erros. Com o comando <code>yarn help</code> é possível visualizar todos os comandos disponíveis no yarn.</p>
+                
+                <p class="conteudo__texto">O <a href="https://classic.yarnpkg.com/">site oficial do Yarn</a> contém uma parte de instalação completa de acordo com cada sistema operacional. Para Windows, é possível baixar um instalador e executá-lo. Para verificar se a instalação ocorreu sem problemas, é só digitar o comando <code>yarn -v</code> no terminal de comando. Caso o terminal retorne a versão do yarn instalada, a instalação ocorreu sem erros. Com o comando <code>yarn help</code> é possível visualizar todos os comandos disponíveis no yarn.</p>
 
-                <!--yarn init, yarn add, yarn remove, (não precisa do --save), yarn global add, yarn global remove, yarn add -D/--dev, yarn.lock, scripts -->
+                <figure>
+                    <img src="../images/yarn-instalar.png" alt="Imagem da tela do site oficial do Yarn com o botão para baixar o instalador do Yarn para Windows.">
+                    <figcaption>Visão do site oficial do Yarn na tela de baixar o instalador para Windows.</figcaption>
+                </figure>
+
                 <h4>Como inicializar o yarn na aplicação</h4>
+
+                <p class="conteudo__texto">Assim como no npm, o yarn possui o comando <code>yarn init</code> para ser inicializado e criar o arquivo package.json. O yarn também fará algumas perguntas sobre o projeto como versão, descrição, autor, licença, entre outras, e estas informações estarão contidas no arquivo criado.</p>
+
+                <figure>
+                    <img src="../images/yarn-init.png" alt="Imagem do terminal de comando com a utilização do comando yarn init para inicializar o Yarn no projeto.">
+                    <figcaption>Utilizando <code>yarn init</code> para inicializar o yarn em um projeto.</figcaption>
+                </figure>
 
                 <h4>Como instalar e desinstalar pacotes</h4>
 
-                <!--npm 5 tirou a necessidade do --save -->
+                <p class="conteudo__texto">Para instalação de desinstalação de pacotes o yarn possui dois comandos: o <code>yarn add pacote</code> e o <code>yarn remove pacote</code>. Como o yarn, não é necessário utilizar a bandeira <code>--save</code>, todas as alterações são automaticamente salvas no package.json.</p>
 
+                <figure>
+                    <img src="../images/yarn-add-remove.png" alt="Imagem do terminal de comando com a utilização dos comandos yarn add e yarn remove para instalar e desinstalar um pacote chamado tiny-swiper.">
+                    <figcaption>Utilizando <code>yarn add</code> e <code>yarn remove</code> para instalar e desinstalar pacotes em um projeto.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Para instalação de dependências de desenvolvimento, é necessário adicionar ao comando <code>yarn add pacote</code> a bandeira <code>-D</code> ou <code>--dev</code>. Qualquer uma das duas irá indicar que o pacote deve ser instalado como uma dev dependency.</p>
+
+                <p class="conteudo__texto">Para instalação e desinstalação global de pacotes, é necessário utilizar a palavra "global" nos comandos como em <code>yarn global add pacote</code> ou <code>yarn global remove pacote</code>.</p>
+
+                <h4>Scripts</h4>
+
+                <p class="conteudo__texto">Assim como com o npm, scripts também podem ser criados no arquivo package.json para facilitar as ações no desenvolvimento. Da mesma forma, é necessário criar os atalhos em um objeto "script" do arquivo package.json.</p>
+
+                <h3>Diferenças entre o npm e o yarn</h3>
+
+                <p class="conteudo__texto">As similaridades entre os dois pacotes, principalmente em termos de sintaxe dos comandos, são muitas. Porém, o que faz desenvolvedores optarem por um ou por outro gerenciador de pacote são suas diferenças frente ao concorrente.</p>
+
+                <p class="conteudo__texto">Os pontos positivos para a escolha do yarn são a sua maior rapidez na performance e na instalação de pacotes em relação ao npm, e a existência de ferramentas de segurança que ajudam a detectar e corrigir vulnerabilidades nas dependências.</p>
+
+                <p class="conteudo__texto">Os pontos positivos para a escolha do npm são o seu grande uso pela comunidade, de modo que suporte e recursos são mais facilmente obtidos em comparação ao yarn e o fato de o npm ter um menor tamanho de instalação, sendo melhor para projetos com limite de espaço.</p>
+
+                <p class="conteudo__texto">Ambos tem seus prós e contras, de modo que o que determinará uma escolha final serão os requisitos do projeto.</p>
             </article>
     
             <div class="artigo__info">
