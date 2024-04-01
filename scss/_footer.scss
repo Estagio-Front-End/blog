@@ -1,40 +1,7 @@
-$largura-container: 100%;
-$gutter: $espacamento-6;
-$margem-lateral: $espacamento-12;
-$colunas: 12;
-
-@include responsividade ("mobile") { 
-    $colunas: 4; 
-    $gutter: $espacamento-4;
-}
-
-@include responsividade ("tablet") { $colunas: 8; }
-@include responsividade ("desktop") { $colunas: 8; }
-
-@function grid ($coluna) {
-    $largura-coluna: ($coluna / $colunas) * $largura-container;
-    $largura-coluna-interna: calc(#{$largura-coluna} - #{$gutter});
-    @if ($offset == offset) {
-        $gutter: $gutter / 2;
-        $largura-coluna-interna: calc(#{$largura-coluna} + #{$gutter});
-    }
-    @return $largura-coluna-interna;
-}
-
-@mixin estrutura-grid {
-    float: left;
-    margin: 0 ($gutter / 2);
-
-    @include responsividade ("mobile") { float: none; }
-}
-
 footer {
-    padding: 11.278rem 14.3rem;
-    background-color: rgba(255,255,255, 0.08);
+    background-color: $cor-primaria;  
     color: $cor-neutra-1;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-
+    padding: 11.278rem $espacamento-12;
     @include responsividade ("desktop") {
         padding: $espacamento-20;
     }
@@ -49,26 +16,60 @@ footer {
 }
 
 .footer__listas {
+    @include estrutura-grid(12, $espacamento-6);
+    @for $i from 1 through 5 {
+        ul:nth-child(#{$i}) {
+            grid-column: $i*2 / span 2;  
+        }
+    }
 
+    @include responsividade ("desktop") {
+        ul:nth-child(odd) {
+            grid-column: 1 / 4;  
+        }
+
+        ul:nth-child(even) {
+            grid-column: 5 / 7;  
+        }
+    } 
+    
+    @include responsividade ("tablet") {
+        ul:nth-child(odd) {
+            grid-column: 1 / 4;  
+        }
+
+        ul:nth-child(even) {
+            grid-column: 5 / 8;  
+        }
+    } 
+
+    @include responsividade ("mobile") {
+        @for $i from 1 through 5 {
+            ul:nth-child(#{$i}) {
+                grid-column: 1 / span 3;  
+            }
+        }
+    }
 }
 
 .footer__listagem {
-
-}
-
-.footer__listagem__titulo {
-
-}
-
-.footer__listagem__item {
-
-}
-
-.footer__redes {
+    .footer__listagem__titulo, .footer__listagem__titulo a {
+        margin-bottom: $espacamento-6;
+        @include headline-primary-bold(14, left, uppercase);
+        letter-spacing: 0.05rem;
+    }
     
+    .footer__listagem__item, .footer__listagem__item a {
+        margin-bottom: $espacamento-3;
+        @include headline-primary-regular(14, left, uppercase);
+        letter-spacing: 0.05rem;
+    }
+}
+
+.footer__redes { 
     p {
         @include headline-primary-regular(14, uppercase, $cor-secundaria);
-        letter-spacing: 0.13em;
+        letter-spacing: 0.13rem;
     }
 
     div {
@@ -79,5 +80,5 @@ footer {
 
 .footer__codigo-conduta {
     @include headline-primary-bold(12, center, $cor-neutra-5);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.05rem;
 }

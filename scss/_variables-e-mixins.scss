@@ -100,31 +100,7 @@ $fonte-tags: 'Space Mono', sans-serif;
     }
 }
 
-@function tamanhoFonte ($dispositivo) {
-    @if $dispositivo == "mobile" {
-        @return 50%;
-    } @else if $dispositivo == "tablet" {
-        @return 56.25%;
-    } @else if $dispositivo == "desktop" {
-        @return 62.5%;
-    } @else if $dispositivo == "fullHD" {
-        @return 68.75%;
-    }
-}
-
 :root{
     font-family: 'Open Sans', sans-serif;
-    font-size: tamanhoFonte("desktop");
-
-    @include responsividade("fullHD") {
-        font-size: tamanhoFonte("fullHD");
-    }
-
-    @include responsividade("tablet") {
-        font-size: tamanhoFonte("tablet");
-    }
-
-    @include responsividade("mobile") {
-        font-size: tamanhoFonte("mobile");
-    }
+    font-size: 62.5%;
 }

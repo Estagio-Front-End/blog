@@ -1,18 +1,18 @@
 @mixin line-height ($tamanho-fonte-px) {
     @if ($tamanho-fonte-px: 32) {
-        line-height: $fator-line-height * $tamanho-fonte-px;
+        line-height: ($fator-line-height * calc($tamanho-fonte-px/10)) + rem;
     } @else if ($tamanho-fonte-px: 28) {
-        line-height: $fator-line-height * $tamanho-fonte-px;
+        line-height: ($fator-line-height * calc($tamanho-fonte-px/10)) + rem;
     } @else if ($tamanho-fonte-px: 24) {
-        line-height: $fator-line-height * $tamanho-fonte-px;
+        line-height: ($fator-line-height * calc($tamanho-fonte-px/10)) + rem;
     } @else {
-        line-height: 1.36 * $tamanho-fonte-px;
+        line-height: (1.36 * calc($tamanho-fonte-px/10)) + rem;
     }
 }
 
 @mixin headline-primary-regular($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-headline;
-    font-size: (($tamanho-fonte-px)/10) + "rem";
+    font-size: calc(($tamanho-fonte-px)/10) + rem;
     @include line-height($tamanho-fonte-px);  
     font-weight: 500;
     text-align: $text-align;
@@ -22,7 +22,7 @@
 
 @mixin headline-primary-semibold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-headline;
-    font-size: (($tamanho-fonte-px)/10) + "rem";
+    font-size: (($tamanho-fonte-px)/10) + rem;
     @include line-height($tamanho-fonte-px);  
     font-weight: 600;
     text-align: $text-align;
@@ -32,7 +32,7 @@
 
 @mixin headline-primary-bold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-headline;
-    font-size: ($tamanho-fonte-px)/10 + "rem";
+    font-size: ($tamanho-fonte-px)/10 + rem;
     @include line-height($tamanho-fonte-px);  
     font-weight: 700;  
     text-align: $text-align;
@@ -42,7 +42,7 @@
 
 @mixin body-system-regular($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-body;
-    font-size: ($tamanho-fonte-px)/10 + "rem";
+    font-size: ($tamanho-fonte-px)/10 + rem;
     @include line-height($tamanho-fonte-px);  
     font-weight: 400;
     text-align: $text-align;
@@ -52,7 +52,7 @@
 
 @mixin body-system-semibold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-body;
-    font-size: ($tamanho-fonte-px)/10 + "rem";
+    font-size: ($tamanho-fonte-px)/10 + rem;
     @include line-height($tamanho-fonte-px);  
     font-weight: 600;
     text-align: $text-align;
@@ -64,12 +64,18 @@
 
 @mixin body-system-bold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-body;
-    font-size: ($tamanho-fonte-px)/10 + "rem";
+    font-size: ($tamanho-fonte-px)/10 + rem;
     @include line-height($tamanho-fonte-px);  
     font-weight: 700;
     text-align: $text-align;
     text-transform: $text-transform;
     color: $color;   
+}
+
+@mixin estrutura-grid($num-colunas, $gutter) {
+    display: grid;
+    grid-template-columns: repeat($num-colunas, 1fr);
+    column-gap: $gutter;
 }
 
 @mixin responsividade ($dispositivo) {
