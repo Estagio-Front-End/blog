@@ -17,8 +17,9 @@ footer {
 }
 
 .footer__listas {
-    @include estrutura-grid(12, $espacamento-6);
     background-color: $cor-footer;     
+    @include estrutura-grid(12, $espacamento-6);
+    
     @for $i from 1 through 5 {
         ul:nth-child(#{$i}) {
             grid-column: $i*2 / span 2;  
@@ -26,6 +27,9 @@ footer {
     }
 
     @include responsividade ("desktop") {
+        @include estrutura-grid(8, $espacamento-6);
+        row-gap: $espacamento-10;
+        
         ul:nth-child(odd) {
             grid-column: 1 / 4;  
         }
@@ -36,6 +40,9 @@ footer {
     } 
     
     @include responsividade ("tablet") {
+        @include estrutura-grid(8, $espacamento-6);
+        row-gap: $espacamento-10;
+        
         ul:nth-child(odd) {
             grid-column: 1 / 4;  
         }
@@ -46,6 +53,9 @@ footer {
     } 
 
     @include responsividade ("mobile") {
+        @include estrutura-grid(4, $espacamento-6);
+        row-gap: $espacamento-10;
+
         @for $i from 1 through 5 {
             ul:nth-child(#{$i}) {
                 grid-column: 1 / span 3;  
@@ -56,6 +66,7 @@ footer {
 
 .footer__listagem {
     background-color: $cor-footer; 
+
     .footer__listagem__titulo, .footer__listagem__titulo a {
         background-color: $cor-footer;      
         margin-bottom: $espacamento-6;
@@ -74,13 +85,45 @@ footer {
 .footer__redes {
     @include estrutura-grid(12, $espacamento-6);
     margin-bottom: $espacamento-20;
-    background-color: $cor-footer;  
+    background-color: $cor-footer;
+
+    @include responsividade ("desktop") {
+        @include estrutura-grid(8, $espacamento-6);
+        margin-top: $espacamento-10;
+        margin-bottom: $espacamento-25
+    } 
+    
+    @include responsividade ("tablet") {
+        @include estrutura-grid(8, $espacamento-6);
+        margin-top: $espacamento-10;
+    } 
+
+    @include responsividade ("mobile") {
+        @include estrutura-grid(4, $espacamento-6);
+        margin-top: $espacamento-10;
+    }
+
+    p, div {
+        background-color: $cor-footer;
+        grid-column: 2 / span 2;
+
+        @include responsividade ("desktop") {
+            grid-column: 1 / span 2;
+        } 
+        
+        @include responsividade ("tablet") {
+            grid-column: 1 / span 2;
+        } 
+
+        @include responsividade ("mobile") {
+            grid-column: 1 / span 2;
+        }
+    }
+
     p {
-        background-color: $cor-footer; 
         @include headline-primary-regular(14, left, uppercase, $cor-secundaria);
         letter-spacing: 0.13rem;
         margin-bottom: $espacamento-3;
-        grid-column: 2 / span 2;
     }
 
     div {
@@ -91,11 +134,10 @@ footer {
         a img {
             background-color: $cor-footer; 
         }        
-        
-        background-color: $cor-footer; 
+
         display: flex;
         gap: $espacamento-4;
-        grid-column: 2 / span 2;
+        grid-row: 2;
     }
 }
 

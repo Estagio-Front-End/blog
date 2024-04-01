@@ -1286,10 +1286,10 @@ footer {
 }
 
 .footer__listas {
+  background-color: #313250;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 2.4rem;
-  background-color: #313250;
 }
 .footer__listas ul:nth-child(1) {
   grid-column: 2/span 2;
@@ -1307,6 +1307,12 @@ footer {
   grid-column: 10/span 2;
 }
 @media screen and (1024px <= width <= 1365px) {
+  .footer__listas {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 2.4rem;
+    row-gap: 4rem;
+  }
   .footer__listas ul:nth-child(odd) {
     grid-column: 1/4;
   }
@@ -1315,6 +1321,12 @@ footer {
   }
 }
 @media screen and (768px <= width <= 1023px) {
+  .footer__listas {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 2.4rem;
+    row-gap: 4rem;
+  }
   .footer__listas ul:nth-child(odd) {
     grid-column: 1/4;
   }
@@ -1323,6 +1335,12 @@ footer {
   }
 }
 @media screen and (max-width: 767px) {
+  .footer__listas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2.4rem;
+    row-gap: 4rem;
+  }
   .footer__listas ul:nth-child(1) {
     grid-column: 1/span 3;
   }
@@ -1375,8 +1393,51 @@ footer {
   margin-bottom: 8rem;
   background-color: #313250;
 }
-.footer__redes p {
+@media screen and (1024px <= width <= 1365px) {
+  .footer__redes {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 2.4rem;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+  }
+}
+@media screen and (768px <= width <= 1023px) {
+  .footer__redes {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 2.4rem;
+    margin-top: 4rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__redes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2.4rem;
+    margin-top: 4rem;
+  }
+}
+.footer__redes p, .footer__redes div {
   background-color: #313250;
+  grid-column: 2/span 2;
+}
+@media screen and (1024px <= width <= 1365px) {
+  .footer__redes p, .footer__redes div {
+    grid-column: 1/span 2;
+  }
+}
+@media screen and (768px <= width <= 1023px) {
+  .footer__redes p, .footer__redes div {
+    grid-column: 1/span 2;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__redes p, .footer__redes div {
+    grid-column: 1/span 2;
+  }
+}
+.footer__redes p {
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
   line-height: 1.708rem;
@@ -1386,13 +1447,11 @@ footer {
   color: #F39200;
   letter-spacing: 0.13rem;
   margin-bottom: 1.2rem;
-  grid-column: 2/span 2;
 }
 .footer__redes div {
-  background-color: #313250;
   display: flex;
   gap: 1.6rem;
-  grid-column: 2/span 2;
+  grid-row: 2;
 }
 .footer__redes div a {
   background-color: #313250;
