@@ -1,7 +1,8 @@
 footer {
-    background-color: $cor-primaria;  
+    background-color: rgba(31, 32, 65, 0.5);      
     color: $cor-neutra-1;
     padding: 11.278rem $espacamento-12;
+    
     @include responsividade ("desktop") {
         padding: $espacamento-20;
     }
@@ -17,6 +18,7 @@ footer {
 
 .footer__listas {
     @include estrutura-grid(12, $espacamento-6);
+    
     @for $i from 1 through 5 {
         ul:nth-child(#{$i}) {
             grid-column: $i*2 / span 2;  
@@ -66,19 +68,24 @@ footer {
     }
 }
 
-.footer__redes { 
+.footer__redes {
+    @include estrutura-grid(12, $espacamento-6);
+    margin-bottom: $espacamento-20; 
     p {
-        @include headline-primary-regular(14, uppercase, $cor-secundaria);
+        @include headline-primary-regular(14, left, uppercase, $cor-secundaria);
         letter-spacing: 0.13rem;
+        margin-bottom: $espacamento-3;
+        grid-column: 2 / span 2;
     }
 
     div {
         display: flex;
         gap: $espacamento-4;
+        grid-column: 2 / span 2;
     }
 }
 
 .footer__codigo-conduta {
-    @include headline-primary-bold(12, center, $cor-neutra-5);
+    @include headline-primary-bold(12, center, initial, $cor-neutra-5);
     letter-spacing: 0.05rem;
 }
