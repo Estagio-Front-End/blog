@@ -107,6 +107,9 @@ function mostrarObjeto() {
 }
 
 //Getters e Setters
+const containerGetter = document.getElementById("resultado-getter");
+const inputSetter = document.getElementById("setter");
+
 let objeto1 = {
     nome: "Camila",
     idade: 29,
@@ -121,6 +124,10 @@ let objeto1 = {
     }
 }
 
+inputSetter.addEventListener('input', objeto1.mudaCargo(inputSetter.value));
+console.log(objeto1.cargo);
+containerGetter.innerText = `${objeto1.valorObjeto}`
+
 function Objeto(nome, idade, cargo) {
     this.nome = nome;
     this.idade = idade;
@@ -128,7 +135,4 @@ function Objeto(nome, idade, cargo) {
 }
 
 let objeto2 = new Objeto("Camila", 29, "Estagiária");
-
-let comparacao = (objeto1 == objeto2);
-console.log(comparacao);
 
