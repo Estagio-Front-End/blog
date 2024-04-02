@@ -105,3 +105,30 @@ function mostrarObjeto() {
         containerResultado.innerHTML = `<p class="conteudo__texto"> ${objeto} </p>`;
     }
 }
+
+//Getters e Setters
+let objeto1 = {
+    nome: "Camila",
+    idade: 29,
+    cargo: "Estagiária",
+
+    get valorObjeto() { 
+        return `Meu nome é ${this.nome}, tenho ${this.idade} anos e sou ${this.cargo}`;
+    },
+
+    set mudaCargo(cargo) {
+        this.cargo = cargo;
+    }
+}
+
+function Objeto(nome, idade, cargo) {
+    this.nome = nome;
+    this.idade = idade;
+    this.cargo = cargo;
+}
+
+let objeto2 = new Objeto("Camila", 29, "Estagiária");
+
+let comparacao = (objeto1 == objeto2);
+console.log(comparacao);
+
