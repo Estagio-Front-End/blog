@@ -119,13 +119,19 @@ let objeto1 = {
         return `Meu nome é ${this.nome}, tenho ${this.idade} anos e sou ${this.cargo}`;
     },
 
-    set mudaCargo(cargo) {
-        this.cargo = cargo;
+    set mudaCargo(cargoNovo) {
+        this.cargo = cargoNovo;
     }
 }
 
-inputSetter.addEventListener('input', objeto1.mudaCargo(inputSetter.value));
-console.log(objeto1.cargo);
+//Não funciona
+//inputSetter.addEventListener('input', objeto1.mudaCargo(inputSetter.value));
+
+//Não funciona
+// inputSetter.addEventListener('input', (evento) => {
+//     objeto1.mudaCargo(evento.target.value);
+// });
+
 containerGetter.innerText = `${objeto1.valorObjeto}`
 
 function Objeto(nome, idade, cargo) {
