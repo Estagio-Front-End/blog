@@ -11,12 +11,6 @@ const botaoAcessar = document.querySelector("#acessar-propriedade");
 const botaoMostrar = document.querySelector("#mostrar-objeto");
 const containerResultado = document.querySelector("#resultado");
 
-// DEPOIS VERIFICAR PORQUE QUE ISSO NÃO FUNCIONA! -> const botoesEFuncoes = { botaoAdicionar: "adicionaPropriedade", botaoRemover: removerPropriedade, botaoModificar: modificarPropriedade, botaoMostrar: mostrarObjeto, botaoAcessar: acessarPropriedade, botaoVerificar: verificarExistenciaPropriedade }
-
-// Object.keys(botoesEFuncoes).forEach((key, value) => {
-//     key.addEventListener('click', value);
-// })
-
 botaoAdicionar.addEventListener('click', adicionaPropriedade);
 botaoRemover.addEventListener('click', removerPropriedade);
 botaoModificar.addEventListener('click', modificarPropriedade);
@@ -115,39 +109,26 @@ const inputSetter = document.getElementById("setter");
 let objeto1 = {
     nome: "Camila",
     idade: 29,
+    cargo: "",
+}
+
+var objeto2 = { 
+    nome: "Camila",
+    idade: 29,
     cargo: "Estagiária",
-
+    
     get valorObjeto() { 
-        return `Meu nome é ${this.nome}, tenho ${this.idade} anos e sou ${this.cargo}`;
+        return `O nome da autora deste artigo é ${this.nome}, ela tem ${this.idade} anos e seu cargo é ${this.cargo}`;
     },
 
-    set mudaCargo(cargoNovo) {
-        this.cargo = cargoNovo;
+    set mudaCargo(cargo) {
+        this.cargo = cargo;
     },
 }
 
-//Aqui seria igual ao exemplo no MDN. Não gera erro, mas também não atualiza o valor do cargo;
+containerGetter.innerText = `${objeto2.valorObjeto}`
+
 inputSetter.addEventListener('input', () => {
-    objeto1.mudaCargo = inputSetter.value;
+    objeto2.mudaCargo = inputSetter.value;
+    containerGetter.innerText = `${objeto2.valorObjeto}`
 });
-
-console.log(objeto1.cargo);
-
-//Não funciona
-//inputSetter.addEventListener('input', objeto1.mudaCargo(inputSetter.value));
-
-//Não funciona
-// inputSetter.addEventListener('input', (evento) => {
-//     objeto1.mudaCargo(evento.target.value);
-// });
-
-containerGetter.innerText = `${objeto1.valorObjeto}`
-
-function Objeto(nome, idade, cargo) {
-    this.nome = nome;
-    this.idade = idade;
-    this.cargo = cargo;
-}
-
-let objeto2 = new Objeto("Camila", 29, "Estagiária");
-
