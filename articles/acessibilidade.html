@@ -221,6 +221,29 @@
                 </div>
             </div>
         </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form action="">
+                <input type="text" name="nome" id="nome" placeholder="*Nome Completo..." required>
+                
+                <span aria-label="Erro no campo nome" id="erro-nome">Possível erro</span>
+                
+                <input type="email" name="email" id="email" placeholder="*Email..." required>
+                
+                <span aria-label="Erro no campo email" id="erro-nome">Possível erro</span>
+                
+                <input type="text" name="comentario" id="comentario" placeholder="*Escreva seu comentário..." required>
+                
+                <span aria-label="Erro no campo comentário" id="erro-nome">Possível erro</span> 
+                
+                <input type="checkbox" name="salvar-info" id="salvar-info">
+                <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                
+                <button type="submit" class="botao__primario">Enviar Comentários</button>
+            </form>
+        </section>
     </main>
     <footer>
         <div aria-label="Listas do Footer" class="footer__listas">
