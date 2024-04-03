@@ -40,13 +40,15 @@ function adicionaPropriedade() {
 }
 
 function removerPropriedade() {
-    if (inputPropriedade.value !== "") {
+    if (inputPropriedade.value === "") {
+        alert("É necessário indicar uma propriedade a ser removida!");
+    } else if ((inputPropriedade.value.toLowerCase() in JSON.parse(localStorage.getItem("objeto"))) === false) {
+        alert("Esta propriedade não existe no objeto, não há como removê-la!");
+    } else {
         containerResultado.innerHTML = "";
         let objeto = JSON.parse(localStorage.getItem("objeto"));
         delete objeto[inputPropriedade.value.toLowerCase()];
         localStorage.setItem("objeto", JSON.stringify(objeto));
-    } else {
-        alert("É necessário indicar uma propriedade a ser removida!");
     }
     inputPropriedade.value = "";
     inputValor.value = "";
@@ -121,8 +123,15 @@ let objeto1 = {
 
     set mudaCargo(cargoNovo) {
         this.cargo = cargoNovo;
-    }
+    },
 }
+
+//Aqui seria igual ao exemplo no MDN. Não gera erro, mas também não atualiza o valor do cargo;
+inputSetter.addEventListener('input', () => {
+    objeto1.mudaCargo = inputSetter.value;
+});
+
+console.log(objeto1.cargo);
 
 //Não funciona
 //inputSetter.addEventListener('input', objeto1.mudaCargo(inputSetter.value));
