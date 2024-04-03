@@ -1,3 +1,12 @@
+input {
+    padding: $espacamento-6;
+    @include body-system-regular(14, $cor-neutra-1); 
+    &::placeholder {
+        @include body-system-regular(14, $cor-neutra-3);
+    } 
+
+}
+
 .botao__primario {
     background-color: $cor-secundaria;
     @include body-system-bold(14,center,uppercase, $cor-primaria); //Essa cor é somente pra quando o input estiver enabled, quando estiver disabled tem 0.7 de transparência. 

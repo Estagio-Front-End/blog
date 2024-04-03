@@ -228,15 +228,15 @@
             <form action="">
                 <input type="text" name="nome" id="nome" placeholder="*Nome Completo..." required>
                 
-                <span aria-label="Erro no campo nome" id="erro-nome">Possível erro</span>
+                <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
                 
                 <input type="email" name="email" id="email" placeholder="*Email..." required>
                 
-                <span aria-label="Erro no campo email" id="erro-nome">Possível erro</span>
+                <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
                 
-                <input type="text" name="comentario" id="comentario" placeholder="*Escreva seu comentário..." required>
+                <input type="text" name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" required>
                 
-                <span aria-label="Erro no campo comentário" id="erro-nome">Possível erro</span> 
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder envia-lo</span> 
                 
                 <input type="checkbox" name="salvar-info" id="salvar-info">
                 <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>

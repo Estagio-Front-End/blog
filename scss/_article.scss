@@ -118,3 +118,8 @@ dl {
     font-family: $fonte-tags;
     cursor: pointer;
 }
+
+//Novo layout
+.artigo__formulario__item--erro {
+    @include body-system-regular(14, $cor-erro);
+}
