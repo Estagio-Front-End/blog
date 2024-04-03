@@ -1467,7 +1467,7 @@ footer {
   background-color: #313250;
 }
 
-.footer__codigo-conduta {
+.footer__codigo-conduta, .footer__codigo-conduta a {
   background-color: #313250;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;

@@ -147,7 +147,7 @@ footer {
     }
 }
 
-.footer__codigo-conduta {
+.footer__codigo-conduta, .footer__codigo-conduta a {
     background-color: $cor-footer; 
     @include headline-primary-bold(12, center, initial, $cor-neutra-5);
     letter-spacing: 0.05rem;
