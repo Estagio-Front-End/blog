@@ -80,6 +80,12 @@ footer {
         @include headline-primary-regular(14, left, uppercase);
         letter-spacing: 0.05rem;
     }
+
+    .footer__listagem__titulo a, .footer__listagem__item a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .footer__redes {

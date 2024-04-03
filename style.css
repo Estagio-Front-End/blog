@@ -1389,6 +1389,9 @@ footer {
   color: #FFFFFF;
   letter-spacing: 0.05rem;
 }
+.footer__listagem .footer__listagem__titulo a:hover, .footer__listagem .footer__listagem__item a:hover {
+  text-decoration: underline;
+}
 
 .footer__redes {
   display: grid;
