@@ -106,29 +106,30 @@ function mostrarObjeto() {
 const containerGetter = document.getElementById("resultado-getter");
 const inputSetter = document.getElementById("setter");
 
-let objeto1 = {
-    nome: "Camila",
-    idade: 29,
-    cargo: "",
-}
-
 var objeto2 = { 
     nome: "Camila",
     idade: 29,
     cargo: "Estagiária",
     
     get valorObjeto() { 
-        return `O nome da autora deste artigo é ${this.nome}, ela tem ${this.idade} anos e seu cargo é ${this.cargo}`;
+        return `<b>O nome da autora deste artigo é ${this.nome}, ela tem ${this.idade} anos e seu cargo é ${this.cargo}</b>`;
     },
 
-    set mudaCargo(cargo) {
+    set novoCargo (cargo) {
         this.cargo = cargo;
     },
 }
 
-containerGetter.innerText = `${objeto2.valorObjeto}`
+containerGetter.innerHTML = `${objeto2.valorObjeto}`
 
 inputSetter.addEventListener('input', () => {
-    objeto2.mudaCargo = inputSetter.value;
-    containerGetter.innerText = `${objeto2.valorObjeto}`
+    objeto2.novoCargo = inputSetter.value;
+    containerGetter.innerHTML = `${objeto2.valorObjeto}`;
 });
+
+inputSetter.addEventListener('focusout', () => {
+    if (inputSetter.value === "") {
+        objeto2.novoCargo = "Estagiária";
+        containerGetter.innerHTML = `${objeto2.valorObjeto}`;
+    }
+})

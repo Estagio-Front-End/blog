@@ -107,8 +107,14 @@
             <div id="resultado"></div>
             
             <h3>Getter e Setter no objeto</h3>
-            <p class="conteudo__texto"></p>
+            <p class="conteudo__texto">Os getters e setters são métodos que, respectivamente, retornam o valor de uma propriedade ou de um conjunto de propriedade e definem o valor de uma propriedade específica. Estes métodos podem ser adicionados ao objeto por meio da notação literal ou pela função <code>Object.defineProperty()</code>. Sua sintaxe inicia com o tipo do método (<code>get</code>/<code>set</code>), o nome do método, parêntesis duplos e um par de chaves, onde irá o bloco de código a ser executado pelo método. O método get não recebe argumentos dentro do parêntesis em sua assinatura, mas deve possuir a palavra reservada <code>return</code> para buscar a informação dentro do objeto e enviá-la no seu uso. O método set recebe um único argumento, que será o utilizado para modificar o valor da propriedade que se quer alterar.</p>
+
+            <figure>
+                <img src="../images/objeto-get-set.png" alt="Imagem com fundo preto e código em Javascript escrito definindo um objeto chamado objeto2 com 3 propriedades (nome com valor Camila, idade com valor 29 e cargo com valor estagiária) e 2 métodos (um get chamado valorObjeto que retorna uma frase com as propriedades do objeto e um set chamado novoCargo que modifica a propriedade cargo do objeto).">
+                <figcaption>Definição de get e set em um objeto na forma literal. </figcaption>
+            </figure>
             
+            <p class="conteudo__texto">Teste aqui a atuação dos métodos get e set:</p>
             <p class="conteudo__texto" id="resultado-getter"></p>
             <div class="conteudo__demonstracao">    
                 <label for="setter">Dê um novo cargo à Camila:</label>
@@ -120,7 +126,7 @@
 
             <figure>
                 <img src="../images/objeto-comparar.png" alt="Imagem com fundo preto e código em javascript criando dois objetos com conteúdo igual, comparando os dois e imprimindo o resultado da comparação no console. O resultado está no canto inferior direito e é false.">
-                <figcaption>Comparação entre dois objetos com conteúdo igual.</figcaption>
+                <figcaption>Comparação entre dois objetos com conteúdo igual e o resultado do <code>console.log</code> no canto inferior direito.</figcaption>
             </figure>
     
             <div class="artigo__info">
