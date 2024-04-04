@@ -1,4 +1,5 @@
 input, textarea {
+    all: unset;
     background-color: $cor-primaria;
     padding: $espacamento-6;
     border: 0.05rem solid $cor-neutra-1;
@@ -9,6 +10,18 @@ input, textarea {
     &::placeholder {
         @include body-system-regular(14, left, initial, $cor-neutra-3);
     } 
+
+    &:focus {
+        background-color: $cor-primaria;
+        @include body-system-regular(14, left, initial, $cor-neutra-1);
+    }
+    
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        transition: all 5000s;
+    }
 }
 
 .artigo__formulario {
@@ -47,12 +60,20 @@ input, textarea {
         
         .artigo__formulario__usuario {
             width: 100%;
-            display: flex;
-            gap: $espacamento-6;
+            @include estrutura-grid(2, $espacamento-6);
             margin-bottom: $espacamento-1;
 
             input {
-                width: calc(50% - $espacamento-6/2);
+                justify-self: stretch;
+            }
+
+            #erro-nome, #erro-email {
+                margin-top: $espacamento-1;
+                grid-row: 2;
+            }
+
+            #erro-email {
+                grid-column: 7 / span 2;
             }
         }
 
@@ -69,7 +90,7 @@ input, textarea {
     }
 }
 
-.artigo__formulario__item--erro {
+.artigo__formulario__item--erro {  
     display: none;
     @include body-system-regular(14, left, initial, $cor-erro);
 }
