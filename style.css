@@ -51,13 +51,10 @@ h1 {
 }
 
 main {
-  margin: 5rem auto;
-  width: 80vw;
   display: flex;
   justify-content: center;
   align-items: normal;
   flex-direction: column;
-  gap: 2rem;
 }
 main > h2 {
   font-size: 2.5rem;
@@ -377,13 +374,6 @@ code {
   border-radius: 0.3rem;
 }
 
-input {
-  border-radius: 0.5rem;
-  border: 1px solid #5b5b5b;
-  padding: 0.8rem 0.5rem;
-  font-family: "Open Sans", sans-serif;
-}
-
 dl {
   display: flex;
   flex-direction: column;
@@ -463,6 +453,16 @@ dl .aberto {
   text-transform: uppercase;
   font-family: "Space Mono", sans-serif;
   cursor: pointer;
+}
+
+.artigo__formulario__item--erro {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.708rem;
+  font-weight: 400;
+  text-align: #FF262D;
+  text-transform: initial;
+  color: #FFFFFF;
 }
 
 .conteudo__botao {
