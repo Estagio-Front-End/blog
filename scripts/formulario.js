@@ -7,10 +7,13 @@ const erroComentario = document.getElementById("erro-comentario");
 const botaoEnviarComentario = document.getElementById("botao-enviar-comentario");
 
 document.getElementById("formulario").addEventListener('submit', (evento) => {
-    console.log(evento);
     let contadorErros = 0;
     if (inputNome.value === "") {
         erroNome.style.display = "block";
+        if (window.screen.availWidth < 767) {
+            erroNome.style.marginTop = "-1.2rem";
+            erroNome.style.marginBottom = "1.6rem";
+        }      
     } else {
         contadorErros++;
     }

@@ -35,7 +35,7 @@ input, textarea {
     } 
     
     @include responsividade ("tablet") {
-        @include estrutura-grid(8, $espacamento-6);
+        @include estrutura-grid(8, $espacamento-6);       
     } 
 
     @include responsividade ("mobile") {
@@ -45,11 +45,35 @@ input, textarea {
     h2 {
         grid-column: 3 / span 4;
         @include body-system-bold(20);
+
+        @include responsividade ("desktop") {
+            grid-column: 2 / span 3;
+        } 
+        
+        @include responsividade ("tablet") {        
+            grid-column: 1 / span 8; 
+        } 
+    
+        @include responsividade ("mobile") {
+            grid-column: 1 / span 4;              
+        }
     }
     
     > p {
         grid-column: 3 / span 6;
         @include body-system-bold(14);
+
+        @include responsividade ("desktop") {
+            grid-column: 2 / span 3;
+        } 
+        
+        @include responsividade ("tablet") {        
+            grid-column: 1 / span 8; 
+        } 
+    
+        @include responsividade ("mobile") {
+            grid-column: 1 / span 4;              
+        }
     }
 
     form {
@@ -57,11 +81,33 @@ input, textarea {
         display: flex;
         flex-direction: column;
         gap: $espacamento-3;
+
+        @include responsividade ("desktop") {
+            grid-column: 2 / span 6;
+        } 
+        
+        @include responsividade ("tablet") {        
+            grid-column: 1 / span 8; 
+        } 
+    
+        @include responsividade ("mobile") {
+            grid-column: 1 / span 4;              
+        }
         
         .artigo__formulario__usuario {
             width: 100%;
             @include estrutura-grid(2, $espacamento-6);
             margin-bottom: $espacamento-1;
+
+            @include responsividade ("mobile") {
+                display: flex;
+                flex-direction: column;
+                
+                #nome {
+                    margin-bottom: $espacamento-4;
+                }
+
+            }
 
             input {
                 justify-self: stretch;
@@ -73,7 +119,7 @@ input, textarea {
             }
 
             #erro-email {
-                grid-column: 7 / span 2;
+                grid-column: 2;
             }
         }
 

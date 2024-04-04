@@ -1553,6 +1553,21 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   text-transform: initial;
   color: #FFFFFF;
 }
+@media screen and (1024px <= width <= 1365px) {
+  .artigo__formulario h2 {
+    grid-column: 2/span 3;
+  }
+}
+@media screen and (768px <= width <= 1023px) {
+  .artigo__formulario h2 {
+    grid-column: 1/span 8;
+  }
+}
+@media screen and (max-width: 767px) {
+  .artigo__formulario h2 {
+    grid-column: 1/span 4;
+  }
+}
 .artigo__formulario > p {
   grid-column: 3/span 6;
   font-family: "Open Sans", sans-serif;
@@ -1563,11 +1578,41 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   text-transform: initial;
   color: #FFFFFF;
 }
+@media screen and (1024px <= width <= 1365px) {
+  .artigo__formulario > p {
+    grid-column: 2/span 3;
+  }
+}
+@media screen and (768px <= width <= 1023px) {
+  .artigo__formulario > p {
+    grid-column: 1/span 8;
+  }
+}
+@media screen and (max-width: 767px) {
+  .artigo__formulario > p {
+    grid-column: 1/span 4;
+  }
+}
 .artigo__formulario form {
   grid-column: 3/span 8;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+}
+@media screen and (1024px <= width <= 1365px) {
+  .artigo__formulario form {
+    grid-column: 2/span 6;
+  }
+}
+@media screen and (768px <= width <= 1023px) {
+  .artigo__formulario form {
+    grid-column: 1/span 8;
+  }
+}
+@media screen and (max-width: 767px) {
+  .artigo__formulario form {
+    grid-column: 1/span 4;
+  }
 }
 .artigo__formulario form .artigo__formulario__usuario {
   width: 100%;
@@ -1575,6 +1620,15 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   grid-template-columns: repeat(2, 1fr);
   column-gap: 2.4rem;
   margin-bottom: 0.4rem;
+}
+@media screen and (max-width: 767px) {
+  .artigo__formulario form .artigo__formulario__usuario {
+    display: flex;
+    flex-direction: column;
+  }
+  .artigo__formulario form .artigo__formulario__usuario #nome {
+    margin-bottom: 1.6rem;
+  }
 }
 .artigo__formulario form .artigo__formulario__usuario input {
   justify-self: stretch;
@@ -1584,7 +1638,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   grid-row: 2;
 }
 .artigo__formulario form .artigo__formulario__usuario #erro-email {
-  grid-column: 7/span 2;
+  grid-column: 2;
 }
 .artigo__formulario form .artigo__formulario__salvar {
   display: flex;
