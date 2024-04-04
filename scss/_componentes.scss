@@ -56,10 +56,6 @@ input, textarea {
             }
         }
 
-        #comentario {
-           
-        }
-
         .artigo__formulario__salvar {
             display: flex;
             gap: $espacamento-2;
@@ -75,6 +71,7 @@ input, textarea {
 
 .artigo__formulario__item--erro {
     display: none;
+    @include body-system-regular(14, left, initial, $cor-erro);
 }
 
 .botao__primario {
