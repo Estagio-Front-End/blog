@@ -6,6 +6,7 @@ const erroEmail = document.getElementById("erro-email");
 const erroComentario = document.getElementById("erro-comentario");
 const botaoEnviarComentario = document.getElementById("botao-enviar-comentario");
 
+//Validação do formulário
 document.getElementById("formulario").addEventListener('submit', (evento) => {
     let contadorErros = 0;
     if (inputNome.value === "") {
@@ -34,4 +35,22 @@ document.getElementById("formulario").addEventListener('submit', (evento) => {
     if (contadorErros > 0) {
         evento.preventDefault();
     }
-}) 
+});
+
+//Clique no checkbox
+const inputCheckbox = document.getElementById("salvar-info");
+const imagemCheckbox = document.getElementById("salvar-info-imagem");
+
+
+imagemCheckbox.addEventListener('click', (evento) => {
+    if (!inputCheckbox.checked) {
+        evento.target.alt = "Clique para não salvar suas informações para próximos comentários.";
+        evento.target.src = "../images/checkbox-marcado.svg";
+        inputCheckbox.checked = true; 
+    } else {
+        evento.target.alt = "Clique para salvar suas informações para próximos comentários.";
+        evento.target.src = "../images/checkbox-vazio.svg";
+        inputCheckbox.checked = false; 
+    }
+})
+

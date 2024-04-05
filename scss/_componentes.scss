@@ -1,4 +1,4 @@
-input, textarea {
+input[type="text"], textarea {
     all: unset;
     background-color: $cor-primaria;
     padding: $espacamento-6;
@@ -61,7 +61,7 @@ input, textarea {
     
     > p {
         grid-column: 3 / span 6;
-        @include body-system-bold(14);
+        @include body-system-regular(14);
 
         @include responsividade ("desktop") {
             grid-column: 2 / span 3;
@@ -124,10 +124,18 @@ input, textarea {
         }
 
         .artigo__formulario__salvar {
-            display: flex;
-            gap: $espacamento-2;
+            @include flex (initial, center);
+            gap: $espacamento-1;
             @include body-system-regular(14, left, initial, $cor-neutra-1);
             margin-bottom: $espacamento-3;
+
+            @include responsividade ("mobile") {
+                align-items: start;
+            }
+
+            input {
+                display: none;
+            }
         }
 
         button {

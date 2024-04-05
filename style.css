@@ -1476,7 +1476,7 @@ footer {
   letter-spacing: 0.05rem;
 }
 
-input, textarea {
+input[type=text], textarea {
   all: unset;
   background-color: #1F2041;
   padding: 2.4rem;
@@ -1491,7 +1491,7 @@ input, textarea {
   color: #FFFFFF;
   display: block;
 }
-input::placeholder, textarea::placeholder {
+input[type=text]::placeholder, textarea::placeholder {
   font-family: "Open Sans", sans-serif;
   font-size: 1.4rem;
   line-height: 1.708rem;
@@ -1500,7 +1500,7 @@ input::placeholder, textarea::placeholder {
   text-transform: initial;
   color: #C2C2C2;
 }
-input:focus, textarea:focus {
+input[type=text]:focus, textarea:focus {
   background-color: #1F2041;
   font-family: "Open Sans", sans-serif;
   font-size: 1.4rem;
@@ -1510,7 +1510,7 @@ input:focus, textarea:focus {
   text-transform: initial;
   color: #FFFFFF;
 }
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:active {
+input[type=text]:-webkit-autofill, input[type=text]:-webkit-autofill:hover, input[type=text]:-webkit-autofill:focus, input[type=text]:-webkit-autofill:active, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:active {
   transition: all 5000s;
 }
 
@@ -1573,7 +1573,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   font-family: "Open Sans", sans-serif;
   font-size: 1.4rem;
   line-height: 1.708rem;
-  font-weight: 700;
+  font-weight: 400;
   text-align: left;
   text-transform: initial;
   color: #FFFFFF;
@@ -1642,7 +1642,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 .artigo__formulario form .artigo__formulario__salvar {
   display: flex;
-  gap: 0.8rem;
+  justify-content: initial;
+  align-items: center;
+  gap: 0.4rem;
   font-family: "Open Sans", sans-serif;
   font-size: 1.4rem;
   line-height: 1.708rem;
@@ -1651,6 +1653,14 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   text-transform: initial;
   color: #FFFFFF;
   margin-bottom: 1.2rem;
+}
+@media screen and (max-width: 767px) {
+  .artigo__formulario form .artigo__formulario__salvar {
+    align-items: start;
+  }
+}
+.artigo__formulario form .artigo__formulario__salvar input {
+  display: none;
 }
 .artigo__formulario form button {
   width: fit-content;
