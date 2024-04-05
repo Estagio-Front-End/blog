@@ -47,7 +47,7 @@ input[type="text"], textarea {
         @include body-system-bold(20);
 
         @include responsividade ("desktop") {
-            grid-column: 2 / span 3;
+            grid-column: 2 / span 6;
         } 
         
         @include responsividade ("tablet") {        
@@ -64,7 +64,7 @@ input[type="text"], textarea {
         @include body-system-regular(14);
 
         @include responsividade ("desktop") {
-            grid-column: 2 / span 3;
+            grid-column: 2 / span 6;
         } 
         
         @include responsividade ("tablet") {        
@@ -125,6 +125,12 @@ input[type="text"], textarea {
             #erro-nome, #erro-email {
                 margin-top: $espacamento-1;
                 grid-row: 2;
+            }
+            #erro-nome {
+                @include responsividade("mobile") {
+                    margin-top: -$espacamento-3;
+                    margin-bottom: $espacamento-4;
+                }
             }
 
             #erro-email {

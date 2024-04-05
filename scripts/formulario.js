@@ -20,11 +20,7 @@ function verificaInput(evento) {
     switch (evento.target.id) {
         case "nome":
             if (inputNome.value === "" || regExVazio.test(inputNome.value)) {
-                erroNome.style.display = "block";
-                if (window.screen.availWidth < 767) {
-                    erroNome.style.marginTop = "-1.2rem";
-                    erroNome.style.marginBottom = "1.6rem";
-                }
+                erroNome.style.display = "block"; 
             } else {
                 erroNome.style.display = "none";
             }
@@ -68,14 +64,12 @@ imagemCheckbox.addEventListener('click', (evento) => {
 })
 
 botaoCheckbox.addEventListener('keypress', (evento) => {
-    console.log(evento)
     if (evento.key === "Enter") {
         if (!inputCheckbox.checked) {
             evento.target.firstChild.alt = "Clique para não salvar suas informações para próximos comentários.";
             evento.target.firstChild.src = "../images/checkbox-marcado.svg";
             inputCheckbox.checked = true; 
         } else {
-            console.log(evento.key)
             evento.target.firstChild.alt = "Clique para salvar suas informações para próximos comentários.";
             evento.target.firstChild.src = "../images/checkbox-vazio.svg";
             inputCheckbox.checked = false; 
