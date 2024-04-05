@@ -41,7 +41,6 @@ document.getElementById("formulario").addEventListener('submit', (evento) => {
 const inputCheckbox = document.getElementById("salvar-info");
 const imagemCheckbox = document.getElementById("salvar-info-imagem");
 
-
 imagemCheckbox.addEventListener('click', (evento) => {
     if (!inputCheckbox.checked) {
         evento.target.alt = "Clique para não salvar suas informações para próximos comentários.";
@@ -53,4 +52,20 @@ imagemCheckbox.addEventListener('click', (evento) => {
         inputCheckbox.checked = false; 
     }
 })
+
+//Enable/disable do botão de enviar
+const inputsFormulario = [inputNome, inputEmail, inputComentario]
+
+inputsFormulario.forEach((input) => input.addEventListener('input', () => {
+    if (inputNome.value !== "" && inputEmail.value !== "" && inputComentario.value !== "") {
+        botaoEnviarComentario.classList.add("botao__primario--enabled");
+        botaoEnviarComentario.removeAttribute("disabled", "");
+    } else {
+        botaoEnviarComentario.classList.remove("botao__primario--enabled");
+        botaoEnviarComentario.setAttribute("disabled", "");
+    }
+}));
+
+
+
 

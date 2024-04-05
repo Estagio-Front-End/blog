@@ -141,6 +141,11 @@ input[type="text"], textarea {
         button {
             width: fit-content;
         }
+
+        .botao__primario--enabled {
+            color: $cor-primaria;
+            cursor: pointer;
+        }
     }
 }
 
@@ -151,9 +156,8 @@ input[type="text"], textarea {
 
 .botao__primario {
     background-color: $cor-secundaria;
-    @include body-system-bold(14,center,uppercase, $cor-primaria); //Essa cor é somente pra quando o input estiver enabled, quando estiver disabled tem 0.7 de transparência. 
+    @include body-system-bold(14,center,uppercase, rgba(31, 32, 65, 0.7));
     border-radius: $espacamento-3;
     padding: $espacamento-4 $espacamento-8;
     border: none;
-    cursor: pointer;
 }
