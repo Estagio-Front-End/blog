@@ -10,7 +10,7 @@ const botaoEnviarComentario = document.getElementById("botao-enviar-comentario")
 const inputsFormulario = [inputNome, inputEmail, inputComentario];
 inputsFormulario.forEach((input) => {
     input.addEventListener('input', habilitacaoBotao);
-    input.addEventListener('input', evento => verificaInput(evento));
+    input.addEventListener('blur', evento => verificaInput(evento));
 });
 
 function verificaInput(evento) {
@@ -53,6 +53,7 @@ function verificaInput(evento) {
 //Clique no checkbox
 const inputCheckbox = document.getElementById("salvar-info");
 const imagemCheckbox = document.getElementById("salvar-info-imagem");
+const botaoCheckbox = document.getElementById("salvar-info-botao");
 
 imagemCheckbox.addEventListener('click', (evento) => {
     if (!inputCheckbox.checked) {
@@ -64,6 +65,22 @@ imagemCheckbox.addEventListener('click', (evento) => {
         evento.target.src = "../images/checkbox-vazio.svg";
         inputCheckbox.checked = false; 
     }
+})
+
+botaoCheckbox.addEventListener('keypress', (evento) => {
+    console.log(evento)
+    if (evento.key === "Enter") {
+        if (!inputCheckbox.checked) {
+            evento.target.firstChild.alt = "Clique para não salvar suas informações para próximos comentários.";
+            evento.target.firstChild.src = "../images/checkbox-marcado.svg";
+            inputCheckbox.checked = true; 
+        } else {
+            console.log(evento.key)
+            evento.target.firstChild.alt = "Clique para salvar suas informações para próximos comentários.";
+            evento.target.firstChild.src = "../images/checkbox-vazio.svg";
+            inputCheckbox.checked = false; 
+        }
+    } 
 })
 
 //Enable/disable do botão de enviar

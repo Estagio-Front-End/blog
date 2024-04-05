@@ -1599,6 +1599,13 @@ input[type=text]:-webkit-autofill, input[type=text]:-webkit-autofill:hover, inpu
   flex-direction: column;
   gap: 1.2rem;
 }
+.artigo__formulario form button {
+  width: fit-content;
+}
+.artigo__formulario form .botao__primario--enabled {
+  color: #1F2041;
+  cursor: pointer;
+}
 @media screen and (1024px <= width <= 1365px) {
   .artigo__formulario form {
     grid-column: 2/span 6;
@@ -1659,15 +1666,12 @@ input[type=text]:-webkit-autofill, input[type=text]:-webkit-autofill:hover, inpu
     align-items: start;
   }
 }
-.artigo__formulario form .artigo__formulario__salvar input {
+.artigo__formulario form .artigo__formulario__salvar input[type=checkbox] {
   display: none;
 }
-.artigo__formulario form button {
-  width: fit-content;
-}
-.artigo__formulario form .botao__primario--enabled {
-  color: #1F2041;
-  cursor: pointer;
+.artigo__formulario form .artigo__formulario__salvar button {
+  background-color: transparent;
+  border: none;
 }
 
 .artigo__formulario__item--erro {

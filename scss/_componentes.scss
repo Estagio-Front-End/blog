@@ -82,6 +82,15 @@ input[type="text"], textarea {
         flex-direction: column;
         gap: $espacamento-3;
 
+        button {
+            width: fit-content;
+        }
+
+        .botao__primario--enabled {
+            color: $cor-primaria;
+            cursor: pointer;
+        }
+
         @include responsividade ("desktop") {
             grid-column: 2 / span 6;
         } 
@@ -133,18 +142,14 @@ input[type="text"], textarea {
                 align-items: start;
             }
 
-            input {
-                display: none;
+            input[type="checkbox"] {
+                display:none;
             }
-        }
 
-        button {
-            width: fit-content;
-        }
-
-        .botao__primario--enabled {
-            color: $cor-primaria;
-            cursor: pointer;
+            button {
+                background-color: transparent;
+                border: none;
+            }
         }
     }
 }
