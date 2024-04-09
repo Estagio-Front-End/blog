@@ -110,6 +110,12 @@ dl {
     text-transform: uppercase;
 }
 
+.conteudo__demonstracao__botoes {
+    @include flex(center, center);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .conteudo__texto__botao {
     padding: 0.3rem 0.5rem;
     border-radius: 0.5rem;
