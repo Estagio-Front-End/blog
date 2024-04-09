@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Objetos em Javascript</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+   
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Objetos em Javascript</h2>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+            
+            <p class="conteudo__texto">Em Javascript, tudo pode ser considerado um objeto. Para efeitos de definição, um objeto é tudo aquilo que possui propriedades, sejam estas propriedades pares de chave/valor ou funções (que, no caso de serem uma propriedade de um objeto, são chamadas métodos). As propriedades são as características do objeto, podendo ser adicionadas, acessadas, removidas e modificadas. Nesta linguagem de programação, todos os objetos são descendentes do objeto <code>Object</code>. Desta forma, é possível utilizar os métodos de <code>Object</code> em todos os objetos criados devido ao conceito da herança, em que os elementos filhos herdam propriedades e métodos dos elementos pais.</p>
+            
+            <h3>Criação de um objeto</h3>
+            <p class="conteudo__texto">Um objeto é usualmente criado de duas formas: pela forma literal ou utilizando uma função construtora. Na forma literal, o objeto é definido como uma variável e suas os pares chave/valor das suas propriedades são escritas dentro de chaves. Utilizando uma função construtora, primeiramente é criada uma função com o "esqueleto" do objeto e, então, um objeto do tipo da função construtora é instanciado com a palava reservada <code>new</code>.</p>
+
+            <div class="conteudo__figuras">
+                <figure>
+                    <img src="../images/objeto-literal.png" alt="Imagem com fundo preto e código javascript escrito criando um objeto com nome objeto1 e propriedades de nome, idade e cargo pela forma literal.">
+                    <figcaption>Objeto criado pela forma literal.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/objeto-construtora.png" alt="Imagem com fundo preto e código javascript escrito criando um objeto com nome objeto2 e propriedades de nome, idade e cargo pela criação a partir de uma função construtora.">
+                    <figcaption>Objeto criado a partir de uma função construtora.</figcaption>
+                </figure>
+            </div>
+
+            <p class="conteudo__texto">A palavra reservada <code>this</code> na função construtora se refere ao próprio objeto. Em uma função com o nome Objeto propriedades nome e idade, <code>this.nome</code> seria a mesma coisa que <code>Objeto.nome</code>. O uso desta palavra reservada é indicado para minimizar a repetição do nome do objeto ao longo de uma função construtora ou em métodos de objetos que utilizem suas propriedades.</p>
+            
+            <h3>Acessar propriedade do objeto</h3>
+            <p class="conteudo__texto">Para acessar as propriedades de um objeto, existem duas notações principais: a notação de ponto e a notação de array. As notações sempre iniciam com o nome do objeto e indicam a propriedade a ser acessada de acordo com sua sintaxe. Para a notação de ponto temos <code>objeto.propriedade</code> e para a notação de array, temos <code>objeto["propriedade"]</code>. Tomando como base um objeto chamado obj com propriedades nome, idade e cargo, podemos acessar os valores destas propriedades das seguintes formas: <code>obj.nome</code>, <code>obj.idade</code> e <code>obj.cargo</code> ou <code>obj["nome"]</code>, <code>obj["idade"]</code> e <code>obj["cargo"]</code>. Caso exista uma variável contendo como seu valor o nome de uma das propriedades do objeto, também é possível, por meio da notação de array, acessar a propriedade por meio de <code>objeto[variável]</code>.</p>
+            
+            <h3>Adicionar propriedade do objeto</h3>
+            <p class="conteudo__texto">Para adicionar uma propriedade ao objeto, dado que ela ainda não exista, é possível utilizar dois formatos. Um formato mais simples seria "atribuir" um valor à uma propriedade não existente, como se ela fosse uma variável. Para um objeto cujo nome é obj, poderíamos criar uma propriedade com <code>obj.novaPropriedade = valor</code>. Desta forma, a <code>novaPropriedade</code> já seria adicionada ao objeto, dado que ele exista. Uma forma mais completa é a função <code>Object.defineProperty</code>. Esta função possui 3 argumentos a serem indicados, o primeiro sendo o objeto no qual a propriedade será adicionada, o segundo é o nome da propriedade e o terceiro é o descritor da propriedade. Neste descritor, pode-se adicionar, além do valor da propriedade a ser adicionada, métodos get e set, se a propriedade pode ser alterada ou não, entre outras "configurações". A imagem a seguir mostra uma propriedade sendo adicionada com esta função.</p>
+
+            <figure>
+                <img src="../images/object-defineproperty.png" alt="Imagem com fundo preto e código em Javascript adicionando uma propriedade nome com valor Camila para um objeto chamado obj.">
+                <figcaption>Adição de propriedade com <code>Object.defineProperty()</code>.</figcaption>
+            </figure>
+            
+            <h3>Remover propriedade do objeto</h3>
+            <p class="conteudo__texto">Para remover uma propriedade de um objeto, dado que ela exista, é necessário apenas utilizar a palavra reservada <code>delete</code> e então referenciar a propriedade que se deseja deletar por meio das notações de ponto ou array. Exemplos genéricos disto são <code>delete objeto.propriedade</code> e <code>delete objeto["propriedade"]</code>.</p>
+            
+            <h3>Mudar valor de propriedade do objeto</h3>
+            <p class="conteudo__texto">Para mudar o valor de uma propriedade de um objeto, dado que ela exista, é necessário apenas reatribuir um valor à ela, como se a propriedade fosse uma variável. Na notação de ponto, temos <code>objeto.propriedade = novo_valor</code> e, na notação de array, temos <code>objeto["propriedade"] = novo_valor</code>.</p>
+
+            <h3>Verificar se uma propriedade existe no objeto</h3>
+            <p class="conteudo__texto">Muitas manipulações de propriedade do objeto dependem, primeiramente, da existência desta propriedade. Para avaliar se uma propriedade existe, utiliza-se a palavra reservada <code>in</code>. A avaliação é uma expressão que retorna um booleano, na forma <code>propriedade in objeto</code>. Se a propriedade existir dentro do objeto, a expressão retornará <code>true</code>, caso contrário, retornará <code>false</code>.  </p>
+
+            <p class="conteudo__texto">Teste aqui as principais manipulações de objeto:</p>
+
+            <div class="conteudo__demonstracao">
+                <label for="chave">Digite um nome de propriedade:</label>
+                <input type="text" id="chave" name="chave">
+                
+                <label for="valor">Digite um valor:</label>
+                <input type="text" id="valor" name="valor">
+                    <div class="conteudo__demonstracao__botoes">
+                        <button class="conteudo__demonstracao__botao" id="adicionar-propriedade">Adicionar Propriedade</button>
+                        
+                        <button class="conteudo__demonstracao__botao" id="remover-propriedade">Remover Propriedade</button>
+                        
+                        <button class="conteudo__demonstracao__botao" id="modificar-propriedade">Modificar Propriedade</button>
+                        
+                        <button class="conteudo__demonstracao__botao" id="verificar-propriedade">Verificar existência da propriedade no objeto</button>
+        
+                        <button class="conteudo__demonstracao__botao" id="acessar-propriedade">Acessar propriedade</button>
+                        
+                        <button class="conteudo__demonstracao__botao" id="mostrar-objeto">Mostrar objeto</button>
+                    </div>
+            </div>
+    
+            <div id="resultado"></div>
+            
+            <h3>Getter e Setter no objeto</h3>
+            <p class="conteudo__texto">Os getters e setters são métodos que, respectivamente, retornam o valor de uma propriedade ou de um conjunto de propriedade e definem o valor de uma propriedade específica. Estes métodos podem ser adicionados ao objeto por meio da notação literal ou pela função <code>Object.defineProperty()</code>. Sua sintaxe inicia com o tipo do método (<code>get</code>/<code>set</code>), o nome do método, parêntesis duplos e um par de chaves, onde irá o bloco de código a ser executado pelo método. O método get não recebe argumentos dentro do parêntesis em sua assinatura, mas deve possuir a palavra reservada <code>return</code> no bloco de código dentro das chaves para buscar a informação dentro do objeto e enviá-la no seu uso. O método set recebe um único argumento, que será o utilizado para modificar o valor da propriedade que se quer alterar.</p>
+
+            <figure>
+                <img src="../images/objeto-get-set.png" alt="Imagem com fundo preto e código em Javascript escrito definindo um objeto chamado objeto2 com 3 propriedades (nome com valor Camila, idade com valor 29 e cargo com valor estagiária) e 2 métodos (um get chamado valorObjeto que retorna uma frase com as propriedades do objeto e um set chamado novoCargo que modifica a propriedade cargo do objeto).">
+                <figcaption>Definição de get e set em um objeto na forma literal. </figcaption>
+            </figure>
+            
+            <p class="conteudo__texto">Teste aqui a atuação dos métodos get e set:</p>
+            <p class="conteudo__texto" id="resultado-getter"></p>
+            <div class="conteudo__demonstracao">    
+                <label for="setter">Dê um novo cargo à Camila:</label>
+                <input type="text" id="setter" name="setter"> 
+            </div>
+            
+            <h3>Comparar objetos</h3>
+            <p class="conteudo__texto">Na linguagem Javascript, objetos são um tipo de referência. Deste modo, todo objeto é igual apenas a si próprio. Comparar dois objetos diferentes, mesmo que eles possuam o mesmo conteúdo, retornará <code>false</code> pois a linguagem interpretará como duas referências diferentes, apesar do conteúdo igual.</p>
+
+            <figure>
+                <img src="../images/objeto-comparar.png" alt="Imagem com fundo preto e código em javascript criando dois objetos com conteúdo igual, comparando os dois e imprimindo o resultado da comparação no console. O resultado está no canto inferior direito e é false.">
+                <figcaption>Comparação entre dois objetos com conteúdo igual e o resultado do <code>console.log</code> no canto inferior direito.</figcaption>
+            </figure>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>02 Abr</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta">Código de Ética e Conduta & Política Anti-Corrupção</p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/objetos.js"></script>
+</html>

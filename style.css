@@ -456,6 +456,14 @@ dl .aberto {
   text-transform: uppercase;
 }
 
+.conteudo__demonstracao__botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .conteudo__texto__botao {
   padding: 0.3rem 0.5rem;
   border-radius: 0.5rem;
