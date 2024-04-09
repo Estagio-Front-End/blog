@@ -13,31 +13,37 @@ inputsFormulario.forEach((input) => {
     input.addEventListener('blur', evento => verificaInput(evento));
 });
 
-function verificaInput(evento) {
-    const regExEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    const regExVazio = /^(?=\s*$)/;
+const regExEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+const regExVazio = /^(?=\s*$)/;
 
+function verificaInput(evento) {
     switch (evento.target.id) {
         case "nome":
             if (inputNome.value === "" || regExVazio.test(inputNome.value)) {
-                erroNome.style.display = "block"; 
+                erroNome.style.display = "block";
+                //msgErroNome +=1; 
             } else {
                 erroNome.style.display = "none";
+                //msgErroNome -=1; 
             }
             break;
         case "email":
             if (inputEmail.value === "" || !regExEmail.test((inputEmail.value))){
                 erroEmail.style.display = "block";
+                //msgErroEmail +=1; 
             } else {
                 erroEmail.style.display = "none";
+                //msgErroEmail -=1; 
             }
             break;
         case "comentario":
             if (inputComentario.value === "" || regExVazio.test(inputComentario.value)) {
                 erroComentario.style.marginTop = "-0.8rem";
                 erroComentario.style.display = "block";
+                //msgErroComentario +=1; 
             } else {
                 erroComentario.style.display = "none";
+                //msgErroComentario -=1; 
             }
             break;
         default:
@@ -61,7 +67,7 @@ imagemCheckbox.addEventListener('click', (evento) => {
         evento.target.src = "../images/checkbox-vazio.svg";
         inputCheckbox.checked = false; 
     }
-})
+});
 
 botaoCheckbox.addEventListener('keypress', (evento) => {
     if (evento.key === "Enter") {
@@ -75,13 +81,13 @@ botaoCheckbox.addEventListener('keypress', (evento) => {
             inputCheckbox.checked = false; 
         }
     } 
-})
+});
 
 //Enable/disable do botão de enviar
 function habilitacaoBotao() {
-    //const validacaoDisplayErros = erroNome.style.display === "none" && erroEmail.style.display === "none" && erroComentario.style.display === "none";
-    const validacaoCamposVazios = inputNome.value !== "" && inputEmail.value !== "" && inputComentario.value !== "";
-    if (validacaoCamposVazios) {
+    const validacaoCompletaCampos = !(inputNome.value === "" || regExVazio.test(inputNome.value)) && !(inputEmail.value === "" || !regExEmail.test((inputEmail.value))) && !(inputComentario.value === "" || regExVazio.test(inputComentario.value));
+
+    if (validacaoCompletaCampos) {
         botaoEnviarComentario.classList.add("botao__primario--enabled");
         botaoEnviarComentario.removeAttribute("disabled", "");
     } else {
@@ -89,7 +95,5 @@ function habilitacaoBotao() {
         botaoEnviarComentario.setAttribute("disabled", "");
     }
 } 
-
-
 
 
