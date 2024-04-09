@@ -1397,6 +1397,9 @@ footer {
   color: #FFFFFF;
   letter-spacing: 0.05rem;
 }
+.footer__listagem .footer__listagem__titulo a:hover, .footer__listagem .footer__listagem__item a:hover {
+  text-decoration: underline;
+}
 
 .footer__redes {
   display: grid;
@@ -1472,7 +1475,7 @@ footer {
   background-color: #313250;
 }
 
-.footer__codigo-conduta {
+.footer__codigo-conduta, .footer__codigo-conduta a {
   background-color: #313250;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;

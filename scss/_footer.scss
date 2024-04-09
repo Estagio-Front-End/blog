@@ -80,6 +80,12 @@ footer {
         @include headline-primary-regular(14, left, uppercase);
         letter-spacing: 0.05rem;
     }
+
+    .footer__listagem__titulo a, .footer__listagem__item a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .footer__redes {
@@ -141,7 +147,7 @@ footer {
     }
 }
 
-.footer__codigo-conduta {
+.footer__codigo-conduta, .footer__codigo-conduta a {
     background-color: $cor-footer; 
     @include headline-primary-bold(12, center, initial, $cor-neutra-5);
     letter-spacing: 0.05rem;
