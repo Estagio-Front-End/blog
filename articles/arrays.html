@@ -87,13 +87,13 @@
                     <li><span>every(função de teste):</span> este método indica se todos os elementos do array atendem à condição imposta na função de teste passada como argumento. Caso positivo, o método retornará <code>true</code>, caso negativo, <code>false</code>.</li>
                     <li><span>includes(alvo):</span> este método retornará <code>true</code> ou <code>false</code> a depender de se o elemento passado como argumento do método exista dentro do array ou não.</li>
                 </ul>
-
+                
                 <h4>Métodos de edição do array</h4>
                 <ul class="conteudo__texto">
                     <li><span>forEach(função):</span> este método itera por todos os elementos do array e executa a função passada como argumento para cada um.</li>
                     <li><span>push(elemento):</span> este método adiciona o(s) elemento(s) passado(s) como argumento no final do array.</li>
-                    <li><span>pop(elemento):</span> este método remove o último elemento do array e retorna este elemento (caso utilizado como valor de variável ou outros contextos como condicionais e funções).</li>
-                    <li><span>shift(elemento):</span> este método remove o primeiro elemento do array e retorna este elemento (caso utilizado como valor de variável ou outros contextos como condicionais e funções).</li>
+                    <li><span>pop():</span> este método remove o último elemento do array e retorna este elemento (caso utilizado como valor de variável ou outros contextos como condicionais e funções).</li>
+                    <li><span>shift():</span> este método remove o primeiro elemento do array e retorna este elemento (caso utilizado como valor de variável ou outros contextos como condicionais e funções).</li>
                     <li><span>unshift(elemento):</span> este método adiciona o(s) elemento(s) passado(s) como argumento no início do array.</li>
                     <li><span>sort(função de comparação):</span> este método ordena os elementos dentro de um array. Pode ou não receber uma função de comparação como argumento, em que, caso não receba, irá ordenar os elementos de acordo com seu código Unicode.</li>
                     <li><span>fill(alvo, posição inicial, posição final):</span> este método preenche os elementos de um array com um elemento alvo indicado no argumento. As posições iniciais e finais, que são opcionais, delimitam os índices nos quais o método irá atuar, sendo a posição final não inclusiva. Desta forma, se inserirmos no código <code>arr.fill(10, 2, 4)</code> os elementos de índices 2 e 3 do array chamado <code>arr</code> serão preenchidos com o número 10.</li>
@@ -101,6 +101,26 @@
                     <li><span>splice(índice inicial, quantidade elementos retirados, elemento novo):</span> este método modifica os elementos de um array incluindo valores novos e deletando (ou não) valores antigos. Deste modo, inserindo no código <code>arr.splice(1, 0, "Camila")</code> o array chamado <code>arr</code> terá seu elemento de índice 1 trocado por "Camila", mas sem retirar elementos do array original.</li>
                     <li><span>reduce(função, valor inicial):</span> este método itera por todo o array e reduz os elementos a um único valor seguindo uma função redutora, indicada como argumento. A função redutora, em geral, recebe 4 argumentos: o acumulador, que irá acumular o resultado da redução até o final; o valor atual e seu índice; e o valor inicial do acumulador. Ao final da iteração, o método retorna o acumulador, que terá o resultado final.</li>
                 </ul>
+
+                <p class="conteudo__texto">Teste aqui os principais métodos de edição de arrays:</p>
+                <p class="conteudo__texto" id="array-inicial">Array inicial:</p>
+                <div class="conteudo__demonstracao">
+                    <label for="input-edicao">Selecione um método a aplicar no array:</label>
+                    <select name="input-edicao" id="input-edicao" onchange="buscaArray(this.value)">
+                        <option value="default">Selecione uma opção:</option>
+                        <option value="foreach">forEach() -> O número x é y</option>
+                        <option value="push">push(8,9)</option>
+                        <option value="pop">pop()</option>
+                        <option value="shift">shift()</option>
+                        <option value="unshift">unshift(8,9)</option>
+                        <option value="sort">sort()</option>
+                        <option value="fill">fill(10, 2, 4)</option>
+                        <option value="reverse">reverse()</option>
+                        <option value="splice">splice(0, 3, 25)</option>
+                        <option value="reduce">reduce() -> soma</option>
+                    </select>
+                </div>
+                <div class="conteudo__texto" id="resultado-edicao"></div>
 
                 <h4>Métodos de criação de novo array</h4>
                 <ul class="conteudo__texto">
