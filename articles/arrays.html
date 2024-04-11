@@ -104,16 +104,15 @@
 
                 <h4>Métodos de criação de novo array</h4>
                 <ul class="conteudo__texto">
-                    <li><span>Array.from(elemento, função)</span></li>
-                    <li><span>Array.of(elementos)</span></li>
-                    <li><span>map(elemento -> alvo)</span></li>
-                    <li><span>filter(elemento === alvo)</span></li>
-                    <li><span>join("divisória")</span></li>
-                    <li><span>concat(outro array)</span></li>
-                    <li><span>flat()</span></li>
-                    <li><span>slice(posição inicial, posição final)</span></li>
+                    <li><span>Array.from(elemento, função):</span> uma outra forma de criação de arrays, gerando um array a partir de qualquer objeto iterável. Pode ou não receber uma função modificadora, em que os elementos primeiramente serão modificados para, depois, integrarem o array.</li>
+                    <li><span>Array.of(elementos):</span> uma outra forma de criação de arrays, gera um array a partir dos elementos indicados no argumento da função.</li>
+                    <li><span>map(função modificadora):</span> este método itera pelo array e, para cada elemento, aplica uma função modificadora indicada como argumento, criando um novo array com os elementos modificados.</li>
+                    <li><span>filter(função afuniladora):</span> este método cria um novo array com todos os elementos do array original que satisfaçam a condição indicada na função afuniladora.</li>
+                    <li><span>join("divisória"):</span> este método junta os elementos do array e os transforma em uma string, separados pela divisória indicada no argumento. Se nenhuma divisória for passada, os elementos sairão todos colados.</li>
+                    <li><span>concat(outro array):</span> este método concatena 2 arrays, sendo o array passado no argumento incluso no final do array original.</li>
+                    <li><span>flat():</span> este método cria um novo array, concatenando quaisquer elementos arrays no array original. Por exemplo, inserindo no código <code>[1,2,3,4,[5,6]].flat()</code> teremos um novo array <code>[1,2,3,4,5,6]</code>.</li>
+                    <li><span>slice(posição inicial, posição final):</span> este método recorta e retorna uma parte do array, indicada pelas posições inicial e final. A posição final, assim como no método <code>fill()</code>, não é inclusiva.</li>
                 </ul>
-
             </article>
     
             <div class="artigo__info">
