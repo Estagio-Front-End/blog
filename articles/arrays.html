@@ -46,7 +46,75 @@
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
             <article>
-                
+                <p class="conteudo__texto">Arrays são um tipo de dado não primitivo que se assemelha à listas. Estas listas contém métodos herdados que realizam operações de busca, edição e criação de novos arays. Para a inicialização de um array, pode-se proceder de duas formas: criando um array literal ou por meio de uma função construtora.</p>
+
+                <p class="conteudo__texto">Com a notação literal, podemos criar um array vazio utilizando apenas colchetes (<code>[]</code>) ou criar um array populado, indicando os dados a serem listados dentro do par de colchetes.</p>
+
+                <p class="conteudo__texto">Com a função construtora, podemos criar um array vazio, não passando nenhum argumento no objeto <code>Array()</code>, podemos criar um array com comprimento definido, passando um parâmetro no objeto, sendo este o comprimento e podemos criar um array populado, passando os dados a serem listados como parâmetros no objeto Array, separados por vírgulas.</p>
+
+                <figure>
+                    <img src="../images/arrays-criacao.png" alt="Imagem com fundo preto e código Javascript criando 5 arrays utilizando as formas explicadas anteriormente.">
+                    <figcaption>Formas de criação de arrays.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Os arrays podem ter tanto dados homogêneos quanto heterogêneos e podem conter todos os tipos primitivos, além de arrays dentro de arrays. Veja a seguir exemplos de ambos os tipos:</p>
+
+                <div class="conteudo__demonstracao">
+                    <input type="radio" name="arrays" id="homogeneo">
+                    <label for="homogeneo">Array Homogêneo</label>
+
+                    <input type="radio" name="arrays" id="heterogeneo">
+                    <label for="heterogeneo">Array Heterogêneo</label>
+                </div>
+
+                <div id="resultad-arrays"></div>
+
+                <p class="conteudo__texto" id="array-objetos">Os arrays também podem ser utilizados para guardar "coleções" de informações, ou seja, é possível criar arrays de objetos, que por sua vez terão suas próprias propriedades. O <abbr title="Javascript Object Notation">JSON</abbr> se utiliza dessa possibilidade para guardar grandes quantidades de informações a serem transmitidas entre aplicações. Como exemplo, podemos ter:</p>
+
+                <p class="conteudo__texto">Para acessar elementos de arrays, é necessário utilizar uma notação de colchetes e, dentro deles, o índice do elemento que se deseja acessar. É importante lembrar que, em arrays, o índice se inicia em zero. Desta forma, um array com 5 posições possui os índices de 0 a 4. Para acessar, por exemplo, o segundo elemento de um array chamado <code>arr</code>, temos que utilizar o código <code>arr[1]</code>.</p>
+
+                <p class="conteudo__texto">Uma propriedade muito importante para acessar elementos de arrays, entre outras funções, é o comprimento de um array. A propriedade <code>lenght</code> pode ser útil em situações em que não se sabe quantos elementos o array tem e se deseja, por exemplo, acessar seu último elemento. Para tal, utilizamos o código <code>arr[arr.length - 1]</code>, visto que, como o índice inicia em 0, um array de n elementos terminará no índice (n - 1). Outra função importante do <code>length</code> é definir o ponto de parada de um loop que deve percorrer todo o array. Esta propriedade pode ser reatribuída em valor, em que, quando o valor é maior que o array existente, o array irá crescer em seu comprimento e, caso o valor seja menor, elementos finais do array serão excluídos.</p>
+
+                <h3>Métodos em arrays</h3>
+                <p class="conteudo__texto">Tão importante quanto a criação de arrays é a manipulação destes para as mais diversas finalidades dentro de um código. Os arrays possuem métodos de busca, edição e criação de novos arrays. São eles:</p>
+
+                <h4>Métodos de busca no array</h4>
+                <ul class="conteudo__texto">
+                    <li><span>find(elemento === alvo)</span></li>
+                    <li><span>findIndex(elemento === alvo)</span></li>
+                    <li><span>indexOf(alvo)</span></li>
+                    <li><span>some(elemento === alvo)</span></li>
+                    <li><span>every(elemento === alvo)</span></li>
+                    <li><span>includes(alvo)</span></li>
+                </ul>
+
+                <h4>Métodos de edição do array</h4>
+                <ul class="conteudo__texto">
+                    <li><span>forEach(elemento -> alvo)</span></li>
+                    <li><span>push(elemento)</span></li>
+                    <li><span>pop(elemento)</span></li>
+                    <li><span>shift(elemento)</span></li>
+                    <li><span>unshift(elemento)</span></li>
+                    <li><span>sort()</span></li>
+                    <li><span>fill(alvo, posição inicial, posição final)</span></li>
+                    <li><span>reverse()</span></li>
+                    <li><span>splice(início, fim, elemento novo)</span></li>
+                </ul>
+
+                <h4>Métodos de criação de novo array</h4>
+                <ul class="conteudo__texto">
+                    <li><span>Array.from(elemento, função)</span></li>
+                    <li><span>Array.of(elementos)</span></li>
+                    <li><span>map(elemento -> alvo)</span></li>
+                    <li><span>filter(elemento === alvo)</span></li>
+                    <li><span>join("divisória")</span></li>
+                    <li><span>concat(outro array)</span></li>
+                    <li><span>flat()</span></li>
+                    <li><span>slice(posição inicial, posição final)</span></li>
+                </ul>
+
+                <!-- reduce -->
+
             </article>
     
             <div class="artigo__info">
@@ -137,4 +205,5 @@
     </footer>
 </body>
 <script src="../script.js"></script>
+<script src="../scripts/arrays.js"></script>
 </html>
