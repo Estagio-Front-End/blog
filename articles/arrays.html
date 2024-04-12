@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Arrays em Javascript</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+   
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Arrays em Javascript</h2>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+            
+            <article>
+                <p class="conteudo__texto">Arrays são um tipo de dado não primitivo que se assemelham à listas. Estas listas contém métodos herdados que realizam operações de busca, edição e criação de novos arrays. Para a inicialização de um array, pode-se proceder de duas formas: criando um array literal ou por meio de uma função construtora.</p>
+
+                <p class="conteudo__texto">Com a notação literal, podemos criar um array vazio utilizando apenas colchetes (<code>[]</code>) ou criar um array populado, indicando os dados a serem listados dentro do par de colchetes, separados por vírgulas.</p>
+
+                <p class="conteudo__texto">Com a função construtora, podemos criar um array vazio, não passando nenhum argumento no objeto <code>Array()</code>, podemos criar um array com comprimento definido, passando um parâmetro no objeto, sendo este o comprimento e podemos criar um array populado, passando os dados a serem listados como parâmetros no objeto Array, separados por vírgulas.</p>
+
+                <figure>
+                    <img src="../images/arrays-criacao.png" alt="Imagem com fundo preto e código Javascript criando 5 arrays utilizando as formas explicadas anteriormente.">
+                    <figcaption>Formas de criação de arrays.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Os arrays podem ter tanto dados homogêneos quanto heterogêneos e podem conter todos os tipos primitivos, além de arrays dentro de arrays. Veja a seguir exemplos de ambos os tipos:</p>
+
+                <div class="conteudo__demonstracao">
+                    <input type="radio" name="arrays" id="homogeneo">
+                    <label for="homogeneo">Array Homogêneo</label>
+
+                    <input type="radio" name="arrays" id="heterogeneo">
+                    <label for="heterogeneo">Array Heterogêneo</label>
+                </div>
+
+                <div id="resultad-arrays"></div>
+
+                <p class="conteudo__texto" id="array-objetos">Os arrays também podem ser utilizados para guardar "coleções" de informações, ou seja, é possível criar arrays de objetos, que por sua vez terão suas próprias propriedades. O <abbr title="Javascript Object Notation">JSON</abbr> se utiliza dessa possibilidade para guardar grandes quantidades de informações a serem transmitidas entre aplicações. Como exemplo, podemos ter:</p>
+
+                <p class="conteudo__texto">Para acessar elementos de arrays, é necessário utilizar uma notação de colchetes e, dentro deles, o índice do elemento que se deseja acessar. É importante lembrar que, em arrays, o índice se inicia em zero. Desta forma, um array com 5 posições possui os índices de 0 a 4. Para acessar, por exemplo, o segundo elemento de um array chamado <code>arr</code>, temos que utilizar o código <code>arr[1]</code>.</p>
+
+                <p class="conteudo__texto">Uma propriedade muito importante para acessar elementos de arrays, entre outras funções, é o comprimento de um array. A propriedade <code>lenght</code> pode ser útil em situações em que não se sabe quantos elementos o array tem e se deseja, por exemplo, acessar seu último elemento. Para tal, utilizamos o código <code>arr[arr.length - 1]</code>, visto que, como o índice inicia em 0, um array de n elementos terminará no índice (n - 1). Outra função importante do <code>length</code> é definir o ponto de parada de um loop que deve percorrer todo o array. Esta propriedade pode ser reatribuída em valor, em que, quando o valor é maior que o array existente, o array irá crescer em seu comprimento e, caso o valor seja menor, elementos finais do array serão excluídos.</p>
+
+                <h3>Métodos em arrays</h3>
+                <p class="conteudo__texto">Tão importante quanto a criação de arrays é a manipulação destes para as mais diversas finalidades dentro de um código. Os arrays possuem métodos de busca, edição e criação de novos arrays. São eles:</p>
+
+                <h4>Métodos de busca no array</h4>
+                <ul class="conteudo__texto">
+                    <li><span>find(função de teste):</span> este método busca e retorna o primeiro elemento dentro do array que satisfaça a condição imposta na função passada como argumento. Caso nenhum elemento satisfaça a condição, o retorno será <code>undefined</code>.</li>
+                    <li><span>findIndex(função de teste):</span> este método busca e retorna o índice do primeiro elemento dentro do array que satisfaça a condição imposta na função passada como argumento. Caso nenhum elemento satisfaça a condição, o retorno será <code>-1</code>.</li>
+                    <li><span>indexOf(alvo):</span> este método retorna o índice do elemento indicado como argumento, caso ele exista dentro do array. Caso ele não exista, o retorno é <code>-1</code>.</li>
+                    <li><span>some(função de teste):</span> este método indica se algum dos elementos do array atende à condição imposta na função de teste passada como argumento. Caso positivo, o método retornará <code>true</code>, caso negativo, <code>false</code>.</li>
+                    <li><span>every(função de teste):</span> este método indica se todos os elementos do array atendem à condição imposta na função de teste passada como argumento. Caso positivo, o método retornará <code>true</code>, caso negativo, <code>false</code>.</li>
+                    <li><span>includes(alvo):</span> este método retornará <code>true</code> ou <code>false</code> a depender de se o elemento passado como argumento do método exista dentro do array ou não.</li>
+                </ul>
+
+                <p class="conteudo__texto">Teste aqui os principais métodos de busca em arrays:</p>
+                <p class="conteudo__texto" id="array-busca">Array inicial:</p>
+                <div class="conteudo__demonstracao">
+                    <label for="input-busca">Selecione um método a aplicar no array:</label>
+                    <div class="conteudo__demonstracao__selecao">
+                        <select name="input-busca" id="input-busca" onchange="buscaArray(this.value)">
+                            <option value="">Selecione uma opção:</option>
+                            <option value="find">find(x => x % 2 === 0)</option>
+                            <option value="findindex">findIIndex(x => x % 2 === 0)</option>
+                            <option value="indexof">indexOf(5)</option>
+                            <option value="some">some(x => x % 2 === 0))</option>
+                            <option value="every">every(x => x % 2 === 0))</option>
+                            <option value="includes">includes(10)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="conteudo__texto" id="resultado-busca"></div>
+                
+                <h4>Métodos de edição do array</h4>
+                <ul class="conteudo__texto">
+                    <li><span>forEach(função):</span> este método itera por todos os elementos do array e executa a função passada como argumento para cada um.</li>
+                    <li><span>push(elemento):</span> este método adiciona o(s) elemento(s) passado(s) como argumento no final do array.</li>
+                    <li><span>pop():</span> este método remove o último elemento do array e retorna este elemento (caso utilizado como valor de variável ou outros contextos como condicionais e funções).</li>
+                    <li><span>shift():</span> este método remove o primeiro elemento do array e retorna este elemento (caso utilizado como valor de variável ou outros contextos como condicionais e funções).</li>
+                    <li><span>unshift(elemento):</span> este método adiciona o(s) elemento(s) passado(s) como argumento no início do array.</li>
+                    <li><span>sort(função de comparação):</span> este método ordena os elementos dentro de um array. Pode ou não receber uma função de comparação como argumento, em que, caso não receba, irá ordenar os elementos de acordo com seu código Unicode.</li>
+                    <li><span>fill(alvo, posição inicial, posição final):</span> este método preenche os elementos de um array com um elemento alvo indicado no argumento. As posições iniciais e finais, que são opcionais, delimitam os índices nos quais o método irá atuar, sendo a posição final não inclusiva. Desta forma, se inserirmos no código <code>arr.fill(10, 2, 4)</code> os elementos de índices 2 e 3 do array chamado <code>arr</code> serão preenchidos com o número 10.</li>
+                    <li><span>reverse():</span> este método inverte a ordem dos elementos dentro de um array.</li>
+                    <li><span>splice(índice inicial, quantidade elementos retirados, elemento novo):</span> este método modifica os elementos de um array incluindo valores novos e deletando (ou não) valores antigos. Deste modo, inserindo no código <code>arr.splice(1, 0, "Camila")</code> o array chamado <code>arr</code> terá seu elemento de índice 1 trocado por "Camila", mas sem retirar elementos do array original.</li>
+                    <li><span>reduce(função, valor inicial):</span> este método itera por todo o array e reduz os elementos a um único valor seguindo uma função redutora, indicada como argumento. A função redutora, em geral, recebe 4 argumentos: o acumulador, que irá acumular o resultado da redução até o final; o valor atual e seu índice; e o valor inicial do acumulador. Ao final da iteração, o método retorna o acumulador, que terá o resultado final.</li>
+                </ul>
+
+                <p class="conteudo__texto">Teste aqui os principais métodos de edição de arrays:</p>
+                <p class="conteudo__texto" id="array-edicao">Array inicial:</p>
+                <div class="conteudo__demonstracao">
+                    <label for="input-edicao">Selecione um método a aplicar no array:</label>
+                    <div class="conteudo__demonstracao__selecao">
+                        <select name="input-edicao" id="input-edicao" onchange="editaArray(this.value)">
+                            <option value="">Selecione uma opção:</option>
+                            <option value="foreach">forEach() -> "O número x é y"</option>
+                            <option value="push">push(8,9)</option>
+                            <option value="pop">pop()</option>
+                            <option value="shift">shift()</option>
+                            <option value="unshift">unshift(8,9)</option>
+                            <option value="sort">sort()</option>
+                            <option value="fill">fill(10, 2, 4)</option>
+                            <option value="reverse">reverse()</option>
+                            <option value="splice">splice(0, 3, 25)</option>
+                            <option value="reduce">reduce() -> soma</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="conteudo__texto" id="resultado-edicao"></div>
+
+                <h4>Métodos de criação de novo array</h4>
+                <ul class="conteudo__texto">
+                    <li><span>Array.from(elemento, função):</span> uma outra forma de criação de arrays, gerando um array a partir de qualquer objeto iterável. Pode ou não receber uma função modificadora, em que os elementos primeiramente serão modificados para, depois, integrarem o array.</li>
+                    <li><span>Array.of(elementos):</span> uma outra forma de criação de arrays, gera um array a partir dos elementos indicados no argumento da função.</li>
+                    <li><span>map(função modificadora):</span> este método itera pelo array e, para cada elemento, aplica uma função modificadora indicada como argumento, criando um novo array com os elementos modificados.</li>
+                    <li><span>filter(função afuniladora):</span> este método cria um novo array com todos os elementos do array original que satisfaçam a condição indicada na função afuniladora.</li>
+                    <li><span>join("divisória"):</span> este método junta os elementos do array e os transforma em uma string, separados pela divisória indicada no argumento. Se nenhuma divisória for passada, os elementos sairão todos colados.</li>
+                    <li><span>concat(outro array):</span> este método concatena 2 arrays, sendo o array passado no argumento incluso no final do array original.</li>
+                    <li><span>flat():</span> este método cria um novo array, concatenando quaisquer elementos arrays no array original. Por exemplo, inserindo no código <code>[1,2,3,4,[5,6]].flat()</code> teremos um novo array <code>[1,2,3,4,5,6]</code>.</li>
+                    <li><span>slice(posição inicial, posição final):</span> este método recorta e retorna uma parte do array, indicada pelas posições inicial e final. A posição final, assim como no método <code>fill()</code>, não é inclusiva.</li>
+                </ul>
+            </article>
+
+            <p class="conteudo__texto">Teste aqui os principais métodos de criação de novos arrays:</p>
+                <p class="conteudo__texto" id="array-criacao">Array inicial para os métodos (exceto <code>Array.of</code>, <code>Array.from</code> e <code>flat</code>):</p>
+                <div class="conteudo__demonstracao">
+                    <label for="input-criacao">Selecione um método a aplicar no array:</label>
+                    <div class="conteudo__demonstracao__selecao">
+                        <select name="input-criacao" id="input-criacao" onchange="criaArray(this.value)">
+                            <option value="">Selecione uma opção:</option>
+                            <option value="arrayfrom">Array.from("Camila")</option>
+                            <option value="arrayof">Array.of(true, 29, "Estagiária")</option>
+                            <option value="map">map(x => x*2)</option>
+                            <option value="filter">filter(x => x % 2 === 0)</option>
+                            <option value="join">join(", ")</option>
+                            <option value="concat">concat([8,9,10])</option>
+                            <option value="flat">[1,2,3,4,[5,6,7]].flat()</option>
+                            <option value="slice">slice(2,5)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="conteudo__texto" id="resultado-criacao"></div>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>11 Abr</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/arrays.js"></script>
+</html>
