@@ -37,13 +37,6 @@ code {
     border-radius: 0.3rem;
 }
 
-input {
-    border-radius: 0.5rem;
-    border: 1px solid $cor-fonte-sec;
-    padding: 0.8rem 0.5rem; 
-    font-family: "Open Sans", sans-serif; 
-}
-
 dl {
     display: flex;
     flex-direction: column;
@@ -66,7 +59,6 @@ dl {
         display: block;
     }
 }
-
 
 .conteudo {
     display: flex;
@@ -131,4 +123,150 @@ dl {
     text-transform: uppercase;
     font-family: $fonte-tags;
     cursor: pointer;
+}
+
+//Novo layout
+.artigo__formulario__item--erro {
+    @include body-system-regular(14, $cor-erro);
+}
+
+.artigo__formulario {
+    background-color: $cor-primaria;
+    padding: $espacamento-10 $espacamento-12;
+    @include estrutura-grid(12, $espacamento-6);
+    row-gap: $espacamento-3;
+
+    @include responsividade ("desktop") {
+        @include estrutura-grid(8, $espacamento-6);
+    } 
+    
+    @include responsividade ("tablet") {
+        @include estrutura-grid(8, $espacamento-6);       
+    } 
+
+    @include responsividade ("mobile") {
+        @include estrutura-grid(4, $espacamento-6);
+    }
+
+    h2 {
+        grid-column: 3 / span 4;
+        @include body-system-bold(20);
+
+        @include responsividade ("desktop") {
+            grid-column: 2 / span 6;
+        } 
+        
+        @include responsividade ("tablet") {        
+            grid-column: 1 / span 8; 
+        } 
+    
+        @include responsividade ("mobile") {
+            grid-column: 1 / span 4;              
+        }
+    }
+    
+    > p {
+        grid-column: 3 / span 6;
+        @include body-system-regular(14);
+
+        @include responsividade ("desktop") {
+            grid-column: 2 / span 6;
+        } 
+        
+        @include responsividade ("tablet") {        
+            grid-column: 1 / span 8; 
+        } 
+    
+        @include responsividade ("mobile") {
+            grid-column: 1 / span 4;              
+        }
+    }
+
+    form {
+        grid-column: 3 / span 8;
+        display: flex;
+        flex-direction: column;
+        gap: $espacamento-3;
+
+        button {
+            width: fit-content;
+        }
+
+        .botao__primario--enabled {
+            color: $cor-primaria;
+            cursor: pointer;
+        }
+
+        @include responsividade ("desktop") {
+            grid-column: 2 / span 6;
+        } 
+        
+        @include responsividade ("tablet") {        
+            grid-column: 1 / span 8; 
+        } 
+    
+        @include responsividade ("mobile") {
+            grid-column: 1 / span 4;              
+        }
+        
+        .artigo__formulario__usuario {
+            width: 100%;
+            @include estrutura-grid(2, $espacamento-6);
+            margin-bottom: $espacamento-1;
+
+            @include responsividade ("mobile") {
+                display: flex;
+                flex-direction: column;
+                
+                #nome {
+                    margin-bottom: $espacamento-4;
+                }
+
+            }
+
+            input {
+                justify-self: stretch;
+            }
+
+            #erro-nome, #erro-email {
+                margin-top: $espacamento-1;
+                grid-row: 2;
+            }
+            #erro-nome {
+                @include responsividade("mobile") {
+                    margin-top: -$espacamento-3;
+                    margin-bottom: $espacamento-4;
+                }
+            }
+
+            #erro-email {
+                grid-column: 2;
+            }
+        }
+
+        .artigo__formulario__salvar {
+            @include flex (initial, center);
+            gap: $espacamento-1;
+            @include body-system-regular(14, left, initial, $cor-neutra-1);
+            margin-bottom: $espacamento-3;
+
+            @include responsividade ("mobile") {
+                align-items: start;
+            }
+
+            input[type="checkbox"] {
+                display:none;
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+}
+
+.artigo__formulario__item--erro {  
+    display: none;
+    @include body-system-regular(14, left, initial, $cor-erro);
 }

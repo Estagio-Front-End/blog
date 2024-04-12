@@ -1,0 +1,33 @@
+input[type="text"], textarea {
+    all: unset;
+    background-color: $cor-primaria;
+    padding: $espacamento-6;
+    border: 0.05rem solid $cor-neutra-1;
+    border-radius: $espacamento-2;
+    @include body-system-regular(14, left, initial, $cor-neutra-1);
+    display: block;
+
+    &::placeholder {
+        @include body-system-regular(14, left, initial, $cor-neutra-3);
+    } 
+
+    &:focus {
+        background-color: $cor-primaria;
+        @include body-system-regular(14, left, initial, $cor-neutra-1);
+    }
+    
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        transition: all 5000s;
+    }
+}
+
+.botao__primario {
+    background-color: $cor-secundaria;
+    @include body-system-bold(14,center,uppercase, rgba(31, 32, 65, 0.7));
+    border-radius: $espacamento-3;
+    padding: $espacamento-4 $espacamento-8;
+    border: none;
+}

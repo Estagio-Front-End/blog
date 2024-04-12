@@ -145,6 +145,33 @@
                 </div>
             </div>
         </section>
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
     </main>
     <footer>
         <div aria-label="Listas do Footer" class="footer__listas">
@@ -221,4 +248,5 @@
 </body>
 <script src="../script.js"></script>
 <script src="../scripts/objetos.js"></script>
+<script src="../scripts/formulario.js"></script>
 </html>
