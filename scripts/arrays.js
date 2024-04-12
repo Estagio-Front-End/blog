@@ -22,56 +22,83 @@ function mostraResultado() {
 const exemploArrayObjetos = document.getElementById("array-objetos");
 exemploArrayObjetos.innerText += ` ${JSON.stringify([{nome: "Camila", cargo: "Estagiária"},{nome: "Valéria", cargo: "Estagiária"},{nome: "Júlia", cargo: "Estagiária"}])}`;
 
-//Métodos de edição 
-var arrayInicial = [1,2,3,4,5,6,7];
-document.getElementById('array-inicial').innerText += ` ${JSON.stringify(arrayInicial)}`;
-const resultadoBusca = document.getElementById('resultado-edicao');
+//Métodos de busca
+var arrayBusca = [1,2,3,4,5,6,7];
+document.getElementById('array-busca').innerText += ` ${JSON.stringify(arrayBusca)}`;
+const resultadoBusca = document.getElementById('resultado-busca');
 
 function buscaArray(metodo) {
-    var resultado;
+    var resultadoArrayBusca;
     switch (metodo) {
-        case "foreach":
-            resultadoBusca.innerText = 'O resultado do método é:';
-            arrayInicial.forEach((numero, index) => resultadoBusca.innerHTML += `<p>O número ${index+1} é ${numero}; </p>`);   
+        case "find":
+            resultadoArrayBusca = arrayBusca.find(x => x % 2 === 0);
             break;
-        case "push":
-            resultado = arrayInicial.push(8,9);
-            resultadoBusca.innerText = `O resultado do método é: ${arrayInicial}`;    
+        case "findindex":
+            resultadoArrayBusca = arrayBusca.findIndex(x => x % 2 === 0);
             break;
-        case "pop":
-            resultado = arrayInicial.pop();
-            resultadoBusca.innerText = `O resultado do método é: ${arrayInicial}`;    
+        case "indexof":
+            resultadoArrayBusca = arrayBusca.indexOf(5);
             break;
-        case "shift":
-            resultado = arrayInicial.shift();
-            resultadoBusca.innerText = `O resultado do método é: ${arrayInicial}`;    
+        case "some":
+            resultadoArrayBusca = arrayBusca.some(x => x % 2 === 0);
             break;
-        case "unshift":
-            resultado = arrayInicial.unshift(8,9);
-            resultadoBusca.innerText = `O resultado do método é: ${arrayInicial}`;    
+        case "every":
+            resultadoArrayBusca = arrayBusca.every(x => x % 2 === 0);
             break;
-        case "sort":
-            resultado = arrayInicial.sort();
-            resultadoBusca.innerText = `O resultado do método é: ${arrayInicial}`;    
-            break;
-        case "fill":
-            resultado = arrayInicial.fill(10, 2, 4);
-            resultadoBusca.innerText = `O resultado do método é: ${arrayInicial}`;    
-            break;
-        case "reverse":
-            resultado = arrayInicial.reverse();
-            resultadoBusca.innerText = `O resultado do método é: ${arrayInicial}`;    
-            break;
-        case "splice":
-            resultado = arrayInicial.splice(0, 3, 25);
-            resultadoBusca.innerText = `O resultado do método é: ${arrayInicial}`;    
-            break;
-        case "reduce":
-            resultado = arrayInicial.reduce((acumulador, valor) => acumulador + valor, 0);
-            resultadoBusca.innerText = `O resultado do método é: ${resultado}`;    
+        case "includes":
+            resultadoArrayBusca = arrayBusca.includes(10);
             break;
         default:
-            resultadoBusca.innerText = "";   
+            resultadoBusca.innerText = '';
             break;
     }
+    resultadoBusca.innerText = `O resultado da busca é: ${resultadoArrayBusca}`
+}
+
+//Métodos de edição 
+var arrayEdicao = [1,2,3,4,5,6,7];
+document.getElementById('array-edicao').innerText += ` ${JSON.stringify(arrayEdicao)}`;
+const resultadoEdicao = document.getElementById('resultado-edicao');
+
+function editaArray(metodo) {
+    switch (metodo) {
+        case "foreach":
+            resultadoEdicao.innerText = 'O resultado do método é:';
+            arrayEdicao.forEach((numero, index) => resultadoEdicao.innerHTML += `<p>O número ${index+1} é ${numero};</p>`);   
+            break;
+        case "push":
+            arrayEdicao.push(8,9);       
+            break;
+        case "pop":
+            arrayEdicao.pop();     
+            break;
+        case "shift":
+            arrayEdicao.shift();     
+            break;
+        case "unshift":
+            arrayEdicao.unshift(8,9);    
+            break;
+        case "sort":
+            arrayEdicao.sort();      
+            break;
+        case "fill":
+            arrayEdicao.fill(10, 2, 4);     
+            break;
+        case "reverse":
+            arrayEdicao.reverse();     
+            break;
+        case "splice":
+            arrayEdicao.splice(0, 3, 25);   
+            break;
+        case "reduce":
+            let resultadoReduce;
+            resultadoReduce = arrayEdicao.reduce((acumulador, valor) => acumulador + valor, 0);
+            resultadoEdicao.innerText = `O resultado do método é: ${resultadoReduce}`;    
+            break;
+        default:
+            resultadoEdicao.innerText = "";   
+            break;
+    }
+
+    (metodo !== "foreach" && metodo !== "reduce") ? resultadoEdicao.innerText = `O resultado do método é: ${arrayEdicao}` : resultadoEdicao.innerText += '';
 }

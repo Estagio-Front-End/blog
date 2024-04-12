@@ -87,6 +87,22 @@
                     <li><span>every(função de teste):</span> este método indica se todos os elementos do array atendem à condição imposta na função de teste passada como argumento. Caso positivo, o método retornará <code>true</code>, caso negativo, <code>false</code>.</li>
                     <li><span>includes(alvo):</span> este método retornará <code>true</code> ou <code>false</code> a depender de se o elemento passado como argumento do método exista dentro do array ou não.</li>
                 </ul>
+
+                <p class="conteudo__texto">Teste aqui os principais métodos de busca em arrays:</p>
+                <p class="conteudo__texto" id="array-busca">Array inicial:</p>
+                <div class="conteudo__demonstracao">
+                    <label for="input-busca">Selecione um método a aplicar no array:</label>
+                    <select name="input-busca" id="input-busca" onchange="buscaArray(this.value)">
+                        <option value="default">Selecione uma opção:</option>
+                        <option value="find">find(x => x % 2 === 0)</option>
+                        <option value="findindex">findIIndex(x => x % 2 === 0)</option>
+                        <option value="indexof">indexOf(5)</option>
+                        <option value="some">some(x => x % 2 === 0))</option>
+                        <option value="every">every(x => x % 2 === 0))</option>
+                        <option value="includes">includes(10)</option>
+                    </select>
+                </div>
+                <div class="conteudo__texto" id="resultado-busca"></div>
                 
                 <h4>Métodos de edição do array</h4>
                 <ul class="conteudo__texto">
@@ -103,12 +119,12 @@
                 </ul>
 
                 <p class="conteudo__texto">Teste aqui os principais métodos de edição de arrays:</p>
-                <p class="conteudo__texto" id="array-inicial">Array inicial:</p>
+                <p class="conteudo__texto" id="array-edicao">Array inicial:</p>
                 <div class="conteudo__demonstracao">
                     <label for="input-edicao">Selecione um método a aplicar no array:</label>
-                    <select name="input-edicao" id="input-edicao" onchange="buscaArray(this.value)">
+                    <select name="input-edicao" id="input-edicao" onchange="editaArray(this.value)">
                         <option value="default">Selecione uma opção:</option>
-                        <option value="foreach">forEach() -> O número x é y</option>
+                        <option value="foreach">forEach() -> "O número x é y"</option>
                         <option value="push">push(8,9)</option>
                         <option value="pop">pop()</option>
                         <option value="shift">shift()</option>
