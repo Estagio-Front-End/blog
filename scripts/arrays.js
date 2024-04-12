@@ -143,5 +143,5 @@ function criaArray(metodo) {
             resultadoCriacao.innerText = '';
             break;
     }
-    (metodo !== '') ? resultadoCriacao.innerText = `O resultado da busca é: ${JSON.stringify(resultadoArrayCriacao)}` : resultadoCriacao.innerText += '';
+    (metodo !== '') ? resultadoCriacao.innerText = `O resultado do método é: ${JSON.stringify(resultadoArrayCriacao)}` : resultadoCriacao.innerText += '';
 }
