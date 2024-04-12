@@ -92,15 +92,17 @@
                 <p class="conteudo__texto" id="array-busca">Array inicial:</p>
                 <div class="conteudo__demonstracao">
                     <label for="input-busca">Selecione um método a aplicar no array:</label>
-                    <select name="input-busca" id="input-busca" onchange="buscaArray(this.value)">
-                        <option value="default">Selecione uma opção:</option>
-                        <option value="find">find(x => x % 2 === 0)</option>
-                        <option value="findindex">findIIndex(x => x % 2 === 0)</option>
-                        <option value="indexof">indexOf(5)</option>
-                        <option value="some">some(x => x % 2 === 0))</option>
-                        <option value="every">every(x => x % 2 === 0))</option>
-                        <option value="includes">includes(10)</option>
-                    </select>
+                    <div class="conteudo__demonstracao__selecao">
+                        <select name="input-busca" id="input-busca" onchange="buscaArray(this.value)">
+                            <option value="">Selecione uma opção:</option>
+                            <option value="find">find(x => x % 2 === 0)</option>
+                            <option value="findindex">findIIndex(x => x % 2 === 0)</option>
+                            <option value="indexof">indexOf(5)</option>
+                            <option value="some">some(x => x % 2 === 0))</option>
+                            <option value="every">every(x => x % 2 === 0))</option>
+                            <option value="includes">includes(10)</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="conteudo__texto" id="resultado-busca"></div>
                 
@@ -122,19 +124,21 @@
                 <p class="conteudo__texto" id="array-edicao">Array inicial:</p>
                 <div class="conteudo__demonstracao">
                     <label for="input-edicao">Selecione um método a aplicar no array:</label>
-                    <select name="input-edicao" id="input-edicao" onchange="editaArray(this.value)">
-                        <option value="default">Selecione uma opção:</option>
-                        <option value="foreach">forEach() -> "O número x é y"</option>
-                        <option value="push">push(8,9)</option>
-                        <option value="pop">pop()</option>
-                        <option value="shift">shift()</option>
-                        <option value="unshift">unshift(8,9)</option>
-                        <option value="sort">sort()</option>
-                        <option value="fill">fill(10, 2, 4)</option>
-                        <option value="reverse">reverse()</option>
-                        <option value="splice">splice(0, 3, 25)</option>
-                        <option value="reduce">reduce() -> soma</option>
-                    </select>
+                    <div class="conteudo__demonstracao__selecao">
+                        <select name="input-edicao" id="input-edicao" onchange="editaArray(this.value)">
+                            <option value="">Selecione uma opção:</option>
+                            <option value="foreach">forEach() -> "O número x é y"</option>
+                            <option value="push">push(8,9)</option>
+                            <option value="pop">pop()</option>
+                            <option value="shift">shift()</option>
+                            <option value="unshift">unshift(8,9)</option>
+                            <option value="sort">sort()</option>
+                            <option value="fill">fill(10, 2, 4)</option>
+                            <option value="reverse">reverse()</option>
+                            <option value="splice">splice(0, 3, 25)</option>
+                            <option value="reduce">reduce() -> soma</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="conteudo__texto" id="resultado-edicao"></div>
 
@@ -150,6 +154,26 @@
                     <li><span>slice(posição inicial, posição final):</span> este método recorta e retorna uma parte do array, indicada pelas posições inicial e final. A posição final, assim como no método <code>fill()</code>, não é inclusiva.</li>
                 </ul>
             </article>
+
+            <p class="conteudo__texto">Teste aqui os principais métodos de busca em arrays:</p>
+                <p class="conteudo__texto" id="array-criacao">Array inicial para os métodos (exceto <code>Array.of</code>, <code>Array.from</code> e <code>flat</code>):</p>
+                <div class="conteudo__demonstracao">
+                    <label for="input-criacao">Selecione um método a aplicar no array:</label>
+                    <div class="conteudo__demonstracao__selecao">
+                        <select name="input-criacao" id="input-criacao" onchange="criaArray(this.value)">
+                            <option value="">Selecione uma opção:</option>
+                            <option value="arrayfrom">Array.from("Camila")</option>
+                            <option value="arrayof">Array.of(true, 29, "Estagiária")</option>
+                            <option value="map">map(x => x*2)</option>
+                            <option value="filter">filter(x => x % 2 === 0)</option>
+                            <option value="join">join(", ")</option>
+                            <option value="concat">concat([8,9,10])</option>
+                            <option value="flat">[1,2,3,4,[5,6,7]].flat()</option>
+                            <option value="slice">slice(2,5)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="conteudo__texto" id="resultado-criacao"></div>
     
             <div class="artigo__info">
                 <div class="artigo__info__autor">

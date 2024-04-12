@@ -52,7 +52,7 @@ function buscaArray(metodo) {
             resultadoBusca.innerText = '';
             break;
     }
-    resultadoBusca.innerText = `O resultado da busca é: ${resultadoArrayBusca}`
+    (metodo !== '') ? resultadoBusca.innerText = `O resultado da busca é: ${resultadoArrayBusca}` : resultadoBusca.innerText += '';
 }
 
 //Métodos de edição 
@@ -100,5 +100,48 @@ function editaArray(metodo) {
             break;
     }
 
-    (metodo !== "foreach" && metodo !== "reduce") ? resultadoEdicao.innerText = `O resultado do método é: ${arrayEdicao}` : resultadoEdicao.innerText += '';
+    (metodo !== '') ?
+        (metodo !== "foreach" && metodo !== "reduce") 
+        ? resultadoEdicao.innerText = `O resultado do método é: ${arrayEdicao}` 
+        : resultadoEdicao.innerText += ''
+        : resultadoEdicao.innerText += '';
+}
+
+//Métodos de criação
+var arrayCriacao = [1,2,3,4,5,6,7];
+document.getElementById('array-criacao').innerText += ` ${JSON.stringify(arrayCriacao)}`;
+const resultadoCriacao = document.getElementById('resultado-criacao');
+
+function criaArray(metodo) {
+    var resultadoArrayCriacao;
+    switch (metodo) {
+        case "arrayfrom":
+            resultadoArrayCriacao = Array.from("Camila");
+            break;
+        case "arrayof":
+            resultadoArrayCriacao = Array.of(true, 29, "Estagiária");
+            break;
+        case "map":
+            resultadoArrayCriacao = arrayCriacao.map(x => x*2);
+            break;
+        case "filter":
+            resultadoArrayCriacao = arrayCriacao.filter(x => x % 2 === 0);
+            break;
+        case "join":
+            resultadoArrayCriacao = arrayCriacao.join(", ");
+            break;
+        case "concat":
+            resultadoArrayCriacao = arrayCriacao.concat([8,9,10]);
+            break;
+        case "flat":
+            resultadoArrayCriacao = [1,2,3,4,[5,6,7]].flat();
+            break;
+        case "slice":
+            resultadoArrayCriacao = arrayCriacao.slice(2,5);
+            break;
+        default:
+            resultadoCriacao.innerText = '';
+            break;
+    }
+    (metodo !== '') ? resultadoCriacao.innerText = `O resultado da busca é: ${JSON.stringify(resultadoArrayCriacao)}` : resultadoCriacao.innerText += '';
 }
