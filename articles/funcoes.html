@@ -50,31 +50,58 @@
                 
                 <p class="conteudo__texto">Para a manutenção de um código mais limpo, é importante que uma função tenha um nome que indique facilmente para que aquela função serve e que seu bloco de código tenha apenas uma funcionalidade. Se ele possuir mais de uma funcionalidade, é interessante que esta função seja quebrada em duas ou mais funções.</p>
 
-                <figure>
-                    <img src="" alt="">
-                    <caption></caption>
-                </figure>
-
                 <h3>Parâmetros da função</h3>
-                <p class="conteudo__texto">Texto aqui</p>
+                <p class="conteudo__texto">Os parâmetros de uma função são informações de entrada que podem ou não ser solicitadas pela função. Estas informações serão utilizadas e/ou manipuladas dentro da função para que ela cumpra a sua funcionalidade. Em uma função que calcula o IMC, por exemplo, teremos como parâmetros da função a altura e o peso de um indivíduo. Estas informações, quando a função for utilizada, serão manipuladas em uma equação algébrica definida para que a função cumpra seu papel: calcular o IMC. 
 
                 <h4>Parâmetros rest</h4>
+                <p class="conteudo__texto">Os parâmetros rest são uma forma de agrupar parâmetros em um array a ser manipulado pela função. Sua sintaxe dentro do parêntesis inicia-se com reticências e é precedido pelo nome a ser dado para esta coleção de parâmetros, como em <code>...argumentos</code>. Por exemplo, em uma função para cálculo da média de um aluno, poderíamos escrever da seguinte forma: <code>function mediaAluno(nome, turma, ...notas)</code>. Os parâmetros nome e turma são parâmetros padrões, e receberão seus valores em <code>string</code> e <code>number</code>, respectivamente, ao passo que quaisquer valores passados após serão incluídos em um array chamado notas, passível de manipulação dentro da função.</p>
+
+                <p class="conteudo__texto">É importante ressaltar que, na inicialização da função estas informações são chamadas de parâmetros, ao passo que, na utilização da função, estas informações são chamadas de argumentos.</p>
+
+                <h3>Escopo da função</h3>
+                <p class="conteudo__texto">Em termos de escopo da função, temos duas situações, o escopo em que a função se encontra e o escopo que ela define. Funções são capazes de acessar informações de escopos mais externos a elas, porém escopos mais externos não são capazes de acessar informações internas aos escopos das funções, exceto quando uma função retorna essa informação. Isso significa que: variáveis definidas em escopo global são acessíveis para toda e qualquer função inicializada, ao passo que variáveis definidas em escopo de função estarão disponíveis apenas dentro daquele escopo, exceto se retornadas pela função. Além disso, funções inicializadas no escopo global podem ser utilizadas em qualquer ponto do código, mas funções inicializadas dentro do escopo de outras funções são acessíveis apenas àquele escopo, exceto se retornadas.</p>
+                
+                <h3>Funções aninhadas</h3>
+                <p class="conteudo__texto">É possível, caso necessário, criar funções dentro de funções. Como explicitado anteriormente, porém, a função interna estará acessível apenas para a função na qual ela foi inicializada, exceto se retornada, assim como suas variáveis não estarão disponíveis para escopos mais externos, exceto se retornadas. Uma função mais interna, por sua vez, tem acesso à variáveis e funções tanto do escopo de função em que ela se encontra quanto do escopo global.</p>
+
+                <h3>Closures</h3>
                 <p class="conteudo__texto">Texto aqui</p>
+
+                <figure>
+                    <img src="../images/funcoes-1.png" alt="Imagem com fundo preto e código Javascript escrito definindo a função mediaAluno aplicando os conceitos de parãmetros padrão e rest, funções aninhadas e escopo de função.">
+                    <figcaption>Definição da função <code>mediaAluno</code></figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Na figura anterior é possível exemplificar vários dos conceitos mencionados anteriormente. A função <code>mediaAluno</code> é criada de forma literal, com a palavra reservada <code>function</code> e a sintaxe correspondente. <code>Nome</code>, <code>sobrenome</code> e <code>turma</code> são parâmetros padrões, ao passo que notas é um parâmetro rest. A função <code>nomeCompleto</code> é uma função aninhada que está inserida no escopo da função <code>mediaAluno</code>, de forma que, para o escopo global, ela é invisível caso não retornada. Esta configuração de escopo significa também que: as variáveis globais e de <code>mediaAluno</code> podem ser acessadas pela função <code>nomeCompleto</code>, mas as variáveis não retornadas de <code>nomeCompleto</code> não podem ser acessadas nem pelo escopo de <code>mediaAluno</code>, nem pelo escopo global. De forma semelhante, as variáveis de <code>mediaAluno</code> não poderiam ser acessadas pelo escopo global, caso não fossem retornadas. Diante destas explicações, é possível entender que todos os <code>console.log</code> exibidos no código, exceto o que mostra a utilização da função <code>mediaAluno</code>, gerarão erros de referência. Teste a função <code>mediaAluno</code> a seguir:</p>
+
+                <div class="conteudo__demonstracao">
+                    <label for="nome-demonstracao">Nome do(a) aluno(a):</label>
+                    <input type="text" id="nome-demonstracao" name="nome-demonstracao" required>
+                    
+                    <label for="sobrenome-demonstracao">Sobrenome do(a) aluno(a):</label>
+                    <input type="text" id="sobrenome-demonstracao" name="sobrenome-demonstracao" required>
+                    
+                    <label for="turma-demonstracao">Turma do(a) aluno(a):</label>
+                    <input type="number" min="1" max="5" id="turma-demonstracao" name="turma-demonstracao" required>
+                    
+                    <label for="nota1-demonstracao">Primeira nota do(a) aluno(a):</label>
+                    <input type="number" min="0" max="10" id="nota1-demonstracao" name="nota1-demonstracao" required>
+                    
+                    <label for="nota2-demonstracao">Segunda nota do(a) aluno(a):</label>
+                    <input type="number" min="0" max="10" id="nota2-demonstracao" name="nota2-demonstracao" required>
+                    
+                    <label for="nota3-demonstracao">Terceira nota do(a) aluno(a):</label>
+                    <input type="number" min="0" max="10" id="nota3-demonstracao" name="nota3-demonstracao" required>
+
+                    <button class="conteudo__demonstracao__botao" id="botao-demonstracao">Calcular média</button>
+                </div>
+
+                <p id="resultado-media" class="conteudo__texto"></p>
 
                 <h3>Funções síncronas e assíncronas</h3>
                 <p class="conteudo__texto">Texto aqui</p>
 
-                <h3>Escopo da função</h3>
-                <p class="conteudo__texto">Texto aqui</p>
-                <h4>Variáveis dentro do escopo de uma função</h4>
-                
-                <h3>Funções aninhadas</h3>
-                <p class="conteudo__texto">Texto aqui</p>
-
                 <h3>Recursão</h3>
-                <p class="conteudo__texto">Texto aqui</p>
-
-                <h3>Closures</h3>
                 <p class="conteudo__texto">Texto aqui</p>
 
                 <h3>Arrow Functions</h3>
