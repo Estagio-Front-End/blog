@@ -63,3 +63,28 @@ async function coletarImagemCharizard(url) {
 coletarImagemSylveon(urlPokeAPI);
 coletarImagemCharizard(urlPokeAPI);
 
+//Recursividade
+const inputRecursao = document.getElementById("numero-recursao");
+const botaoRecursao = document.getElementById("botao-recursao")
+const resultadoRecursao = document.getElementById("resultado-recursao");
+
+function contagemRegressiva(tempoEmSegundos) {
+    let contador = tempoEmSegundos;
+    resultadoRecursao.innerText += ` ${contador}`; 
+    setTimeout(() => {
+        if (contador > 0) {
+            contagemRegressiva(contador - 1)
+        }
+    }, 1000)
+}
+
+botaoRecursao.addEventListener('click', () => {
+    resultadoRecursao.innerText = "";
+    if ((inputRecursao.value !== "") && (inputRecursao.value > 0)) {
+        contagemRegressiva(inputRecursao.value);
+        inputRecursao.value = "";
+    } else {
+        alert("Indicar um número maior que zero para realizar a contagem regressiva!")
+    }
+})
+

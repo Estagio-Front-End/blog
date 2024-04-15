@@ -119,7 +119,15 @@
                 </div>
 
                 <h3>Recursão</h3>
-                <p class="conteudo__texto">Texto aqui</p>
+                <p class="conteudo__texto">Funções recursivas são aquelas que chamam a si mesmas dentro de seu próprio escopo até que seja interrompida. É importante frisar que ela deve ser interrompida, ou gerará um loop infinito podendo travar a máquina executando o código. São bastante utilizadas em casos em que uma mesma função deve ser invocada repetidas vezes seguindo um padrão. Na maioria dos casos, uma funcionalidade obtida por funções recursivas pode ser igualmente obtida por um laço iterativo. Deste modo, é necessário verificar a real necessidade de utilização de recursão, pois é uma solução de mais difícil entendimento e manutenção.</p>
+
+                <p class="conteudo__texto">Teste aqui o funcionamento de uma função recursiva:</p>
+                <div class="conteudo__demonstracao">
+                    <label for="numero-recursao">Digite um número para iniciar a contagem regressiva até 0.</label>
+                    <input type="number" min="1" max="60" id="numero-recursao" name="numero-recursao">
+                    <button class="conteudo__demonstracao__botao" id="botao-recursao">MOSTRAR CONTAGEM REGRESSIVA</button>
+                </div>
+                <p class="conteudo__texto" id="resultado-recursao"></p>
 
                 <h3>Arrow Functions</h3>
                 <p class="conteudo__texto">A sintaxe de arrow functions é uma forma mais concisa de se criar uma função. Toda arrow function é uma função anônima, ou seja, ela não tem um nome, de modo que não pode ser reutilizada em outro pronto do código exceto aquele em que ela é criada. Muito utilizada em funções de callback, sua sintaxe é na forma <code>( parâmetros ) => { //bloco de código }</code>. Os parâmetros, assim como nas demais funções, são opcionais e, caso a função tenha apenas um parâmetro, os parêntesis podem ser omitidos. Caso o bloco de código a ser executado tenha apenas um linha, é possível, também, omitir o par de chaves. Devido à seta utilizada, este tipo de sintaxe é também chamada de função da seta gorda.</p>
