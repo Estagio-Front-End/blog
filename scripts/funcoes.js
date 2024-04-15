@@ -41,3 +41,25 @@ botaoDemonstracao.addEventListener('click', () => {
         }   
 })
 
+//Funções assíncronas
+const urlPokeAPI = "https://pokeapi.co/api/v2/pokemon";
+
+function coletarImagemSylveon (url) {
+    fetch(`${url}/sylveon`)
+        .then(resposta => resposta.json())
+        .then(dados => {
+            document.getElementById("pokemon").setAttribute('src', dados.sprites.front_default);
+            document.getElementById("pokemon").setAttribute('alt', `Imagem do pokemon ${dados.name}`);
+        });
+}
+
+async function coletarImagemCharizard(url) {
+    let resposta = await fetch(`${url}/charizard`);
+    let dados = await resposta.json();
+    document.getElementById("pokemon-2").setAttribute('src', dados.sprites.front_default);
+    document.getElementById("pokemon-2").setAttribute('alt', `Imagem do pokemon ${dados.name}`);
+}
+
+coletarImagemSylveon(urlPokeAPI);
+coletarImagemCharizard(urlPokeAPI);
+

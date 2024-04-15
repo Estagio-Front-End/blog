@@ -99,17 +99,38 @@
                 <p id="resultado-media" class="conteudo__texto"></p>
 
                 <h3>Funções síncronas e assíncronas</h3>
-                <p class="conteudo__texto">Texto aqui</p>
+                <p class="conteudo__texto">Funções síncronas são aquelas em que o código é lido e executado na ordem em que foi escrito, ao passo que funções assíncronas, como o nome já detona, não necessariamente seguem a ordem em que o código foi escrito. Muito utilizadas no consumo de APIs, as funções assíncronas são utilizadas quando se necessita esperar que uma operação ocorra sem barrar o funcionamento do resto da aplicação. Funções assíncronas podem utilizar duas sintaxes, a de <code>async/await</code> e a de <code>.then</code>. Na primeira sintaxe, se utiliza o <code>async</code> na assinatura da função para indicar que ela é assíncrona e <code>await</code> em toda linha de código em que se tenha uma operação que deve aguardada. Na segunda sintaxe, o <code>.then</code> será utilizado após uma linha de código que deve ser aguardada. Este método indica o que será feito em seguida, após a linha de código sendo aguardada executar com sucesso.</p>
+
+                <figure>
+                    <img src="../images/funcoes-async.png" alt="Imagem com fundo preto e código Javascript escrito realizando o consumo da API PokeAPI com as sintaxes async/await e .then">
+                    <figcaption>Consumo de APIs com as sintaxes <code>async/await</code> e <code>.then()</code></figcaption>
+                </figure>
+                
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img id="pokemon">
+                        <figcaption>Imagem do Pokemon Sylveon retirado da PokeAPI com a sintaxe <code>.then</code></figcaption>
+                    </figure>
+
+                    <figure>
+                        <img id="pokemon-2">
+                        <figcaption>Imagem do Pokemon Charizard retirado da PokeAPI com a sintaxe <code>async/await</code></figcaption>
+                    </figure>
+                </div>
 
                 <h3>Recursão</h3>
                 <p class="conteudo__texto">Texto aqui</p>
 
                 <h3>Arrow Functions</h3>
-                <p class="conteudo__texto">Texto aqui</p>
+                <p class="conteudo__texto">A sintaxe de arrow functions é uma forma mais concisa de se criar uma função. Toda arrow function é uma função anônima, ou seja, ela não tem um nome, de modo que não pode ser reutilizada em outro pronto do código exceto aquele em que ela é criada. Muito utilizada em funções de callback, sua sintaxe é na forma <code>( parâmetros ) => { //bloco de código }</code>. Os parâmetros, assim como nas demais funções, são opcionais e, caso a função tenha apenas um parâmetro, os parêntesis podem ser omitidos. Caso o bloco de código a ser executado tenha apenas um linha, é possível, também, omitir o par de chaves. Devido à seta utilizada, este tipo de sintaxe é também chamada de função da seta gorda.</p>
 
                 <h3>Principais funções predefinidas do Javascript</h3>
                 <ul class="conteudo__texto">
-                    <li><span></span></li>
+                    <li><span>eval(argumento):</span> esta função avalia um código Javascript válido em formato de string e o executa. Por exemplo, se temos <code>eval("2+2")</code>, o retorno da função será 4.</li>
+                    <li><span>isFinite(argumento):</span> esta função é utilizada para determinar se um número é finito ou não.</li>
+                    <li><span>isNaN(argumento):</span> esta função recebe um parâmetro e avalia se ele é do tipo NaN (Not a Number) ou não. Se sim, ele retornará <code>true</code>, caso contrário, retornará <code>false</code>.</li>
+                    <li><span>parseFloat(argumento):</span> esta função retorna um número do tipo <code>float</code> (número decimal) a partir de um parâmetro do tipo string. Caso o primeiro caracter do parâmetro diferente de espaço vazio não seja um número, este método retornará <code>NaN</code>.</li>
+                    <li><span>parseInt(argumento, base):</span> esta função retorna um número inteiro a partir de um parâmetro do tipo string e uma base indicada. Caso o primeiro caracter do parâmetro diferente de espaço vazio não seja um número, este método retornará <code>NaN</code>. Para que esta função funcione da forma esperada, é importante que a base sempre seja indicada. Normalmente, quando a base não é indicada, ela é assumida como 10 (base decimal), mas isto não é regra, de modo que é necessário indicá-la.</li>
                 </ul>
                 
             </article>
