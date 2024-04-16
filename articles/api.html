@@ -46,16 +46,32 @@
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
             <article>
-                <p class="conteudo__texto">Texto aqui</p>
+                <p class="conteudo__texto">As <abbr title="Application Programming Interface">API</abbr>s, no português, Interface de Programação de Aplicações, são um mecanismo pelo qual diferentes aplicações trocam informações. APIs são utilizadas para acesso à dados de terceiros, abstrair a complexidade de uma aplicação, aumentar as funcionalidades de uma aplicação ou adicionar uma camada de segurança em dispositivos móveis. Aplicativos nativos de previsão do tempo, widgets de aplicativos e o sistema operacional perguntando se um app pode utilizar a localização atual são exemplos de APIs trabalhando.</p>
+
+                <p class="conteudo__texto">Existem algumas formas de trabalhar com APIs, "consumindo-as" na aplicação e utilizando os dados ou funcionalidades obtidas no código. Exemplos são: fetch API, Axios e Ajax.</p>
                 
                 <h3>Fetch API</h3>
-                <p class="conteudo__texto">Texto aqui</p>
+                <p class="conteudo__texto">A Fetch API é uma API que possibilita a criação de requisições HTTP do navegador para o servidor. É uma evolução do XMLHttpRequest por ser mais simples e mais flexível. Essa API utiliza, dentro de uma estrutura de Javascript assíncrono (<code>async/await</code> ou <code>.then</code>), o método global <code>fetch()</code> para inicializar uma requisição. Ela é baseada em <code>Promise</code>, que são, como o nome sugere, um "promessa" de retorno de dados. A depender do resultado da <code>Promise</code>, pode-se lidar com erros utilizando o bloco <code>catch</code> ou acessar informações da resposta (<code>Response</code>) como o seu valor, o status da resposta e o valor do status da resposta.</p>
+
+                <figure>
+                    <img src="../images/api-fetch.png" alt="">
+                    <figcaption>Utilização da Fetch API com bloco de tratamento de erros utilizando as sintaxes <code>.then</code> e <code>asyn/await</code>.</figcaption>
+                </figure>
+
+                para 
                 
                 <h3>AJAX</h3>
                 <p class="conteudo__texto">Texto aqui</p>
                 
                 <h3>Axios</h3>
-                <p class="conteudo__texto">Texto aqui</p>
+                <p class="conteudo__texto">O Axios é uma biblioteca que facilita as requisições HTTP, podendo trabalhar tanto ser utilizada no front-end quanto no back-end. Ela primeiramente deve ser instalada (utilizando npm, temos o comando <code>npm i axios</code>) e importada no projeto. Ela é uma biblioteca baseada em <code>Promise</code>, de modo que podemos utilizar os blocos <code>.then/.catch</code> para lidar com a resposta ou com possíveis erros, respectivamente.</p>
+
+                <figure> 
+                    <img src="../images/" alt="">
+                    <figcaption>Utilização da biblioteca Axios com bloco de tratamento de erros utilizando a sintaxe <code>.then/.catch</code>.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Um das vantagens do axios é que ele também oferece atalhos para cada tipo de requisição, como GET, PUT, POST, DELETE, com a notação de ponto. Ou seja, para realizar uma requisição GET temos <code>axios.get()</code>, para uma requisição DELETE temos <code>axios.delete()</code>, entre outros tipos de requisição.</p>
             </article>
     
             <div class="artigo__info">
