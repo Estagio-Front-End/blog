@@ -29,9 +29,7 @@ botaoDemonstracao.addEventListener('click', () => {
             } else {
                 inputsVazios += 1;
             }
-            console.log(inputsVazios);
         });
-
 
         if (inputsVazios === 0) {
             resultadoMedia.innerText = mediaAluno(nomeDemonstracao.value, sobrenomenomeDemonstracao.value, turmaDemonstracao.value, nota1Demonstracao.value, nota2Demonstracao.value, nota3Demonstracao.value);
@@ -76,6 +74,7 @@ function contagemRegressiva(tempoEmSegundos) {
             contagemRegressiva(contador - 1)
         }
     }, 1000)
+
 }
 
 botaoRecursao.addEventListener('click', () => {
@@ -87,4 +86,33 @@ botaoRecursao.addEventListener('click', () => {
         alert("Indicar um número maior que zero para realizar a contagem regressiva!")
     }
 })
+
+//Closures
+const botao1Closure = document.getElementById("botao1-closure");
+const botao2Closure = document.getElementById("botao2-closure");
+const botao3Closure = document.getElementById("botao3-closure");
+const resultado1Closure = document.getElementById("resultado1-closure");
+const resultado2Closure = document.getElementById("resultado2-closure");
+const resultado3Closure = document.getElementById("resultado3-closure");
+
+const botoesClosure = [botao1Closure, botao2Closure, botao3Closure];
+botoesClosure.forEach(botao => contadorCliqueBotao(botao));
+
+function contadorCliqueBotao (botao) {
+    let contadorClique = 0;
+
+    botao.addEventListener('click', (evento) => {
+        contadorClique++;
+        if(evento.target.id === "botao1-closure") {
+            resultado1Closure.innerText = `O ${evento.target.textContent} foi clicado ${contadorClique} vezes.`
+        } else if (evento.target.id === "botao2-closure") {
+            resultado2Closure.innerText = `O ${evento.target.textContent} foi clicado ${contadorClique} vezes.`
+        } else if (evento.target.id === "botao3-closure") {
+            resultado3Closure.innerText = `O ${evento.target.textContent} foi clicado ${contadorClique} vezes.`
+        } else {
+            alert("Clique em um botão válido!");
+        }
+    });
+}
+
 

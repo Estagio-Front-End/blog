@@ -63,10 +63,7 @@
                 
                 <h3>Funções aninhadas</h3>
                 <p class="conteudo__texto">É possível, caso necessário, criar funções dentro de funções. Como explicitado anteriormente, porém, a função interna estará acessível apenas para a função na qual ela foi inicializada, exceto se retornada, assim como suas variáveis não estarão disponíveis para escopos mais externos, exceto se retornadas. Uma função mais interna, por sua vez, tem acesso à variáveis e funções tanto do escopo de função em que ela se encontra quanto do escopo global.</p>
-
-                <h3>Closures</h3>
-                <p class="conteudo__texto">Texto aqui</p>
-
+                
                 <figure>
                     <img src="../images/funcoes-1.png" alt="Imagem com fundo preto e código Javascript escrito definindo a função mediaAluno aplicando os conceitos de parãmetros padrão e rest, funções aninhadas e escopo de função.">
                     <figcaption>Definição da função <code>mediaAluno</code></figcaption>
@@ -97,6 +94,27 @@
                 </div>
 
                 <p id="resultado-media" class="conteudo__texto"></p>
+
+                <h3>Closures</h3>
+                <p class="conteudo__texto">Closures são funções que retém acesso às variáveis do contexto na qual foram criadas, mesmo que este contexto seja uma função que já tenha sido executada e encerrada. É um conceito muito utilizado em callbacks e na criação de funções que não podem ser acessadas em outras partes do código. Um exemplo de aplicação do conceito de closure é na utilização do método <code>addEventListener</code>, que recebe um evento e um callback como argumentos. O callback, por sua vez, é uma função que não pode ser acessada em outras partes do código, mas retém acesso às variáveis do contexto em que foi criada.</p>
+
+                <figure>
+                    <img src="../images/funcoes-closure.png" alt="Imagem com fundo preto e código Javascript inicializando uma função que conta os cliques de um botão e aplicando-a nos 3 botões da tela.">
+                    <figcaption>Função <code>contadorCliqueBotao</code> aplicando o conceito de closure</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Na imagem anterior temos a função <code>contadorCliqueBotao</code> que irá contabilizar os cliques em 3 botões. A chamada da função para cada botão cria um contexto de execução, de modo que cada botão (contexto) possui a sua variável <code>contadorClique</code>. O callback na função <code>addEventListener</code> irá incrementar e "lembrar" do valor da variável <code>contadorClique</code> mesmo que o contexto de execução (a função <code>contadorCliqueBotao</code>) já tenha sido executado e encerrado. Deste modo, em cada clique de cada botão, a função lembrará a quantidade e esta informação poderá ser manipulada.</p>
+
+                <p class="conteudo__texto">Clique nos botões para testar a função <code>contadorCliqueBotao</code>:</p>
+                <div class="conteudo__demonstracao">
+                    <button class="conteudo__demonstracao__botao" id="botao1-closure">Botão 1</button>
+                    <button class="conteudo__demonstracao__botao" id="botao2-closure">Botão 2</button>
+                    <button class="conteudo__demonstracao__botao" id="botao3-closure">Botão 3</button>
+                </div>
+
+                <p class="conteudo__texto" id="resultado1-closure"></p>
+                <p class="conteudo__texto" id="resultado2-closure"></p>
+                <p class="conteudo__texto" id="resultado3-closure"></p>
 
                 <h3>Funções síncronas e assíncronas</h3>
                 <p class="conteudo__texto">Funções síncronas são aquelas em que o código é lido e executado na ordem em que foi escrito, ao passo que funções assíncronas, como o nome já detona, não necessariamente seguem a ordem em que o código foi escrito. Muito utilizadas no consumo de APIs, as funções assíncronas são utilizadas quando se necessita esperar que uma operação ocorra sem barrar o funcionamento do resto da aplicação. Funções assíncronas podem utilizar duas sintaxes, a de <code>async/await</code> e a de <code>.then</code>. Na primeira sintaxe, se utiliza o <code>async</code> na assinatura da função para indicar que ela é assíncrona e <code>await</code> em toda linha de código em que se tenha uma operação que deve aguardada. Na segunda sintaxe, o <code>.then</code> será utilizado após uma linha de código que deve ser aguardada. Este método indica o que será feito em seguida, após a linha de código sendo aguardada executar com sucesso.</p>
