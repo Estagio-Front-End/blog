@@ -54,17 +54,26 @@
                 <p class="conteudo__texto">A Fetch API é uma API que possibilita a criação de requisições HTTP do navegador para o servidor. É uma evolução do XMLHttpRequest por ser mais simples e mais flexível. Essa API utiliza, dentro de uma estrutura de Javascript assíncrono (<code>async/await</code> ou <code>.then</code>), o método global <code>fetch()</code> para inicializar uma requisição. Ela é baseada em <code>Promise</code>, que são, como o nome sugere, um "promessa" de retorno de dados. A depender do resultado da <code>Promise</code>, pode-se lidar com erros utilizando o bloco <code>catch</code> ou acessar informações da resposta (<code>Response</code>) como o seu valor, o status da resposta e o valor do status da resposta.</p>
 
                 <figure>
-                    <img src="../images/api-fetch.png" alt="">
+                    <img src="../images/api-fetch.png" alt="Imagem com fundo preto e código Javascript escrito definindo duas funções assíncronas com sintaxes diferentes, porém com o mesmo intuito de consumir uma API por meio da Fetch API.">
                     <figcaption>Utilização da Fetch API com bloco de tratamento de erros utilizando as sintaxes <code>.then</code> e <code>asyn/await</code>.</figcaption>
-                </figure>
+                </figure> 
 
-                para 
+                <p class="conteudo__texto">Para métodos de requisição que requeiram o envio de dados, o método <code>fetch()</code> é passível de receber um segundo argumento, o objeto <code>init</code>, por onde são passadas as informações da requisição, incluindo os dados a serem enviados para o servidor.</p>
                 
                 <h3>AJAX</h3>
-                <p class="conteudo__texto">O <abbr title="Asynchronous Javascript and XML">AJAX</abbr> é uma junção entre Javascript assíncrono e XML (ou JSON, ou txt) para enviar e receber dados entre cliente e servidor. Uma requisição no AJAX é inicializada pela criação de um objeto do tipo <code>XMLHttpRequest</code>, a utilização de seus métodos <code>open()</code>, por onde são passados o tipo da requisição (GET, POST, DELETE...), a url de onde se quer acessar os recursos e se a requisição deve ser tratada de forma assíncrona ou não, método <code>onload</code> com uma função de callback para lidar com a resposta e método <code>send()</code> para enviar a requisição.</p>
+                <p class="conteudo__texto">O <abbr title="Asynchronous Javascript and XML">AJAX</abbr> é uma junção entre Javascript assíncrono e XML (ou JSON, ou txt) para enviar e receber dados entre cliente e servidor. Uma requisição no AJAX é inicializada pela criação de um objeto do tipo <code>XMLHttpRequest</code> e a subsequente utilização de seus métodos e propriedades: 
+                
+                <ul class="conteudo__texto">
+                    <li><span>método open(metodo, url, assincronicidade):</span> por onde são passados o tipo da requisição (GET, POST, DELETE...), a url de onde se quer acessar os recursos e se a requisição deve ser tratada de forma assíncrona ou não;</li>
+                    
+                    <li><span>propriedade onload:</span> com uma função de callback atribuída a ela, para lidar com a resposta ou possíveis erros;</li>
+                    
+                    <li><span>método send():</span> para enviar a requisição.</li>
+                </ul>
+                   
 
                 <figure>
-                    <img src="" alt="">
+                    <img src="../images/api-ajax.png" alt="Imagem com fundo preto e código Javascript escrito definindo uma função para consumir uma API com AJAX">
                     <figcaption>Requisição HTTP com AJAX.</figcaption>
                 </figure>
                 
@@ -72,14 +81,14 @@
                 <p class="conteudo__texto">O Axios é uma biblioteca que facilita as requisições HTTP, podendo trabalhar tanto ser utilizada no front-end quanto no back-end. Ela primeiramente deve ser instalada (utilizando npm, temos o comando <code>npm i axios</code>) e importada no projeto. Ela é uma biblioteca baseada em <code>Promise</code>, de modo que podemos utilizar os blocos <code>.then/.catch</code> para lidar com a resposta ou com possíveis erros, respectivamente.</p>
 
                 <figure> 
-                    <img src="" alt="">
+                    <img src="../images/api-axios.png" alt="Imagem com fundo preto e código Javascript escrito definindo uma função para consumir uma API com Axios">
                     <figcaption>Utilização da biblioteca Axios com bloco de tratamento de erros utilizando a sintaxe <code>.then/.catch</code>.</figcaption>
                 </figure>
 
-                <p class="conteudo__texto">Um das vantagens do axios é que ele também oferece atalhos para cada tipo de requisição, como GET, PUT, POST, DELETE, com a notação de ponto. Ou seja, para realizar uma requisição GET temos <code>axios.get()</code>, para uma requisição DELETE temos <code>axios.delete()</code>, entre outros tipos de requisição.</p>
+                <p class="conteudo__texto">Um das vantagens do Axios é que ele também oferece atalhos para cada tipo de requisição, como GET, PUT, POST, DELETE, com a notação de ponto. Ou seja, para realizar uma requisição GET temos <code>axios.get()</code>, para uma requisição DELETE temos <code>axios.delete()</code>, entre outros tipos de requisição.</p>
 
                 <figure>
-                    <img src="" alt="">
+                    <img src="../images/api-axios-docs.png" alt="Imagem com fundo branco e palavras em preto listando os métodos de requisição HTTP suportados pelo Axios.">
                     <figcaption>Métodos suportados pelo Axios, disponível na documentação oficial da biblioteca.</figcaption>
                 </figure>
             </article>
