@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Funções no Javascript</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+   
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Funções no Javascript</h2>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+            
+            <article>
+                <p class="conteudo__texto">As funções em Javascript são blocos de código executáveis e reutilizáveis. Sua criação pode se dar de várias formas, mas a sintaxe mais comum é a que inclui a palavra reservada <code>function</code>, seguido do nome da função, par de parêntesis (que podem conter ou não elementos) e um par de chaves. Dentro do par de chaves é onde será escrito o bloco de código que será executado pela função em questão. Uma função pode ou não retornar um valor. Caso retorne, a palavra reservada <code>return</code> deve ser utilizada dentro do bloco de código e a função deve retornar apenas um valor, seja ele numérico, uma string, ou até mesmo uma outra função.</p>
+                
+                <p class="conteudo__texto">Para a manutenção de um código mais limpo, é importante que uma função tenha um nome que indique facilmente para que aquela função serve e que seu bloco de código tenha apenas uma funcionalidade. Se ele possuir mais de uma funcionalidade, é interessante que esta função seja quebrada em duas ou mais funções.</p>
+
+                <h3>Parâmetros da função</h3>
+                <p class="conteudo__texto">Os parâmetros de uma função são informações de entrada que podem ou não ser solicitadas pela função. Estas informações serão utilizadas e/ou manipuladas dentro da função para que ela cumpra a sua funcionalidade. Em uma função que calcula o IMC, por exemplo, teremos como parâmetros da função a altura e o peso de um indivíduo. Estas informações, quando a função for utilizada, serão manipuladas em uma equação algébrica definida para que a função cumpra seu papel: calcular o IMC. 
+
+                <h4>Parâmetros rest</h4>
+                <p class="conteudo__texto">Os parâmetros rest são uma forma de agrupar parâmetros em um array a ser manipulado pela função. Sua sintaxe dentro do parêntesis inicia-se com reticências e é precedido pelo nome a ser dado para esta coleção de parâmetros, como em <code>...argumentos</code>. Por exemplo, em uma função para cálculo da média de um aluno, poderíamos escrever da seguinte forma: <code>function mediaAluno(nome, turma, ...notas)</code>. Os parâmetros nome e turma são parâmetros padrões, e receberão seus valores em <code>string</code> e <code>number</code>, respectivamente, ao passo que quaisquer valores passados após serão incluídos em um array chamado notas, passível de manipulação dentro da função.</p>
+
+                <p class="conteudo__texto">É importante ressaltar que, na inicialização da função estas informações são chamadas de parâmetros, ao passo que, na utilização da função, estas informações são chamadas de argumentos.</p>
+
+                <h3>Escopo da função</h3>
+                <p class="conteudo__texto">Em termos de escopo da função, temos duas situações, o escopo em que a função se encontra e o escopo que ela define. Funções são capazes de acessar informações de escopos mais externos a elas, porém escopos mais externos não são capazes de acessar informações dos escopos das funções internas, exceto quando a função interna retorna essa informação. Isso significa que: variáveis definidas em escopo global são acessíveis para toda e qualquer função inicializada, ao passo que variáveis definidas em escopo de função estarão disponíveis apenas dentro daquele escopo, exceto se retornadas pela função. Além disso, funções inicializadas no escopo global podem ser utilizadas em qualquer ponto do código, mas funções inicializadas dentro do escopo de outras funções são acessíveis apenas àquele escopo, exceto se retornadas.</p>
+                
+                <h3>Funções aninhadas</h3>
+                <p class="conteudo__texto">É possível, caso necessário, criar funções dentro de funções. Como explicitado anteriormente, porém, a função interna estará acessível apenas para a função na qual ela foi inicializada, exceto se retornada, assim como suas variáveis não estarão disponíveis para escopos mais externos, exceto se retornadas. Uma função mais interna, por sua vez, tem acesso à variáveis e funções tanto do escopo de função em que ela se encontra quanto do escopo global.</p>
+                
+                <figure>
+                    <img src="../images/funcoes-1.png" alt="Imagem com fundo preto e código Javascript escrito definindo a função mediaAluno aplicando os conceitos de parãmetros padrão e rest, funções aninhadas e escopo de função.">
+                    <figcaption>Definição da função <code>mediaAluno</code></figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Na figura anterior é possível exemplificar vários dos conceitos mencionados anteriormente. A função <code>mediaAluno</code> é criada de forma literal, com a palavra reservada <code>function</code> e a sintaxe correspondente. <code>Nome</code>, <code>sobrenome</code> e <code>turma</code> são parâmetros padrões, ao passo que <code>...notas</code> é um parâmetro rest. A função <code>nomeCompleto</code> é uma função aninhada que está inserida no escopo da função <code>mediaAluno</code>, de forma que, para o escopo global, ela é invisível caso não retornada. Esta configuração de escopo significa também que: as variáveis globais e de <code>mediaAluno</code> podem ser acessadas pela função <code>nomeCompleto</code>, mas as variáveis não retornadas de <code>nomeCompleto</code> não podem ser acessadas nem pelo escopo de <code>mediaAluno</code>, nem pelo escopo global. De forma semelhante, as variáveis de <code>mediaAluno</code> não poderiam ser acessadas pelo escopo global, caso não fossem retornadas. Diante destas explicações, é possível entender que todos os <code>console.log</code> exibidos no código, exceto o que mostra a utilização da função <code>mediaAluno</code>, gerarão erros de referência. Teste a função <code>mediaAluno</code> a seguir:</p>
+
+                <div class="conteudo__demonstracao">
+                    <label for="nome-demonstracao">Nome do(a) aluno(a):</label>
+                    <input type="text" id="nome-demonstracao" name="nome-demonstracao" required>
+                    
+                    <label for="sobrenome-demonstracao">Sobrenome do(a) aluno(a):</label>
+                    <input type="text" id="sobrenome-demonstracao" name="sobrenome-demonstracao" required>
+                    
+                    <label for="turma-demonstracao">Turma do(a) aluno(a):</label>
+                    <input type="number" min="1" max="5" id="turma-demonstracao" name="turma-demonstracao" required>
+                    
+                    <label for="nota1-demonstracao">Primeira nota do(a) aluno(a):</label>
+                    <input type="number" min="0" max="10" id="nota1-demonstracao" name="nota1-demonstracao" required>
+                    
+                    <label for="nota2-demonstracao">Segunda nota do(a) aluno(a):</label>
+                    <input type="number" min="0" max="10" id="nota2-demonstracao" name="nota2-demonstracao" required>
+                    
+                    <label for="nota3-demonstracao">Terceira nota do(a) aluno(a):</label>
+                    <input type="number" min="0" max="10" id="nota3-demonstracao" name="nota3-demonstracao" required>
+
+                    <button class="conteudo__demonstracao__botao" id="botao-demonstracao">Calcular média</button>
+                </div>
+
+                <p id="resultado-media" class="conteudo__texto"></p>
+
+                <h3>Closures</h3>
+                <p class="conteudo__texto">Closures são funções que retém acesso às variáveis do contexto na qual foram criadas, mesmo que este contexto seja uma função que já tenha sido executada e encerrada. É um conceito muito utilizado em callbacks e na criação de funções que não podem ser acessadas em outras partes do código. Um exemplo de aplicação do conceito de closure é na utilização do método <code>addEventListener</code>, que recebe um evento e um callback como argumentos. O callback, por sua vez, é uma função que não pode ser acessada em outras partes do código, mas retém acesso às variáveis do contexto em que foi criada.</p>
+
+                <figure>
+                    <img src="../images/funcoes-closure.png" alt="Imagem com fundo preto e código Javascript inicializando uma função que conta os cliques de um botão e aplicando-a nos 3 botões da tela.">
+                    <figcaption>Função <code>contadorCliqueBotao</code> aplicando o conceito de closure</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Na imagem anterior temos a função <code>contadorCliqueBotao</code> que irá contabilizar os cliques em 3 botões. A chamada da função para cada botão cria um contexto de execução, de modo que cada botão (contexto) possui a sua variável <code>contadorClique</code>. O callback na função <code>addEventListener</code> irá incrementar e "lembrar" do valor da variável <code>contadorClique</code> mesmo que o contexto de execução (a função <code>contadorCliqueBotao</code>) já tenha sido encerrado. Deste modo, em cada clique de cada botão, a função lembrará a quantidade e esta informação poderá ser manipulada.</p>
+
+                <p class="conteudo__texto">Clique nos botões para testar a função <code>contadorCliqueBotao</code>:</p>
+                <div class="conteudo__demonstracao">
+                    <button class="conteudo__demonstracao__botao" id="botao1-closure">Botão 1</button>
+                    <button class="conteudo__demonstracao__botao" id="botao2-closure">Botão 2</button>
+                    <button class="conteudo__demonstracao__botao" id="botao3-closure">Botão 3</button>
+                </div>
+
+                <p class="conteudo__texto" id="resultado1-closure"></p>
+                <p class="conteudo__texto" id="resultado2-closure"></p>
+                <p class="conteudo__texto" id="resultado3-closure"></p>
+
+                <h3>Funções síncronas e assíncronas</h3>
+                <p class="conteudo__texto">Funções síncronas são aquelas em que o código é lido e executado na ordem em que foi escrito, ao passo que funções assíncronas, como o nome já detona, não necessariamente seguem a ordem em que o código foi escrito. Muito utilizadas no consumo de APIs, as funções assíncronas são utilizadas quando se necessita esperar que uma operação ocorra sem barrar o funcionamento do resto da aplicação. Funções assíncronas podem utilizar duas sintaxes, a de <code>async/await</code> e a de <code>.then</code>. Na primeira sintaxe, se utiliza o <code>async</code> na assinatura da função para indicar que ela é assíncrona e <code>await</code> em toda linha de código em que se tenha uma operação que deve ser aguardada. Na segunda sintaxe, o <code>.then</code> será utilizado após uma linha de código que deve ser aguardada. Este método indica o que será feito em seguida, após a linha de código sendo aguardada executar com sucesso.</p>
+
+                <figure>
+                    <img src="../images/funcoes-async.png" alt="Imagem com fundo preto e código Javascript escrito realizando o consumo da API PokeAPI com as sintaxes async/await e .then">
+                    <figcaption>Consumo da API PokeAPI com as sintaxes <code>async/await</code> e <code>.then()</code></figcaption>
+                </figure>
+                
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img id="pokemon">
+                        <figcaption>Imagem do Pokemon Sylveon retirado da PokeAPI com a sintaxe <code>.then</code></figcaption>
+                    </figure>
+
+                    <figure>
+                        <img id="pokemon-2">
+                        <figcaption>Imagem do Pokemon Charizard retirado da PokeAPI com a sintaxe <code>async/await</code></figcaption>
+                    </figure>
+                </div>
+
+                <h3>Recursão</h3>
+                <p class="conteudo__texto">Funções recursivas são aquelas que chamam a si mesmas dentro de seu próprio escopo até que seja interrompida. É importante frisar que ela deve ser interrompida, ou gerará um loop infinito podendo travar a máquina executando o código. São bastante utilizadas em casos em que uma mesma função deve ser invocada repetidas vezes seguindo um padrão. Na maioria dos casos, uma funcionalidade obtida por funções recursivas pode ser igualmente obtida por um laço iterativo. Deste modo, é necessário verificar a real necessidade de utilização de recursão, pois é uma solução de mais difícil entendimento e manutenção.</p>
+
+                <p class="conteudo__texto">Teste aqui o funcionamento de uma função recursiva:</p>
+                <div class="conteudo__demonstracao">
+                    <label for="numero-recursao">Digite um número para iniciar a contagem regressiva até 0.</label>
+                    <input type="number" min="1" max="60" id="numero-recursao" name="numero-recursao">
+                    <button class="conteudo__demonstracao__botao" id="botao-recursao">MOSTRAR CONTAGEM REGRESSIVA</button>
+                </div>
+                <p class="conteudo__texto" id="resultado-recursao"></p>
+
+                <h3>Arrow Functions</h3>
+                <p class="conteudo__texto">A sintaxe de arrow functions é uma forma mais concisa de se criar uma função. Toda arrow function é uma função anônima, ou seja, ela não tem um nome, de modo que não pode ser reutilizada em outro pronto do código exceto aquele em que ela é criada. Muito utilizada em funções de callback, sua sintaxe é na forma <code>( parâmetros ) => { //bloco de código }</code>. Os parâmetros, assim como nas demais funções, são opcionais e, caso a função tenha apenas um parâmetro, os parêntesis podem ser omitidos. Caso o bloco de código a ser executado tenha apenas um linha, é possível, também, omitir o par de chaves. Devido à seta utilizada, este tipo de sintaxe é também chamada de função da seta gorda.</p>
+
+                <h3>Principais funções predefinidas do Javascript</h3>
+                <ul class="conteudo__texto">
+                    <li><span>eval(argumento):</span> esta função avalia um código Javascript válido em formato de string e o executa. Por exemplo, se temos <code>eval("2+2")</code>, o retorno da função será 4.</li>
+                    <li><span>isFinite(argumento):</span> esta função é utilizada para determinar se um número é finito ou não.</li>
+                    <li><span>isNaN(argumento):</span> esta função recebe um parâmetro e avalia se ele é do tipo NaN (Not a Number) ou não. Se sim, ele retornará <code>true</code>, caso contrário, retornará <code>false</code>.</li>
+                    <li><span>parseFloat(argumento):</span> esta função retorna um número do tipo <code>float</code> (número decimal) a partir de um parâmetro do tipo string. Caso o primeiro caracter do parâmetro diferente de espaço vazio não seja um número, este método retornará <code>NaN</code>.</li>
+                    <li><span>parseInt(argumento, base):</span> esta função retorna um número inteiro a partir de um parâmetro do tipo string e uma base indicada. Caso o primeiro caracter do parâmetro diferente de espaço vazio não seja um número, este método retornará <code>NaN</code>. Para que esta função funcione da forma esperada, é importante que a base sempre seja indicada. Normalmente, quando a base não é indicada, ela é assumida como 10 (base decimal), mas isto não é regra, de modo que é necessário indicá-la.</li>
+                </ul>
+                
+            </article>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>12 Abr</p>
+                </div>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
+<script src="../scripts/funcoes.js"></script>
+</html>
