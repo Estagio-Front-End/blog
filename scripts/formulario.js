@@ -97,26 +97,51 @@ function habilitacaoBotao() {
 } 
 
 //Consumo API Fake
-const urlAPIFake = "";
+const urlAPIFake = "https://mocki.io/v1/f366cd70-97b8-486e-b4bc-02ac6fc915e1";
 
 async function coletarDadosAPI(){
-    let resposta = await fetch(urlAPIFake);
+    let resposta = await fetch(urlAPIFake)
     let dados = await resposta.json();
+    console.log(dados);
+
+    document.querySelector("article").innerHTML = `<p class='conteudo__texto'>Comentários disponíveis: <br>
+        ${dados.comentarios.map(comentario => {
+            let indexArtigo = dados.artigos.findIndex(artigo => artigo.id === comentario.idArtigo);
+
+            return `O comentário feito por ${comentario.nomeUsuario} no artigo ${dados.artigos[indexArtigo].titulo} foi: ${comentario.comentario}`
+        })} `  
 }
 
-async function enviarDadosFormulario(nome, email, comentario){
+coletarDadosAPI();
 
-
-    let resposta = await fetch(urlAPIFake, {
+async function enviarDadosFormulario(nome, email, comentario, salvarInfo){
+    let resposta = await fetch(`${urlAPIFake}/comentarios`, {
         method: "POST",
         headers: {
             'Content-Type': "application/json"
         },
-        body: 
+        body: `{
+            "id": ${dados.comentarios.length+1},
+            "idArtigo": "${location.pathname.slice(10,-5)}",
+            "nomeUsuario": ${nome},
+            "emailUsuario": ${email},
+            "comentario": ${comentario}
+        }`  
     })
-}
 
-//Salvar nome+email no localStorage
-//Retornando mensagem de sucesso ao enviar comentário
+    //Retornando mensagem de sucesso ao enviar comentário se der certo e mensagem de erro de ser errado
+    if (resposta.ok) {
+
+    } else {
+
+    }
+
+    //Salvar nome+email no localStorage
+    if (salvarInfo) {
+
+    } else {
+        
+    }   
+}
 
 
