@@ -97,51 +97,103 @@ function habilitacaoBotao() {
 } 
 
 //Consumo API Fake
-const urlAPIFake = "https://mocki.io/v1/f366cd70-97b8-486e-b4bc-02ac6fc915e1";
+const urlAPIFake = "https://cssblog.free.beeceptor.com";
 
 async function coletarDadosAPI(){
     let resposta = await fetch(urlAPIFake)
     let dados = await resposta.json();
-    console.log(dados);
+
+    console.log(dados)
 
     document.querySelector("article").innerHTML = `<p class='conteudo__texto'>Comentários disponíveis: <br>
         ${dados.comentarios.map(comentario => {
             let indexArtigo = dados.artigos.findIndex(artigo => artigo.id === comentario.idArtigo);
 
             return `O comentário feito por ${comentario.nomeUsuario} no artigo ${dados.artigos[indexArtigo].titulo} foi: ${comentario.comentario}`
-        })} `  
+        })} `
+        
+    return dados;
 }
 
-coletarDadosAPI();
+//Envio de dados para API
+const formularioComentario = document["formulario-comentario"];
+formularioComentario.addEventListener('submit', evento => {
+    evento.preventDefault();
+    console.log(evento)
+    enviarDadosFormulario(evento.target[0].value, evento.target[1].value, evento.target[2].value, evento.target[3].checked);
+})
 
 async function enviarDadosFormulario(nome, email, comentario, salvarInfo){
+    let dados = await coletarDadosAPI();
+
     let resposta = await fetch(`${urlAPIFake}/comentarios`, {
         method: "POST",
         headers: {
-            'Content-Type': "application/json"
+            "Content-Type": "application/json"
         },
-        body: `{
+        body: JSON.stringify(`{
             "id": ${dados.comentarios.length+1},
             "idArtigo": "${location.pathname.slice(10,-5)}",
             "nomeUsuario": ${nome},
             "emailUsuario": ${email},
             "comentario": ${comentario}
-        }`  
+        }`)  
     })
 
     //Retornando mensagem de sucesso ao enviar comentário se der certo e mensagem de erro de ser errado
-    if (resposta.ok) {
+    if (resposta.ok) {        
+        salvarInformacoesComentario(salvarInfo);
+    } else {
+       //? 
+    }
+
+    criarMensagemRetorno(resposta.ok);
+}
+
+//Salvar nome+email no localStorage
+function salvarInformacoesComentario(salvarInfo) {
+    if (salvarInfo) {
+        localStorage.setItem("usuario", JSON.stringify({usuario: nome, email: email}))
+    } else {
+        localStorage.removeItem("usuario");
+        inputEmail.value = "";
+        inputNome.value = "";
+    }
+    inputComentario.value = "";
+    inputCheckbox.checked = false; //Verificar se é boa prática deixar como salvo ou não!
+}
+
+//Verificar se tem informações salvar no localStorage para colocar nos inputs
+let infoUsuario = JSON.parse(localStorage.getItem("usuario"));
+if (infoUsuario === null || infoUsuario === "") {
+    inputNome.value = "";
+    inputEmail.value = "";
+} else {
+    inputNome.value = infoUsuario.usuario;
+    inputEmail.value = infoUsuario.email;   
+}
+
+//Criar caixa de mensagem deu certo
+function criarMensagemRetorno(resposta) {
+    
+    const divResposta = document.createElement("div")
+    const divCorResposta = document.createElement("div")
+    const imagemResposta = document.createElement("img")
+    const mensagemResposta = document.createElement("p")
+    
+    divResposta.appendChild(divCorResposta);
+    divResposta.appendChild(imagemResposta);
+    divResposta.appendChild(mensagemResposta);
+    
+    document.getElementsByClassName("artigo__formulario").appendChild(divResposta)
+
+    if (resposta) {
 
     } else {
 
     }
-
-    //Salvar nome+email no localStorage
-    if (salvarInfo) {
-
-    } else {
-        
-    }   
+    
+    window.addEventListener('click', () => {
+        divResposta.style.display = "none";    
+    })
 }
-
-
