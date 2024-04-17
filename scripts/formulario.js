@@ -96,4 +96,27 @@ function habilitacaoBotao() {
     }
 } 
 
+//Consumo API Fake
+const urlAPIFake = "";
+
+async function coletarDadosAPI(){
+    let resposta = await fetch(urlAPIFake);
+    let dados = await resposta.json();
+}
+
+async function enviarDadosFormulario(nome, email, comentario){
+
+
+    let resposta = await fetch(urlAPIFake, {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: 
+    })
+}
+
+//Salvar nome+email no localStorage
+//Retornando mensagem de sucesso ao enviar comentário
+
 
