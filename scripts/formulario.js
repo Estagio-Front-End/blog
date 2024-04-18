@@ -107,17 +107,17 @@ async function coletarDadosAPI(){
 }
 
 //Mostrar comentários no artigo de API Fake
-async function mostrarComentarios() {
-    let dados = await coletarDadosAPI()
-    document.querySelector("#artigo-api-fake").innerHTML = `<p class='conteudo__texto'>Comentários disponíveis: <br>
-    ${dados.comentarios.map(comentario => {
-        let indexArtigo = dados.artigos.findIndex(artigo => artigo.id === comentario.idArtigo);
-
-        return `O comentário feito por ${comentario.nomeUsuario} no artigo ${dados.artigos[indexArtigo].titulo} foi: ${comentario.comentario}`
-    })} ` 
+async function mostrarArtigos() {
+    let dados = await coletarDadosAPI();
+    
+    document.querySelector("#artigo-api-fake").innerHTML += `<p class='conteudo__texto'>Artigos disponíveis: <br>
+    ${dados.artigos.map(artigo => {
+        return `<br><span style="height: 24px; width: 24px; border-radius: 50%" class=${artigo.classeTag}></span> Artigo ${artigo.titulo}, na categoria ${artigo.tag} - escrito por ${artigo.autor}`
+    })}` 
 }
 
-//mostrarComentarios();
+const botaoMostrarArtigos = document.getElementById("mostrar-artigos");
+botaoMostrarArtigos.addEventListener('click', mostrarArtigos)
 
 //Envio de dados para API
 const formularioComentario = document["formulario-comentario"];
