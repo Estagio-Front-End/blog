@@ -117,9 +117,9 @@ async function coletarDadosAPI(){
 
 //Envio de dados para API
 const formularioComentario = document["formulario-comentario"];
+
 formularioComentario.addEventListener('submit', evento => {
     evento.preventDefault();
-    console.log(evento)
     enviarDadosFormulario(evento.target[0].value, evento.target[1].value, evento.target[2].value, evento.target[3].checked);
 })
 
@@ -140,18 +140,17 @@ async function enviarDadosFormulario(nome, email, comentario, salvarInfo){
         }`)  
     })
 
-    //Retornando mensagem de sucesso ao enviar comentário se der certo e mensagem de erro de ser errado
+    //Salvando informações no local storage
     if (resposta.ok) {        
-        salvarInformacoesComentario(salvarInfo);
-    } else {
-       //? 
+        salvarInformacoesComentario(salvarInfo, nome, email);
     }
 
+    //Retornando mensagem de sucesso ao enviar comentário se der certo e mensagem de erro de ser errado
     criarMensagemRetorno(resposta.ok);
 }
 
 //Salvar nome+email no localStorage
-function salvarInformacoesComentario(salvarInfo) {
+function salvarInformacoesComentario(salvarInfo, nome, email) {
     if (salvarInfo) {
         localStorage.setItem("usuario", JSON.stringify({usuario: nome, email: email}))
     } else {
@@ -160,10 +159,10 @@ function salvarInformacoesComentario(salvarInfo) {
         inputNome.value = "";
     }
     inputComentario.value = "";
-    inputCheckbox.checked = false; //Verificar se é boa prática deixar como salvo ou não!
+    inputCheckbox.checked = true; //Verificar se é boa prática deixar como salvo ou não!
 }
 
-//Verificar se tem informações salvar no localStorage para colocar nos inputs
+//Verificar se tem informações salvar no localStorage para colocar nos inputs de nome e e-mail
 let infoUsuario = JSON.parse(localStorage.getItem("usuario"));
 if (infoUsuario === null || infoUsuario === "") {
     inputNome.value = "";
@@ -176,24 +175,32 @@ if (infoUsuario === null || infoUsuario === "") {
 //Criar caixa de mensagem deu certo
 function criarMensagemRetorno(resposta) {
     
-    const divResposta = document.createElement("div")
-    const divCorResposta = document.createElement("div")
-    const imagemResposta = document.createElement("img")
-    const mensagemResposta = document.createElement("p")
+    const divResposta = document.createElement("div");
+    const divCorResposta = document.createElement("div");
+    const imagemResposta = document.createElement("img");
+    const mensagemResposta = document.createElement("p");
     
     divResposta.appendChild(divCorResposta);
     divResposta.appendChild(imagemResposta);
     divResposta.appendChild(mensagemResposta);
     
-    document.getElementsByClassName("artigo__formulario").appendChild(divResposta)
+    formularioComentario.appendChild(divResposta);
+    divResposta.classList.add("artigo__formulario__resposta");
+    divResposta.style.display = "block";
 
     if (resposta) {
-
+        divResposta.classList.add("artigo__formulario__resposta--ok")
+        imagemResposta.setAttribute("src", "../images/mensagem-ok.png")
+        imagemResposta.setAttribute("alt", "Imagem de um símbolo de check verde indicando que tudo ocorreu como esperado")
+        mensagemResposta.innerText = "Comentário enviado com sucesso!";
     } else {
-
+        divResposta.classList.add("artigo__formulario__resposta--erro")
+        imagemResposta.setAttribute("src", "../images/mensagem-erro.png")
+        imagemResposta.setAttribute("alt", "Imagem de um X vermelho indicando um erro")
+        mensagemResposta.innerText = "Houve um erro! Por favor, tente novamente!";
     }
     
     window.addEventListener('click', () => {
-        divResposta.style.display = "none";    
+        divResposta.remove();    
     })
 }

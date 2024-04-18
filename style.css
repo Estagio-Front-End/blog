@@ -480,6 +480,7 @@ dl .aberto {
   grid-template-columns: repeat(12, 1fr);
   column-gap: 2.4rem;
   row-gap: 1.2rem;
+  position: relative;
 }
 @media screen and (1024px <= width <= 1365px) {
   .artigo__formulario {
@@ -1714,6 +1715,70 @@ input[type=text]:-webkit-autofill, input[type=text]:-webkit-autofill:hover, inpu
   border-radius: 1.2rem;
   padding: 1.6rem 3.2rem;
   border: none;
+}
+
+.artigo__formulario__resposta {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  border-radius: 0.8rem;
+  background-color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.4rem;
+  line-height: 2.928rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: initial;
+  color: #707070;
+  text-transform: initial;
+  color: #707070;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  width: 30vw;
+  height: 30vh;
+}
+@media screen and (max-width: 767px) {
+  .artigo__formulario__resposta {
+    width: 50vw;
+    height: 50vh;
+    left: 30%;
+  }
+}
+@media screen and (768px <= width <= 1023px) {
+  .artigo__formulario__resposta {
+    width: 50vw;
+    height: 35vh;
+    left: 25%;
+  }
+}
+@media screen and (1024px <= width <= 1365px) {
+  .artigo__formulario__resposta {
+    width: 50vw;
+    height: 30vh;
+    left: 25%;
+  }
+}
+.artigo__formulario__resposta div {
+  height: 40%;
+  width: 100%;
+  border-radius: 0.8rem;
+}
+.artigo__formulario__resposta img {
+  position: relative;
+  height: 10rem;
+  bottom: 15%;
+}
+.artigo__formulario__resposta p {
+  padding: 0 1.2rem;
+  text-align: center;
+  margin-top: -1.6rem;
+}
+
+.artigo__formulario__resposta--ok div {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.artigo__formulario__resposta--erro div {
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
 /*# sourceMappingURL=style.css.map */

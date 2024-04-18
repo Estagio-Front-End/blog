@@ -135,6 +135,7 @@ dl {
     padding: $espacamento-10 $espacamento-12;
     @include estrutura-grid(12, $espacamento-6);
     row-gap: $espacamento-3;
+    position: relative;
 
     @include responsividade ("desktop") {
         @include estrutura-grid(8, $espacamento-6);

@@ -31,3 +31,59 @@ input[type="text"], textarea {
     padding: $espacamento-4 $espacamento-8;
     border: none;
 }
+
+.artigo__formulario__resposta {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    border-radius: $espacamento-2;
+    background-color: $cor-neutra-1;
+    @include body-system-semibold(24, center, initial, $cor-neutra-5);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.2);
+    
+    width: 30vw;
+    height: 30vh;
+
+    @include responsividade("mobile") {
+        width: 50vw;
+        height: 50vh;
+        left: 30%
+    }
+
+    @include responsividade("tablet") {
+        width: 50vw;
+        height: 35vh;
+        left: 25%
+    }
+
+    @include responsividade("desktop") {
+        width: 50vw;
+        height: 30vh;
+        left: 25%
+    }
+    
+    div {
+        height: 40%;
+        width: 100%;
+        border-radius: $espacamento-2;
+    }
+
+    img {
+        position: relative;
+        height: $espacamento-25;
+        bottom: 15%;
+    } 
+
+    p {
+        padding: 0 $espacamento-3;
+        text-align: center;
+        margin-top: -$espacamento-4;
+    }
+}
+
+.artigo__formulario__resposta--ok div {
+    background-color: rgba(0,255,0,0.2);
+}
+.artigo__formulario__resposta--erro div {
+    background-color: rgba(255,0,0,0.2);
+}
