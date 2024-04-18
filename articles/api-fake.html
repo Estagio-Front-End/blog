@@ -46,10 +46,15 @@
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
             <article id="artigo-api-fake">
-                <p class="conteudo__texto">O uso de APIs é muito comum em aplicações, de modo que desenvolvedores front-end </p>          
-
-                <button id="mostrar-artigos" class="conteudo__demonstracao__botao">Mostrar artigos</button>
+                <p class="conteudo__texto">O uso de APIs é muito comum em aplicações, de modo que desenvolvedores front-end estão constantemente consumindo APIs e manipulando suas informações. Quando o desenvolvedor back-end não finalizou por completo a API, mas já se quer testar o código desenvolvido pelo front-end com algum tipo de informação, utilizam-se as APIs fakes.</p>  
                 
+                <p class="conteudo__texto">As APIs fakes são ferramentas que simulam uma API, muitas vezes já com seus dados e endpoints definidos. É possível, também, buscar ferramentas nas quais se possa criar uma API fake a partir de seus próprios dados, mas estas são mais limitadas em termos de métodos HTTP disponíveis, quantidade de requisições diárias permitidas e funcionalidades gratuitas.</p>
+
+                <p class="conteudo__texto">Para este artigo, foi criada uma API fake a partir das informações de artigos existentes. O método HTTP GET pode ser testado nesta API utlizando o botão "Mostrar artigos". Também foi criada uma simulação do método POST no formulário da página, em que, caso tudo ocorra como esperado, uma mensagem de OK, aparecerá. Caso haja algum problema com o envio do formulário, uma mensagem de erro aparecerá.</p>
+
+                <p class="conteudo__texto">Observação: a API Fake criada possui um máximo de 50 requisições diárias, de modo que, caso as requisições parem de funcionar, esta é uma das prováveis causas. Caso isto ocorra, o botão "Mostrar artigos" não mostrará nada e o formulário gerará erro ao clicar no botão "Enviar Comentários".</p>
+
+                <button id="mostrar-artigos" class="conteudo__demonstracao__botao">Mostrar artigos</button> 
             </article>
     
             <div class="artigo__info">

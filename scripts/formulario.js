@@ -109,11 +109,12 @@ async function coletarDadosAPI(){
 //Mostrar comentários no artigo de API Fake
 async function mostrarArtigos() {
     let dados = await coletarDadosAPI();
-    
-    document.querySelector("#artigo-api-fake").innerHTML += `<p class='conteudo__texto'>Artigos disponíveis: <br>
-    ${dados.artigos.map(artigo => {
-        return `<br><span style="height: 24px; width: 24px; border-radius: 50%" class=${artigo.classeTag}></span> Artigo ${artigo.titulo}, na categoria ${artigo.tag} - escrito por ${artigo.autor}`
-    })}` 
+    const containerArtigo = document.querySelector("#artigo-api-fake");
+
+    containerArtigo.innerHTML += `<p class='conteudo__texto'>Artigos disponíveis:
+        ${dados.artigos.map(artigo => {
+            return `<br></span> Artigo ${artigo.titulo}, na categoria ${artigo.tag} - escrito por ${artigo.autor}`
+        })}</p>`    
 }
 
 const botaoMostrarArtigos = document.getElementById("mostrar-artigos");
@@ -137,12 +138,9 @@ async function enviarDadosFormulario(nome, email, comentario, salvarInfo){
         body: payload
     })
 
-    //Salvando informações no local storage
-    if (resposta.ok) {        
-        salvarInformacoesComentario(salvarInfo, nome, email);
-    }
-
+    //Salvando informações no local storage  
     //Retornando mensagem de sucesso ao enviar comentário se der certo e mensagem de erro de ser errado
+    salvarInformacoesComentario(salvarInfo, nome, email);
     criarMensagemRetorno(resposta.ok);
 }
 
@@ -174,6 +172,7 @@ function salvarInformacoesComentario(salvarInfo, nome, email) {
         inputEmail.value = "";
         inputNome.value = "";
     }
+
     inputComentario.value = "";
 }
 
