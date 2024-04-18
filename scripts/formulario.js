@@ -100,20 +100,24 @@ function habilitacaoBotao() {
 const urlAPIFake = "https://cssblog.free.beeceptor.com";
 
 async function coletarDadosAPI(){
-    let resposta = await fetch(urlAPIFake)
+    let resposta = await fetch(`${urlAPIFake}/artigos`)
     let dados = await resposta.json();
-
-    console.log(dados)
-
-    document.querySelector("article").innerHTML = `<p class='conteudo__texto'>Comentários disponíveis: <br>
-        ${dados.comentarios.map(comentario => {
-            let indexArtigo = dados.artigos.findIndex(artigo => artigo.id === comentario.idArtigo);
-
-            return `O comentário feito por ${comentario.nomeUsuario} no artigo ${dados.artigos[indexArtigo].titulo} foi: ${comentario.comentario}`
-        })} `
-        
-    return dados;
+    
+    return dados
 }
+
+//Mostrar comentários no artigo de API Fake
+async function mostrarComentarios() {
+    let dados = await coletarDadosAPI()
+    document.querySelector("#artigo-api-fake").innerHTML = `<p class='conteudo__texto'>Comentários disponíveis: <br>
+    ${dados.comentarios.map(comentario => {
+        let indexArtigo = dados.artigos.findIndex(artigo => artigo.id === comentario.idArtigo);
+
+        return `O comentário feito por ${comentario.nomeUsuario} no artigo ${dados.artigos[indexArtigo].titulo} foi: ${comentario.comentario}`
+    })} ` 
+}
+
+//mostrarComentarios();
 
 //Envio de dados para API
 const formularioComentario = document["formulario-comentario"];
@@ -124,20 +128,13 @@ formularioComentario.addEventListener('submit', evento => {
 })
 
 async function enviarDadosFormulario(nome, email, comentario, salvarInfo){
-    let dados = await coletarDadosAPI();
+    let payload = criarBody(nome, email, comentario);
+    let cabecalho = criarHeader();
 
     let resposta = await fetch(`${urlAPIFake}/comentarios`, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(`{
-            "id": ${dados.comentarios.length+1},
-            "idArtigo": "${location.pathname.slice(10,-5)}",
-            "nomeUsuario": ${nome},
-            "emailUsuario": ${email},
-            "comentario": ${comentario}
-        }`)  
+        headers: cabecalho,
+        body: payload
     })
 
     //Salvando informações no local storage
@@ -147,6 +144,25 @@ async function enviarDadosFormulario(nome, email, comentario, salvarInfo){
 
     //Retornando mensagem de sucesso ao enviar comentário se der certo e mensagem de erro de ser errado
     criarMensagemRetorno(resposta.ok);
+}
+
+function criarHeader() {
+    let headers = {
+        "Content-Type": "application/json"
+    }
+
+    return headers
+}
+
+function criarBody(nome, email, comentario) {
+    let payload = {
+        "idArtigo": location.pathname.slice(10,-5),
+        "nomeUsuario": nome,
+        "emailUsuario": email,
+        "comentario": comentario
+    }
+
+    return payload
 }
 
 //Salvar nome+email no localStorage
@@ -159,7 +175,6 @@ function salvarInformacoesComentario(salvarInfo, nome, email) {
         inputNome.value = "";
     }
     inputComentario.value = "";
-    inputCheckbox.checked = true; //Verificar se é boa prática deixar como salvo ou não!
 }
 
 //Verificar se tem informações salvar no localStorage para colocar nos inputs de nome e e-mail
@@ -172,7 +187,7 @@ if (infoUsuario === null || infoUsuario === "") {
     inputEmail.value = infoUsuario.email;   
 }
 
-//Criar caixa de mensagem deu certo
+//Criar caixa de mensagem deu certo/deu errado (método POST)
 function criarMensagemRetorno(resposta) {
     
     const divResposta = document.createElement("div");
@@ -186,7 +201,6 @@ function criarMensagemRetorno(resposta) {
     
     formularioComentario.appendChild(divResposta);
     divResposta.classList.add("artigo__formulario__resposta");
-    divResposta.style.display = "block";
 
     if (resposta) {
         divResposta.classList.add("artigo__formulario__resposta--ok")
