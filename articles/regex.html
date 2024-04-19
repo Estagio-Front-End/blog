@@ -48,15 +48,15 @@
             <article>
                 <p class="conteudo__texto">As Regex, ou expressões regulares, são formas de criar padrões a serem utilizados, muito comuns em inputs de formulários. Com as regex, pode-se realizar operações de busca, substituição, validação de padrões e filtragem de informações. As regex, em Javascript, podem ser criadas de duas formas. A primeira é de forma literal, atribuindo à uma variável e utilizando barras duplas (<code>//</code>) em volta do padrão criado com as flags após a segunda barra. A segunda, com o construtor <code>RegExp(expressão, flags) atribuído à uma variável</code>.</p>
 
-                <form action="">
+                <form>
                     <label for="cpf-regex">CPF</label>
-                    <input type="text" id="cpf-regex" required minlength="11" maxlength="11">
+                    <input type="text" id="cpf-regex" required minlength="14" maxlength="14">
                     
                     <label for="cnpj-regex">CNPJ</label>
-                    <input type="text" id="cnpj-regex" required minlength="14" maxlength="14">
+                    <input type="text" id="cnpj-regex" required minlength="18" maxlength="18">
                     
                     <label for="data-regex">Data de Nascimento</label>
-                    <input type="text" id="data-regex" required maxlength="8">
+                    <input type="text" id="data-regex" required maxlength="10">
 
                     <label for="monetario-regex">Valor monetário (real brasileiro)</label>
                     <input type="text" id="monetario-regex" required>
@@ -65,8 +65,8 @@
                     <input type="text" id="email-regex" required>
                     
                     <label for="celular-regex">Telefone celular com DDD</label>
-                    <input type="text" id="celular-regex" required>
-
+                    <input type="text" id="celular-regex" required minlength="14" maxlength="14">
+                    
                     <button class="conteudo__demonstracao__botao" id="botao-regex">Testar formulário</button>
                 </form>
 
@@ -190,4 +190,5 @@
 </body>
 <script src="../script.js"></script>
 <script src="../scripts/formulario.js"></script>
+<script src="../scripts/regex.js"></script>
 </html>
