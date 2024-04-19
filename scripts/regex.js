@@ -1,0 +1,6 @@
+const regexCPF = new RegExp("\d{3}\.\d{3}\.\d{3}\-\d{2}","g")
+const regexCNPJ = new RegExp("\d{2}\.\d{3}\.\d{3}\/(0001|0002)\-\d{2}", "g")
+const regexDataNascimento = new RegExp("\d{2}\/\d{2}\/\d{4}", "g")
+const regexReal = new RegExp("\R\$ \d\,\d{2}", "g")
+const regexEmail = new RegExp("", "g")
+const regexCelular = new RegExp("\(\d{2}\) 9\d{4}\-\d{4}", "g")
