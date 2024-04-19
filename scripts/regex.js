@@ -1,11 +1,11 @@
 const regexCPF = /(\d{3})(\d{3})(\d{3})(\d{2})/gis;
-const regexCNPJ = /\d{2}[\.]\d{3}[\.]\d{3}[\/](0001|0002)[\-]\d{2}/gis;
+const regexCNPJ = /(\d{2})(\d{3})(\d{3})(0001|0002)(\d{2})/gis;
 const regexDataNascimento = /\d{2}[\/]\d{2}[\/]\d{4}/gis
 const regexReal = /[\R\$]\d+[\,]\d{2}/gis
 const regexEmail = /[a-z0-9]+[\-]?[\_]?[a-z0-9]+[\@][a-z]+[\.][a-z]+([\.][a-z]+)?/gis
 const regexCelular = /[\(]\d{2}[\)][9]\d{4}[\-]\d{4}/gis
 
-const regexOrdinarioCPF = /(\d{3})[\.](\d{3})[\.](\d{3})[\-](\d{2})/gis;
+const regexOrdinario = /[.-]|[(]|[)]|[/]/gis;
 
 const inputCPF = document.getElementById("cpf-regex");
 const inputCNPJ = document.getElementById("cnpj-regex");
@@ -17,18 +17,19 @@ const inputCelular = document.getElementById("celular-regex");
 let campos = [inputCPF, inputCNPJ, inputData, inputReal, inputEmailRegex, inputCelular];
 let padroes = [regexCPF, regexCNPJ, regexDataNascimento, regexReal, regexEmail, regexCelular];
 
-inputCPF.addEventListener('focus', evento => mascaraVazia(evento))
+inputCPF.addEventListener('focus', evento => tirarMascara(evento))
 inputCPF.addEventListener('blur', evento => mascaraCPF(evento))
 
-function mascaraVazia(evento) {
-    console.log("dentro")
-    console.log(inputCPF.value);
-    console.log(evento.target.value.replace(regexOrdinario, "$1$2$3$4"))
-    inputCPF.value = evento.target.value.replace(regexOrdinario, "$1$2$3$4");
+inputCNPJ.addEventListener('focus', evento => tirarMascara(evento))
+inputCNPJ.addEventListener('blur', evento => mascaraCNPJ(evento))
+
+//Tem que ser uma função desse jeito, mas todas as máscaras numa função só com switch porque se não quando clicar em uma a outra some :(
+
+function tirarMascara(evento) {
+    inputCPF.value = evento.target.value.replace(regexOrdinario, "");
 }
 
 function mascaraCPF(evento){
-    console.log("fora")
     inputCPF.value = evento.target.value.replace(regexCPF, "$1.$2.$3-$4");
 }
 
