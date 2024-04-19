@@ -137,9 +137,7 @@ async function enviarDadosFormulario(nome, email, comentario, salvarInfo){
         headers: cabecalho,
         body: payload
     })
-
-    //Salvando informações no local storage  
-    //Retornando mensagem de sucesso ao enviar comentário se der certo e mensagem de erro de ser errado
+    
     salvarInformacoesComentario(salvarInfo, nome, email);
     criarMensagemRetorno(resposta.ok);
 }
