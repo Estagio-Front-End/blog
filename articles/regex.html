@@ -75,7 +75,7 @@
                 <p class="conteudo__texto">Para identificar o início e o fim de uma linha e auxiliar a busca de caracteres ou grupos em uma regex, utiliza-se os caracteres especiais <code>^</code> para indicar o início da linha (o caractere deve estar fora do grupo ou conjunto, pois dentro seria uma negação) e o <code>$</code> para indicar o fim de uma linha.</p>
                 
                 <h4>Grupo "()"</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">É possível criar subgrupos dentro da regex com os parênteses, criando uma "subregra" assim como referências à esses subgrupos. Estas referências podem ser utilizadas na própria regex ou na string de troca do método <code>replace</code>. Em uma regex de CPF, por exemplo: <code>/(\d{3})[\.]?(\d{3})[\.]?(\d{3})[\-]?(\d{2})/g</code> podemos ter 4 grupos: 3 grupos com 3 dígitos e 1 grupo com 2 dígitos. Em uma string de troca, estes grupos poderão ser referidos como $1 a $4.</p>
                 
                 <h4>Métodos de Regex</h4>
                 <p class="conteudo__texto">Para realizar as operações de busca, substituição, validação de padrões e filtragem de informações, as regex possuem métodos como test, replace, entre outros. São eles:</p>
@@ -90,9 +90,9 @@
                 </ul>
 
                 <h4>Máscaras</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Máscaras em inputs são utilizadas para mostrar ao usuário que ele escreveu informações requisitadas de forma correta, ou mesmo mostrar a forma como as informações devem ser escritas. As máscaras são criadas com base nas regex, visto que estas expressões são os padrões que indicam a informação escrita de forma correta.</p>
 
-                <p class="conteudo__texto">Teste aqui as validações por Regex:</p>
+                <p class="conteudo__texto">Teste aqui as validações por Regex e visualize as máscaras sendo utilizadas:</p>
                 <form>
                     <label for="cpf-regex">CPF</label>
                     <input type="text" id="cpf-regex" required minlength="11" maxlength="11" placeholder="ex: 12345678900">

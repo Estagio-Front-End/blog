@@ -55,7 +55,7 @@ function colocarMascara(evento){
         break;
         default:
             alert("Ocorreu um erro, tente novamente mais tarde.");
-        break; 
+        break;
     }
 }
 
