@@ -20,6 +20,7 @@ let padroes = [regexCPF, regexCNPJ, regexDataNascimento, regexReal, regexEmail, 
 campos.forEach(campo => campo.addEventListener('focus', evento => tirarMascara(evento)))
 campos.forEach(campo => campo.addEventListener('blur', evento => colocarMascara(evento)))
 
+//Tirar máscara quando se clica dentro do campo
 function tirarMascara(evento) {
     let input = evento.target;
     if (input === inputCPF || input === inputCNPJ || input === inputData || input === inputReal || input === inputCelular) {
@@ -31,6 +32,7 @@ function tirarMascara(evento) {
     } 
 }
 
+//Colocar máscara quando se clica fora do campo
 function colocarMascara(evento){
     switch (evento.target) {
         case inputCPF:

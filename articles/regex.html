@@ -48,6 +48,42 @@
             <article>
                 <p class="conteudo__texto">As Regex, ou expressões regulares, são formas de criar padrões a serem utilizados, muito comuns em inputs de formulários. Com as regex, pode-se realizar operações de busca, substituição, validação de padrões e filtragem de informações. As regex, em Javascript, podem ser criadas de duas formas. A primeira é de forma literal, atribuindo à uma variável e utilizando barras duplas (<code>//</code>) em volta do padrão criado com as flags após a segunda barra. A segunda, com o construtor <code>RegExp(expressão, flags) atribuído à uma variável</code>.</p>
 
+                <h4>Caracteres e flags</h4>
+                <p class="conteudo__texto">Com as regex, é possível buscar por caractéres específicos (<code>/c/</code>) ou palavras específicas (<code>/Camila/</code>). Ao confrontar um texto com uma regex, ela poderá buscar apenas pelo primeiro match ou poderar encontrar ocorrências em todo o texto, isto dependerá das flags. As flags mais utilizadas são:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>g:</span> significa global, ou seja, serão retornados todos os matches com a regex utilizada.</li>
+                    <li><span>i:</span> significa insensitive. As regex, por padrão, são case sensitive, ou seja <code>/c/</code> e <code>/C/</code> são regex diferentes. Esta flag faz com que se busque por letras maiúsculas e minúsculas por meio de uma mesma regex.</li>
+                    <li><span>m:</span> significa multi line. Com esta flag, a regex buscará por ocorrências em todas as linhas de um texto ou campo, dado que o padrão possua os caractéres <code>^</code> e <code>$</code> indicando início e fim da linha, respectivamente.</li>
+                    <li><span>s:</span> significa single line. Com esta flag, a regex só buscará por ocorrências na primeira linha de um texto ou campo.</li>
+                    <li><span>x:</span> significa extended. Faz com que a regex ignore espaços em branco.</li>
+                </ul>
+
+                <h4>Operador lógico <code>|</code></h4>
+                <p class="conteudo__texto">As regex também possuem a possibilidade de inclusão de um operador lógico, similar ao OR (<code>||</code>), que é o pipe (<code>|</code>). Deste modo, com um regex <code>/c|a|m/gi</code>, por exemplo, serão procuradas todas as ocorrências das letras c, a ou m, maíusculas ou minúsculas.</p>
+
+                <h4>Conjuntos "[]" e ranges</h4>
+                <p class="conteudo__texto">Para situações em que se pode ter variados tipos de caractéres em uma mesma casa, são utilizados os conjuntos "[]". Este tipo de sintaxe é muito utilizada em ranges, por exemplo <code>[0-9]</code> para números de 0 à 9 ou <code>[a-z]</code> para letras do alfabeto minúsculas. è possível, também, negar conjuntos com o caractere (<code>^</code>). Desta forma, com um regex <code>/[^0-9]/gi</code>, serão buscadas ocorrências de todos os caracteres diferentes de números de 0 a 9.</p>
+                
+                <h4>Shorthands</h4>
+                <p class="conteudo__texto">Em regex, também existem as shorthands para facilitar a escrita do padrão. Os mais utilizados são <code>\d</code> com o mesmo efeito que <code>[0-9]</code>, <code>\w</code> com o mesmo efeito que <code>[a-zA-Z0-9_]</code> e <code>\s</code> para espaços em branco.</p>
+                
+                <h4>Quantificadores</h4>
+                <p class="conteudo__texto"></p>
+                
+                <h4>Início e fim de linha</h4>
+                <p class="conteudo__texto"></p>
+                
+                <h4>Grupo "()"</h4>
+                <p class="conteudo__texto"></p>
+                
+                <h4>Métodos de Regex</h4>
+                <p class="conteudo__texto"></p>
+
+                <h4>Máscaras</h4>
+                <p class="conteudo__texto"></p>
+
+                <p class="conteudo__texto">Teste aqui as validações por Regex:</p>
                 <form>
                     <label for="cpf-regex">CPF</label>
                     <input type="text" id="cpf-regex" required minlength="11" maxlength="11" placeholder="ex: 12345678900">
