@@ -1,9 +1,9 @@
-const regexCPF = /(\d{3})(\d{3})(\d{3})(\d{2})/gis;
-const regexCNPJ = /(\d{2})(\d{3})(\d{3})(0001|0002)(\d{2})/gis;
-const regexDataNascimento = /(\d{2})(\d{2})(\d{4})/gis
+const regexCPF = /(\d{3})[\.]?(\d{3})[\.]?(\d{3})[\-]?(\d{2})/gis;
+const regexCNPJ = /(\d{2})[\.]?(\d{3})[\.]?(\d{3})[\/]?(0001|0002)[\-]?(\d{2})/gis;
+const regexDataNascimento = /(\d{2})[\/]?(\d{2})[\/]?(\d{4})/gis
 const regexReal = /(\d+)(\,)(\d{2})/gis
 const regexEmail = /[a-z0-9]+[\-]?[\_]?[a-z0-9]+[\@][a-z]+[\.][a-z]+([\.][a-z]+)?/gis
-const regexCelular = /(\d{2})([9])(\d{4})(\d{4})/gis
+const regexCelular = /[\(]?(\d{2})[\)]?[\s]?([9])(\d{4})[\-]?(\d{4})/gis
 
 const regexOrdinario = /[.-]|[(]|[)]|[/]|[R]|[$]|[\s]/gis;
 
