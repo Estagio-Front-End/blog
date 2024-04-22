@@ -53,7 +53,9 @@ function colocarMascara(evento){
         case inputCelular:
             inputCelular.value = evento.target.value.replace(regexCelular, "($1) $2$3-$4");
         break;
-
+        default:
+            alert("Ocorreu um erro, tente novamente mais tarde.");
+        break; 
     }
 }
 

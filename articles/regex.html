@@ -78,7 +78,16 @@
                 <p class="conteudo__texto"></p>
                 
                 <h4>Métodos de Regex</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Para realizar as operações de busca, substituição, validação de padrões e filtragem de informações, as regex possuem métodos como test, replace, entre outros. São eles:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>regex.exec(item)</span> confronta o item passado como argumento com a regex. Retorna um array com informações como o primeiro match, o índice deste match, caso haja, e o item passado como argumento. Caso não haja matches, este método retornará <code>null</code>.</li>
+                    <li><span>regex.test(item):</span> confronta o item passado como argumento com a regex. Retorna um booleano, <code>true</code> se houverem matches e <code>false</code> caso contrário.</li>
+                    <li><span>item.match(regex):</span> confronta o item com a regex passada como argumento. Retorna um array com todos os matches encontrados, ou <code>null</code> caso não haja matches.</li>
+                    <li><span>item.replace(regex, item2):</span> confronta o item com a regex passada como argumento. Em seguida, troca todos os matches encontrados pelo item passado como segundo argumento, seja ele uma string ou conformando o valor ao padrão da regex.</li>
+                    <li><span>item.search(regex):</span> confronta o item com a regex passada como argumento. Retorna o índice do primeiro match encontrado, , ou <code>-1</code> caso não haja matches.</li>
+                    <li><span>item.split(regex):</span> confronta o item com a regex passada como argumento. Quebra o item a cada match encontrado, gerando um array em que os itens são o "resto" do item original sem a parte que deu match com o regex. Caso não haja matches, retorna um array de 1 item: o item original.</li>
+                </ul>
 
                 <h4>Máscaras</h4>
                 <p class="conteudo__texto"></p>
