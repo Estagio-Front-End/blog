@@ -46,7 +46,21 @@
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
             <article>
-                
+                <form class="conteudo__tarefas__form">
+                    <label for="nome-tarefas">Nome da tarefa:</label>
+                    <input type="text" id="nome-tarefas" name="criar-tarefas">
+                    
+                    <label for="select-tarefas">Selecione a categoria da tarefa</label>
+                    <select name="select-tarefas" id="select-tarefas">
+                        <option value="casa">Afazer Doméstico</option>
+                        <option value="estudos">Estudos</option>
+                        <option value="trabalho">Trabalho</option>
+                    </select>
+        
+                    <button id="criar-tarefa">Criar tarefa</button>
+                </form>
+        
+                <ul id="lista-tarefas" class="conteudo__tarefas__listagem"></ul>
             </article>
     
             <div class="artigo__info">
