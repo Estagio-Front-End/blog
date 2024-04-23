@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Regex em Javascript</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+   
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Regex em Javascript</h2>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+            
+            <article>
+                <p class="conteudo__texto">As Regex, ou expressões regulares, são formas de criar padrões a serem utilizados, muito comuns em inputs de formulários. Com as regex, pode-se realizar operações de busca, substituição, validação de padrões e filtragem de informações. As regex, em Javascript, podem ser criadas de duas formas. A primeira é de forma literal, atribuindo à uma variável e utilizando barras duplas (<code>//</code>) em volta do padrão criado com as flags após a segunda barra. A segunda, com o construtor <code>RegExp(expressão, flags)</code> atribuído à uma variável.</p>
+
+                <h4>Caracteres e flags</h4>
+                <p class="conteudo__texto">Com as regex, é possível buscar por caractéres específicos (<code>/c/</code>) ou palavras específicas (<code>/Camila/</code>). Ao confrontar um texto com uma regex, ela poderá buscar apenas pela primeira correspondência ou poderar encontrar ocorrências em todo o texto, isto dependerá das flags. As flags mais utilizadas são:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>g:</span> significa global, ou seja, serão retornadas todas as correspondências com a regex utilizada.</li>
+                    <li><span>i:</span> significa insensitive. As regex, por padrão, são case sensitive, ou seja, <code>/c/</code> e <code>/C/</code> são regex diferentes. Esta flag faz com que se busque por letras maiúsculas e minúsculas por meio de uma mesma regex.</li>
+                    <li><span>m:</span> significa multi line. Com esta flag, a regex buscará por ocorrências em todas as linhas de um texto ou campo, dado que o padrão possua os caractéres <code>^</code> e <code>$</code> indicando início e fim da linha, respectivamente.</li>
+                    <li><span>s:</span> significa single line. Com esta flag, a regex só buscará por ocorrências na primeira linha de um texto ou campo.</li>
+                    <li><span>x:</span> significa extended. Faz com que a regex ignore espaços em branco.</li>
+                </ul>
+
+                <h4>Operador lógico <code>|</code></h4>
+                <p class="conteudo__texto">As regex também possuem a possibilidade de inclusão de um operador lógico, similar ao OR (<code>||</code>), que é o pipe (<code>|</code>). Deste modo, com um regex <code>/c|a|m/gi</code>, por exemplo, serão procuradas todas as ocorrências das letras c, a ou m, maíusculas ou minúsculas.</p>
+
+                <h4>Conjuntos "[]" e ranges</h4>
+                <p class="conteudo__texto">Para situações em que se pode ter variados tipos de caractéres em uma mesma casa, são utilizados os conjuntos "[]". Este tipo de sintaxe é muito utilizada em ranges, por exemplo <code>[0-9]</code> para números de 0 à 9 ou <code>[a-z]</code> para letras do alfabeto minúsculas. è possível, também, negar conjuntos com o caractere (<code>^</code>). Desta forma, com um regex <code>/[^0-9]/gi</code>, serão buscadas ocorrências de todos os caracteres diferentes de números de 0 a 9.</p>
+                
+                <h4>Shorthands</h4>
+                <p class="conteudo__texto">Em regex, também existem as shorthands para facilitar a escrita do padrão. Os mais utilizados são <code>\d</code> com o mesmo efeito que <code>[0-9]</code>, <code>\w</code> com o mesmo efeito que <code>[a-zA-Z0-9_]</code> e <code>\s</code> para espaços em branco.</p>
+                
+                <h4>Quantificadores</h4>
+                <p class="conteudo__texto">Para quantificar a ocorrência de um caractere ou grupo, é possível utilizar os caracteres especiais <code>*</code> (zero ou mais ocorrências), <code>?</code> (zero ou uma ocorrência), <code>+</code> (uma ou mais ocorrências) ou a notação <code>{i, f}</code> (de i à f ocorrências). A regex <code>/\d+/gi</code>, por exemplo, buscará grupos com uma ou mais ocorrências de dígitos de 0 a 9.</p>
+                
+                <h4>Início e fim de linha</h4>
+                <p class="conteudo__texto">Para identificar o início e o fim de uma linha e auxiliar a busca de caracteres ou grupos em uma regex, utiliza-se os caracteres especiais <code>^</code> para indicar o início da linha (o caractere deve estar fora do grupo ou conjunto, pois dentro seria uma negação) e o <code>$</code> para indicar o fim de uma linha.</p>
+                
+                <h4>Grupo "()"</h4>
+                <p class="conteudo__texto">É possível criar subgrupos dentro da regex com os parênteses, criando uma "subregra" assim como referências à esses subgrupos. Estas referências podem ser utilizadas na própria regex ou na string de troca do método <code>replace</code>. Em uma regex de CPF, por exemplo: <code>/(\d{3})[\.]?(\d{3})[\.]?(\d{3})[\-]?(\d{2})/g</code> podemos ter 4 grupos: 3 grupos com 3 dígitos e 1 grupo com 2 dígitos. Em uma string de troca, estes grupos poderão ser referidos como $1 a $4.</p>
+                
+                <h4>Métodos de Regex</h4>
+                <p class="conteudo__texto">Para realizar as operações de busca, substituição, validação de padrões e filtragem de informações, as regex possuem métodos como test, replace, entre outros. São eles:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>regex.exec(item)</span> confronta o item passado como argumento com a regex. Retorna um array com informações como a primeira correspondência, o índice desta correspondência, caso haja, e o item passado como argumento. Caso não haja correspondências, este método retornará <code>null</code>.</li>
+                    <li><span>regex.test(item):</span> confronta o item passado como argumento com a regex. Retorna um booleano, <code>true</code> se houverem correspondências e <code>false</code> caso contrário.</li>
+                    <li><span>item.match(regex):</span> confronta o item com a regex passada como argumento. Retorna um array com todas as correspondências encontradas, ou <code>null</code> caso não haja correspondências.</li>
+                    <li><span>item.replace(regex, item2):</span> confronta o item com a regex passada como argumento. Em seguida, troca todas as correspondências encontradas pelo item passado como segundo argumento, seja ele uma string ou conformando o valor ao padrão da regex.</li>
+                    <li><span>item.search(regex):</span> confronta o item com a regex passada como argumento. Retorna o índice da primeira correspondência encontrada ou <code>-1</code> caso não haja correspondências.</li>
+                    <li><span>item.split(regex):</span> confronta o item com a regex passada como argumento. Quebra o item a cada correspondência encontrada, gerando um array em que os itens são o "resto" do item original sem a parte que teve correspondência com o regex. Caso não haja correspondências, retorna um array de 1 item: o item original.</li>
+                </ul>
+
+                <h4>Máscaras</h4>
+                <p class="conteudo__texto">Máscaras em inputs são utilizadas para mostrar ao usuário que ele escreveu informações requisitadas de forma correta, ou mesmo mostrar a forma como as informações devem ser escritas. As máscaras são criadas com base nas regex, visto que estas expressões são os padrões que indicam a informação escrita de forma correta.</p>
+
+                <p class="conteudo__texto">Teste aqui as validações por Regex e visualize as máscaras sendo utilizadas:</p>
+                <form>
+                    <label for="cpf-regex">CPF</label>
+                    <input type="text" id="cpf-regex" required minlength="11" maxlength="11" placeholder="ex: 12345678900">
+                    
+                    <label for="cnpj-regex">CNPJ</label>
+                    <input type="text" id="cnpj-regex" required minlength="18" maxlength="18" placeholder="ex: 12345678000100">
+                    
+                    <label for="data-regex">Data de Nascimento</label>
+                    <input type="text" id="data-regex" required minlength="10" maxlength="10" placeholder="ex: DDMMAAAA">
+
+                    <label for="monetario-regex">Valor monetário (real brasileiro)</label>
+                    <input type="text" id="monetario-regex" required placeholder="ex: 20,10">
+
+                    <label for="email-regex">E-mail</label>
+                    <input type="text" id="email-regex" required placeholder="ex: fulano@gmail.com">
+                    
+                    <label for="celular-regex">Telefone celular com DDD</label>
+                    <input type="text" id="celular-regex" required minlength="14" maxlength="14" placeholder="ex: 11988998899">
+
+                    <button class="conteudo__demonstracao__botao" id="botao-regex">Testar inputs com regex</button>
+                </form>
+
+                <div class="conteudo__texto" id="resultado-regex"></div>
+            </article>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>19 Abr</p>
+                </div>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
+<script src="../scripts/regex.js"></script>
+</html>
