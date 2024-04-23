@@ -49,21 +49,28 @@
                 <p class="conteudo__texto">O <abbr title="Document Object Model">DOM</abbr> é o modelo no qual o HTML de uma página é visto como uma árvore e cada um de seus elementos são suas ramificações. O navegador gera esta árvore ao ler o documento HTML e, por meio da conexão com a tag <code>script</code>, o Javascript pode interagir com esta árvore. Esta interação pode se dar por seleção de elementos diretamente ou pelas suas descendências/ascendências dentro da árvore, manipulação de elementos, de seus atributos ou de seu estilo, além de trabalho com eventos.</p>
 
                 <h3>Seleção de elementos diretamente</h3>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Para a seleção de itens no <code>document</code>, que é o nome que se dá para a árvore do DOM, é possível utilizar vários métodos do elemento <code>document</code>, acessando-os com a notação de ponto. </p>
                 <ul class="conteudo__texto">
-                    <li><span>getElementById(id)</span></li>
-                    <li><span>getElementsByName(name)</span></li>
-                    <li><span>getElementsByTagName(tag)</span></li>
-                    <li><span>getElementsByClassName(classe)</span></li>
-                    <li><span>querySelector()</span></li>
-                    <li><span>querySelectorAll()</span></li>
+                    <li><span>document.getElementById(id):</span> busca e retorna o elemento identificado com o atributo <code>id</code> passado como argumento. Só retorna um elemento pois cada id deve ser único dentro do documento HTML.</li>
+                    
+                    <li><span>document.getElementsByName(name):</span> busca e retorna uma <code>NodeList</code> com os elementos identificados com o atributo <code>name</code> passado como argumento. Uma <code>NodeList</code> é um elemento array-like, ou seja, parecido com um array, mas que não suporta os métodos de array.</li>
+                    
+                    <li><span>document.getElementsByTagName(tag):</span> busca e retorna uma <code>HTMLCollection</code> com os elementos da tag passada como argumento. A <code>HTMLCollection</code>, assim como a <code>NodeList</code>, é um objeto array-like.</li>
+                    
+                    <li><span>document.getElementsByClassName(classe):</span> busca e retorna uma <code>HTMLCollection</code> com os elementos que possuem como atributo <code>class</code> o valor passado como argumento.</li>
+                    
+                    <li><span>document.querySelector(tag/id/class):</span> busca e retorna o elemento com base no argumento que foi passado. Podem ser buscados elementos por tag, indicando a tag, por id, colocando um ponto (<code>.</code>) antes do valor do identificador e por classe, colocando um jogo da velha (<code>#</code>) antes do valor do atributo. Retorna apenas um elemento e, caso haja vários, retornará a primeira correspondência dentro da árvore.</li>
+                    
+                    <li><span>document.querySelectorAll(tag/class):</span> busca e retorna uma <code>NodeList</code> com os elementos identificados com base no argumento passado. É possível buscar por tag e por classe, assim como no método <code>querySelector</code>. Não faz sentido buscar por id, pois surtirá o mesmo efeito que o método anterior, visto que ids são únicas dentro do documento HTML.</li>
                 </ul>
 
                 <h3>Seleção de elementos pela ascendência/descendência</h3>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Com a seleção de um dado elemento pelos métodos citados anteriormente, é possível, por meio de algumas propriedades, acessar os elementos pais, elementos filhos ou elementos irmãos daquele que foi inicialmente selecionado. Estas propriedades são:</p>
                 <ul class="conteudo__texto">
-                    <li><span>Selecionando a ascendência</span></li>
-                    <li><span>Selecionando a descendência</span></li>
+                    <li><span>Selecionando a ascendência:</span> para buscar elementos pais, utiliza-se as propriedades <code>parentElement</code> ou <code>parentNode</code>. Desta forma, o código <code>document.getElementById("id").parentElement</code> irá retornar o elemento pai do elemento com id "id" e todos os seus filhos, incluindo o elemento buscado originalmente.</li>
+                    
+                    <li><span>Selecionando a descendência:</span> para buscar elementos filhos, utilizamos a propriedade <code>childNodes</code>, que, por sua vez, retornará uma <code>NodeList</code> com todos os elementos filhos. É também possível utilizar a propriedade <code>firstChild</code> para acessar o primeiro elemento filho ou <code>lastChild</code>, para acessar o último.</li>
+                    
                     <li><span>Selecionando elementos no mesmo nível</span></li>
                 </ul>
 
