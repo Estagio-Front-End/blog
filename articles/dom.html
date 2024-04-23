@@ -49,8 +49,8 @@
                 <p class="conteudo__texto">O <abbr title="Document Object Model">DOM</abbr> é o modelo no qual o HTML de uma página é visto como uma árvore e cada um de seus elementos são suas ramificações. O navegador gera esta árvore ao ler o documento HTML e, por meio da conexão com a tag <code>script</code>, o Javascript pode interagir com esta árvore. Esta interação pode se dar por seleção de elementos diretamente ou pelas suas descendências/ascendências dentro da árvore, manipulação de elementos, de seus atributos ou de seu estilo, além de trabalho com eventos.</p>
 
                 <h3>Seleção de elementos diretamente</h3>
-                <p></p>
-                <ul>
+                <p class="conteudo__texto"></p>
+                <ul class="conteudo__texto">
                     <li><span>getElementById(id)</span></li>
                     <li><span>getElementsByName(name)</span></li>
                     <li><span>getElementsByTagName(tag)</span></li>
@@ -60,16 +60,16 @@
                 </ul>
 
                 <h3>Seleção de elementos pela ascendência/descendência</h3>
-                <p></p>
-                <ul>
+                <p class="conteudo__texto"></p>
+                <ul class="conteudo__texto">
                     <li><span>Selecionando a ascendência</span></li>
                     <li><span>Selecionando a descendência</span></li>
                     <li><span>Selecionando elementos no mesmo nível</span></li>
                 </ul>
 
                 <h3>Manipulação de elementos</h3>
-                <p></p>
-                <ul>
+                <p class="conteudo__texto"class="conteudo__texto"></p>
+                <ul class="conteudo__texto"class="conteudo__texto">
                     <li><span>createElement(tag)</span></li>
                     <li><span>appendChild(elemento)</span></li>
                     <li><span>removeChild(elemento)</span></li>
@@ -78,8 +78,8 @@
                 </ul>
                 
                 <h3>Manipulação de atributos</h3>
-                <p></p>
-                <ul>
+                <p class="conteudo__texto"></p>
+                <ul class="conteudo__texto">
                     <li><span>setAttribute()</span></li>
                     <li><span>getAttribute()</span></li>
                     <li><span>removeAttribute()</span></li>
@@ -87,17 +87,17 @@
                 </ul>
 
                 <h3>Manipulação do estilo dos elementos</h3>
-                <p></p>
-                <ul>
+                <p class="conteudo__texto"></p>
+                <ul class="conteudo__texto">
                     <li><span>proriedade style</span></li>
                     <li><span>propriedade className</span></li>
                     <li><span>propriedade classList</span></li>
                 </ul>
                 
                 <h3>Shadow DOM</h3>
-                <p>o que é</p>
-                <p>como criar</p>
-                <p>diferenças pra shadow dom e dom</p>
+                <p class="conteudo__texto">o que é</p>
+                <p class="conteudo__texto">como criar</p>
+                <p class="conteudo__texto">diferenças pra shadow dom e dom</p>
 
                 <form class="conteudo__tarefas__form">
                     <label for="nome-tarefas">Nome da tarefa:</label>
@@ -109,6 +109,11 @@
                         <option value="estudos">Estudos</option>
                         <option value="trabalho">Trabalho</option>
                     </select>
+
+                    <label for="dark-mode">Dark Mode</label>
+                    <input type="radio" name="style-mode" id="dark-mode">
+                    <label for="light-mode">Light Mode</label>
+                    <input type="radio" name="style-mode" id="light-mode">
         
                     <button id="criar-tarefa">Criar tarefa</button>
                 </form>
