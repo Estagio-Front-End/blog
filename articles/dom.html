@@ -48,8 +48,14 @@
             <article>
                 <p class="conteudo__texto">O <abbr title="Document Object Model">DOM</abbr> é o modelo no qual o HTML de uma página é visto como uma árvore e cada um de seus elementos são suas ramificações. O navegador gera esta árvore ao ler o documento HTML e, por meio da conexão com a tag <code>script</code>, o Javascript pode interagir com esta árvore. Esta interação pode se dar por seleção de elementos diretamente ou pelas suas descendências/ascendências dentro da árvore, manipulação de elementos, de seus atributos ou de seu estilo, além de trabalho com eventos.</p>
 
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
                 <h3>Seleção de elementos diretamente</h3>
-                <p class="conteudo__texto">Para a seleção de itens no <code>document</code>, que é o nome que se dá para a árvore do DOM, é possível utilizar vários métodos do elemento <code>document</code>, acessando-os com a notação de ponto. </p>
+                <p class="conteudo__texto">Para a seleção de itens no <code>document</code>, que é o nome que se dá para a árvore do DOM, é possível utilizar vários métodos do elemento <code>document</code>, acessando-os com a notação de ponto.</p>
+
                 <ul class="conteudo__texto">
                     <li><span>document.getElementById(id):</span> busca e retorna o elemento identificado com o atributo <code>id</code> passado como argumento. Só retorna um elemento pois cada id deve ser único dentro do documento HTML.</li>
                     
@@ -74,33 +80,41 @@
                     <li><span>Selecionando elementos no mesmo nível:</span> para buscar elementos do mesmo nível, ou seja, elementos irmãos, é possível utilizar as propriedades <code>previousSibiling</code> para acessar o elemento irmão anterior e <code>nextSibling</code> para acessar o elemento irmão posterior.</li>
                 </ul>
 
-                <p>Se é necessário buscar elementos não adjacentes, é possível subir e descer na árvore dos <code>Nodes</code>, como são chamados os elementos. Tomando como exemplo uma lista não ordenada (<code>ul</code>) com 4 itens (<code>li</code>), se já temos selecionado o terceiro item e queremos acessar o primeiro por meio dele, não é possível utilizar a seleção de elemento do mesmo nível. Desta forma, é possível subir na árvore (<code>parentNode</code>) e descer novamente para o elemento que se quer (<code>firstChild</code>).</p>
+                <p class="conteudo__texto">Se é necessário buscar elementos não adjacentes, é possível subir e descer na árvore dos <code>Nodes</code>, como são chamados os elementos. Tomando como exemplo uma lista não ordenada (<code>ul</code>) com 4 itens (<code>li</code>), se já temos selecionado o terceiro item e queremos acessar o primeiro por meio dele, não é possível utilizar a seleção de elemento do mesmo nível. Desta forma, é possível subir na árvore (<code>parentNode</code>) e descer novamente para o elemento que se quer (<code>firstChild</code>).</p>
 
                 <h3>Manipulação de elementos</h3>
-                <p class="conteudo__texto"class="conteudo__texto"></p>
-                <ul class="conteudo__texto"class="conteudo__texto">
-                    <li><span>createElement(tag)</span></li>
-                    <li><span>appendChild(elemento)</span></li>
-                    <li><span>removeChild(elemento)</span></li>
-                    <li><span>textContent</span></li>
-                    <li><span>replaceChild</span></li>
+                <p class="conteudo__texto">É possível, com Javascript, criar e manipular elementos HTML com métodos do próprio documento. Os elementos criados constarão na árvore do DOM disposta no navegador, mas não existirão no documento HTML original, são apenas criados dinamicamente pela programação em Javascript. Os principais métodos de manipulação são:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>document.createElement(tag):</span> com este método, é possível criar um único elemento da tag passada no argumento.</li>
+                    
+                    <li><span>elemento.appendChild(elemento2):</span> com esse método é possível adicionar filhos ao elemento pai, ou seja, se criamos uma <code>ul</code> e uma <code>li</code> com o método <code>createElement</code>, é com o método <code>appendChild</code> que "inserimos" o item de lista como filho da lista não ordenada.</li>
+                    
+                    <li><span>elemento.removeChild(elemento):</span> com este método, é possível remover elementos do DOM. É importante frisar que, caso o elemento tenha filhos, os filhos também serão removidos com a utilização deste método.</li>
+                    
+                    <li><span>elemento.textContent:</span> este método insere conteúdo textual no elemento, muito utilizado para indicar o texto em parágrafos, âncoras ou itens de lista.</li>
                 </ul>
                 
                 <h3>Manipulação de atributos</h3>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Uma parte importante dos elementos são seus atributos, principalmente em elementos como imagens, âncoras e inputs. É possível adicioná-los e manipulá-los a depender da necessidade com os seguintes métodos:</p>
+
                 <ul class="conteudo__texto">
-                    <li><span>setAttribute()</span></li>
-                    <li><span>getAttribute()</span></li>
-                    <li><span>removeAttribute()</span></li>
-                    <li><span>hasAttribute()</span></li>
+                    <li><span>elemento.setAttribute(atributo, valor):</span> este método cria o atributo indicado no primeiro argumento com o valor indicado no segundo argumento. Em uma imagem, por exemplo, podemos inserir seu texto alternativo com <code>elemento.setAttribute('alt', 'Texto alternativo da imagem')</code>.</li>
+
+                    <li><span>elemento.getAttribute(atributo):</span> este método retorna o valor do atributo passado como argumento pertencente ao elemento no qual o método está sendo aplicado. Se o elemento não possuir o atributo, ele retorna <code>null</code>.</li>
+
+                    <li><span>elemento.removeAttribute(atributo):</span> este método remove o atributo passado como argumento pertencente ao elemento no qual o método está sendo aplicado. Caso o elemento não possua este atributo, ele retorna <code>undefined</code>.</li>
+
+                    <li><span>elemento.hasAttribute(atributo):</span> este método retorna um booleano, <code>true</code> caso o elemento possua o atributo passado como argumento, <code>false</code>, caso contrário.</li>
                 </ul>
 
                 <h3>Manipulação do estilo dos elementos</h3>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Apesar da estilização ser função do CSS, é possível aplicar e modificar estilos dos elementos por meio do Javascript e das propriedades style, className e classList. </p>
+                
                 <ul class="conteudo__texto">
-                    <li><span>proriedade style</span></li>
-                    <li><span>propriedade className</span></li>
-                    <li><span>propriedade classList</span></li>
+                    <li><span>proriedade style:</span> esta propriedade dá acesso às propriedades do CSS, de forma que se pode modificar ou aplicar um estilo específico  </li>
+                    <li><span>propriedade className:</span> </li>
+                    <li><span>propriedade classList:</span> </li>
                 </ul>
                 
                 <h3>Shadow DOM</h3>
