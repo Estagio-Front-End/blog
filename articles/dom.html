@@ -71,8 +71,10 @@
                     
                     <li><span>Selecionando a descendência:</span> para buscar elementos filhos, utilizamos a propriedade <code>childNodes</code>, que, por sua vez, retornará uma <code>NodeList</code> com todos os elementos filhos. É também possível utilizar a propriedade <code>firstChild</code> para acessar o primeiro elemento filho ou <code>lastChild</code>, para acessar o último.</li>
                     
-                    <li><span>Selecionando elementos no mesmo nível</span></li>
+                    <li><span>Selecionando elementos no mesmo nível:</span> para buscar elementos do mesmo nível, ou seja, elementos irmãos, é possível utilizar as propriedades <code>previousSibiling</code> para acessar o elemento irmão anterior e <code>nextSibling</code> para acessar o elemento irmão posterior.</li>
                 </ul>
+
+                <p>Se é necessário buscar elementos não adjacentes, é possível subir e descer na árvore dos <code>Nodes</code>, como são chamados os elementos. Tomando como exemplo uma lista não ordenada (<code>ul</code>) com 4 itens (<code>li</code>), se já temos selecionado o terceiro item e queremos acessar o primeiro por meio dele, não é possível utilizar a seleção de elemento do mesmo nível. Desta forma, é possível subir na árvore (<code>parentNode</code>) e descer novamente para o elemento que se quer (<code>firstChild</code>).</p>
 
                 <h3>Manipulação de elementos</h3>
                 <p class="conteudo__texto"class="conteudo__texto"></p>
