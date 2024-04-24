@@ -1,6 +1,8 @@
 let listagemDasTarefas = document.getElementById("lista-tarefas")
 let botaoCriarTarefa = document.querySelector("#criar-tarefa")
 let categoriasDasTarefas = document.getElementById("select-tarefas")
+let botaoModoDark = document.querySelector("#dark-mode");
+let botaoModoLight = document.querySelector("#light-mode");
 
 let listaDeTarefas = [["Fazer tarefa da sprint", "Trabalho"], ["Estudar módulo 1 da cadeira de aplicativos Android", "Estudos"], ["Aspirar a casa", "Casa"]];
 
@@ -27,7 +29,7 @@ function criarTarefa(tarefa) {
     
     tituloTarefa.textContent = tarefa[0];
     categoriaTarefa.textContent = tarefa[1].toUpperCase();
-    botaoDeletaTarefa.textContent = "X";
+    botaoDeletaTarefa.textContent = "x";
 
     listagemDasTarefas.appendChild(containerTarefa);
 
@@ -49,6 +51,7 @@ function criarNovaTarefa(evento) {
         criarTarefa(novaTarefa);
         estilizaTarefa();
         adicionarFuncaoDeletar();
+        modoDeEstilo();
     } else {
         alert("Dê um título à tarefa para adicioná-la!")
     }
@@ -84,4 +87,17 @@ function estilizaTarefa() {
         div.style.alignItems = "center";
         div.style.gap = "2rem";
     });
+}
+
+//Dark mode/light mode
+botaoModoLight.checked = true;
+
+function modoDeEstilo() {
+    if (botaoModoDark.checked) {
+        listagemDasTarefas.classList.add("conteudo__tarefas__listagem--dark")
+        listagemDasTarefas.classList.remove("conteudo__tarefas__listagem--light")
+    } else if (botaoModoLight.checked) {
+        listagemDasTarefas.classList.add("conteudo__tarefas__listagem--light")
+        listagemDasTarefas.classList.remove("conteudo__tarefas__listagem--dark")
+    } 
 }
