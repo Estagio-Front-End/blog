@@ -49,11 +49,11 @@
                 <p class="conteudo__texto">O <abbr title="Document Object Model">DOM</abbr> é o modelo no qual o HTML de uma página é visto como uma árvore e cada um de seus elementos são suas ramificações. O navegador gera esta árvore ao ler o documento HTML e, por meio da conexão com a tag <code>script</code>, o Javascript pode interagir com esta árvore. Esta interação pode se dar por seleção de elementos diretamente ou pelas suas descendências/ascendências dentro da árvore, manipulação de elementos, de seus atributos ou de seu estilo, além de trabalho com eventos.</p>
 
                 <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
+                    <img src="https://lh5.googleusercontent.com/SQ3qz32VvBhTPFTeGtWOzPVhcv-mfB7C8mj6k4C1IVOttNGWf71T9s8Pq9QY4F_AlMbEKMwgnMGh5XEQf2v8-UU-G6xZc984pnSwfJvKF-CxSEOsBafgKCkkg6tCWgH6Ni9bb_N8" alt="Figura com fundo branco e estrutura da árvore do DOM com documento no primeiro nível, tag html no segundo, tags semânticas no terceiro, elementos usuais no quarto e no quinto e último, os conteúdos textuais dos elementos.">
+                    <figcaption>Estrutura exemplificada de árvore do DOM.</figcaption>
                 </figure>
 
-                <h3>Seleção de elementos diretamente</h3>
+                <h4>Seleção de elementos diretamente</h4>
                 <p class="conteudo__texto">Para a seleção de itens no <code>document</code>, que é o nome que se dá para a árvore do DOM, é possível utilizar vários métodos do elemento <code>document</code>, acessando-os com a notação de ponto.</p>
 
                 <ul class="conteudo__texto">
@@ -70,7 +70,7 @@
                     <li><span>document.querySelectorAll(tag/class):</span> busca e retorna uma <code>NodeList</code> com os elementos identificados com base no argumento passado. É possível buscar por tag e por classe, assim como no método <code>querySelector</code>. Não faz sentido buscar por id, pois surtirá o mesmo efeito que o método anterior, visto que ids são únicas dentro do documento HTML.</li>
                 </ul>
 
-                <h3>Seleção de elementos pela ascendência/descendência</h3>
+                <h4>Seleção de elementos pela ascendência/descendência</h4>
                 <p class="conteudo__texto">Com a seleção de um dado elemento pelos métodos citados anteriormente, é possível, por meio de algumas propriedades, acessar os elementos pais, elementos filhos ou elementos irmãos daquele que foi inicialmente selecionado. Estas propriedades são:</p>
                 <ul class="conteudo__texto">
                     <li><span>Selecionando a ascendência:</span> para buscar elementos pais, utiliza-se as propriedades <code>parentElement</code> ou <code>parentNode</code>. Desta forma, o código <code>document.getElementById("id").parentElement</code> irá retornar o elemento pai do elemento com id "id" e todos os seus filhos, incluindo o elemento buscado originalmente.</li>
@@ -82,7 +82,7 @@
 
                 <p class="conteudo__texto">Se é necessário buscar elementos não adjacentes, é possível subir e descer na árvore dos <code>Nodes</code>, como são chamados os elementos. Tomando como exemplo uma lista não ordenada (<code>ul</code>) com 4 itens (<code>li</code>), se já temos selecionado o terceiro item e queremos acessar o primeiro por meio dele, não é possível utilizar a seleção de elemento do mesmo nível. Desta forma, é possível subir na árvore (<code>parentNode</code>) e descer novamente para o elemento que se quer (<code>firstChild</code>).</p>
 
-                <h3>Manipulação de elementos</h3>
+                <h4>Manipulação de elementos</h4>
                 <p class="conteudo__texto">É possível, com Javascript, criar e manipular elementos HTML com métodos do próprio documento. Os elementos criados constarão na árvore do DOM disposta no navegador, mas não existirão no documento HTML original, são apenas criados dinamicamente pela programação em Javascript. Os principais métodos de manipulação são:</p>
 
                 <ul class="conteudo__texto">
@@ -95,7 +95,7 @@
                     <li><span>elemento.textContent:</span> este método insere conteúdo textual no elemento, muito utilizado para indicar o texto em parágrafos, âncoras ou itens de lista.</li>
                 </ul>
                 
-                <h3>Manipulação de atributos</h3>
+                <h4>Manipulação de atributos</h4>
                 <p class="conteudo__texto">Uma parte importante dos elementos são seus atributos, principalmente em elementos como imagens, âncoras e inputs. É possível adicioná-los e manipulá-los a depender da necessidade com os seguintes métodos:</p>
 
                 <ul class="conteudo__texto">
@@ -108,7 +108,7 @@
                     <li><span>elemento.hasAttribute(atributo):</span> este método retorna um booleano, <code>true</code> caso o elemento possua o atributo passado como argumento, <code>false</code>, caso contrário.</li>
                 </ul>
 
-                <h3>Manipulação do estilo dos elementos</h3>
+                <h4>Manipulação do estilo dos elementos</h4>
                 <p class="conteudo__texto">Apesar da estilização ser função do CSS, é possível aplicar e modificar estilos dos elementos por meio do Javascript e das propriedades style, className e classList. </p>
                 
                 <ul class="conteudo__texto">
@@ -118,11 +118,6 @@
                     
                     <li><span>propriedade classList:</span> esta propriedade dá acesso à lista de classes individualmente, permitindo adição, remoção e manipulação das classes. Com o método <code>add(classe)</code>, é possível adicionar uma classe ao elemento; com o método <code>remove(classe)</code> é possível remover uma classe do elemento; com o método <code>replace(classe atual, classe nova)</code> é possível substituir uma classe por outra e, com o método <code>toggle(classe)</code>, é possível alternar uma classe: caso exista, será removida; caso não exista, será adicionada.</li>
                 </ul>
-                
-                <h3>Shadow DOM</h3>
-                <p class="conteudo__texto">o que é</p>
-                <p class="conteudo__texto">como criar</p>
-                <p class="conteudo__texto">diferenças pra shadow dom e dom</p>
 
                 <form class="conteudo__demonstracao">
                     <label for="nome-tarefas">Nome da tarefa:</label>
@@ -140,10 +135,23 @@
                         <label for="light-mode">Light Mode <input type="radio" name="style-mode" id="light-mode"></label>
                     </div>
         
-                    <button id="criar-tarefa">Criar tarefa</button>
+                    <button class="conteudo__demonstracao__botao" id="criar-tarefa">Criar tarefa</button>
                 </form>
         
                 <ul id="lista-tarefas" class="conteudo__tarefas__listagem"></ul>
+
+                <h3>Shadow DOM</h3>
+                <p class="conteudo__texto">O shadow DOM é uma parte do modelo DOM igualmente representada por uma árvore com seus <code>Nodes</code>. É uma ferramenta importante para a modularização do código, permitindo a criação de componentes reutilizável. Uma das principais características do shadow DOM é que manipulações do DOM não afetam elementos do shadow DOM e vice-versa, o que possibilita o encapsulamento do código.</p>
+
+                <figure>
+                    <img src="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM/shadowdom.svg" alt="">
+                    <figcaption>Estrutura exemplificada de árvore do DOM contendo uma árvore do shadow DOM.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">como criar</p>
+                <p class="conteudo__texto">diferenças pra shadow dom e dom</p>
+
+                <div id="shadow-dom"></div>
             </article>
     
             <div class="artigo__info">
@@ -264,4 +272,5 @@
 <script src="../script.js"></script>
 <script src="../scripts/formulario.js"></script>
 <script src="../scripts/todolist.js"></script>
+<script src="../scripts/shadow-dom.js"></script>
 </html>

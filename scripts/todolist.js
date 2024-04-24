@@ -1,8 +1,8 @@
-let listagemDasTarefas = document.getElementById("lista-tarefas")
-let botaoCriarTarefa = document.querySelector("#criar-tarefa")
-let categoriasDasTarefas = document.getElementById("select-tarefas")
-let botaoModoDark = document.querySelector("#dark-mode");
-let botaoModoLight = document.querySelector("#light-mode");
+const listagemDasTarefas = document.getElementById("lista-tarefas")
+const botaoCriarTarefa = document.querySelector("#criar-tarefa")
+const categoriasDasTarefas = document.getElementById("select-tarefas")
+const botaoModoDark = document.querySelector("#dark-mode");
+const botaoModoLight = document.querySelector("#light-mode");
 
 let listaDeTarefas = [["Fazer tarefa da sprint", "Trabalho"], ["Estudar módulo 1 da cadeira de aplicativos Android", "Estudos"], ["Aspirar a casa", "Casa"]];
 
