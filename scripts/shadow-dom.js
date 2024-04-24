@@ -28,10 +28,10 @@ botoesNoShadowDOM.forEach(botao => botao.addEventListener('click', () => {
 
 //Criação de tag customizada
 
-class WordCount extends HTMLParagraphElement {
+class ComponenteCustomizado extends HTMLElement {
     constructor() {
       super();
     }
     
-    
-  }
+
+}
