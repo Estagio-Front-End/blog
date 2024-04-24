@@ -31,8 +31,7 @@ function criarTarefa(tarefa) {
 
     listagemDasTarefas.appendChild(containerTarefa);
 
-    containerTarefa.className = "tarefas__listagem__item";
-    containerTarefa.classList.add("conteudo__texto");
+    containerTarefa.className = "tarefas__listagem__item conteudo__texto";
     categoriaTarefa.className = `tarefas__listagem__item--${tarefa[1].toLowerCase()}`;
     botaoDeletaTarefa.className = "listagem__item__botao";
 }

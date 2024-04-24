@@ -112,9 +112,11 @@
                 <p class="conteudo__texto">Apesar da estilização ser função do CSS, é possível aplicar e modificar estilos dos elementos por meio do Javascript e das propriedades style, className e classList. </p>
                 
                 <ul class="conteudo__texto">
-                    <li><span>proriedade style:</span> esta propriedade dá acesso às propriedades do CSS, de forma que se pode modificar ou aplicar um estilo específico  </li>
-                    <li><span>propriedade className:</span> </li>
-                    <li><span>propriedade classList:</span> </li>
+                    <li><span>proriedade style:</span> esta propriedade dá acesso às propriedades do CSS, de forma que se pode modificar ou aplicar um estilo específico à um elemento. É importante frisar que deve-se utilizar camel case ao indicar as propriedades CSS, visto que não é possível utilizar a notação com hífen. A propriedade <code>border-radius</code> no CSS, por exemplo, fica <code>elemento.style.borderRadius</code> em Javascript, para a qual se pode atribuir um valor.</li>
+
+                    <li><span>propriedade className:</span> com esta propriedade, é possível retornar ou atribuir uma ou mais classes (separadas por espaço) ao elemento que se referencia. Caso seja atribuída à uma variável, irá retornar uma <code>string</code> com a(s) classe(s) do elemento. Caso um valor do tipo <code>string</code> seja atribuído a ela, esta será a nova (ou novas) classe do elemento.</li>
+                    
+                    <li><span>propriedade classList:</span> esta propriedade dá acesso à lista de classes individualmente, permitindo adição, remoção e manipulação das classes. Com o método <code>add(classe)</code>, é possível adicionar uma classe ao elemento; com o método <code>remove(classe)</code> é possível remover uma classe do elemento; com o método <code>replace(classe atual, classe nova)</code> é possível substituir uma classe por outra e, com o método <code>toggle(classe)</code>, é possível alternar uma classe: caso exista, será removida; caso não exista, será adicionada.</li>
                 </ul>
                 
                 <h3>Shadow DOM</h3>
