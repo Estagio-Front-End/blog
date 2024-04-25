@@ -46,9 +46,10 @@
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
             <article>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Algumas propriedades dos elementos são direcionadas a busca a estrutura HTML ou estrutura textual de um elemento. São elas:</p>
+
                 <ul class="conteudo__texto">
-                    <li><span>elemento.outerHTML:</span> esta propriedade possibilita o acesso à estrutura HTML do elemento selecionado e, caso o elemento tenha filhos, os retorna também.  </li>
+                    <li><span>elemento.outerHTML:</span> esta propriedade possibilita o acesso à estrutura HTML do elemento selecionado e, caso o elemento tenha filhos, os retorna também. Ou seja, usa-se essa propriedade quando se quer substituir completamente um elemento.</li>
                     
                     <li><span>elemento.innerHTML:</span> esta propriedade possibilita o acesso aos elementos HTML dentro de um elemento pai ou a modificação destes elementos, seja sobrescrevendo-os ou adicionando novos elementos filhos.</li>
                     
@@ -63,12 +64,13 @@
                 </div>
                 
                 <button class="conteudo__demonstracao__botao" id="add-inner-html">Adicionar innerHTML</button>
-                <button class="conteudo__demonstracao__botao" id="add-outer-html">Adicionar outerHTML</button>
+                <button class="conteudo__demonstracao__botao" id="add-outer-html">Modificar outerHTML</button>
+                <button class="conteudo__demonstracao__botao" id="add-inner-text">Modificar innerText</button>
                 
                 <div id="resultado-propriedades">
-                    <p class="conteudo__texto" id="inner-text">Este texto poderá ser modificado pelo botão "Adicionar innerText"</p>
+                    <p class="conteudo__texto" id="outer-html">Este elemento poderá ser modificado pelo botão "Modificar outerHTML" apenas uma vez.</p>
+                    <p class="conteudo__texto" id="inner-text">Este texto poderá ser modificado pelo botão "Modificar innerText".</p>
                 </div>
-                <button class="conteudo__demonstracao__botao" id="add-inner-text">Modificar innerText</button>
 
             </article>
     
