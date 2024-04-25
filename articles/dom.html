@@ -158,8 +158,15 @@
                 <p class="conteudo__texto">A estilização, assim como a criação do shadow DOM, também pode ser realizada por meio do HTML ou do Javascript. No HTML, se insere uma tag <code>style</code> dentro da tag <code>template</code>, como em um modelo de CSS interno. No Javascript, se inicia criando um objeto do tipo <code>CSSStyleSheet()</code> e, utilizando o método <code>replaceSync(estilização)</code>, se passa o código CSS escrito para a estilização. Para conectar o estilo criado ao shadow DOM, é necessário utilizar a propriedade <code>adopetedStyleSheets</code> e atribuir à ela o objeto criado inicialmente. Desta forma, foi possível modificar o estilo do botão do exemplo anterior.</p>
 
                 <h4>Componentes customizados</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Uma das possibilidades que o encapsulamento promovido pelo shadow DOM traz é a de criação de componentes customizados e reutilizáveis. Visto que alterações da árvore do DOM não serão refletidas no shadow DOM e vice-versa, é possível ter um total controle de estrutura, estilo e lógica do componente sem se preocupar com as interações com a árvore original. Essa criação se dá por meio da criação de uma classe que estende a interface <code>HTMLElement</code>, onde será construído o componente. A criação do shadow DOM, da estrutura do componente e da sua estilização se dá da mesma forma que a anteriormente explicada. A única diferença é que, no componente customizado, todo esse código estará dentro de um método chamado <code>connectedCallback()</code>, que é "chamada" toda vez que o elemento customizado é utilizado dentro do código.</p>
 
+                <div class="conteudo__demonstracao">
+                    <animais-domesticos src="https://petpillow.com.br/wp-content/uploads/2018/09/animais-domesticos-cachorro-300x162.jpg" alt="Foto de um cachorro" tipo="Cachorro"></animais-domesticos>
+                    <animais-domesticos src="https://geocracia.com/wp-content/uploads/2021/11/Cat_Guvo59_Pixabay.jpg" alt="Foto de um gato" tipo="Gato"></animais-domesticos>
+                    <animais-domesticos src="https://petpillow.com.br/wp-content/uploads/2018/09/animais-domesticos-chinchila-300x300.jpg" alt="Foto de uma chinchilla" tipo="Chincilla"></animais-domesticos>
+                </div>
+
+                <p class="conteudo__texto">Um componente customizado básico foi criado e utilizado 3 vezes acima. Outra vantagem dos componentes customizados é que o código acaba por ficar mais conciso. Neste componente básico, reduzimos de 9 para 3 elementos dentro do documento HTML, deixando toda a "complexidade" do componenente encapsulada em sua criação. Além disso, é possível utilizá-lo em qualquer ponto do código sem necessidade de uma nova criação de estrutura e estilização, apenas passar os atributos necessários.</p>
             </article>
     
             <div class="artigo__info">
