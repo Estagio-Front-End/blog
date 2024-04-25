@@ -148,9 +148,18 @@
                     <figcaption>Estrutura exemplificada de árvore do DOM contendo uma árvore do shadow DOM.</figcaption>
                 </figure>
 
-                <p class="conteudo__texto">A shadow DOM pode ser criada tanto pelo HTML como pelo Javascript. No HTML, adiciona-se uma tag <code>template</code> dentro do elemento que servirá como hospedeiro da shadow DOM com o atributo <code>shadowrootmode</code>. Este atributo possui dois valores possíveis: <code>open</code> ou <code>closed</code> e, a depender do valor, os elementos da shadow DOM são ou não acessíveis pelo Javascript.</p>
+                <p class="conteudo__texto">A criação do shadow DOM pode ser realizada tanto pelo HTML como pelo Javascript, mas em ambas, ela é feita pela criação de um elemento hospedeiro (no HTML) e um elemento raiz (HTML ou JS). No HTML, adiciona-se uma tag <code>template</code> dentro do elemento que servirá como hospedeiro do shadow DOM com o atributo <code>shadowrootmode</code>. Este atributo possui dois valores possíveis: <code>open</code> ou <code>closed</code> e, a depender do valor, os elementos do shadow DOM são ou não acessíveis pelo Javascript. No Javascript, utiliza-se o método <code>attachShadow({mode})</code>, que recebe como argumento um objeto com o par atrbuto <code>mode</code>/valor. Após a criação do shadow DOM, todos os elementos criados por meio do método <code>createElement</code> deverão ser anexados ao elemento raiz, não ao hospedeiro.</p>
 
                 <div id="shadow-dom"></div>
+
+                <p class="conteudo__texto">A demonstração anterior foi feita utilizando o método <code>querySelectorAll</code> para buscar os elementos de botão e parágrafo. Dessa forma, foi possível observar na prática que, quando criamos o shadow DOM, seus elementos ficam encapsulados em relação aos elementos da árvore do DOM, pois o <code>querySelectorAll</code> não retornou outros botões ou outros parágrafos além dos inseridos no shadow DOM. Além disso, foi possível observar que, originalmente, as tags <code>h4</code> e <code>p</code> não assumiram estilos aplicados como globais no documento, o que mostra que as ações de fora do shadow DOM também não atingem os elementos dentro dele.</p>
+
+                <h4 >Estilização no shadow DOM</h4>
+                <p class="conteudo__texto">A estilização, assim como a criação do shadow DOM, também pode ser realizada por meio do HTML ou do Javascript. No HTML, se insere uma tag <code>style</code> dentro da tag <code>template</code>, como em um modelo de CSS interno. No Javascript, se inicia criando um objeto do tipo <code>CSSStyleSheet()</code> e, utilizando o método <code>replaceSync(estilização)</code>, se passa o código CSS escrito para a estilização. Para conectar o estilo criado ao shadow DOM, é necessário utilizar a propriedade <code>adopetedStyleSheets</code> e atribuir à ela o objeto criado inicialmente. Desta forma, foi possível modificar o estilo do botão do exemplo anterior.</p>
+
+                <h4>Componentes customizados</h4>
+                <p class="conteudo__texto"></p>
+
             </article>
     
             <div class="artigo__info">
