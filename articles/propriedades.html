@@ -43,10 +43,33 @@
     <main>
         <section class="conteudo">
             <h2 class="conteudo__titulo">Propriedades em Javascript</h2>
-            <span class="artigo__tag artigo__tag--javascript">Javascript</span>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
             <article>
+                <p class="conteudo__texto"></p>
+                <ul class="conteudo__texto">
+                    <li><span>elemento.outerHTML:</span> esta propriedade possibilita o acesso à estrutura HTML do elemento selecionado e, caso o elemento tenha filhos, os retorna também.  </li>
+                    
+                    <li><span>elemento.innerHTML:</span> esta propriedade possibilita o acesso aos elementos HTML dentro de um elemento pai ou a modificação destes elementos, seja sobrescrevendo-os ou adicionando novos elementos filhos.</li>
+                    
+                    <li><span>elemento.innerText:</span> esta propriedade possibilita o acesso ao conteúdo textual de um elemento. Possui quase a mesma função de <code>textContent</code>, com a diferença sendo em casos de elementos com visibilidade ocultada pelo CSS. No <code>textContent</code>, a mudança de visibilidade não possui influência e, caso seja atribuído à uma variável, ela irá mostrar o texto. No <code>innerText</code>, a mudança de visibilidade é totalmente aplicada, de modo que, caso atribuída a uma variável, esta irá retornar uma string vazia.</li>
+                </ul>
                 
+                <label for="modifica-elementos">Adicione um texto qualquer aqui e teste as propriedades mencionadas:</label>
+                <div>
+                    <span class="conteudo__texto">< h3 ></span>
+                    <input style="display: inline-block" type="text" id="modifica-elementos" name="modifica-elementos">
+                    <span class="conteudo__texto">< /h3 ></p></span>
+                </div>
+                
+                <button class="conteudo__demonstracao__botao" id="add-inner-html">Adicionar innerHTML</button>
+                <button class="conteudo__demonstracao__botao" id="add-outer-html">Adicionar outerHTML</button>
+                
+                <div id="resultado-propriedades">
+                    <p class="conteudo__texto" id="inner-text">Este texto poderá ser modificado pelo botão "Adicionar innerText"</p>
+                </div>
+                <button class="conteudo__demonstracao__botao" id="add-inner-text">Modificar innerText</button>
+
             </article>
     
             <div class="artigo__info">
