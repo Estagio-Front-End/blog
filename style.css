@@ -395,6 +395,7 @@ dl .aberto {
 }
 
 .conteudo {
+  word-break: break-word;
   display: flex;
   flex-direction: column;
 }
@@ -649,6 +650,58 @@ dl .aberto {
   text-align: left;
   text-transform: initial;
   color: #FF262D;
+}
+
+.conteudo__tarefas__listagem {
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #EBEBEB;
+  border-radius: 0.8rem;
+}
+.conteudo__tarefas__listagem .tarefas__listagem__item {
+  border-radius: 0.8rem;
+  padding-left: 1rem;
+  color: #1F2041;
+}
+.conteudo__tarefas__listagem .tarefas__listagem__item--casa, .conteudo__tarefas__listagem .tarefas__listagem__item--estudos, .conteudo__tarefas__listagem .tarefas__listagem__item--trabalho {
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+}
+.conteudo__tarefas__listagem .tarefas__listagem__item--casa {
+  background-color: #FF8F7C;
+}
+.conteudo__tarefas__listagem .tarefas__listagem__item--estudos {
+  background-color: #89E581;
+}
+.conteudo__tarefas__listagem .tarefas__listagem__item--trabalho {
+  background-color: #6DBEFF;
+}
+.conteudo__tarefas__listagem .listagem__item__botao {
+  color: #FF262D;
+  border: 1px solid #C2C2C2;
+  border-radius: 0.8rem;
+  padding: 0.1rem 0.6rem;
+  cursor: pointer;
+}
+
+.conteudo__tarefas__listagem--dark {
+  background-color: #1F2041;
+}
+.conteudo__tarefas__listagem--dark .tarefas__listagem__item {
+  color: #EBEBEB;
+}
+.conteudo__tarefas__listagem--dark .tarefas__listagem__item--casa, .conteudo__tarefas__listagem--dark .tarefas__listagem__item--estudos, .conteudo__tarefas__listagem--dark .tarefas__listagem__item--trabalho {
+  color: #EBEBEB;
+}
+
+.conteudo__tarefas__listagem--light {
+  background-color: #EBEBEB;
+}
+.conteudo__tarefas__listagem--light .tarefas__listagem__item {
+  color: #1F2041;
+}
+.conteudo__tarefas__listagem--light .tarefas__listagem__item--casa, .conteudo__tarefas__listagem--light .tarefas__listagem__item--estudos, .conteudo__tarefas__listagem--light .tarefas__listagem__item--trabalho {
+  color: #1F2041;
 }
 
 .conteudo__botao {

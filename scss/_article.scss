@@ -61,6 +61,7 @@ dl {
 }
 
 .conteudo {
+    word-break: break-word;
     display: flex;
     flex-direction: column;
 
@@ -270,4 +271,63 @@ dl {
 .artigo__formulario__item--erro {  
     display: none;
     @include body-system-regular(14, left, initial, $cor-erro);
+}
+
+.conteudo__tarefas__listagem {
+    width: fit-content;
+    margin: 0 auto;
+    background-color: $cor-neutra-2;
+    border-radius: $espacamento-2;
+
+    .tarefas__listagem__item {
+        border-radius: $espacamento-2;
+        padding-left: 1rem;
+        color: $cor-primaria;
+    }
+
+    .tarefas__listagem__item--casa, .tarefas__listagem__item--estudos, .tarefas__listagem__item--trabalho {
+        padding: .5rem 1rem;
+        border-radius: $espacamento-2;
+    }
+
+    .tarefas__listagem__item--casa {
+        background-color: $cor-tag-designux;
+    }
+    .tarefas__listagem__item--estudos {
+        background-color: $cor-tag-people;
+    }
+    .tarefas__listagem__item--trabalho {
+        background-color: $cor-tag-tecnologia;
+    }
+
+    .listagem__item__botao {
+        color: $cor-erro;
+        border: 1px solid $cor-neutra-3;
+        border-radius: $espacamento-2;        padding: .1rem .6rem;
+        cursor: pointer;
+    }  
+}
+
+.conteudo__tarefas__listagem--dark {
+    background-color: $cor-primaria;
+    
+    .tarefas__listagem__item {
+        color: $cor-neutra-2;
+    }
+
+    .tarefas__listagem__item--casa, .tarefas__listagem__item--estudos, .tarefas__listagem__item--trabalho {
+        color: $cor-neutra-2;
+    }
+}
+
+.conteudo__tarefas__listagem--light {
+    background-color: $cor-neutra-2;
+    
+    .tarefas__listagem__item {
+        color: $cor-primaria;
+    }
+
+    .tarefas__listagem__item--casa, .tarefas__listagem__item--estudos, .tarefas__listagem__item--trabalho {
+        color: $cor-primaria;
+    }
 }
