@@ -12,14 +12,19 @@ botoesPropriedades.forEach(botao => botao.addEventListener('click', evento => ex
 function executaAcao(evento) {
     if (inputParaParagrafo.value !== "") {
         let botaoPressionado = evento.target.id;
-        if (botaoPressionado === "add-inner-html") {
-            containerResultado.innerHTML += `<h3 class="conteudo__texto">${inputParaParagrafo.value}</h3>`
-        } else if (botaoPressionado === "add-outer-html") {
-            elementoOuterHTML.outerHTML = `<h3 class="conteudo__texto">${inputParaParagrafo.value}</h3>`
-        } else if (botaoPressionado === "add-inner-text") {
-            textoInnerText.innerText = `${inputParaParagrafo.value}`;
-        } else {
-            alert("Ocorreu um erro, tente novamente mais tarde!")
+        switch(botaoPressionado) {
+            case "add-inner-html":
+                containerResultado.innerHTML += `<h3>${inputParaParagrafo.value}</h3>`;
+            break;
+            case "add-outer-html":
+                elementoOuterHTML.outerHTML = `<h3>${inputParaParagrafo.value}</h3>`;
+            break;
+            case "add-inner-text":
+                textoInnerText.innerText = inputParaParagrafo.value;
+            break;
+            default:
+                alert("Ocorreu um erro, tente novamente mais tarde!");
+            break;
         }
     } else {
         alert("Digite algo no campo de texto para testar as propriedades!")
