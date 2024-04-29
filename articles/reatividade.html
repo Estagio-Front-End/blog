@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Propriedades em Javascript</title>
+    <title>Javascript Reativo</title>
 </head>
 <body>
     <header>
@@ -39,41 +39,31 @@
             <img src="../images/search-outline.png" alt="Imagem de uma lupa">
         </div>
     </header>
-   
+
     <main>
         <section class="conteudo">
-            <h2 class="conteudo__titulo">Propriedades em Javascript</h2>
+            <h2 class="conteudo__titulo">Javascript Reativo</h2>
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
-            
+
             <article>
-                <p class="conteudo__texto">Algumas propriedades dos elementos são direcionadas a buscar a estrutura HTML ou o conteúdo textual de um elemento para manipulação ou até mesmo substituição total. São elas:</p>
+                <p class="conteudo__texto">O Javascript, por natureza, é uma linguagem de programação baseada em eventos, sejam eles iniciados pelo navegador ou pelo usuário. Desta forma, é possível que, quando haja uma ação do usuário (evento), a programação reaja de acordo com esta ação pois, por trás dos panos, uma função que lida com este evento foi criada e atrelada ao elemento com o qual o usuário interagiu. Isto serve para criar aplicações web dinâmicas e interativas, porém, quanto maior a complexidade da aplicação e maior a quantidade de operações assíncronas envolvidas, mais complexa fica a programação baseada somente em eventos.</p>
+
+                <p class="conteudo__texto">A programação reativa vem para facilitar este processo. Ela é um paradigma da programação baseado em fluxos de dados e propagações de estados, o que a torna mais equipada para lidar com aplicações que se utilizem de múltiplos processos assíncronos, devido a sua capacidade de responder eficientemente à eventos externos. Em 2014, foi lançado o manifesto reativo que fala brevemente sobre os 4 princípios da programação reativa. São eles:</p>
 
                 <ul class="conteudo__texto">
-                    <li><span>elemento.outerHTML:</span> esta propriedade possibilita o acesso à estrutura HTML do elemento selecionado e, caso o elemento tenha filhos, os retorna também. Dessa forma, usa-se essa propriedade quando se quer substituir completamente um elemento.</li>
-                    
-                    <li><span>elemento.innerHTML:</span> esta propriedade possibilita o acesso aos elementos HTML dentro de um elemento pai ou a modificação destes elementos, seja sobrescrevendo-os ou adicionando novos elementos filhos.</li>
-                    
-                    <li><span>elemento.innerText:</span> esta propriedade possibilita o acesso ao conteúdo textual de um elemento. Possui quase a mesma função de <code>textContent</code>, com a diferença sendo em casos de elementos com visibilidade ocultada pelo CSS. No <code>textContent</code>, a mudança de visibilidade não possui influência e, caso seja atribuído à uma variável, ela irá mostrar o texto. No <code>innerText</code>, a mudança de visibilidade é totalmente aplicada, de modo que, caso atribuída a uma variável, esta irá retornar uma string vazia.</li>
+                    <li><span>Responsividade:</span> neste contexto, se refere à rapidez da resposta que a aplicação oferece após uma ação do usuário. Sistemas responsivos devem oferecer tempos de resposta curtos e consistentes.</li>
+                    <li><span>Resiliência:</span> se refere à capacidade de reação e recuperação após falhas de software, hardware ou conexão. Qualquer sistema que não for resiliente, ficará indisponível após a falha.</li>
+                    <li><span>Elasticidade:</span> se refere à capacidade de se manter responsivo e resiliente mesmo com altas variações de cargas (demanda). Sistemas elásticos devem aumentar ou diminuir a quantidade de recursos alocados para lidar com a demanda oscilante.</li>
+                    <li><span>Message driven (guiados por mensagens):</span> se refere à reação à entrada de diferentes fluxos de dados de forma assíncrona e não bloqueante. A passagem de mensagens assíncrona garante baixo acoplamento e isolamento entre componentes.</li>
                 </ul>
 
-                <p class="conteudo__texto">As propriedades <code>innerText</code> e <code>innerHTML</code> suportam o operador <code>+=</code>, ou seja, novas tags ou textos podem ser adicionados em vez de substituir completamente o que já existia.</p>
+                <p class="conteudo__texto">As vantagens da programação reativa estão intimamente atreladas aos seus princípios. Deste modo, a grande vantagem da utilização da programação reativa é a capacidade de criar aplicações responsivas, resilientes, escaláveis (por sua elasticidade) e que controlam e combinam, de modo eficiente, diferentes fontes de dados. As desvantagens da programação reativa são sua maior curva de aprendizado e em relação à programação tradicional e uma possível maior complexidade devido ao gerenciamento de múltiplas fontes de dados e eventos.</p>
+
+                <p class="conteudo__texto">Os casos de uso mais recorrentes da programação reativa são aplicações que necessitam oferecer respostas em tempo real aos usuários que as utilizam. Portanto, exemplos de uso deste paradigma são comumente encontrados no desenvolvimento de aplicações web em tempo real, como chatbots e plataformas de e-commerce; softwares para dispositivos de <abbr title="Internet of Things">IoT</abbr>; análises de dados em tempo real e jogos online.</p>
                 
-                <label for="modifica-elementos">Adicione um texto qualquer aqui e teste as propriedades mencionadas:</label>
-                <div>
-                    <span class="conteudo__texto">< h3 ></span>
-                    <input style="display: inline-block" type="text" id="modifica-elementos" name="modifica-elementos">
-                    <span class="conteudo__texto">< /h3 ></p></span>
-                </div>
-                
-                <button class="conteudo__demonstracao__botao" id="add-inner-html">Adicionar innerHTML</button>
-                <button class="conteudo__demonstracao__botao" id="add-inner-text">Modificar innerText</button>
-                <button class="conteudo__demonstracao__botao" id="add-outer-html">Modificar outerHTML</button>
-                
-                <p class="conteudo__texto" id="outer-html">Este elemento poderá ser modificado pelo botão "Modificar outerHTML" apenas uma vez.</p>
-                <p class="conteudo__texto" id="inner-text">Este texto poderá ser modificado pelo botão "Modificar innerText".</p>
-                <div id="resultado-propriedades"></div>
+                <p class="conteudo__texto">Em Javascript, se tem várias opções para o uso da programação reativa. Ao longo dos anos, foram criadas bibliotecas e frameworks que utilizam os conceitos da programação reativa e facilitam o trabalho de desenvolvedores como RxJS, React, Angular e Vue.</p>
             </article>
-    
+            
             <div class="artigo__info">
                 <div class="artigo__info__autor">
                     <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
@@ -83,11 +73,10 @@
                     </div>
                 </div>
                 <div class="artigo__data">
-                    <p>25 Abr</p>
+                    <p>25 Mar</p>
                 </div>
             </div>
         </section>
-
         <section aria-label="Seção de Formulário" class="artigo__formulario">    
             <h2>Gostou do que leu? Deixe um comentário</h2>
             <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
@@ -188,8 +177,8 @@
 
         <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
     </footer>
+    <script src="../script.js"></script>
+    <script src="../scripts/javascript.js"></script>
+    <script src="../scripts/formulario.js"></script>
 </body>
-<script src="../script.js"></script>
-<script src="../scripts/formulario.js"></script>
-<script src="../scripts/propriedades.js"></script>
 </html>
