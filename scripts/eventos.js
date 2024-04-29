@@ -57,3 +57,17 @@ function escureceFonte(evento) {
 function clareiaFonte(evento) {
     evento.target.style.color = "#5b5b5b";
 }
+
+const inputExemploEventos = document.getElementById("nome-exemplo")
+
+inputExemploEventos.addEventListener('focus', () => {
+    inputExemploEventos.style.backgroundColor = "#313250"
+})
+
+inputExemploEventos.addEventListener('input', () => {
+    inputExemploEventos.style.backgroundColor = "#1F2041"
+})
+
+inputExemploEventos.addEventListener('blur', () => {
+    inputExemploEventos.style.backgroundColor = "#1F2041"
+})
