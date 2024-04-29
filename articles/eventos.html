@@ -44,8 +44,21 @@
         <section class="conteudo">
             <h2 class="conteudo__titulo">Eventos em Javascript</h2>
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+
+            <!-- preventDefault, Diferentes eventos (Click, Scroll, Mouse Enter, Keydown, Mouse Leaver, etc..) -->
             
-            <article></article>
+            <article>
+                <p class="conteudo__texto">Eventos são, como o próprio nome diz, eventos que ocorrem, geralmente decorrentes de uma interação do usuário com a aplicação. É possível que se crie blocos de código designados para tratar estes eventos e dispará-los quando o evento ocorrer, gerando uma resposta imediata à ação do usuário. Estes eventos podem ser vários, como o clique em um botão, o envio de um formulário, a finalização do carregamento de uma página, entre outros.</p>
+
+                <p class="conteudo__texto">Para lidar com um evento, em geral, temos 3 blocos de código: a seleção do elemento no qual o evento irá ocorrer, a adição de um "escutador" de eventos ao elemento e a criação da função que irá lidar com este evento. Estes 3 blocos são representados pela seleção do elemento com métodos como <code>querySelector</code> ou <code>getElementById</code>, o acoplamento do método <code>addEventListener</code> ao elemento e a criação de uma função de <code>callback</code>. Uma função de callback é uma função que é passada como argumento de uma outra função. Muito utilizada em funções assíncronas antes das <code>Promises</code>, atualmente uma grande utilização é no tratamento de eventos.</p>
+
+                <button id="botao1-eventos" class="conteudo__demonstracao__botao">Mude a cor do botão ao clicá-lo</button>
+
+                <figure>
+                    <img src="../images/eventos-botao.png" alt="Imagem com fundo preto e código em Javascript escrito selecionando um elemento de botão da página, adicionando um addEventListener à ele e lidando com o evento de clique com uma função que muda a cor do botão.">
+                    <figcaption>Código criado para tratamento do evento de clique no botão anterior com os três blocos de código mencionados anteriormente: seleção, escutador e função de callback.</figcaption>
+                </figure>
+            </article>
 
             <div class="artigo__info">
                 <div class="artigo__info__autor">
