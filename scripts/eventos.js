@@ -30,11 +30,15 @@ function pararAcaoDefault(evento) {
 }
 
 //Outros eventos
+const tituloListaEventos = document.getElementById("checkpoint-scroll");
+
+window.addEventListener('load', () => {
+        tituloListaEventos.nextElementSibling.nextElementSibling.style.display = "none"
+    })
+
 window.addEventListener('scroll', mostraListaEventos)
 
 function mostraListaEventos(){
-    const tituloListaEventos = document.getElementById("checkpoint-scroll");
-
     if(window.scrollY > document.getElementById("checkpoint-scroll").getBoundingClientRect().top) {
         tituloListaEventos.nextElementSibling.style.display = "none";
         tituloListaEventos.nextElementSibling.nextElementSibling.style.display = "block";
