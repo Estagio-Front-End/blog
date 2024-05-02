@@ -1,16 +1,16 @@
 let itensComercio = [
   {
-    nomeProduto: "Blusa feminina rosa",
+    nomeProduto: "Blusa rosa",
     fotoProduto: "https://cdn.awsli.com.br/600x450/1398/1398809/produto/111209958/553b2a55bc.jpg",
     precoProduto: "R$29,99"
   }, 
   {
-    nomeProduto: "Cropped feminina preta", 
+    nomeProduto: "Cropped preta", 
     fotoProduto: "https://images.tcdn.com.br/img/img_prod/726059/mini_blusa_amarracao_preta_3051_1_9ce769a4f71534b1002722ba67d06ed3.jpg", 
     precoProduto: "R$19,99"
   }, 
   {
-    nomeProduto: "Kit 5 blusas masculinas", 
+    nomeProduto: "Kit 5 blusas", 
     fotoProduto: "https://m.media-amazon.com/images/I/310+ZGN0owL._AC_SY1000_DpWeblab_.jpg", 
     precoProduto: "R$99,99"
   }, 
@@ -101,3 +101,6 @@ function atualizarNotificacaoCarrinho() {
   }
   carrinhoNotificacao.innerText = itensNoCarrinho;
 }
+
+carrinhoNotificacao.addEventListener('mouseover', abrirDescricaoCarrinho);
+carrinhoNotificacao.addEventListener('mouseleave', fecharDescricaoCarrinho);

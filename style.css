@@ -732,6 +732,7 @@ dl .aberto {
 }
 
 .conteudo__demonstracao__carrinho {
+  margin-top: 2rem;
   width: 48px;
   position: relative;
   margin-left: 50%;

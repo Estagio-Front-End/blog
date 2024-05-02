@@ -46,21 +46,37 @@
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
 
             <article>
-                <!-- localStorage, sessionStorage, cookies -->
                 <p class="conteudo__texto"></p>
                 
-                <h3>Local storage</h3>
-                <p class="conteudo__texto"></p>
+                <h3>Local storage e Session storage</h3>
+                <p class="conteudo__texto">Integrantes da Web Storage API, o <code>localStorage</code> e o <code>sessionStorage</code> são formas mais intuitivas de armazenar dados no navegador em comparação aos Cookies. Ambos armazenam dados na forma chave/valor e estes dados podem ser recuperados e reutilizados na aplicação. A persistência dos dados em ambos os recursos é por origem, portanto, protocolos diferentes (http ou https), domínios diferentes ou portas diferentes terão <code>localStorage</code> e <code>sessionStorage</code> diferentes. As grandes diferenças entre os dois são:</p> 
                 
-                <h3>Session storage</h3>
-                <p class="conteudo__texto"></p>
+                <ul class="conteudo__texto">
+                    <li><span>Compartilhamento entre abas e janelas:</span> o <code>localStorage</code> compartilha dados com outras abas ou janelas na mesma origem (mesmos protocolo, domínio e porta). O <code>sessionStorage</code> não faz esse compartilhamento.</li>
+                    <li><span>Expiração dos dados no navegador:</span> os dados salvos no <code>sessionStorage</code> duram apenas até o usuário fechar a aba ou janela. Dados salvos no <code>localStorage</code> irão persistir mesmo que o navegador seja fechado e aberto novamente, podendo os dados ser removidos apenas por meio de código Javascript ou pela limpeza do cache do navegador.</li>
+                </ul>
+
+                <p class="conteudo__texto">Para ambos, existem métodos de manipulação dos dados. São eles:</p>
+                <ul class="conteudo__texto">
+                    <li><span>(local/session)Storage.setItem(chave, valor):</span> insere um par chave/valor para armazenamento no objeto Storage indicado. É importante frisar que ambos aceitam apenas chaves e valores do tipo <code>string</code>, de modo que quaisquer outros tipos devem ser transformados em <code>string</code>.</li>
+                    <li><span>(local/session)Storage.key(índice):</span> retorna a chave do item armazenado no objeto Storage no índice indicado como argumento.</li>
+                    <li><span>(local/session)Storage.getItem(chave):</span> retorna o valor que foi armazenado como par da chave indicada como argumento, sempre em formato de <code>string</code>.</li>
+                    <li><span>(local/session)Storage.length:</span> propriedade que retorna o número de pares chave/valor armazenados no web storage indicado.</li>
+                    <li><span>(local/session)Storage.removeItem(chave):</span> remove do web storage indicado o par chave/valor identificado pela chave passada como argumento.</li>
+                    <li><span>(local/session)Storage.clear():</span> deleta todo o conteúdo do web storage indicado.</li>
+                </ul>
+
+                <p class="conteudo__texto">Todos os métodos da Web Storage API são síncronos, de modo que, a depender da quantidade de dados armazenados, a performance da aplicação pode ser afetada. Desta forma, para grandes volumes de dados, é indicado buscar outros recursos de armazenamento.</p>
 
                 <h3>Cookies</h3>
                 <p class="conteudo__texto"></p>
                 
+                <p class="conteudo__texto">Teste a seguir a funcionalidade do <code>localStorage</code> e do <code>sessionStorage</code>. Roupas adicionadas ao carrinho serão salvas no <code>localStorage</code> e sapatos, no <code>sessionStorage</code>.</p>
+                
                 <div class="conteudo__demonstracao__carrinho">
                     <div class="carrinho__notificacao"></div>
                     <img src="../images/carrinho-de-compras.png" alt="Ícone de carrinho de compras">
+                    <div class="carrinho__descricao"></div>
                 </div>
                 <div class="conteudo__demonstracao" id="container-comercio"></div>
             </article>
