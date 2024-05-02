@@ -110,7 +110,7 @@ function atualizarNotificacaoCarrinho() {
 }
 
 //Funcionalidade de mostrar descrição do carrinho
-const containerCarrinho = document.querySelector('.conteudo__demonstracao__carrinho');
+const containerCarrinho = document.querySelector('.conteudo__demonstracao__carrinho').firstElementChild;
 
 containerCarrinho.addEventListener('mouseover', abrirDescricaoCarrinho);
 containerCarrinho.addEventListener('mouseleave', fecharDescricaoCarrinho);
