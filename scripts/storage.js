@@ -42,10 +42,33 @@ itensComercio.forEach(item => {
   </div>`
 })
 
-let itensNoCarrinho = [];
-let carrinhoNotificacao = document.querySelector('.carrinho__notificacao')
+let itensNoCarrinho = 0;
+const carrinhoNotificacao = document.querySelector('.carrinho__notificacao')
+carrinhoNotificacao.innerText = itensNoCarrinho;
 
-      let folhaEstiloCustomizado = new CSSStyleSheet();
-      folhaEstiloCustomizado.replaceSync("*{font-family: 'Open Sans', sans-serif; font-size: 1.4rem} div {width: 200px; display: flex; flex-direction: column; flex-wrap: wrap; border: 1px solid lightgrey; gap: 1rem; padding: 1rem; border-radius: 2rem;} img {border-radius: 1rem; max-height: 80px;} h3 {font-size: 1.8rem; margin-bottom: 0;}")
-      raiz.adoptedStyleSheets = [folhaEstiloCustomizado]
+const botoesAdicionarAoCarrinho = document.querySelectorAll('.botao__carrinho')
+botoesAdicionarAoCarrinho.forEach(botao => botao.addEventListener('click', evento => adicionarItemNoCarrinho(evento)))
 
+function adicionarItemNoCarrinho(evento) {
+  let itemAdicionado = evento.target.parentNode.children[1].innerText;
+  if (itemAdicionado === itensComercio[0].nomeProduto || itemAdicionado === itensComercio[1].nomeProduto || itemAdicionado === itensComercio[2].nomeProduto) {
+    adicionarAoLocalStorage(itemAdicionado)
+    adicionarAoSessionStorage(itemAdicionado)
+    itensNoCarrinho++
+    carrinhoNotificacao.innerText = itensNoCarrinho;
+  } else if (itemAdicionado === itensComercio[3].nomeProduto || itemAdicionado === itensComercio[4].nomeProduto || itemAdicionado === itensComercio[5].nomeProduto) {
+    adicionarAoSessionStorage(itemAdicionado)
+    itensNoCarrinho++
+    carrinhoNotificacao.innerText = itensNoCarrinho;
+  } else {
+    alert('Houve um erro, tente novamente mais tarde!')
+  }   
+}
+
+function adicionarAoLocalStorage(item) {
+
+}
+
+function adicionarAoSessionStorage(item) {
+
+}

@@ -355,14 +355,18 @@ dl {
         border-radius: $espacamento-1;
         border: none;
         background-color: $cor-secundaria;
+        cursor: pointer;
+        
+        &:hover {
+            transform: scale(1.02);
+        }
     }
 }
 
 .conteudo__demonstracao__carrinho {
     width: 48px;
-    align-self: flex-start;
     position: relative;
-    align-items: center;
+    margin-left: 50%;
 
     & img {
         width: 100%;
@@ -376,5 +380,8 @@ dl {
         left: 40px;
         top: -5px;
         background-color: red;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bold;
     }
 }

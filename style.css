@@ -725,13 +725,16 @@ dl .aberto {
   border-radius: 0.4rem;
   border: none;
   background-color: #F39200;
+  cursor: pointer;
+}
+.conteudo__demonstracao__produto button:hover {
+  transform: scale(1.02);
 }
 
 .conteudo__demonstracao__carrinho {
   width: 48px;
-  align-self: flex-start;
   position: relative;
-  align-items: center;
+  margin-left: 50%;
 }
 .conteudo__demonstracao__carrinho img {
   width: 100%;
@@ -744,6 +747,9 @@ dl .aberto {
   left: 40px;
   top: -5px;
   background-color: red;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .conteudo__botao {
