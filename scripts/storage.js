@@ -42,33 +42,62 @@ itensComercio.forEach(item => {
   </div>`
 })
 
-let itensNoCarrinho = 0;
-const carrinhoNotificacao = document.querySelector('.carrinho__notificacao')
-carrinhoNotificacao.innerText = itensNoCarrinho;
-
 const botoesAdicionarAoCarrinho = document.querySelectorAll('.botao__carrinho')
 botoesAdicionarAoCarrinho.forEach(botao => botao.addEventListener('click', evento => adicionarItemNoCarrinho(evento)))
 
 function adicionarItemNoCarrinho(evento) {
   let itemAdicionado = evento.target.parentNode.children[1].innerText;
+
   if (itemAdicionado === itensComercio[0].nomeProduto || itemAdicionado === itensComercio[1].nomeProduto || itemAdicionado === itensComercio[2].nomeProduto) {
     adicionarAoLocalStorage(itemAdicionado)
-    adicionarAoSessionStorage(itemAdicionado)
-    itensNoCarrinho++
-    carrinhoNotificacao.innerText = itensNoCarrinho;
   } else if (itemAdicionado === itensComercio[3].nomeProduto || itemAdicionado === itensComercio[4].nomeProduto || itemAdicionado === itensComercio[5].nomeProduto) {
     adicionarAoSessionStorage(itemAdicionado)
-    itensNoCarrinho++
-    carrinhoNotificacao.innerText = itensNoCarrinho;
   } else {
     alert('Houve um erro, tente novamente mais tarde!')
   }   
 }
 
-function adicionarAoLocalStorage(item) {
+if ((JSON.parse(localStorage.getItem('produtosLocal')) && JSON.parse(sessionStorage.getItem('produtosSession'))) === null) {
+  localStorage.setItem('produtosLocal', JSON.stringify([]))
+  sessionStorage.setItem('produtosSession', JSON.stringify([]))
+} else {
+  sessionStorage.setItem('produtosSession', JSON.stringify([]))
+}
 
+function adicionarAoLocalStorage(item) {
+  let itensNoLocalStorage = JSON.parse(localStorage.getItem('produtosLocal'))
+  itensNoLocalStorage.push(item);
+  
+  localStorage.setItem('produtosLocal', JSON.stringify(itensNoLocalStorage));
+  
+  atualizarNotificacaoCarrinho()
 }
 
 function adicionarAoSessionStorage(item) {
+  let itensNoSessionStorage = JSON.parse(sessionStorage.getItem('produtosSession'))
+  
+  itensNoSessionStorage.push(item);
+  sessionStorage.setItem('produtosSession', JSON.stringify(itensNoSessionStorage));
 
+  atualizarNotificacaoCarrinho()
+}
+
+let itensNoCarrinho;
+const carrinhoNotificacao = document.querySelector('.carrinho__notificacao');
+
+if ((JSON.parse(sessionStorage.getItem('produtosSession'))) === null) {
+  itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length
+} else {
+  itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length + (JSON.parse(sessionStorage.getItem('produtosSession'))).length;
+}
+
+carrinhoNotificacao.innerText = itensNoCarrinho;
+
+function atualizarNotificacaoCarrinho() {
+  if ((JSON.parse(sessionStorage.getItem('produtosSession'))) === null) {
+    itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length
+  } else {
+    itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length + (JSON.parse(sessionStorage.getItem('produtosSession'))).length;
+  }
+  carrinhoNotificacao.innerText = itensNoCarrinho;
 }
