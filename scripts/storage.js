@@ -1,3 +1,4 @@
+//Renderizar itens
 let itensComercio = [
   {
     nomeProduto: "Blusa rosa",
@@ -42,6 +43,30 @@ itensComercio.forEach(item => {
   </div>`
 })
 
+//Inicialização do storages
+let existeLocalStorage = (JSON.parse(localStorage.getItem('produtosLocal')) !== null);
+let existeSessionStorage = (JSON.parse(sessionStorage.getItem('produtosSession')) !== null);
+
+if (!existeLocalStorage && !existeSessionStorage) {
+  localStorage.setItem('produtosLocal', JSON.stringify([]))
+  sessionStorage.setItem('produtosSession', JSON.stringify([]))
+} else {
+  sessionStorage.setItem('produtosSession', JSON.stringify([]))
+}
+
+//Inicializar notificação do carrinho
+let itensNoCarrinho;
+const carrinhoNotificacao = document.querySelector('.carrinho__notificacao');
+
+if (!existeSessionStorage) {
+  itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length
+} else {
+  itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length + (JSON.parse(sessionStorage.getItem('produtosSession'))).length;
+}
+
+carrinhoNotificacao.innerText = itensNoCarrinho;
+
+//Funcionalidade de adicionar produto ao carrinho
 const botoesAdicionarAoCarrinho = document.querySelectorAll('.botao__carrinho')
 botoesAdicionarAoCarrinho.forEach(botao => botao.addEventListener('click', evento => adicionarItemNoCarrinho(evento)))
 
@@ -55,13 +80,6 @@ function adicionarItemNoCarrinho(evento) {
   } else {
     alert('Houve um erro, tente novamente mais tarde!')
   }   
-}
-
-if ((JSON.parse(localStorage.getItem('produtosLocal')) && JSON.parse(sessionStorage.getItem('produtosSession'))) === null) {
-  localStorage.setItem('produtosLocal', JSON.stringify([]))
-  sessionStorage.setItem('produtosSession', JSON.stringify([]))
-} else {
-  sessionStorage.setItem('produtosSession', JSON.stringify([]))
 }
 
 function adicionarAoLocalStorage(item) {
@@ -82,19 +100,8 @@ function adicionarAoSessionStorage(item) {
   atualizarNotificacaoCarrinho()
 }
 
-let itensNoCarrinho;
-const carrinhoNotificacao = document.querySelector('.carrinho__notificacao');
-
-if ((JSON.parse(sessionStorage.getItem('produtosSession'))) === null) {
-  itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length
-} else {
-  itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length + (JSON.parse(sessionStorage.getItem('produtosSession'))).length;
-}
-
-carrinhoNotificacao.innerText = itensNoCarrinho;
-
 function atualizarNotificacaoCarrinho() {
-  if ((JSON.parse(sessionStorage.getItem('produtosSession'))) === null) {
+  if (!existeSessionStorage) {
     itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length
   } else {
     itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length + (JSON.parse(sessionStorage.getItem('produtosSession'))).length;
@@ -102,5 +109,30 @@ function atualizarNotificacaoCarrinho() {
   carrinhoNotificacao.innerText = itensNoCarrinho;
 }
 
-carrinhoNotificacao.addEventListener('mouseover', abrirDescricaoCarrinho);
-carrinhoNotificacao.addEventListener('mouseleave', fecharDescricaoCarrinho);
+//Funcionalidade de mostrar descrição do carrinho
+const containerCarrinho = document.querySelector('.conteudo__demonstracao__carrinho');
+
+containerCarrinho.addEventListener('mouseover', abrirDescricaoCarrinho);
+containerCarrinho.addEventListener('mouseleave', fecharDescricaoCarrinho);
+
+const descricaoCarrinho = document.querySelector('.carrinho__descricao');
+
+function abrirDescricaoCarrinho() {
+  let listagemCarrinho = [];
+
+  (existeLocalStorage) 
+  ? JSON.parse(localStorage.getItem('produtosLocal')).forEach(produto => listagemCarrinho.push(produto))
+  : listagemCarrinho = listagemCarrinho;
+
+  (existeSessionStorage)
+  ? JSON.parse(sessionStorage.getItem('produtosSession')).forEach(produto => listagemCarrinho.push(produto))
+  : listagemCarrinho = listagemCarrinho;
+
+  listagemCarrinho.forEach((produto, index) => descricaoCarrinho.innerHTML += `<p>${index+1}. ${produto}</p>`)
+  descricaoCarrinho.style.display = "block";
+}
+
+function fecharDescricaoCarrinho() {
+  descricaoCarrinho.innerHTML = '';
+  descricaoCarrinho.style.display = "none";
+}
