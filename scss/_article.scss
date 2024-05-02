@@ -386,3 +386,18 @@ dl {
         font-weight: bold;
     }
 }
+
+.carrinho__descricao {
+    padding: 1rem;
+    background-color: $cor-neutra-1;
+    border-radius: $espacamento-2;
+    position: absolute;
+    z-index: 0.5;
+    width: 20rem;
+    @include box-shadow(0 10px 20px rgba(0,0,0,0.1), 0 3px 3px rgba(0,0,0,0.1));
+
+    & p {
+        @include headline-primary-bold(14, left, initial, $cor-primaria);
+        width: fit-content;
+    }
+}
