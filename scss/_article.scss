@@ -331,3 +331,50 @@ dl {
         color: $cor-primaria;
     }
 }
+
+.conteudo__demonstracao__produto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid $cor-neutra-3;
+    border-radius: $espacamento-2;
+    color: $cor-primaria;
+    
+    & img {
+        max-height: 8rem;
+    }
+
+    & span {
+        font-size: 1.4rem;
+    }
+
+    & button {
+        padding: 0.5rem 1rem;
+        border-radius: $espacamento-1;
+        border: none;
+        background-color: $cor-secundaria;
+    }
+}
+
+.conteudo__demonstracao__carrinho {
+    width: 48px;
+    align-self: flex-start;
+    position: relative;
+    align-items: center;
+
+    & img {
+        width: 100%;
+    }
+
+    & .carrinho__notificacao {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        left: 40px;
+        top: -5px;
+        background-color: red;
+    }
+}

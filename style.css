@@ -704,6 +704,48 @@ dl .aberto {
   color: #1F2041;
 }
 
+.conteudo__demonstracao__produto {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #C2C2C2;
+  border-radius: 0.8rem;
+  color: #1F2041;
+}
+.conteudo__demonstracao__produto img {
+  max-height: 8rem;
+}
+.conteudo__demonstracao__produto span {
+  font-size: 1.4rem;
+}
+.conteudo__demonstracao__produto button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: #F39200;
+}
+
+.conteudo__demonstracao__carrinho {
+  width: 48px;
+  align-self: flex-start;
+  position: relative;
+  align-items: center;
+}
+.conteudo__demonstracao__carrinho img {
+  width: 100%;
+}
+.conteudo__demonstracao__carrinho .carrinho__notificacao {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 40px;
+  top: -5px;
+  background-color: red;
+}
+
 .conteudo__botao {
   margin: 2rem 0;
   padding: 0.5rem 1rem;
