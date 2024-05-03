@@ -133,3 +133,11 @@ function fecharDescricaoCarrinho() {
   descricaoCarrinho.innerHTML = '';
   descricaoCarrinho.style.display = "none";
 }
+
+//Cookies
+window.addEventListener('load', () => {
+  let nomePessoa;
+  nomePessoa = prompt("Digite um nome qualquer, este nome irá ser guardado nos cookies de sessão do navegador!", "Fulano")
+  document.cookie = `name=${nomePessoa}; samesite=lax; secure`
+})
+
