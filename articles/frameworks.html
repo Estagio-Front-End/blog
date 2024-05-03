@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Frameworks Javascript</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Frameworks Javascript</h2>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+
+            <article>
+
+            </article>
+            
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>03 Mai</p>
+                </div>
+            </div>
+        </section>
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+    <script src="../script.js"></script>
+    <script src="../scripts/formulario.js"></script>
+</body>
+</html>
