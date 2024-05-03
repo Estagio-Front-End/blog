@@ -50,21 +50,18 @@ let existeSessionStorage = (JSON.parse(sessionStorage.getItem('produtosSession')
 if (!existeLocalStorage && !existeSessionStorage) {
   localStorage.setItem('produtosLocal', JSON.stringify([]))
   sessionStorage.setItem('produtosSession', JSON.stringify([]))
-} else {
+  
+  existeLocalStorage = (JSON.parse(localStorage.getItem('produtosLocal')) !== null);
+  existeSessionStorage = (JSON.parse(sessionStorage.getItem('produtosSession')) !== null);
+} else if (!existeSessionStorage) {
   sessionStorage.setItem('produtosSession', JSON.stringify([]))
+  
+  existeSessionStorage = (JSON.parse(sessionStorage.getItem('produtosSession')) !== null);
 }
 
 //Inicializar notificação do carrinho
 let itensNoCarrinho;
-const carrinhoNotificacao = document.querySelector('.carrinho__notificacao');
-
-if (!existeSessionStorage) {
-  itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length
-} else {
-  itensNoCarrinho = (JSON.parse(localStorage.getItem('produtosLocal'))).length + (JSON.parse(sessionStorage.getItem('produtosSession'))).length;
-}
-
-carrinhoNotificacao.innerText = itensNoCarrinho;
+const carrinhoNotificacao = document.querySelector('.carrinho__notificacao');atualizarNotificacaoCarrinho();
 
 //Funcionalidade de adicionar produto ao carrinho
 const botoesAdicionarAoCarrinho = document.querySelectorAll('.botao__carrinho')
@@ -88,7 +85,7 @@ function adicionarAoLocalStorage(item) {
   
   localStorage.setItem('produtosLocal', JSON.stringify(itensNoLocalStorage));
   
-  atualizarNotificacaoCarrinho()
+  atualizarNotificacaoCarrinho();
 }
 
 function adicionarAoSessionStorage(item) {
@@ -97,7 +94,7 @@ function adicionarAoSessionStorage(item) {
   itensNoSessionStorage.push(item);
   sessionStorage.setItem('produtosSession', JSON.stringify(itensNoSessionStorage));
 
-  atualizarNotificacaoCarrinho()
+  atualizarNotificacaoCarrinho();
 }
 
 function atualizarNotificacaoCarrinho() {
