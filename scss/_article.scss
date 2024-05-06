@@ -61,10 +61,11 @@ dl {
 }
 
 .conteudo {
+    background-color: $cor-primaria;
     @include estrutura-grid(12, $espacamento-6);
     padding: 0 $espacamento-12;
 
-    >div, h2, span, article {
+    >div, h2, span, article, p, nav {
         grid-column: 3 / span 8;
 
         @include responsividade ("desktop") {
@@ -97,9 +98,36 @@ dl {
 }
 
 .conteudo__titulo {
-    margin-bottom: 0.5rem;
-    font-size: 3rem;
-    font-family: $fonte-titulos;
+    padding: 1rem 0;
+    margin-bottom: $espacamento-2;
+    @include headline-primary-bold(32);
+}
+
+.conteudo__preview {
+    @include headline-primary-semibold(24);
+    padding: 1rem 0;
+    margin-bottom: $espacamento-4;
+}
+
+.conteudo__info {
+    display: flex;
+    justify-content: space-between;
+    padding: $espacamento-1 0;
+    @include body-system-regular(20, left, initial, $cor-neutra-3);
+    span {
+        @include body-system-bold(20, left, initial, $cor-neutra-3);
+    }
+    margin-bottom: $espacamento-4;
+}
+
+.conteudo__navegacao {
+    margin: $espacamento-10 0;
+    padding: $espacamento-6;
+    border: 1px solid $cor-neutra-1;
+    border-radius: $espacamento-3;
+    @include headline-primary-bold(24);
+    list-style-position: inside;
+
 }
 
 .conteudo__texto {

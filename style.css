@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 
-li {
+ul li {
   list-style: none;
 }
 
@@ -384,26 +384,27 @@ dl .aberto {
 }
 
 .conteudo {
+  background-color: #1F2041;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 2.4rem;
   padding: 0 4.8rem;
 }
-.conteudo > div, .conteudo h2, .conteudo span, .conteudo article {
+.conteudo > div, .conteudo h2, .conteudo span, .conteudo article, .conteudo p, .conteudo nav {
   grid-column: 3/span 8;
 }
 @media screen and (1024px <= width <= 1365px) {
-  .conteudo > div, .conteudo h2, .conteudo span, .conteudo article {
+  .conteudo > div, .conteudo h2, .conteudo span, .conteudo article, .conteudo p, .conteudo nav {
     grid-column: 2/span 6;
   }
 }
 @media screen and (768px <= width <= 1023px) {
-  .conteudo > div, .conteudo h2, .conteudo span, .conteudo article {
+  .conteudo > div, .conteudo h2, .conteudo span, .conteudo article, .conteudo p, .conteudo nav {
     grid-column: 1/span 8;
   }
 }
 @media screen and (max-width: 767px) {
-  .conteudo > div, .conteudo h2, .conteudo span, .conteudo article {
+  .conteudo > div, .conteudo h2, .conteudo span, .conteudo article, .conteudo p, .conteudo nav {
     grid-column: 1/span 4;
   }
 }
@@ -431,9 +432,65 @@ dl .aberto {
 }
 
 .conteudo__titulo {
-  margin-bottom: 0.5rem;
-  font-size: 3rem;
-  font-family: "Roboto Slab", serif;
+  padding: 1rem 0;
+  margin-bottom: 0.8rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2rem;
+  line-height: 3.904rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: initial;
+  color: #FFFFFF;
+}
+
+.conteudo__preview {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  line-height: 2.928rem;
+  font-weight: 600;
+  text-align: left;
+  text-transform: initial;
+  color: #FFFFFF;
+  padding: 1rem 0;
+  margin-bottom: 1.6rem;
+}
+
+.conteudo__info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  line-height: 2.44rem;
+  font-weight: 400;
+  text-align: left;
+  text-transform: initial;
+  color: #C2C2C2;
+  margin-bottom: 1.6rem;
+}
+.conteudo__info span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  line-height: 2.44rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: initial;
+  color: #C2C2C2;
+}
+
+.conteudo__navegacao {
+  margin: 4rem 0;
+  padding: 2.4rem;
+  border: 1px solid #FFFFFF;
+  border-radius: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  line-height: 2.928rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: initial;
+  color: #FFFFFF;
+  list-style-position: inside;
 }
 
 .conteudo__texto {
