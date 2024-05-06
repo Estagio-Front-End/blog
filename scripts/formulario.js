@@ -118,7 +118,10 @@ async function mostrarArtigos() {
 }
 
 const botaoMostrarArtigos = document.getElementById("mostrar-artigos");
-botaoMostrarArtigos.addEventListener('click', mostrarArtigos)
+
+if (botaoMostrarArtigos !== null) {
+    botaoMostrarArtigos.addEventListener('click', mostrarArtigos)
+}
 
 //Envio de dados para API
 const formularioComentario = document["formulario-comentario"];

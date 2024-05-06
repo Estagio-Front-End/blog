@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Web Storage em Javascript</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Web Storage em Javascript</h2>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+
+            <article>
+                <p class="conteudo__texto"></p>
+                
+                <h3>Local storage e Session storage</h3>
+                <p class="conteudo__texto">Integrantes da Web Storage API, o <code>localStorage</code> e o <code>sessionStorage</code> são formas intuitivas de armazenar dados no navegador. Ambos armazenam dados na forma chave/valor e estes dados podem ser recuperados e reutilizados na aplicação. A persistência dos dados em ambos os recursos é por origem, portanto, protocolos diferentes (http ou https), domínios diferentes ou portas diferentes terão <code>localStorage</code> e <code>sessionStorage</code> diferentes. As grandes diferenças entre os dois são:</p> 
+                
+                <ul class="conteudo__texto">
+                    <li><span>Compartilhamento entre abas e janelas:</span> o <code>localStorage</code> compartilha dados com outras abas ou janelas na mesma origem (mesmos protocolo, domínio e porta). O <code>sessionStorage</code> não faz esse compartilhamento.</li>
+                    <li><span>Expiração dos dados no navegador:</span> os dados salvos no <code>sessionStorage</code> duram apenas até o usuário fechar a aba ou janela. Dados salvos no <code>localStorage</code> irão persistir mesmo que o navegador seja fechado e aberto novamente, podendo os dados ser removidos apenas por meio de código Javascript ou pela limpeza do cache do navegador.</li>
+                </ul>
+
+                <p class="conteudo__texto">Para ambos, existem métodos de manipulação dos dados. São eles:</p>
+                <ul class="conteudo__texto">
+                    <li><span>(local/session)Storage.setItem(chave, valor):</span> insere um par chave/valor para armazenamento no objeto Storage indicado. É importante frisar que ambos aceitam apenas chaves e valores do tipo <code>string</code>, de modo que quaisquer outros tipos devem ser transformados em <code>string</code> para que o método não gere erros.</li>
+                    <li><span>(local/session)Storage.key(índice):</span> retorna a chave do item armazenado no objeto Storage no índice indicado como argumento.</li>
+                    <li><span>(local/session)Storage.getItem(chave):</span> retorna o valor que foi armazenado como par da chave indicada como argumento, sempre em formato de <code>string</code>.</li>
+                    <li><span>(local/session)Storage.length:</span> propriedade que retorna o número de pares chave/valor armazenados no web storage indicado.</li>
+                    <li><span>(local/session)Storage.removeItem(chave):</span> remove do web storage indicado o par chave/valor identificado pela chave passada como argumento.</li>
+                    <li><span>(local/session)Storage.clear():</span> deleta todo o conteúdo do web storage indicado.</li>
+                </ul>
+
+                <p class="conteudo__texto">Todos os métodos da Web Storage API são síncronos, de modo que, a depender da quantidade de dados armazenados, a performance da aplicação pode ser afetada. Desta forma, para grandes volumes de dados, é indicado buscar outros recursos de armazenamento.</p>
+
+                <h3>Cookies</h3>
+                <p class="conteudo__texto">Os cookies são uma forma de armazenamento de dados em texto que servem para "melhorar a experiência do usuário", guardando preferências de sistema, dados de sessão ou informações sobre o comportamento de um usuário em uma página na web. Como os cookies podem guardar informações sensíveis, legislações mais atuais definiram que os sites precisam pedir a permissão do usuário para coletar e armazenar estas informações.</p>
+
+                <p class="conteudo__texto">Os cookies podem ser definidos adicionando uma linha no header em uma requisição HTTP com o <code>Set-Cookie</code> ou, mais facilmente, com o <code>document.cookie</code>. Em ambos, são admitidos pares chave=valor separados por ponto e vírgula mais um espaço. Nesses pares, podem aparecer atributos como <code>Domain</code> com o valor do host para o qual o cookie será enviado, <code>Path</code> com o valor de caminho que deve estar na url, <code>Expire</code> com a data e hora de expiração do cookie, entre outros.</p>
+
+                <p class="conteudo__texto">Os cookies, de acordo com persistência, podem ser de dois tipos, de sessão ou permanentes. Os nomes são auto explicativos, mas, em código, a diferença entre eles é que os cookies permanentes possuem atributos <code>Expire</code> ou <code>MaxAge</code> definidos, ao passo que os cookies de sessão não possuem estes atributos definidos e expiram ao término da sessão no navegador.</p>
+
+                <p class="conteudo__texto">Em termos de escopo, os cookies podem ser de first-party (cookies primários), second-party ou third-party (cookies de terceiros).</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>First-party:</span> um cookie enviado diretamente pelo site que o usuário está utilizando. Por exemplo: o carrinho de compras de um e-commerce.</li>
+                    <li><span>Second-party:</span> um cookie compartilhado com outra parte por meio de um contrato de parceria de dados. Por exemplo: relatório de uso do Microsoft Teams.</li>
+                    <li><span>Third-party:</span> um cookie instalado por um site diferente do qual o usuário está acessando. Por exemplo: botões de curtida de redes sociais.</li>
+                </ul>
+
+                <p class="conteudo__texto">Na seção "Application", aba "Cookies" do Chrome DevTools, é possível visualizar os cookies que estão sendo utilizados no site em que se está visitando.</p>
+                
+                <p class="conteudo__texto">Teste a seguir a funcionalidade do <code>localStorage</code> e do <code>sessionStorage</code>. Roupas adicionadas ao carrinho serão salvas no <code>localStorage</code> e sapatos, no <code>sessionStorage</code>.</p>
+                
+                <div class="conteudo__demonstracao__carrinho">
+                    <img src="../images/carrinho-de-compras.png" alt="Ícone de carrinho de compras">
+                    <div class="carrinho__notificacao"></div>
+                    <div class="carrinho__descricao"></div>
+                </div>
+                <div class="conteudo__demonstracao" id="container-comercio"></div>
+            </article>
+            
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>30 Abr</p>
+                </div>
+            </div>
+        </section>
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+    <script src="../script.js"></script>
+    <script src="../scripts/storage.js"></script>
+    <script src="../scripts/formulario.js"></script>
+</body>
+</html>
