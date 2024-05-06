@@ -45,7 +45,8 @@
             <h2 class="conteudo__titulo">Variáveis CSS</h2>
             <span class="artigo__tag artigo__tag--css-basico">CSS BÁSICO</span>
             
-            <p class="conteudo__texto">As variáveis CSS são valores fixos criados pelo desenvolvedor para propriedades que se repetem bastante ao longo do código. Podem representar cores, dimensões, fontes, entre outros tipos de valores. As variáveis são facilitadoras de manutenção de código, visto que, para variáveis global, cada mudança só precisa ser alterada em um local, o da inicialização da variável.</p>
+            <article>
+                <p class="conteudo__texto">As variáveis CSS são valores fixos criados pelo desenvolvedor para propriedades que se repetem bastante ao longo do código. Podem representar cores, dimensões, fontes, entre outros tipos de valores. As variáveis são facilitadoras de manutenção de código, visto que, para variáveis global, cada mudança só precisa ser alterada em um local, o da inicialização da variável.</p>
     
             <p class="conteudo__texto">A inicialização de uma variável CSS pode se dar de 3 formas: por meio do pseudo elemento <code>:root</code> e pela regra <code>@property</code>, gerando variáveis globais, ou apenas pela definição de variáveis e valor em um bloco de código com <code>--</code> no início do nome, gerando variáveis locais.</p>
     
@@ -73,6 +74,7 @@
             <p class="conteudo__texto">É possível, também, definir valores de backup para variáveis, para caso ela venha a receber um valor invalido. Por exemplo, se uma variável <code>--cor-principal</code> for inicializada com o valor 16px, ela gerará um valor inválido caso utilizada em propriedades de cor. Caso a propriedade tenha seu valor indicado como <code>var(--cor-principal, #ffffff)</code>, ela assumirá o valor do segundo argumento, que é válido para propriedades de cor. Caso nenhum argumento dentro dos parênteses do <code>var()</code> sejam válidos, a propriedade retornará seu valor inicial default ou um valor herdado por um elemento pai com a propriedade definida, se existir.</p>
     
             <p class="conteudo__texto">Variáveis globalmente inicializadas podem ser sobrescritas localmente, porém o escopo desta sobrescrição será somente este: local. Utilizações da variável em outros blocos de código seguirão retornando o valor definido globalmente.</p>
+            </article>
             
             <div class="artigo__info">
                 <div class="artigo__info__autor">

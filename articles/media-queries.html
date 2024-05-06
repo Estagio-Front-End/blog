@@ -46,111 +46,114 @@
             
             <span class="artigo__tag artigo__tag--responsividade">RESPONSIVIDADE</span>
             
-            <p class="conteudo__texto">As media queries são recursos do CSS em que, mediante o valor verdadeiro de uma ou mais condições, um bloco de código de estilização será aplicado no documento. Utilizado principalmente para adaptar o layout de uma aplicação à diferentes tamanhos de tela, as media queries são um dos 3 principais pilares do <a href="../articles/design-responsivo.html">Design Responsivo</a>.</p>
+            <article>
+                <p class="conteudo__texto">As media queries são recursos do CSS em que, mediante o valor verdadeiro de uma ou mais condições, um bloco de código de estilização será aplicado no documento. Utilizado principalmente para adaptar o layout de uma aplicação à diferentes tamanhos de tela, as media queries são um dos 3 principais pilares do <a href="../articles/design-responsivo.html">Design Responsivo</a>.</p>
 
-            <figure>
-                <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Aw7MvBtq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://i.ibb.co/7GKTqSy/media-query-syntax.png" alt="Imagem com fundo preto e código CSS escrito em azul, vermelho, rosa e verde mostrando a estrutura de uma media query">
-                <figcaption>Estrutura de uma media query.</figcaption>
-            </figure>
+                <figure>
+                    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Aw7MvBtq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://i.ibb.co/7GKTqSy/media-query-syntax.png" alt="Imagem com fundo preto e código CSS escrito em azul, vermelho, rosa e verde mostrando a estrutura de uma media query">
+                    <figcaption>Estrutura de uma media query.</figcaption>
+                </figure>
 
-            <p class="conteudo__texto">A estrutura de uma media query é sempre iniciada pela regra <code>@media</code>. Logo após, os seguintes elementos completam a sintaxe:</p>
+                <p class="conteudo__texto">A estrutura de uma media query é sempre iniciada pela regra <code>@media</code>. Logo após, os seguintes elementos completam a sintaxe:</p>
 
-            <ul class="conteudo__texto">
-                <li><span>media type:</span> é o tipo de mídia, que é opcional e pode assumir os valores <code>all</code>, que serve para todos os tipos de mídia e é implícito caso não se indique um media type, <code>print</code>, que serve para visão de documentos ou material paginado visualizados em modo de impressão, ou <code>screen</code>, que representa telas de qualquer dispositivo. Outros media types existiam em versões anteriores do media queries, mas foram depreciadas no Media Queries 4, que é a versão mais atual.</li>
+                <ul class="conteudo__texto">
+                    <li><span>media type:</span> é o tipo de mídia, que é opcional e pode assumir os valores <code>all</code>, que serve para todos os tipos de mídia e é implícito caso não se indique um media type, <code>print</code>, que serve para visão de documentos ou material paginado visualizados em modo de impressão, ou <code>screen</code>, que representa telas de qualquer dispositivo. Outros media types existiam em versões anteriores do media queries, mas foram depreciadas no Media Queries 4, que é a versão mais atual.</li>
+                    
+                    <li><span>media features:</span> são as condições as quais o dispositivo deve obedecer para que o bloco de código CSS seja aplicado. As opções de media features são muitas, mas as mais utilizadas no design responsivo são <code>min-width</code>, <code>max-width</code>, <code>orientation</code> e <code>aspect-ratio</code>.</li>
+                    
+                    <li><span>código CSS:</span> incluso dentro de chaves, fica o código CSS que será aplicado caso a media query retorne verdadeira. Este código é sempre carregado, porém apenas aplicado mediante a condição descrita anteriormente.</li>
+                </ul>
+
+                <p class="conteudo__texto">Para um conjunto de media features ou regras mais específicas, é possível utilizar os seguintes operadores lógicos na construção das condições:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>and:</span> operador lógico de adição, une um media type definido às media features ou combina múltiplas media features como em <code>@media screen and (min-width: 768px) and (max-width: 1279px)</code>. Para que o código CSS seja aplicado, todas as condições conectadas por <code>and</code> devem ser verdadeiras.</li>
+                    
+                    <li><span>not:</span> operador de negação, pode negar tanto uma media type, uma media feature ou toda a media query. Utilizando o operador not, expressões que retornariam falso, retornam verdadeiro. Com seu uso, a inclusão de um media type se torna obrigatória.</li>
+                    
+                    <li><span>only:</span> aplica o estilo apenas se todas as condições da media query forem atendidas. Em browsers antigos, sem a palavra reservada <code>only</code>, caso a primeira parte da media query fosse verdadeira, o estilo já era aplicado sem considerar outras media features que poderiam ser falsas.</li>
+                    
+                    <li><span>, (vírugla):</span> este operador é utilizado para converter várias condicionais em media queries em uma só de forma que, se pelo menos uma das condições retornar verdadeiro, o bloco de código será aplicado.</li>
+                    
+                    <li><span>or:</span> adicionado na versão mais recente do media queries, é uma nova maneira de converter várias condicionais em uma só. Equivalente ao operador <code>,</code> (vírgula).</li>
+                </ul>
+
+                <p class="conteudo__texto">Um recurso que foi também adicionado na versão mais recente do media queries, objetivando deixar o código mais enxuto, é a sintaxe de range. Os operadores <code><</code>, <code>></code>, <code>=></code> e <code><=</code> podem ser utilizados em qualquer media feature nas quais ranges podem ser aplicados. Os códigos exibidos em ambas as imagens a seguir possuem o mesmo resultado, porém o código com range é menos verboso.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/mq-and.png" alt="Imagem com fundo preto e código CSS escrito em vermelho, azul e verde descrevendo uma mudança de display em um elemento de classe navegacao para telas de largura de 768px a 1279px com media queries conectadas pelo operador and">
+                        <figcaption>Media query utilizando operadores lógicos.</figcaption>
+                    </figure>
+        
+                    <figure>
+                        <img src="../images/mq-range.png" alt="Imagem com fundo preto e código CSS escrito em vermelho, azul e verde descrevendo uma mudança de display em um elemento de classe navegacao para telas de largura de 768px a 1279px com media queries conectadas pelos operadores de range">
+                        <figcaption>Media query utilizando operadores lógicos e de range.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Como exemplo de como o resultado das media queries são visualizadas, temos a própria página inicial deste blog com 3 diferenças principais entre elas: o menu de navegação, a barra de pesquisa e a quantidade de cards de artigos por linha.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/index-mobile.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão mobile.">
+                        <figcaption>Visualização da página inicial do CSS blog em um dispositivo mobile.</figcaption>
+                    </figure>
+        
+                    <figure>
+                        <img src="../images/index-tablet.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão tablet.">
+                        <figcaption>Visualização da página inicial do CSS blog em um dispositivo tablet.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/index-desktop.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão desktop.">
+                        <figcaption>Visualização da página inicial do CSS blog em uma tela desktop.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/index-full-hd.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão full HD.">
+                        <figcaption>Visualização da página inicial do CSS blog em uma tela full HD.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Para a criação destas diferentes visualizações, foi criado um mixin em SCSS com as media queries necessárias para cada breakpoint (mobile, tablet e full HD) e, para cada ponto do site mencionado anteriormente, as devidas alterações nas propriedades de estilização foram aplicadas. O site do CSS blog foi criado com a abordagem desktop-first, portanto, não há uma media query para o tamanho em desktop, visto que a estilização inicial foi feita para este tamanho de dispositivo.</p>
                 
-                <li><span>media features:</span> são as condições as quais o dispositivo deve obedecer para que o bloco de código CSS seja aplicado. As opções de media features são muitas, mas as mais utilizadas no design responsivo são <code>min-width</code>, <code>max-width</code>, <code>orientation</code> e <code>aspect-ratio</code>.</li>
+                <figure>
+                    <img src="../images/mixins.png" alt="Imagem em fundo preto com código escrito em SCSS para criação de um mixin de media queries.">
+                    <figcaption>Mixin de media queries.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Em tamanhos de tela menores, o menu de navegação ficaria muito apertado ou de difícil leitura, portanto, foi criado um novo menu de navegação em que os tópicos seriam exibidos em coluna a partir do clique em um botão. Em telas maiores, o menu por meio do botão é escondido e o menu original fica em evidência. Em telas menores, o contrário é verdadeiro. Estas alterações são realizadas por meio da modificação na propriedade <code>display</code> dos menus nas media queries necessárias. Como o menu original é o "comportamento" default, não foi preciso incluir uma media query para telas em full HD.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/mq-index-menu-og.png" alt="Imagem com fundo preto e código SCSS escrito em azul, rosa, vermelho e verde visando esconder o menu original em dispositivos de tamanho tablet e mobile.">
+                        <figcaption>Alterações no menu de navegação original.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/mq-index-menu-resp.png" alt="Imagem com fundo preto e código SCSS escrito em azul, rosa, vermelho e verde visando evidenciar o menu via botão em dispositivos de tamanho tablet e mobile.">
+                        <figcaption>Alterações no menu de navegação criado para atender à responsividade.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Em telas de tamanho mobile, o tamanho da barra de pesquisa geraria um efeito indesejável de criação de uma barra de scroll horizontal no site. Desta forma, com a modificação da propriedade <code>width</code> na media query para dispositivos mobile, foi possível evitar este efeito.</p>
                 
-                <li><span>código CSS:</span> incluso dentro de chaves, fica o código CSS que será aplicado caso a media query retorne verdadeira. Este código é sempre carregado, porém apenas aplicado mediante a condição descrita anteriormente.</li>
-            </ul>
-
-            <p class="conteudo__texto">Para um conjunto de media features ou regras mais específicas, é possível utilizar os seguintes operadores lógicos na construção das condições:</p>
-
-            <ul class="conteudo__texto">
-                <li><span>and:</span> operador lógico de adição, une um media type definido às media features ou combina múltiplas media features como em <code>@media screen and (min-width: 768px) and (max-width: 1279px)</code>. Para que o código CSS seja aplicado, todas as condições conectadas por <code>and</code> devem ser verdadeiras.</li>
+                <figure>
+                    <img src="../images/mq-index-pesquisa.png" alt="Imagem com fundo preto e código SCSS escrito em diferentes cores visando diminuir o tamanho da barra de pesquisa em dispositivos mobile.">
+                    <figcaption>Alterações na barra de pesquisa.</figcaption>
+                </figure>
                 
-                <li><span>not:</span> operador de negação, pode negar tanto uma media type, uma media feature ou toda a media query. Utilizando o operador not, expressões que retornariam falso, retornam verdadeiro. Com seu uso, a inclusão de um media type se torna obrigatória.</li>
-                
-                <li><span>only:</span> aplica o estilo apenas se todas as condições da media query forem atendidas. Em browsers antigos, sem a palavra reservada <code>only</code>, caso a primeira parte da media query fosse verdadeira, o estilo já era aplicado sem considerar outras media features que poderiam ser falsas.</li>
-                
-                <li><span>, (vírugla):</span> este operador é utilizado para converter várias condicionais em media queries em uma só de forma que, se pelo menos uma das condições retornar verdadeiro, o bloco de código será aplicado.</li>
-                
-                <li><span>or:</span> adicionado na versão mais recente do media queries, é uma nova maneira de converter várias condicionais em uma só. Equivalente ao operador <code>,</code> (vírgula).</li>
-            </ul>
-
-            <p class="conteudo__texto">Um recurso que foi também adicionado na versão mais recente do media queries, objetivando deixar o código mais enxuto, é a sintaxe de range. Os operadores <code><</code>, <code>></code>, <code>=></code> e <code><=</code> podem ser utilizados em qualquer media feature nas quais ranges podem ser aplicados. Os códigos exibidos em ambas as imagens a seguir possuem o mesmo resultado, porém o código com range é menos verboso.</p>
-
-            <div class="conteudo__figuras">
-                <figure>
-                    <img src="../images/mq-and.png" alt="Imagem com fundo preto e código CSS escrito em vermelho, azul e verde descrevendo uma mudança de display em um elemento de classe navegacao para telas de largura de 768px a 1279px com media queries conectadas pelo operador and">
-                    <figcaption>Media query utilizando operadores lógicos.</figcaption>
-                </figure>
-    
-                <figure>
-                    <img src="../images/mq-range.png" alt="Imagem com fundo preto e código CSS escrito em vermelho, azul e verde descrevendo uma mudança de display em um elemento de classe navegacao para telas de largura de 768px a 1279px com media queries conectadas pelos operadores de range">
-                    <figcaption>Media query utilizando operadores lógicos e de range.</figcaption>
-                </figure>
-            </div>
-
-            <p class="conteudo__texto">Como exemplo de como o resultado das media queries são visualizadas, temos a própria página inicial deste blog com 3 diferenças principais entre elas: o menu de navegação, a barra de pesquisa e a quantidade de cards de artigos por linha.</p>
-
-            <div class="conteudo__figuras">
-                <figure>
-                    <img src="../images/index-mobile.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão mobile.">
-                    <figcaption>Visualização da página inicial do CSS blog em um dispositivo mobile.</figcaption>
-                </figure>
-    
-                <figure>
-                    <img src="../images/index-tablet.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão tablet.">
-                    <figcaption>Visualização da página inicial do CSS blog em um dispositivo tablet.</figcaption>
-                </figure>
+                <p class="conteudo__texto">Quanto menor o tamanho da tela, menor a quantidade de cards de artigo que ficariam legíveis e agradavelmente dispostos por fila da tela inicial. Diante disto, a modificação do grid template da listagem de artigos por meio da propriedade <code>grid-template-columns</code> foi essencial para que, de acordo com o tamanho do dispositivo, os cards não ficassem nem ilegíveis, nem grandes demais.</p>
 
                 <figure>
-                    <img src="../images/index-desktop.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão desktop.">
-                    <figcaption>Visualização da página inicial do CSS blog em uma tela desktop.</figcaption>
+                    <img src="../images/mq-index-grid.png" alt="Imagem com fundo preto e código SCSS escrito em azul, vermelho e verde visando alterar a quantidade de colunas do grid template da listagem de artigos de acordo com o dispositivo do usuário.">
+                    <figcaption>Alterações na disposição dos cards de artigos.</figcaption>
                 </figure>
 
-                <figure>
-                    <img src="../images/index-full-hd.png" alt="Imagem da página inicial do CSS Blog com tela na dimensão full HD.">
-                    <figcaption>Visualização da página inicial do CSS blog em uma tela full HD.</figcaption>
-                </figure>
-            </div>
+                <p class="conteudo__texto">Portanto, com a aplicação das media queries descritas, foi possível adequar o layout de pontos da tela inicial que, sem a responsividade, tornariam a experiência do usuário mais dificultosa e menos agradável.</p>
 
-            <p class="conteudo__texto">Para a criação destas diferentes visualizações, foi criado um mixin em SCSS com as media queries necessárias para cada breakpoint (mobile, tablet e full HD) e, para cada ponto do site mencionado anteriormente, as devidas alterações nas propriedades de estilização foram aplicadas. O site do CSS blog foi criado com a abordagem desktop-first, portanto, não há uma media query para o tamanho em desktop, visto que a estilização inicial foi feita para este tamanho de dispositivo.</p>
-            
-            <figure>
-                <img src="../images/mixins.png" alt="Imagem em fundo preto com código escrito em SCSS para criação de um mixin de media queries.">
-                <figcaption>Mixin de media queries.</figcaption>
-            </figure>
-
-            <p class="conteudo__texto">Em tamanhos de tela menores, o menu de navegação ficaria muito apertado ou de difícil leitura, portanto, foi criado um novo menu de navegação em que os tópicos seriam exibidos em coluna a partir do clique em um botão. Em telas maiores, o menu por meio do botão é escondido e o menu original fica em evidência. Em telas menores, o contrário é verdadeiro. Estas alterações são realizadas por meio da modificação na propriedade <code>display</code> dos menus nas media queries necessárias. Como o menu original é o "comportamento" default, não foi preciso incluir uma media query para telas em full HD.</p>
-
-            <div class="conteudo__figuras">
-                <figure>
-                    <img src="../images/mq-index-menu-og.png" alt="Imagem com fundo preto e código SCSS escrito em azul, rosa, vermelho e verde visando esconder o menu original em dispositivos de tamanho tablet e mobile.">
-                    <figcaption>Alterações no menu de navegação original.</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="../images/mq-index-menu-resp.png" alt="Imagem com fundo preto e código SCSS escrito em azul, rosa, vermelho e verde visando evidenciar o menu via botão em dispositivos de tamanho tablet e mobile.">
-                    <figcaption>Alterações no menu de navegação criado para atender à responsividade.</figcaption>
-                </figure>
-            </div>
-
-            <p class="conteudo__texto">Em telas de tamanho mobile, o tamanho da barra de pesquisa geraria um efeito indesejável de criação de uma barra de scroll horizontal no site. Desta forma, com a modificação da propriedade <code>width</code> na media query para dispositivos mobile, foi possível evitar este efeito.</p>
-            
-            <figure>
-                <img src="../images/mq-index-pesquisa.png" alt="Imagem com fundo preto e código SCSS escrito em diferentes cores visando diminuir o tamanho da barra de pesquisa em dispositivos mobile.">
-                <figcaption>Alterações na barra de pesquisa.</figcaption>
-            </figure>
-            
-            <p class="conteudo__texto">Quanto menor o tamanho da tela, menor a quantidade de cards de artigo que ficariam legíveis e agradavelmente dispostos por fila da tela inicial. Diante disto, a modificação do grid template da listagem de artigos por meio da propriedade <code>grid-template-columns</code> foi essencial para que, de acordo com o tamanho do dispositivo, os cards não ficassem nem ilegíveis, nem grandes demais.</p>
-
-            <figure>
-                <img src="../images/mq-index-grid.png" alt="Imagem com fundo preto e código SCSS escrito em azul, vermelho e verde visando alterar a quantidade de colunas do grid template da listagem de artigos de acordo com o dispositivo do usuário.">
-                <figcaption>Alterações na disposição dos cards de artigos.</figcaption>
-            </figure>
-
-            <p class="conteudo__texto">Portanto, com a aplicação das media queries descritas, foi possível adequar o layout de pontos da tela inicial que, sem a responsividade, tornariam a experiência do usuário mais dificultosa e menos agradável.</p>
+            </article>
 
             <div class="artigo__info">
                 <div class="artigo__info__autor">

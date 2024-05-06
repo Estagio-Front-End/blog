@@ -61,13 +61,39 @@ dl {
 }
 
 .conteudo {
-    word-break: break-word;
-    display: flex;
-    flex-direction: column;
+    @include estrutura-grid(12, $espacamento-6);
+    padding: 0 $espacamento-12;
 
-    .artigo__info {
-        margin-top: 3rem;
+    >div, h2, span, article {
+        grid-column: 3 / span 8;
+
+        @include responsividade ("desktop") {
+            grid-column: 2 / span 6;
+        } 
+        
+        @include responsividade ("tablet") {
+            grid-column: 1 / span 8;
+        } 
+    
+        @include responsividade ("mobile") {
+            grid-column: 1 / span 4;
+        }
+    }
+    
+    @include responsividade ("desktop") {
+        @include estrutura-grid(8, $espacamento-6);
     } 
+    
+    @include responsividade ("tablet") {
+        @include estrutura-grid(8, $espacamento-6);
+    } 
+
+    @include responsividade ("mobile") {
+        @include estrutura-grid(4, $espacamento-6);
+        padding: 0 $espacamento-4;
+    }
+
+    
 }
 
 .conteudo__titulo {
