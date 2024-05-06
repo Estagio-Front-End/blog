@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Eventos em Javascript</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Eventos em Javascript</h2>
+            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+
+            <!-- preventDefault, Diferentes eventos (Click, Scroll, Mouse Enter, Keydown, Mouse Leaver, etc..) -->
+            
+            <article>
+                <p class="conteudo__texto">Eventos são, como o próprio nome diz, eventos que ocorrem, geralmente decorrentes de uma interação do usuário com a aplicação. É possível que se crie blocos de código designados para tratar estes eventos e dispará-los quando o evento ocorrer, gerando uma resposta imediata à ação do usuário. Estes eventos podem ser vários, como o clique em um botão, o envio de um formulário, a finalização do carregamento de uma página, entre outros.</p>
+
+                <p class="conteudo__texto">Para lidar com um evento, em geral, temos 3 blocos de código: a seleção do elemento no qual o evento irá ocorrer, a adição de um "escutador" de eventos ao elemento e a criação da função que irá lidar com este evento. Estes 3 blocos são representados pela seleção do elemento com métodos como <code>querySelector</code> ou <code>getElementById</code>, o acoplamento do método <code>addEventListener</code> ao elemento e a criação de uma função de <code>callback</code>. Uma função de callback é uma função que é passada como argumento de uma outra função. Muito utilizada em funções assíncronas antes das <code>Promises</code>, atualmente uma grande utilização é no tratamento de eventos.</p>
+
+                <button id="botao1-eventos" class="conteudo__demonstracao__botao">Mude a cor do botão ao clicá-lo</button>
+
+                <figure>
+                    <img src="../images/eventos-botao.png" alt="Imagem com fundo preto e código em Javascript escrito selecionando um elemento de botão da página, adicionando um addEventListener à ele e lidando com o evento de clique com uma função que muda a cor do botão.">
+                    <figcaption>Código criado para tratamento do evento de clique no botão anterior com os três blocos de código mencionados anteriormente: seleção, escutador e função de callback.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Caso se queira cancelar o comportamento padrão de um evento, utiliza-se o método <code>preventDefault()</code>. Para que este método funcione da forma como deveria, a propriedade <code>cancelable</code> do evento deve ser <code>true</code>, fazendo com que o evento seja cancelável.</p>
+                
+                <form id="formulario-exemplo">
+                    <div class="conteudo__demonstracao">
+                        <label for="nome-exemplo">Digite seu nome</label>
+                        <input type="text" id="nome-exemplo" required autocomplete="off">
+                        
+                        <button type="submit" id="botao2-eventos" class="conteudo__demonstracao__botao">Enviar sem preventDefault</button>
+                        <button type="submit" id="botao3-eventos" class="conteudo__demonstracao__botao">Enviar com preventDefault</button>
+                    </div>
+                </form>
+
+                <p id="resultado-prevent" class="conteudo__texto"></p>
+
+                <p class="conteudo__texto" id="checkpoint-scroll">Existem vários tipos de eventos que podem ser acionados e tratados. Os mais comumente utilizados são:</p>
+                <p>Scroll para mostrar!</p>
+
+                <ul class="conteudo__texto">
+                    <li class="conteudo__texto__item"><span>click:</span> evento que ocorre quando se clica em algum elemento da página.</li>
+                    <li class="conteudo__texto__item"><span>scroll:</span> evento que ocorre quando se navega pela página com a barra de rolagem.</li>
+                    <li class="conteudo__texto__item"><span>keydown/keyup:</span> eventos que ocorrem quando se pressiona ou se deixa de pressionar uma tecla do teclado.</li>
+                    <li class="conteudo__texto__item"><span>submit:</span> evento que ocorre quando um formulário é submetido.</li>
+                    <li class="conteudo__texto__item"><span>mouseenter:</span> evento que ocorre quando se posiciona o cursor do mouse em cima do elemento.</li>
+                    <li class="conteudo__texto__item"><span>mouseleave:</span> evento que ocorre quando se retira o cursor do mouse em cima do elemento.</li>
+                    <li class="conteudo__texto__item"><span>focus:</span> evento que dispara quando se dá foco em um item, geralmente utilizado para campos de formulários.</li>
+                    <li class="conteudo__texto__item"><span>blur:</span> evento que dispara quando se tira o foco de um item, geralmente utilizado para campos de formulários.</li>
+                    <li class="conteudo__texto__item"><span>input:</span> evento que dispara quando se muda um campo, geralmente utilizado para campos de formulários.</li>
+                </ul>
+            </article>
+
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>29 Abr</p>
+                </div>
+            </div>
+        </section>
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+    <script src="../script.js"></script>
+    <script src="../scripts/eventos.js"></script>
+    <script src="../scripts/formulario.js"></script>
+</body>
+</html>

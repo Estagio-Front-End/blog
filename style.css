@@ -704,6 +704,80 @@ dl .aberto {
   color: #1F2041;
 }
 
+.conteudo__demonstracao__produto {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #C2C2C2;
+  border-radius: 0.8rem;
+  color: #1F2041;
+}
+.conteudo__demonstracao__produto img {
+  max-height: 8rem;
+}
+.conteudo__demonstracao__produto span {
+  font-size: 1.4rem;
+}
+.conteudo__demonstracao__produto button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: #F39200;
+  cursor: pointer;
+}
+.conteudo__demonstracao__produto button:hover {
+  transform: scale(1.02);
+}
+
+.conteudo__demonstracao__carrinho {
+  margin-top: 2rem;
+  width: 48px;
+  position: relative;
+  margin-left: 50%;
+}
+.conteudo__demonstracao__carrinho img {
+  width: 100%;
+}
+.conteudo__demonstracao__carrinho .carrinho__notificacao {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 40px;
+  top: -5px;
+  background-color: red;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.carrinho__descricao {
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-radius: 0.8rem;
+  position: absolute;
+  z-index: 0.5;
+  width: 20rem;
+  display: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.carrinho__descricao p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.708rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: initial;
+  color: #1F2041;
+  width: fit-content;
+}
+
 .conteudo__botao {
   margin: 2rem 0;
   padding: 0.5rem 1rem;
