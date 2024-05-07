@@ -18,10 +18,6 @@ h4 {
     margin-top: 2rem;
 }
 
-p, li {
-    text-align: justify;
-}
-
 code {
     padding: 0 0.3rem;
     background-color: rgba(243, 146, 0, 0.1);
@@ -49,6 +45,12 @@ dl {
     .aberto {
         display: block;
     }
+}
+
+article, article a {
+    li, p, blockquote {margin-bottom: $espacamento-10;}
+    @include body-system-regular(16);
+    list-style-position: inside;
 }
 
 .conteudo {
@@ -109,6 +111,11 @@ dl {
         @include body-system-bold(20, left, initial, $cor-neutra-3);
     }
     margin-bottom: $espacamento-4;
+
+    @include responsividade("mobile") {
+        flex-direction: column;
+        gap: $espacamento-1;
+    }
 }
 
 .conteudo__navegacao {
@@ -119,12 +126,6 @@ dl {
     @include headline-primary-bold(24);
     list-style-position: inside;
 
-}
-
-.conteudo__texto, .conteudo__texto a, blockquote {
-    @include body-system-regular(16);
-    margin-bottom: $espacamento-10;
-    list-style-position: inside;
 }
 
 .conteudo__figuras {
@@ -144,14 +145,44 @@ dl {
     display: flex;
     flex-direction: column;
     gap: $espacamento-6;
+    margin-bottom: $espacamento-6;
     @include body-system-semibold(16);
     
     .conteudo__stats{
         display: flex;
         justify-content: space-between;
+
+        @include responsividade("mobile") {
+            flex-direction: column;
+            gap: $espacamento-2;
+        }
+
+        div:nth-child(1), div:nth-child(2) {
+            display: flex;
+            gap: $espacamento-6;
+            padding: 1rem 0;
+            
+            div {
+                display: flex;
+                align-items: center;
+                gap: $espacamento-2;
+            }
+        }
     }
 }
 
+.conteudo__autor {
+    text-align: center;
+    img {
+        border-radius: 50%;
+        width: 16rem;
+        margin: $espacamento-25 auto $espacamento-4 auto;
+    }
+
+    p {
+        @include body-system-regular(16);
+    }
+}
 
 .conteudo__demonstracao__botao {
     border-radius: 0.5rem;
@@ -199,6 +230,7 @@ dl {
 
     @include responsividade ("mobile") {
         @include estrutura-grid(4, $espacamento-6);
+        padding: $espacamento-10 $espacamento-4;
     }
 
     h2 {
