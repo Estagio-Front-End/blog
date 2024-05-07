@@ -48,7 +48,27 @@
             <span class="artigo__tag artigo__tag--angular">Angular</span>
             
             <article>
-                
+                <p class="conteudo__texto">Os componentes são os blocos básicos da construção de interface em Frameworks Front-End. Sua utilização faz com que se tenham blocos de código reutilizáveis, tornando o HTML principal mais conciso e de fácil leitura, além de encapsular a complexidade do componente, facilitando sua manutenção e modularizar a aplicação, auxiliando a padronização do desenvolvimento. O Angular, tendo uma arquitetura baseada em componentes, utiliza desta conceito para estruturar e organizar aplicações.</p>
+
+                <p class="conteudo__texto">Em Angular, um componente é composto de 4 partes principais. São elas:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>Seletor:</span> seria o "nome" do componente, ou seja, a forma como ele será instanciado no documento HTML principal.</li>
+                    <li><span>Template:</span> seria a estrutura HTML do componente. Esta estrutura pode ser repassada de forma inline, com a propriedade <code>template</code> ou repassando um arquivo HTML do componente, com a propriedade <code>templateUrl</code>.</li>
+                    <li><span>Folha de estilo:</span> seria o código CSS (ou SCSS) de estilização da estrutura que foi repassada no template. Da mesma forma que o template, pode ser passado de forma inline. Em geral, se repassa um ou mais arquivos com a extensão escolhida (<code>.css</code> ou <code>.scss</code>) dentro de duplo colchetes, como um array (<code>[]</code>), como valor da propriedade <code>styleUrls</code>.</li>
+                    <li><span>Classe:</span> onde são definidas as propriedades e comportamentos do componente.</li>
+                </ul>
+
+                <p class="conteudo__texto">Quando uma aplicação Angular é inicializada, um componente principal chamado <code>app-root</code>, a "raiz" da aplicação, é criado. Todos os demais componentes irão ser componentes descendentes deste componente principal. Para criar um novo componente, o Angular possui o comando <code>ng generate component nome-componente</code> em que nome-componente é um nome arbitrário. É possível, da mesma forma, utilizar o atalho <code>ng g c nome-componente</code>. Por padrão, quando este comando é utilizado, é criada uma pasta com o nome do componente indicado e contendo 4 arquivos:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>nome-componente.component.ts</span>, o arquivo do componente com a extensão da linguagem TypeScript.</li>
+                    <li><span>nome-componente.component.html</span>, o arquivo de template HTML do componente.</li>
+                    <li><span>nome-componente.component.css</span>, o arquivo de estilização do componente.</li>
+                    <li><span>nome-componente.component.spec.ts</span>, o arquivo de especificações de testes do componente.</li>
+                </ul>
+
+                <p class="conteudo__texto">Além de criada a pasta com os arquivos </p>
             </article>
     
             <div class="artigo__info">
