@@ -15,7 +15,6 @@ h1 {
 }
 
 blockquote {
-    font-size: 1.4rem;
     margin: 2rem 0 2rem 1rem;
     padding-left: 1rem;
     border-left: 0.2rem solid $cor-fonte-sec;
@@ -236,10 +235,9 @@ blockquote {
 
 .artigo__tag {
     width: fit-content;
-    padding: 0.2rem 0.5rem;
-    margin-bottom: 2rem;
-    font: 600 1.2rem $fonte-tags;
-    border-radius: 0.8rem;
+    padding: $espacamento-2 $espacamento-4;
+    @include body-system-semibold(16, left, initial, $cor-fonte-tags);
+    border-radius: $espacamento-2;
 }
 
 .artigo__info {

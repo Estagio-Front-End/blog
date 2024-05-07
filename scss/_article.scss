@@ -1,29 +1,20 @@
 figure {
-    margin: 1rem 0;
+    margin-bottom: $espacamento-4;
     text-align: center;
-    font-size: 1.3rem;
     
     figcaption, img {
-        max-width: 60vw;
+        max-width: 100%;
         margin: 0 auto;
-
-        @include responsividade("tablet") {
-            max-width: 80%;
-        }
-
-        @include responsividade("mobile") {
-            max-width: 100% !important;
-        }
+        @include body-system-regular(12, center);
     }
 }
 
 h3 {
-    font-size: 2rem;
-    margin: 2rem 0 0.5rem 0;
+    @include body-system-bold(20);
 }
 
 h4 {
-    font-size: 1.6rem;
+    @include body-system-bold(18);
     margin-top: 2rem;
 }
 
@@ -130,19 +121,17 @@ dl {
 
 }
 
-.conteudo__texto {
-    font-size: 1.6rem;
-    color: $cor-fonte-sec;
-
-    span {
-        font-weight: 600;
-    }
+.conteudo__texto, .conteudo__texto a, blockquote {
+    @include body-system-regular(16);
+    margin-bottom: $espacamento-10;
+    list-style-position: inside;
 }
 
 .conteudo__figuras {
     @include flex (center,center);
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: $espacamento-10;
+    margin-bottom: $espacamento-10;
 }
 
 .conteudo__figuras--em-coluna {
@@ -151,9 +140,18 @@ dl {
     gap: 2rem;
 }
 
-.artigo__info__autor__nome p{
-    margin: 0;
+.conteudo__tags-stats {
+    display: flex;
+    flex-direction: column;
+    gap: $espacamento-6;
+    @include body-system-semibold(16);
+    
+    .conteudo__stats{
+        display: flex;
+        justify-content: space-between;
+    }
 }
+
 
 .conteudo__demonstracao__botao {
     border-radius: 0.5rem;
@@ -180,7 +178,6 @@ dl {
     cursor: pointer;
 }
 
-//Novo layout
 .artigo__formulario__item--erro {
     @include body-system-regular(14, $cor-erro);
 }
@@ -456,3 +453,4 @@ dl {
         width: fit-content;
     }
 }
+

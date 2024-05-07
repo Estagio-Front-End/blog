@@ -16,12 +16,17 @@
   box-sizing: border-box;
 }
 
-ul li {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 header {
@@ -51,7 +56,6 @@ h1 {
 }
 
 blockquote {
-  font-size: 1.4rem;
   margin: 2rem 0 2rem 1rem;
   padding-left: 1rem;
   border-left: 0.2rem solid #5b5b5b;
@@ -275,9 +279,16 @@ blockquote {
 
 .artigo__tag {
   width: fit-content;
-  padding: 0.2rem 0.5rem;
-  margin-bottom: 2rem;
-  font: 600 1.2rem "Space Mono", sans-serif;
+  padding: 0.8rem 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.952rem;
+  font-weight: 600;
+  text-align: left;
+  text-transform: initial;
+  color: #1F1F1F;
+  text-transform: initial;
+  color: #1F1F1F;
   border-radius: 0.8rem;
 }
 
@@ -324,32 +335,39 @@ blockquote {
 }
 
 figure {
-  margin: 1rem 0;
+  margin-bottom: 1.6rem;
   text-align: center;
-  font-size: 1.3rem;
 }
 figure figcaption, figure img {
-  max-width: 60vw;
+  max-width: 100%;
   margin: 0 auto;
-}
-@media screen and (768px <= width <= 1023px) {
-  figure figcaption, figure img {
-    max-width: 80%;
-  }
-}
-@media screen and (max-width: 767px) {
-  figure figcaption, figure img {
-    max-width: 100% !important;
-  }
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.464rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: initial;
+  color: #FFFFFF;
 }
 
 h3 {
+  font-family: "Open Sans", sans-serif;
   font-size: 2rem;
-  margin: 2rem 0 0.5rem 0;
+  line-height: 2.44rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: initial;
+  color: #FFFFFF;
 }
 
 h4 {
-  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  line-height: 2.196rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: initial;
+  color: #FFFFFF;
   margin-top: 2rem;
 }
 
@@ -493,12 +511,16 @@ dl .aberto {
   list-style-position: inside;
 }
 
-.conteudo__texto {
+.conteudo__texto, .conteudo__texto a, blockquote {
+  font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
-  color: #5b5b5b;
-}
-.conteudo__texto span {
-  font-weight: 600;
+  line-height: 1.952rem;
+  font-weight: 400;
+  text-align: left;
+  text-transform: initial;
+  color: #FFFFFF;
+  margin-bottom: 4rem;
+  list-style-position: inside;
 }
 
 .conteudo__figuras {
@@ -506,7 +528,8 @@ dl .aberto {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 4rem;
+  margin-bottom: 4rem;
 }
 
 .conteudo__figuras--em-coluna {
@@ -517,8 +540,23 @@ dl .aberto {
   gap: 2rem;
 }
 
-.artigo__info__autor__nome p {
-  margin: 0;
+.conteudo__tags-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.952rem;
+  font-weight: 600;
+  text-align: left;
+  text-transform: initial;
+  color: #FFFFFF;
+  text-transform: initial;
+  color: #FFFFFF;
+}
+.conteudo__tags-stats .conteudo__stats {
+  display: flex;
+  justify-content: space-between;
 }
 
 .conteudo__demonstracao__botao {
@@ -1760,6 +1798,7 @@ footer {
 }
 
 .footer__listagem {
+  list-style: none;
   background-color: #313250;
 }
 .footer__listagem .footer__listagem__titulo, .footer__listagem .footer__listagem__titulo a {
