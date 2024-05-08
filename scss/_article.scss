@@ -155,6 +155,7 @@ article, article a {
     ol {
         margin-top: $espacamento-10;
         @include headline-primary-medium(24);
+        display: none;
 
         li:not(:last-child) {
             margin-bottom: $espacamento-6;
@@ -167,10 +168,72 @@ article, article a {
         }
     }
 
+    .conteudo__navegacao__itens--ativo {
+        display: block;
+        animation: abrirMenu .5s forwards;
+    }
+
+    .conteudo__navegacao__icone--ativo {
+        animation: abrirIcone .15s forwards;
+    }
+
+    .conteudo__navegacao__icone--inativo {
+        animation: fecharIcone .15s forwards;
+    }
+
+
     .conteudo__navegacao__titulo {
         display: flex;
         justify-content: space-between;
         cursor: pointer
+    }
+}
+
+@include keyframes(abrirMenu) {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    to {
+        opacity: 1;
+        max-height: 50rem;
+    }
+}
+
+@include keyframes(abrirIcone) {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+    70% { 
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@include keyframes(fecharIcone) {
+    0% {
+        transform: rotate(180deg);
+    }
+    30% {
+        transform: rotate(135deg);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+    70% { 
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }
 

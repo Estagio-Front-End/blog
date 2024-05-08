@@ -14,7 +14,19 @@ function mudarMenu () {
     }  
 };
 
-//Propriedades que se repetem em flexbox e grid
+const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
+if (menuNavegacaoConteudo !== null) {
+    const iconeNavegacaoConteudo = menuNavegacaoConteudo.querySelector("img");
+    menuNavegacaoConteudo.addEventListener('click', abrirOuFecharMenu)
+
+    function abrirOuFecharMenu() {
+        menuNavegacaoConteudo.nextElementSibling.classList.toggle("conteudo__navegacao__itens--ativo");
+        iconeNavegacaoConteudo.classList.toggle("conteudo__navegacao__icone--ativo");
+        iconeNavegacaoConteudo.classList.toggle("conteudo__navegacao__icone--inativo");
+    }
+}
+
+//Artigos Flexbox e Grid
 let containerJustifyContent;
 let containerAlignItems;
 let containerAlignContent;
@@ -78,3 +90,4 @@ function justifySelf(value) {
 function gridAutoFlow(value){
     containerGridAutoFlow.style.gridAutoFlow = value;
 }
+
