@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>API em Javascript</title>
+    <title>Componentes em Angular</title>
 </head>
 <body>
     <header>
@@ -44,55 +44,50 @@
    
     <main>
         <section class="conteudo">
-            <h2 class="conteudo__titulo">API em Javascript</h2>
-            <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
+            <h2 class="conteudo__titulo">Componentes em Angular</h2>
+            <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
             
             <article>
-                <p class="conteudo__texto">As <abbr title="Application Programming Interface">API</abbr>s, no português, Interface de Programação de Aplicações, são um mecanismo pelo qual diferentes aplicações trocam informações. APIs são utilizadas para acesso à dados de terceiros, abstrair a complexidade de uma aplicação, aumentar as funcionalidades de uma aplicação ou adicionar uma camada de segurança em dispositivos móveis. Aplicativos nativos de previsão do tempo, widgets de aplicativos e o sistema operacional perguntando se um app pode utilizar a localização atual são exemplos de APIs trabalhando.</p>
+                <p class="conteudo__texto">Os componentes são os blocos básicos da construção de interface em Frameworks Front-End. Sua utilização faz com que se tenham blocos de código reutilizáveis, tornando o HTML principal mais conciso e de fácil leitura, além de encapsular a complexidade do componente, facilitando sua manutenção e modularizar a aplicação, auxiliando a padronização do desenvolvimento. O Angular, tendo uma arquitetura baseada em componentes, utiliza desta conceito para estruturar e organizar aplicações.</p>
 
-                <p class="conteudo__texto">Existem algumas formas de trabalhar com APIs, "consumindo-as" na aplicação e utilizando os dados ou funcionalidades obtidas no código. Exemplos são: fetch API, Axios e Ajax.</p>
-                
-                <h3>Fetch API</h3>
-                <p class="conteudo__texto">A Fetch API é uma API que possibilita a criação de requisições HTTP do navegador para o servidor. É uma evolução do XMLHttpRequest por ser mais simples e mais flexível. Essa API utiliza, dentro de uma estrutura de Javascript assíncrono (<code>async/await</code> ou <code>.then</code>), o método global <code>fetch()</code> para inicializar uma requisição. Ela é baseada em <code>Promise</code>, que são, como o nome sugere, um "promessa" de retorno de dados. A depender do resultado da <code>Promise</code>, pode-se lidar com erros utilizando o bloco <code>catch</code> ou acessar informações da resposta (<code>Response</code>) como o seu valor, o status da resposta e o valor do status da resposta.</p>
+                <p class="conteudo__texto">Em Angular, um componente é composto de 4 partes principais. São elas:</p>
 
-                <figure>
-                    <img src="../images/api-fetch.png" alt="Imagem com fundo preto e código Javascript escrito definindo duas funções assíncronas com sintaxes diferentes, porém com o mesmo intuito de consumir uma API por meio da Fetch API.">
-                    <figcaption>Utilização da Fetch API com bloco de tratamento de erros utilizando as sintaxes <code>.then</code> e <code>asyn/await</code>.</figcaption>
-                </figure> 
-
-                <p class="conteudo__texto">Para métodos de requisição que requeiram o envio de dados, o método <code>fetch()</code> é passível de receber um segundo argumento, o objeto <code>init</code>, por onde são passadas as informações da requisição, incluindo os dados a serem enviados para o servidor.</p>
-                
-                <h3>AJAX</h3>
-                <p class="conteudo__texto">O <abbr title="Asynchronous Javascript and XML">AJAX</abbr> é uma junção entre Javascript assíncrono e XML (ou JSON, ou txt) para enviar e receber dados entre cliente e servidor. Uma requisição no AJAX é inicializada pela criação de um objeto do tipo <code>XMLHttpRequest</code> e a subsequente utilização de seus métodos e propriedades: 
-                
                 <ul class="conteudo__texto">
-                    <li><span>método open(metodo, url, assincronicidade):</span> por onde são passados o tipo da requisição (GET, POST, DELETE...), a url de onde se quer acessar os recursos e se a requisição deve ser tratada de forma assíncrona ou não;</li>
-                    
-                    <li><span>propriedade onload:</span> com uma função de callback atribuída a ela, para lidar com a resposta ou possíveis erros;</li>
-                    
-                    <li><span>método send():</span> para enviar a requisição.</li>
+                    <li><span>Seletor:</span> seria o "nome" do componente, ou seja, a forma como ele será instanciado no documento HTML principal.</li>
+                    <li><span>Template:</span> seria a estrutura HTML do componente. Esta estrutura pode ser repassada de forma inline, com a propriedade <code>template</code> ou repassando um arquivo HTML do componente, com a propriedade <code>templateUrl</code>.</li>
+                    <li><span>Folha de estilo:</span> seria o código CSS (ou SCSS) de estilização da estrutura que foi repassada no template. Da mesma forma que o template, pode ser passado de forma inline. Em geral, se repassa um ou mais arquivos com a extensão escolhida (<code>.css</code> ou <code>.scss</code>) dentro de duplo colchetes, como um array (<code>[]</code>), como valor da propriedade <code>styleUrls</code>.</li>
+                    <li><span>Classe:</span> onde são definidas as propriedades e comportamentos do componente.</li>
                 </ul>
-                   
 
-                <figure>
-                    <img src="../images/api-ajax.png" alt="Imagem com fundo preto e código Javascript escrito definindo uma função para consumir uma API com AJAX">
-                    <figcaption>Requisição HTTP com AJAX.</figcaption>
-                </figure>
-                
-                <h3>Axios</h3>
-                <p class="conteudo__texto">O Axios é uma biblioteca que facilita as requisições HTTP, podendo trabalhar tanto ser utilizada no front-end quanto no back-end. Ela primeiramente deve ser instalada (utilizando npm, temos o comando <code>npm i axios</code>) e importada no projeto. Ela é uma biblioteca baseada em <code>Promise</code>, de modo que podemos utilizar os blocos <code>.then/.catch</code> para lidar com a resposta ou com possíveis erros, respectivamente.</p>
+                <p class="conteudo__texto">Quando uma aplicação Angular é inicializada, um componente principal chamado <code>app-root</code>, a "raiz" da aplicação, é criado. Todos os demais componentes irão ser componentes descendentes deste componente principal. Para criar um novo componente, o Angular possui o comando <code>ng generate component nome-componente</code> em que nome-componente é um nome arbitrário. É possível, da mesma forma, utilizar o atalho <code>ng g c nome-componente</code>. Por padrão, quando este comando é utilizado, é criada uma pasta com o nome do componente indicado contendo 4 arquivos:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>nome-componente.component.ts</span>, o arquivo do componente com a extensão da linguagem TypeScript.</li>
+                    <li><span>nome-componente.component.html</span>, o arquivo de template HTML do componente que utiliza uma sintaxe extendida, suportando diretivas do Angular.</li>
+                    <li><span>nome-componente.component.css</span>, o arquivo de estilização do componente.</li>
+                    <li><span>nome-componente.component.spec.ts</span>, o arquivo de especificações de testes do componente.</li>
+                </ul>
 
                 <figure> 
-                    <img src="../images/api-axios.png" alt="Imagem com fundo preto e código Javascript escrito definindo uma função para consumir uma API com Axios">
-                    <figcaption>Utilização da biblioteca Axios com bloco de tratamento de erros utilizando a sintaxe <code>.then/.catch</code>.</figcaption>
+                    <img src="../images/angular-pasta-componente.png" alt="Imagem com uma pasta de componente Angular e os 4 arquivos criados em sua inicialização">
+                    <figcaption>Pasta criada na inicialização de um componente chamado <code>primeiro-componente</code>.</figcaption>
                 </figure>
 
-                <p class="conteudo__texto">Um das vantagens do Axios é que ele também oferece atalhos para cada tipo de requisição, como GET, PUT, POST, DELETE, com a notação de ponto. Ou seja, para realizar uma requisição GET temos <code>axios.get()</code>, para uma requisição DELETE temos <code>axios.delete()</code>, entre outros tipos de requisição.</p>
+                <p class="conteudo__texto">No arquivo do componente, desenvolvido em TypeScript, é possível conectar todas as outras partes principais do componente de modo a definí-lo por completo. Sua estrutura inicia com a importação do pacote <code>Component</code> do Angular, além de quaisquer outras funcionalidades a serem utilizadas; segue com o decorator <code>@Component</code> onde serão inseridos o seletor, o template e a folha de estilo e finaliza com uma classe que irá conter suas propriedades e comportamentos. Dentro desta classe, temos como padrão uma função construtora e o método <code>ngOnInit</code>, que contém o código que é aplicado quando o componente é inicializado.</p>
 
                 <figure>
-                    <img src="../images/api-axios-docs.png" alt="Imagem com fundo branco e palavras em preto listando os métodos de requisição HTTP suportados pelo Axios.">
-                    <figcaption>Métodos suportados pelo Axios, disponível na documentação oficial da biblioteca.</figcaption>
+                    <img src="../images/angular-componente.png" alt="Código em TypeScript definindo um componente chamado primeiro-componente">
+                    <figcaption>Estrutura do arquivo do componente <code>primeiro-componente</code>, em TypeScript.</figcaption>
                 </figure>
+
+                <p class="conteudo__texto">Além de criada a pasta com os arquivos mencionados anteriormente, o módulo principal da aplicação é atualizado, importando o componente e o declarando, de modo a possibilitar a utilização deste componente dentro da estrutura prncipal.</p>
+
+                <figure>
+                    <img src="../images/angular-importacao-componente.png" alt="Imagem de código Typescript definindo um módulo e importando o componente primeiro-componente para possibilitar sua utilização">
+                    <figcaption>Importação do <code>primeiro-componente</code> em um módulo.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Portanto, com sua inicialização, definição e importação, é possível utilizar componentes para suas funções principais na aplicação: servir como blocos para a construção da interface e controlar a sua view, definida pelo template, que renderiza o que o usuário final irá visualizar e com o que ele irá interagir.</p>
             </article>
     
             <div class="artigo__info">
@@ -104,7 +99,7 @@
                     </div>
                 </div>
                 <div class="artigo__data">
-                    <p>16 Abr</p>
+                    <p>07 Mai</p>
                 </div>
             </div>
         </section>
