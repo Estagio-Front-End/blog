@@ -144,7 +144,7 @@ article, article a {
     }
 }
 
-.conteudo__navegacao {
+.conteudo__navegacao { 
     margin: $espacamento-10 0;
     padding: $espacamento-6;
     border: 1px solid $cor-neutra-1;
@@ -154,14 +154,17 @@ article, article a {
 
     ol {
         margin-top: $espacamento-10;
-        @include headline-primary-medium(24);
         display: none;
 
         li:not(:last-child) {
             margin-bottom: $espacamento-6;
         }
 
-        li:hover {
+        li a, li{
+            @include headline-primary-medium(24);
+        }
+
+        li:hover, li a:hover {
             @include headline-primary-semibold(24);
             text-decoration: underline;
             cursor: pointer;

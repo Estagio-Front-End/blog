@@ -565,6 +565,12 @@ article li, article p, article blockquote, article a li, article a p, article a 
 }
 .conteudo__navegacao ol {
   margin-top: 4rem;
+  display: none;
+}
+.conteudo__navegacao ol li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+.conteudo__navegacao ol li a, .conteudo__navegacao ol li {
   font-family: "Montserrat", sans-serif;
   font-size: 2.4rem;
   line-height: 2.928rem;
@@ -572,12 +578,8 @@ article li, article p, article blockquote, article a li, article a p, article a 
   text-align: left;
   text-transform: initial;
   color: #FFFFFF;
-  display: none;
 }
-.conteudo__navegacao ol li:not(:last-child) {
-  margin-bottom: 2.4rem;
-}
-.conteudo__navegacao ol li:hover {
+.conteudo__navegacao ol li:hover, .conteudo__navegacao ol li a:hover {
   font-family: "Montserrat", sans-serif;
   font-size: 2.4rem;
   line-height: 2.928rem;

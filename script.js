@@ -14,6 +14,7 @@ function mudarMenu () {
     }  
 };
 
+//Abre/fecha do menu de navegação
 const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
 if (menuNavegacaoConteudo !== null) {
     const iconeNavegacaoConteudo = menuNavegacaoConteudo.querySelector("img");
@@ -24,7 +25,24 @@ if (menuNavegacaoConteudo !== null) {
         iconeNavegacaoConteudo.classList.toggle("conteudo__navegacao__icone--ativo");
         iconeNavegacaoConteudo.classList.toggle("conteudo__navegacao__icone--inativo");
     }
+} 
+
+const linksMenuNavegacao = document.querySelectorAll(".conteudo__navegacao__itens li a");
+linksMenuNavegacao.forEach(link => link.addEventListener('click', evento => scrollSuaveParaSecao(evento)))
+
+function scrollSuaveParaSecao(evento) {
+    evento.preventDefault();
+    const linkDesejado = evento.currentTarget.getAttribute("href");
+    const secaoDesejada = document.querySelector(linkDesejado);
+    const configScroll = {
+        left: 0,
+        top: secaoDesejada.offsetTop,
+        behavior: "smooth"
+    }
+    window.scrollTo(configScroll);
 }
+
+
 
 //Artigos Flexbox e Grid
 let containerJustifyContent;

@@ -55,10 +55,10 @@
             
             <nav class="conteudo__navegacao">
                 <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
-                <ol class="conteudo__navegacao__itens--inativo">
-                    <li class="conteudo__navegacao__item">Definições de deficiências</li>
-                    <li class="conteudo__navegacao__item">Elementos de acessibilidade no desenvolvimento</li>
-                    <li class="conteudo__navegacao__item">Lighthouse no Chrome DevTools</li>
+                <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
+                    <li class="conteudo__navegacao__item"><a href="#definicoes">Definições de deficiências</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#elementos">Elementos de acessibilidade no desenvolvimento</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#lighthouse">Lighthouse no Chrome DevTools</a></li>
                 </ol>
             </nav>
 
@@ -67,7 +67,7 @@
                 
                 <blockquote>"A possibilidade e condição de alcance, percepção e entendimento para a utilização, em igualdade de oportunidades, com segurança e autonomia, do meio físico, do transporte, da informação e da comunicação, inclusive dos sistemas e tecnologias de informação e comunicação, bem como de outros serviços e instalações."</blockquote>
                 
-                <p class="conteudo__texto">Para o desenvolvimento de sites e aplicações, esta definição se traduz em garantir com que o máximo de pessoas consiga utilizar aquilo que foi desenvolvido. Os tipos de deficiência são categorizados em 5 grupos e, inicialmente, existem cuidados básicos para cada grupo:</p>
+                <p class="conteudo__texto" id="definicoes">Para o desenvolvimento de sites e aplicações, esta definição se traduz em garantir com que o máximo de pessoas consiga utilizar aquilo que foi desenvolvido. Os tipos de deficiência são categorizados em 5 grupos e, inicialmente, existem cuidados básicos para cada grupo:</p>
     
                 <ul class="conteudo__texto">
                     <li><span>Deficiência auditiva:</span> pessoas com perda total ou parcial da audição. É importante transcrever audios e gerar legendas para vídeos utilizados no site.</li>
@@ -81,7 +81,7 @@
                     <li><span>Deficiência visual:</span> pessoas com perda parcial ou total da visão, ou com baixa acuidade visual. É importante se atentar aos contrastes de cor da página, garantir que textos e imagens possam ser aumentados em tamanho e que o site ou aplicação suporte leitores de tela.</li>
                 </ul>    
                 
-                <p class="conteudo__texto">Além dos cuidados básicos mencionados anteriormente, é possível, na própria escrita do código, utilizar técnicas e adicionar elementos que permitirão e/ou facilitarão o uso do site por pessoas com algum tipo de deficiência. Alguns destes elementos e técnicas são:</p>
+                <p class="conteudo__texto" id="elementos">Além dos cuidados básicos mencionados anteriormente, é possível, na própria escrita do código, utilizar técnicas e adicionar elementos que permitirão e/ou facilitarão o uso do site por pessoas com algum tipo de deficiência. Alguns destes elementos e técnicas são:</p>
 
                 <ul class="conteudo__texto">
                     <li><span>Texto alternativo em imagens:</span> além de gerar um texto explicativo da imagem para situações em que há um problema de carregamento, o atributo <code>alt</code> da tag <code>img</code> é como o leitor de tela irá apresentar a imagem ao usuário, sendo indispensável para imagens com significado como imagens de produtos em um e-commerce.</li>
@@ -200,7 +200,7 @@
 
                 </ul>
 
-                <p class="conteudo__texto">O Chrome DevTools é uma ferramenta para desenvolvedores do Google Chrome que possui uma seção de diagnóstico do site em algumas frentes, uma delas sendo acessibilidade. A depender da nota (que vai de 0 a 100), o site pode estar bem adaptado para diferentes necessidades de usuários ou ter pontos de melhoria. É possível abrir o DevTools por meio da tecla F12 (Windows) ou clicando na página com o botão direito e selecionando a opção "Inspecionar". No menu de opções superior, é possível encontrar o "Lighthouse" e, para gerar o relatório, clicar em "Analyze page load".</p>
+                <p class="conteudo__texto" id="lighthouse">O Chrome DevTools é uma ferramenta para desenvolvedores do Google Chrome que possui uma seção de diagnóstico do site em algumas frentes, uma delas sendo acessibilidade. A depender da nota (que vai de 0 a 100), o site pode estar bem adaptado para diferentes necessidades de usuários ou ter pontos de melhoria. É possível abrir o DevTools por meio da tecla F12 (Windows) ou clicando na página com o botão direito e selecionando a opção "Inspecionar". No menu de opções superior, é possível encontrar o "Lighthouse" e, para gerar o relatório, clicar em "Analyze page load".</p>
 
                 <div class="conteudo__figuras">
                     <figure>
