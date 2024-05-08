@@ -29,6 +29,10 @@ button {
   cursor: pointer;
 }
 
+main {
+  background-color: #1F2041;
+}
+
 header {
   padding: 2rem;
   position: sticky;
@@ -412,7 +416,6 @@ article li, article p, article blockquote, article a li, article a p, article a 
 }
 
 .conteudo {
-  background-color: #1F2041;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 2.4rem;
@@ -456,6 +459,40 @@ article li, article p, article blockquote, article a li, article a p, article a 
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2.4rem;
     padding: 0 1.6rem;
+  }
+}
+
+@media screen and (width >= 1366px) {
+  .imagem__principal {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2.4rem;
+    padding: 0 4.8rem;
+  }
+}
+@media screen and (1024px <= width <= 1365px) {
+  .imagem__principal {
+    margin: 0 4.8rem;
+  }
+}
+@media screen and (768px <= width <= 1023px) {
+  .imagem__principal {
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .imagem__principal {
+    width: 100vw;
+  }
+}
+.imagem__principal img {
+  border-radius: 0.4rem;
+  width: 100%;
+  max-height: 60rem;
+}
+@media screen and (width >= 1366px) {
+  .imagem__principal img {
+    grid-column: 3/span 8;
   }
 }
 

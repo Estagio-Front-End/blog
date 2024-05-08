@@ -54,7 +54,6 @@ article, article a {
 }
 
 .conteudo {
-    background-color: $cor-primaria;
     @include estrutura-grid(12, $espacamento-6);
     padding: 0 $espacamento-12;
 
@@ -85,9 +84,36 @@ article, article a {
     @include responsividade ("mobile") {
         @include estrutura-grid(4, $espacamento-6);
         padding: 0 $espacamento-4;
+    }  
+}
+
+.imagem__principal {
+    @include responsividade("HD") {
+        @include estrutura-grid(12, $espacamento-6);
+        padding: 0 $espacamento-12;
     }
 
+    @include responsividade ("desktop") {
+        margin: 0 $espacamento-12;
+    } 
     
+    @include responsividade ("tablet") { 
+        width: 100vw;
+    } 
+
+    @include responsividade ("mobile") {
+        width: 100vw;
+    }  
+
+    img {
+        border-radius: $espacamento-1;
+        width: 100%;
+        max-height: 60rem;
+
+        @include responsividade ("HD") {
+            grid-column: 3 / span 8;
+        } 
+    }
 }
 
 .conteudo__titulo {
