@@ -152,6 +152,26 @@ article, article a {
     @include headline-primary-bold(24);
     list-style-position: inside;
 
+    ol {
+        margin-top: $espacamento-10;
+        @include headline-primary-medium(24);
+
+        li:not(:last-child) {
+            margin-bottom: $espacamento-6;
+        }
+
+        li:hover {
+            @include headline-primary-semibold(24);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    .conteudo__navegacao__titulo {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer
+    }
 }
 
 .conteudo__figuras {
