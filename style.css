@@ -89,6 +89,10 @@ blockquote {
   background-color: #F7E025;
 }
 
+.artigo__tag--angular {
+  background-color: #ff1749;
+}
+
 .navegacao {
   display: flex;
   justify-content: center;

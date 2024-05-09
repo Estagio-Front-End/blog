@@ -10,6 +10,7 @@ $cor-tag-posicionamento: #FF8F7C;
 $cor-tag-animacoes: #F39200;
 $cor-tag-responsividade: #1BB2BB;
 $cor-tag-javascript: #F7E025;
+$cor-tag-angular: #ff1749;
 $fonte-titulos: 'Roboto Slab', serif;
 $fonte-tags: 'Space Mono', sans-serif;
 
@@ -97,6 +98,8 @@ $fonte-tags: 'Space Mono', sans-serif;
         @return $cor-tag-html;
     } @else if $tag == "javascript" {
         @return $cor-tag-javascript;
+    } @else if $tag == "angular" {
+        @return $cor-tag-angular;
     }
 }
 

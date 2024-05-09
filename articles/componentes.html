@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>CSS Inline, Interno e Externo</title>
+    <title>Componentes em Angular</title>
 </head>
 <body>
     <header>
@@ -41,40 +41,55 @@
             <img src="../images/search-outline.png" alt="Imagem de uma lupa">
         </div>
     </header>
-    
+   
     <main>
         <section class="conteudo">
-            <h2 class="conteudo__titulo">CSS inline, interno e externo</h2>
-            
-            <span class="artigo__tag artigo__tag--css-basico">CSS BÁSICO</span>
+            <h2 class="conteudo__titulo">Componentes em Angular</h2>
+            <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
             
             <article>
-                <p class="conteudo__texto">O <abbr title="Cascading Style Sheets">CSS</abbr> é uma linguagem de estilo por meio da qual documentos em HTML ou XML tem sua apresentação para o usuário descrita. Existem 3 formas de adicionar a estilização à um documento HTML: de forma inline, interna ou externa.</p>
-                   
-            <p class="conteudo__texto">No CSS inline, a estilização a ser aplicada é descrita dentro da própria tag HTML que será estilizada, dentro do documento HTML, por meio do atributo <code>style</code>.</p>
+                <p class="conteudo__texto">Os componentes são os blocos básicos da construção de interface em Frameworks Front-End. Sua utilização faz com que se tenham blocos de código reutilizáveis, tornando o HTML principal mais conciso e de fácil leitura, além de encapsular a complexidade do componente, facilitando sua manutenção e modularizar a aplicação, auxiliando a padronização do desenvolvimento. O Angular, tendo uma arquitetura baseada em componentes, utiliza desta conceito para estruturar e organizar aplicações.</p>
 
-            <figure>
-                <img src="../images/css-inline.png" alt="Linha de código CSS que reduz o comprimento de uma tag hr para 50% do comprimento da tag pai">
-                <figcaption>O atributo <code>style</code> na tag <code>hr</code> atribui uma estilização à tag, neste caso, de reduzir seu comprimento para 50% do comprimento da tag pai.</figcaption>
-            </figure>    
-    
-            <p class="conteudo__texto">No CSS interno, a estilização a ser aplicada é descrita dentro de uma tag <code>style</code>, posicionada entre as tags <code>head</code> e <code>body</code> do documento HTML. Para identificação das tags nas quais cada estilo será aplicado, são utilizados os seletores, classes ou ids utilizados no código HTML.</p>
-            
-            <figure>
-                <img src="../images/css-interno.png" alt="Bloco de código css que altera o peso da fonte de títulos em lista de descrições para negrito.">
-                <figcaption>No bloco de código inserido dentro da tag <code>style</code>, o peso da fonte de um título em lista de descrições é alterado para negrito.</figcaption>
-            </figure> 
-            
-            <p class="conteudo__texto">No CSS externo, a estilização a ser aplicada é descrita dentro de um documento com extensão <code>.css</code>, que fica à parte do documento HTML. Já que a descrição da estilização não fica inserida no documento HTML, é necessário que os documentos <code>.html</code> e <code>.css</code> sejam relacionados por meio de uma tag <code>link</code>, a ser inclusa dentro da tag <code>head</code> do documento HTML. Para identificação das tags a serem estilizadas, assim como no CSS interno, são utilizados seletores, classes e ids.</p>
-            
-            <figure>
-                <img src="../images/link-css-externo.png" alt="Tag link com a referenciação para o documento .css">
-                <figcaption>A tag <code>link</code> é a responsável por indicar o relacionamento entre uma folha de estilo e um documento html.</figcaption>
-            </figure>
-            
-            <p class="conteudo__texto">Atualmente, a melhor prática é utilizar o CSS externo, visto que mantém o código organizado para cada função (marcação e estilização) e permite a reutilização de código, em que uma folha de estilo (documento <code>.css</code>) pode ser aplicado para vários documentos HTML. A prática do CSS externo também traz vantagens para a manutenção do código, pois, ao necessitar de uma alteração, esta será feita em apenas um ponto do código, e não em vários, como aconteceria no CSS inline e no CSS interno.</p>
+                <p class="conteudo__texto">Em Angular, um componente é composto de 4 partes principais. São elas:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>Seletor:</span> seria o "nome" do componente, ou seja, a forma como ele será instanciado no documento HTML principal.</li>
+                    <li><span>Template:</span> seria a estrutura HTML do componente. Esta estrutura pode ser repassada de forma inline, com a propriedade <code>template</code> ou repassando um arquivo HTML do componente, com a propriedade <code>templateUrl</code>.</li>
+                    <li><span>Folha de estilo:</span> seria o código CSS (ou SCSS) de estilização da estrutura que foi repassada no template. Da mesma forma que o template, pode ser passado de forma inline. Em geral, se repassa um ou mais arquivos com a extensão escolhida (<code>.css</code> ou <code>.scss</code>) dentro de duplo colchetes, como um array (<code>[]</code>), como valor da propriedade <code>styleUrls</code>.</li>
+                    <li><span>Classe:</span> onde são definidas as propriedades e comportamentos do componente.</li>
+                </ul>
+
+                <p class="conteudo__texto">Quando uma aplicação Angular é inicializada, um componente principal chamado <code>app-root</code>, a "raiz" da aplicação, é criado. Todos os demais componentes irão ser componentes descendentes deste componente principal. Para criar um novo componente, o Angular possui o comando <code>ng generate component nome-componente</code> em que nome-componente é um nome arbitrário. É possível, da mesma forma, utilizar o atalho <code>ng g c nome-componente</code>. Por padrão, quando este comando é utilizado, é criada uma pasta com o nome do componente indicado contendo 4 arquivos:</p>
+
+                <ul class="conteudo__texto">
+                    <li><span>nome-componente.component.ts</span>, o arquivo do componente com a extensão da linguagem TypeScript.</li>
+                    <li><span>nome-componente.component.html</span>, o arquivo de template HTML do componente que utiliza uma sintaxe extendida, suportando diretivas do Angular.</li>
+                    <li><span>nome-componente.component.css</span>, o arquivo de estilização do componente.</li>
+                    <li><span>nome-componente.component.spec.ts</span>, o arquivo de especificações de testes do componente.</li>
+                </ul>
+
+                <figure> 
+                    <img src="../images/angular-pasta-componente.png" alt="Imagem com uma pasta de componente Angular e os 4 arquivos criados em sua inicialização">
+                    <figcaption>Pasta criada na inicialização de um componente chamado <code>primeiro-componente</code>.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">No arquivo do componente, desenvolvido em TypeScript, é possível conectar todas as outras partes principais do componente de modo a definí-lo por completo. Sua estrutura inicia com a importação do pacote <code>Component</code> do Angular, além de quaisquer outras funcionalidades a serem utilizadas; segue com o decorator <code>@Component</code> onde serão inseridos o seletor, o template e a folha de estilo e finaliza com uma classe que irá conter suas propriedades e comportamentos. Dentro desta classe, temos como padrão uma função construtora e o método <code>ngOnInit</code>, que contém o código que é aplicado quando o componente é inicializado.</p>
+
+                <figure>
+                    <img src="../images/angular-componente.png" alt="Código em TypeScript definindo um componente chamado primeiro-componente">
+                    <figcaption>Estrutura do arquivo do componente <code>primeiro-componente</code>, em TypeScript.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Além de criada a pasta com os arquivos mencionados anteriormente, o módulo principal da aplicação é atualizado, importando o componente e o declarando, de modo a possibilitar a utilização deste componente dentro da estrutura prncipal.</p>
+
+                <figure>
+                    <img src="../images/angular-importacao-componente.png" alt="Imagem de código Typescript definindo um módulo e importando o componente primeiro-componente para possibilitar sua utilização">
+                    <figcaption>Importação do <code>primeiro-componente</code> em um módulo.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Portanto, com sua inicialização, definição e importação, é possível utilizar componentes para suas funções principais na aplicação: servir como blocos para a construção da interface e controlar a sua view, definida pelo template, que renderiza o que o usuário final irá visualizar e com o que ele irá interagir.</p>
             </article>
-            
+    
             <div class="artigo__info">
                 <div class="artigo__info__autor">
                     <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
@@ -84,11 +99,11 @@
                     </div>
                 </div>
                 <div class="artigo__data">
-                    <p>20 Fev</p>
+                    <p>07 Mai</p>
                 </div>
             </div>
         </section>
-        
+
         <section aria-label="Seção de Formulário" class="artigo__formulario">    
             <h2>Gostou do que leu? Deixe um comentário</h2>
             <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>

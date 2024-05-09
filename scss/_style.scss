@@ -44,6 +44,10 @@ blockquote {
     background-color: corTag("javascript");
 }
 
+.artigo__tag--angular {
+    background-color: corTag("angular");
+}
+
 .navegacao {
     @include flex(center);
     gap: 3rem;
