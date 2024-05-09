@@ -583,7 +583,16 @@ article li, article p, article blockquote, article a li, article a p, article a 
   text-transform: initial;
   color: #FFFFFF;
 }
-.conteudo__navegacao ol li:hover, .conteudo__navegacao ol li a:hover {
+.conteudo__navegacao ol li:hover {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  line-height: 2.928rem;
+  font-weight: 600;
+  text-align: left;
+  text-transform: initial;
+  color: #FFFFFF;
+}
+.conteudo__navegacao ol li a:hover {
   font-family: "Montserrat", sans-serif;
   font-size: 2.4rem;
   line-height: 2.928rem;

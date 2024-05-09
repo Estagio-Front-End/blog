@@ -164,7 +164,11 @@ article, article a {
             @include headline-primary-medium(24);
         }
 
-        li:hover, li a:hover {
+        li:hover {
+            @include headline-primary-semibold(24);
+        }
+
+        li a:hover {
             @include headline-primary-semibold(24);
             text-decoration: underline;
             cursor: pointer;
