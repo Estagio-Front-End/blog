@@ -6,11 +6,12 @@
     font-family: $fonte-tags;
     border-radius: 0.5rem;
     transition: all 0.5s ease-in-out;
+    border: 2px solid $cor-neutra-1;
+    color: $cor-neutra-1;
     
     &:hover{
         cursor: pointer;
         background-color: #b09bc1;
-        color: #fff;
         border: 2px solid #b09bc1;
         @include transform(scale(1.2));
     }
@@ -29,12 +30,16 @@ label {
     font-family: $fonte-tags;
     border-radius: 0.5rem;
     border: 2px solid #000000;
-    background-color: #e7e6e7;
+    background-color: #a5a5a5;
 
     &:focus {
         background-color: #ffffff;
         color: #ff0000;
-        }
+    }
+
+    &::placeholder {
+        color: $cor-primaria;
+    }
 
     @include responsividade("mobile") {
         width: 100%;
