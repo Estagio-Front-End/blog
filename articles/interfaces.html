@@ -50,7 +50,7 @@
             <article>
                 <p class="conteudo__texto">Interfaces em Angular são como contratos que firmam a estrutura de um objeto, suas propriedades e métodos juntamente com seus tipos, mas não fornece uma implementação. Nos casos de instanciação de um objeto com o tipo da interface ou extensão da interface por uma classe, é que serão definidos os valores de propriedades e implementações de métodos. As interfaces deixam o código mais legível, mais consistente e facilitam a manutenção de partes da aplicação nas quais são utilizadas, visto que o contrato define quais e os tipos de dados esperados como input ou resposta dentro de uma funcionalidade.</p>
 
-                <p class="conteudo__texto">Para criar uma interface em Angular, basta utilizar o comando <code>ng generate interface nome-interface</code> em que nome-interface é um nome arbitrário. Existe, também, o atalho <code>ng g i nome-interface</code>. Com a utilização deste comando, é criado um arquivo com a extensão de TypeScript (<code>.ts</code>) quase vazio, exceto pela estrutura inicial de uma interface, já sendo exportada.</p>
+                <p class="conteudo__texto">Para criar uma interface em Angular, basta utilizar o comando <code>ng generate interface nome-interface</code> em que nome-interface é um nome arbitrário, por convenção, iniciado com I (de interface), para diferenciação. Existe, também, o atalho <code>ng g i nome-interface</code>. Com a utilização deste comando, é criado um arquivo com a extensão de TypeScript (<code>.ts</code>) quase vazio, exceto pela estrutura inicial de uma interface, já sendo exportada.</p>
 
                 <!-- Arquivo na pasta de interface -->
                 <div>
@@ -70,7 +70,7 @@
                     </figure>
                 </div>
 
-                <p class="conteudo__texto">Propriedades com o símbolo <code>?</code> são propriedades opcionais dentro do contrato estabelecido pela interface. É importante frisar que, propriedades que não estiverem dentro do contrato e forem utilizadas gerarão erro em tempo de compilação, assim como propriedades que estiverem dentro do contrato e não forem utilizadas.</p>
+                <p class="conteudo__texto">Propriedades com o símbolo <code>?</code> são propriedades opcionais dentro do contrato estabelecido pela interface. É importante frisar que, propriedades que não estiverem dentro do contrato e forem utilizadas gerarão erro em tempo de compilação, assim como propriedades que estiverem dentro do contrato e não forem utilizadas. Propriedades com a palavra reservada <code>readonly</code> não poderão ser modificadas após instanciação da interface.</p>
 
                 <p class="conteudo__texto">Para utilizar a interface criada, é necessário importá-la no componente que se deseja utilizá-la e aplicá-la.</p>
 
