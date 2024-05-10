@@ -48,7 +48,11 @@
             <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
             
             <article>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Módulos em Angular são uma ferramenta de encapsulamento de código baseado em unidades coesas para cada função dentro da aplicação. Os módulos atuam como containers de componentes, diretivas e serviços, entre outros blocos de código, que atuam em um mesmo objetivo e/ou funcionalidade.</p>
+
+                <p class="conteudo__texto">Este conceito auxilia na modularização da aplicação, gerando containers funcionais e facilmente reutilizáveis, além de facilitar a manutenção do código, tornando a aplicação mais facilmente testável e escalável.</p>
+
+                <p class="conteudo__texto">Para criar um módulo, basta utilizar o comando <code>ng generate module nome-modulo</code>, em que nome-modulo é um nome arbitrário. Este comando gerará um arquivo com a extensão de TypeScript com o nome nome-modulo.module.ts. Até o Angular v16, aplicações criadas com o comando <code>ng new</code> geravam um arquivo app.module.ts por padrão, em que se poderia importar todos os componentes, diretivas e serviços, gerando um container que encapsula a aplicação como um todo. A partir do Angular v17, o padrão se tornou os componentes ditos "standalones", que não possuem módulos atrelados e podem ser utilizados na aplicação ou aninhados em outros componentes por meio de importação direta na propriedade imports dos componentes.</p>
             </article>
     
             <div class="artigo__info">
