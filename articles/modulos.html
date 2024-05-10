@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Angular</title>
+    <title>Módulos em Angular</title>
 </head>
 <body>
     <header>
@@ -41,58 +41,56 @@
             <img src="../images/search-outline.png" alt="Imagem de uma lupa">
         </div>
     </header>
-
+   
     <main>
-        <h2 class="titulo">Angular</h2>
-
-        <section class="listagem-artigos">
-            <article class="listagem-artigos__card">
-                <a href="../articles/componentes.html">
-                    <img src="https://dotnettutorials.net/wp-content/uploads/2018/08/Angular-Components.png" alt="Imagem com o código básico de um componente em Angular e as partes de importação, adição de metadados e criação de classe identificadas.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Componentes em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>07 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Módulos em Angular</h2>
+            <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
             
-            <article class="listagem-artigos__card">
-                <a href="../articles/modulos.html">
-                    <img src="https://miro.medium.com/v2/resize:fit:1171/1*MvxlnyUiWSvXvb_2FS3YOA.png" alt="Imagem com fundo branco e uma caixa quadrada escrito Modules no centro com setas indicando os itens que podem representar imports, exports, providers e bootstraps/declares.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Módulos em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>10 Mai</p>
-                        </div>
+            <article>
+                <p class="conteudo__texto"></p>
+            </article>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
                     </div>
-                </a>
-            </article>  
+                </div>
+                <div class="artigo__data">
+                    <p>10 Mai</p>
+                </div>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
         </section>
     </main>
     <footer>
@@ -169,4 +167,5 @@
     </footer>
 </body>
 <script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
 </html>
