@@ -53,6 +53,37 @@
                 <p class="conteudo__texto">Este conceito auxilia na modularização da aplicação, gerando containers funcionais e facilmente reutilizáveis, além de facilitar a manutenção do código, tornando a aplicação mais facilmente testável e escalável.</p>
 
                 <p class="conteudo__texto">Para criar um módulo, basta utilizar o comando <code>ng generate module nome-modulo</code>, em que nome-modulo é um nome arbitrário. Este comando gerará um arquivo com a extensão de TypeScript com o nome nome-modulo.module.ts. Até o Angular v16, aplicações criadas com o comando <code>ng new</code> geravam um arquivo app.module.ts por padrão, em que se poderia importar todos os componentes, diretivas e serviços, gerando um container que encapsula a aplicação como um todo. A partir do Angular v17, o padrão se tornou os componentes ditos "standalones", que não possuem módulos atrelados e podem ser utilizados na aplicação ou aninhados em outros componentes por meio de importação direta na propriedade imports dos componentes.</p>
+
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <p class="conteudo__texto">A estrutura inicial de um módulo consiste em suas importações seguido de um decorator <code>@NgModule</code> com as propriedades do módulo e uma classe exportando este módulo.</p>
+
+                <!-- Estrutura de um módulo -->
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <p class="conteudo__texto">As propriedades mais importantes do decorador são a declarations, que é um array com os componentes e diretivas utilizados dentro daquele módulo; o imports, um array com quaisquer outros módulos utilizados naquele módulo; o providers, um array com os services utilizados naquele módulo e o bootstrap, que é o componente principal da aplicação (em geral, o AppComponent criado por padrão pelo Angular CLI).</p>
+
+                <p class="conteudo__texto">Caso se queira reutilizar os componentes de um módulo em outro componente que não faça parte da descendência original dele, é possível exportar o componente com a propriedade exports no decorator <code>@NgModules</code> e importar o módulo original no módulo do componente em que se quer utilizar o componente original.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="" alt="">
+                        <figcaption></figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="" alt="">
+                        <figcaption></figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Existem, também, módulos nativos do Angular que podem ser importados para utilizações específicas, como BrowserModule, para renderização da aplicação em um navegador; o RouterModule, para utilização em criação de rotas; o HttpClientModule, para comunicação com o servidor por meio do protocolo HTTP; o CommonModule, para utilizar diretivas como <code>NgIf</code> e <code>NgFor</code>; o ReactiveFormsModule, para construção de formulários reativos, entre outros.</p>
             </article>
     
             <div class="artigo__info">
