@@ -497,6 +497,7 @@ article li, article p, article blockquote, article a li, article a p, article a 
 @media screen and (width >= 1366px) {
   .imagem__principal img {
     grid-column: 3/span 8;
+    max-height: 42rem;
   }
 }
 

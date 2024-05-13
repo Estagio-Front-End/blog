@@ -112,6 +112,7 @@ article, article a {
 
         @include responsividade ("HD") {
             grid-column: 3 / span 8;
+            max-height: 42rem;
         }
     }
 }
