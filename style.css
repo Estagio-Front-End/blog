@@ -1812,8 +1812,9 @@ header {
   top: 0;
   z-index: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 8rem;
   background-color: rgba(18, 19, 38, 0.5);
 }
 header a[href="https://www.zappts.com.br/contato/"] {
@@ -1824,7 +1825,6 @@ header a[href="https://www.zappts.com.br/contato/"] {
   display: flex;
   justify-content: center;
   align-items: normal;
-  gap: 3rem;
 }
 .navegacao li {
   border-radius: 1.2rem;
@@ -1837,6 +1837,7 @@ header a[href="https://www.zappts.com.br/contato/"] {
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
+  letter-spacing: 0.05;
   display: inline-block;
   padding: 1.6rem;
 }
@@ -1857,67 +1858,33 @@ header a[href="https://www.zappts.com.br/contato/"] {
   }
 }
 
-.navegacao--responsiva {
-  display: none;
-  position: relative;
+.idiomas {
+  padding: 1.6rem;
+  border-radius: 1.2rem;
 }
-@media screen and (max-width: 767px) {
-  .navegacao--responsiva {
-    display: block;
-  }
+.idiomas ul {
+  display: flex;
+  justify-content: center;
+  align-items: normal;
+  flex-direction: column;
+  gap: 1.2rem;
 }
-@media screen and (768px <= width <= 1023px) {
-  .navegacao--responsiva {
-    display: block;
-  }
+.idiomas ul li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.708rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1.2rem;
+  letter-spacing: -0.03;
 }
-
-.navegacao__botao--responsiva {
-  align-self: center;
-  border: none;
-}
-
-.navegacao__imagem--responsiva {
-  height: 4rem;
-  width: 4rem;
-  border-radius: 0;
-}
-@media screen and (768px <= width <= 1023px) {
-  .navegacao__imagem--responsiva {
-    max-width: 100%;
-  }
-}
-
-.navegacao__listagem--responsiva {
-  display: none;
-  position: absolute;
-  top: 6rem;
-}
-.navegacao__listagem--responsiva a {
-  display: block;
-  padding: 1.5rem 2rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.pesquisa {
-  position: relative;
-}
-.pesquisa img {
-  position: absolute;
-  right: 5%;
-  top: 0.5rem;
-}
-
-.pesquisa__item {
-  padding: 0.5rem 1rem;
-  border: 0.2rem solid #5b5b5b;
-  border-radius: 0.5rem;
-}
-@media screen and (max-width: 767px) {
-  .pesquisa__item {
-    width: 30vw;
-  }
+.idiomas:hover {
+  background-color: #1F2041;
 }
 
 /*# sourceMappingURL=style.css.map */

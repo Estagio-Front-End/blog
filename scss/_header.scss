@@ -3,7 +3,8 @@ header {
     @include sticky();
     top: 0;
     z-index: 1;
-    @include flex(space-between, center);
+    @include flex(center, center);
+    gap: $espacamento-20;
     background-color: rgba(18, 19, 38, 0.5);
 
     a[href="https://www.zappts.com.br/contato/"] {
@@ -13,12 +14,12 @@ header {
 
 .navegacao {
     @include flex(center);
-    gap: 3rem;
 
     li {
         border-radius: $espacamento-3;
         a {
             @include headline-primary-regular(14, center, uppercase);
+            letter-spacing: 0.05;
             display: inline-block;
             padding: $espacamento-4;
         }
@@ -40,63 +41,24 @@ header {
     }
 }
 
-.navegacao--responsiva{
-    display: none;
-    position: relative;
-
-    @include responsividade("mobile"){
-        display: block;
+.idiomas {
+    padding: $espacamento-4;
+    border-radius: $espacamento-3;
+    
+    ul {
+        @include flex(center);
+        flex-direction: column;
+        gap: $espacamento-3;
     }
 
-    @include responsividade("tablet"){
-        display: block;
+    ul li {
+        @include headline-primary-bold(14, left, uppercase);
+        @include flex(left, center);
+        gap: $espacamento-3;
+        letter-spacing: -0.03;
     }
-}
 
-.navegacao__botao--responsiva {
-    align-self: center;
-    border: none;
-}
-
-.navegacao__imagem--responsiva {
-    height: 4rem;
-    width: 4rem;
-    border-radius: 0;
-
-    @include responsividade ("tablet"){
-        max-width: 100%;
-    }
-}
-
-.navegacao__listagem--responsiva {
-    display: none;
-    position: absolute;
-    top: 6rem;
-
-    a {
-        display: block;
-        padding: 1.5rem 2rem;
-        font-size: 1.6rem;
-        font-weight: 600;
-    }
-}
-
-.pesquisa {
-    position: relative;
-
-    img {
-        position: absolute;
-        right: 5%;
-        top: 0.5rem;
-    }
-}
-
-.pesquisa__item {
-    padding: 0.5rem 1rem;
-    border: 0.2rem solid $cor-fonte-sec;
-    border-radius: 0.5rem;
-
-    @include responsividade("mobile") {
-        width: 30vw;
+    &:hover{
+        background-color: $cor-primaria;
     }
 }
