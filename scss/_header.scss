@@ -1,0 +1,102 @@
+header {
+    padding: $espacamento-6 $espacamento-10;
+    @include sticky();
+    top: 0;
+    z-index: 1;
+    @include flex(space-between, center);
+    background: rgba(18, 19, 38, 0.5);
+
+    a[href="https://www.zappts.com.br/contato/"] {
+        color: $cor-primaria;
+    }
+}
+
+.navegacao {
+    @include flex(center);
+    gap: 3rem;
+
+    li {
+        border-radius: $espacamento-3;
+        a {
+            @include headline-primary-regular(14, center, uppercase);
+            display: inline-block;
+            padding: $espacamento-4;
+        }
+        
+        &:hover {
+            background-color: $cor-primaria;
+            a {   
+                font-weight: 800;
+            }
+        }
+    }
+
+    @include responsividade("mobile"){
+        display: none;
+    }
+
+    @include responsividade("tablet"){
+        display: none;
+    }
+}
+
+.navegacao--responsiva{
+    display: none;
+    position: relative;
+
+    @include responsividade("mobile"){
+        display: block;
+    }
+
+    @include responsividade("tablet"){
+        display: block;
+    }
+}
+
+.navegacao__botao--responsiva {
+    align-self: center;
+    border: none;
+}
+
+.navegacao__imagem--responsiva {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 0;
+
+    @include responsividade ("tablet"){
+        max-width: 100%;
+    }
+}
+
+.navegacao__listagem--responsiva {
+    display: none;
+    position: absolute;
+    top: 6rem;
+
+    a {
+        display: block;
+        padding: 1.5rem 2rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}
+
+.pesquisa {
+    position: relative;
+
+    img {
+        position: absolute;
+        right: 5%;
+        top: 0.5rem;
+    }
+}
+
+.pesquisa__item {
+    padding: 0.5rem 1rem;
+    border: 0.2rem solid $cor-fonte-sec;
+    border-radius: 0.5rem;
+
+    @include responsividade("mobile") {
+        width: 30vw;
+    }
+}
