@@ -1814,7 +1814,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(18, 19, 38, 0.5);
+  background-color: rgba(18, 19, 38, 0.5);
 }
 header a[href="https://www.zappts.com.br/contato/"] {
   color: #1F2041;

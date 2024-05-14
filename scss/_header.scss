@@ -4,7 +4,7 @@ header {
     top: 0;
     z-index: 1;
     @include flex(space-between, center);
-    background: rgba(18, 19, 38, 0.5);
+    background-color: rgba(18, 19, 38, 0.5);
 
     a[href="https://www.zappts.com.br/contato/"] {
         color: $cor-primaria;
