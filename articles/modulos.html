@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Módulos em Angular</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+                <li><a href="../pages/angular.html">Angular</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                    <a href="../pages/angular.html">Angular</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+   
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Módulos em Angular</h2>
+            <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
+            
+            <article>
+                <p class="conteudo__texto">Módulos em Angular são uma ferramenta de encapsulamento de código baseado em unidades coesas para cada função dentro da aplicação. Os módulos atuam como containers de componentes, diretivas e serviços, entre outros blocos de código, que atuam em um mesmo objetivo e/ou funcionalidade.</p>
+
+                <p class="conteudo__texto">Este conceito auxilia na modularização da aplicação, gerando containers funcionais e facilmente reutilizáveis, além de facilitar a manutenção do código, tornando a aplicação mais facilmente testável e escalável.</p>
+
+                <p class="conteudo__texto">Para criar um módulo, basta utilizar o comando <code>ng generate module nome-modulo</code>, em que nome-modulo é um nome arbitrário. Este comando gerará um arquivo com a extensão de TypeScript com o nome nome-modulo.module.ts. Até o Angular v16, aplicações criadas com o comando <code>ng new</code> geravam um arquivo app.module.ts por padrão, em que se poderia importar todos os componentes, diretivas e serviços, gerando um container que encapsula a aplicação como um todo. A partir do Angular v17, o padrão se tornou os componentes ditos "standalones", que não possuem módulos atrelados e podem ser utilizados na aplicação ou aninhados em outros componentes por meio de importação direta na propriedade imports dos componentes.</p>
+
+                <figure>
+                    <img src="../images/modulo-arquivo.png" alt="Imagem com um ícone do Angular seguido do nome do arquivo de módulo, funcionalidade.module.ts">
+                    <figcaption>Arquivo de módulo em Angular.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">A estrutura inicial de um módulo consiste em suas importações seguido de um decorator <code>@NgModule</code> com as propriedades do módulo e uma classe exportando este módulo.</p>
+
+                <figure>
+                    <img src="../images/modulo-estrutura.png" alt="Imagem com código escrito em TypeScript juntamente com a sintaxe de Angular para a criação de um módulo com a estrutura inicial mencionada no texto anterior.">
+                    <figcaption>Estrutura inicial de um módulo em Angular.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">As propriedades mais importantes do decorador são a declarations, que é um array com os componentes e diretivas utilizados dentro daquele módulo; o imports, um array com quaisquer outros módulos utilizados naquele módulo; o providers, um array com os services utilizados naquele módulo e o bootstrap, que é o componente principal da aplicação (em geral, o AppComponent criado por padrão pelo Angular CLI).</p>
+
+                <p class="conteudo__texto">Caso se queira reutilizar os componentes de um módulo em outro componente que não faça parte da descendência original dele, é possível exportar o componente com a propriedade exports no decorator <code>@NgModules</code> e importar o módulo original no módulo do componente em que se quer utilizar o componente original.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/modulo-export.png" alt="Imagem com código escrito em TypeScript juntamente com a sintaxe de Angular criando um módulo chamado ProductsModule que exporta o componente ProductItemComponent">
+                        <figcaption>Export de um componente de um módulo para utilização em outro local da aplicação.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/modulo-import.png" alt="Imagem com código escrito em TypeScript juntamente com a sintaxe de Angular importando o ProductsModule no AppModule.">
+                        <figcaption>Import do módulo que exporta o componente desejado em outro local da aplicação, para futuro uso do componente.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Nas imagens anteriores, é possível ver o trâmite de export/import entre módulos para utilização de um componente fora do escopo do seu módulo. Desta forma: </p> 
+                <ul class="conteudo__texto">
+                    <li>- Criando o ProductsModule</li>
+                    <li>- Declarando e exportando o ProductItemComponent no decorator <code>@NgModule</code> do ProductsModule</li>
+                    <li>- Importando o ProductsModule, por meio do import no arquivo e no decorator <code>@NgModule</code>, no AppModule</li>
+                    <li>- O AppModule tendo o AppComponent declarado no seu decorator <code>@NgModule</code></li>
+                </ul> 
+                <p class="conteudo__texto">é possível utilizar o ProductItemComponent dentro do AppComponent.</p>
+
+                <p class="conteudo__texto">Existem, também, módulos nativos do Angular que podem ser importados para utilizações específicas, como o BrowserModule, para renderização da aplicação em um navegador; o RouterModule, para criação de rotas da aplicação; o HttpClientModule, para comunicação com o servidor por meio do protocolo HTTP; o CommonModule, para utilizar diretivas como <code>NgIf</code> e <code>NgFor</code>; o ReactiveFormsModule, para construção de formulários reativos, entre outros.</p>
+
+                <p class="conteudo__texto">Portanto, criando, importando e utilizando módulos, é possível deixar a aplicação mais concisa e organizada na troca de informações e componentes entre funcionalidades, além de facilitar a manutenção e os testes por toda a aplicação, aumentando sua escalabilidade.</p>
+            </article>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>10 Mai</p>
+                </div>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
+</html>
