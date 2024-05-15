@@ -47,52 +47,54 @@
             <h2 class="conteudo__titulo">Ternário e Switch em Javascript</h2>
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
-            <h3>Operador Ternário</h3>
-            <p class="conteudo__texto">O operador ternário é uma estrutura simplificada de um bloco <code>if</code>/<code>else</code> com o mesmo resultado, porém sintaxe menor. A sintaxe do operador ternário é <code>(condição) ? valor_se_verdadeiro : valor_se_falso</code>. É como se a própria sintaxe perguntasse "a condição é verdadeira?" e a resposta é sim ou não, em que o operador <code>:</code> atua como o "ou". Se a condição retorna true, o primeiro valor é executado, se retorna false, o segundo valor é executado.</p>
+            <article>
+                <h3>Operador Ternário</h3>
+                <p class="conteudo__texto">O operador ternário é uma estrutura simplificada de um bloco <code>if</code>/<code>else</code> com o mesmo resultado, porém sintaxe menor. A sintaxe do operador ternário é <code>(condição) ? valor_se_verdadeiro : valor_se_falso</code>. É como se a própria sintaxe perguntasse "a condição é verdadeira?" e a resposta é sim ou não, em que o operador <code>:</code> atua como o "ou". Se a condição retorna true, o primeiro valor é executado, se retorna false, o segundo valor é executado.</p>
 
-            <p class="conteudo__texto">Este operador é bastante utilizado quando é necessário condicionar o valor de uma variável, para realizar renderizações condicionais ou apenas deixar o código mais conciso.</p>
-            
-            <p class="conteudo__texto">É possível aninhar operadores ternários, tendo como <code>valor_se_falso</code> uma nova estrutura de ternário com uma nova condição, seguindo a estrutura <code>(condição1) ? valor_se_verdadeiro : (condição2) ? valor_se_verdadeiro : valor_se_falso</code>. Da mesma forma, é possível realizar mais de uma operação em cada bloco de <code>true</code> ou <code>false</code>, separando as operações por vírgulas como em <code>(condição) ? operação1, operação2 : operação3, operação4</code>.</p>
-
-            <p class="conteudo__texto">Teste aqui a ação do operador ternário, faça uma seleção (ou não) nas caixas e clique no botão:</p>
-            <div class="conteudo__demonstracao">
-                <input type="checkbox" id="primeira-caixa">
-                <label for="primeira-caixa">Primeira caixa</label>
-
-                <input type="checkbox" id="segunda-caixa">
-                <label for="segunda-caixa">Segunda caixa</label> 
-
-                <button class="conteudo__demonstracao__botao" id="teste-ternario">Clique aqui</button>
-            </div>
-
-            <div id="resultado-ternario"></div>
-
-            <h3>Switch</h3>
-
-            <p class="conteudo__texto">O switch é uma estrutura de condicional muito utilizada para evitar muitas utilizações suscessivas de blocos <code>if</code>/<code>else if</code>/<code>else</code>, deixando o código mais conciso. Ele é utilizado quando uma expressão necessita ter seu valor avalido e possui resultados diferentes de acordo com seu valor.</p>
-
-            <p class="conteudo__texto">A sua estrutura básica é:</p>
-            <p class="conteudo__texto"><code>switch (condição) {<br>&nbsp; case "opção1":<br>&nbsp; //bloco de código a ser executado caso a opção1 seja verdadeira <br>&nbsp; break; <br>&nbsp; case "opção2":<br>&nbsp; //bloco de código a ser executado caso a opção2 seja verdadeira <br>&nbsp; break; <br>&nbsp; ... <br>&nbsp; default: <br>&nbsp; //bloco de código a ser executado caso nenhuma das opções seja verdadeira. <br>&nbsp; break; <br>}</code></p>
-
-            <p class="conteudo__texto">Esta estrutura possui algumas palavras reservadas como o <code>switch</code>, que inicia a estrutura; o <code>case</code> que indica um possível valor da condição; o <code>break</code>, que faz com que demais opções não sejam testadas após o programa encontrar a verdadeira e o <code>default</code> que é um case particular em que nenhum dos cases testados retornaram verdadeiros, atuando como se fosse um <code>else</code>.</p>
-
-            <p class="conteudo__texto">Teste aqui a ação do switch, escolhendo uma das cores:</p>
-
-            <div class="conteudo__demonstracao">
-                <input type="radio" id="cor1" name="cores">
-                <label for="cor1"><div style="height: 2rem; width: 2rem; background-color: yellowgreen;"></div></label>
+                <p class="conteudo__texto">Este operador é bastante utilizado quando é necessário condicionar o valor de uma variável, para realizar renderizações condicionais ou apenas deixar o código mais conciso.</p>
                 
-                <input type="radio" id="cor2" name="cores">
-                <label for="cor2"><div style="height: 2rem; width: 2rem; background-color: aqua;"></div></label>
-                
-                <input type="radio" id="cor3" name="cores">
-                <label for="cor3"><div style="height: 2rem; width: 2rem; background-color: pink;"></div></label>
-                
-                <input type="radio" id="cor4" name="cores">
-                <label for="cor4"><div style="height: 2rem; width: 2rem; background-color: orangered;"></div></label>
-            </div>
+                <p class="conteudo__texto">É possível aninhar operadores ternários, tendo como <code>valor_se_falso</code> uma nova estrutura de ternário com uma nova condição, seguindo a estrutura <code>(condição1) ? valor_se_verdadeiro : (condição2) ? valor_se_verdadeiro : valor_se_falso</code>. Da mesma forma, é possível realizar mais de uma operação em cada bloco de <code>true</code> ou <code>false</code>, separando as operações por vírgulas como em <code>(condição) ? operação1, operação2 : operação3, operação4</code>.</p>
 
-            <div id="resultado-switch"></div>
+                <p class="conteudo__texto">Teste aqui a ação do operador ternário, faça uma seleção (ou não) nas caixas e clique no botão:</p>
+                <div class="conteudo__demonstracao">
+                    <input type="checkbox" id="primeira-caixa">
+                    <label for="primeira-caixa">Primeira caixa</label>
+
+                    <input type="checkbox" id="segunda-caixa">
+                    <label for="segunda-caixa">Segunda caixa</label> 
+
+                    <button class="conteudo__demonstracao__botao" id="teste-ternario">Clique aqui</button>
+                </div>
+
+                <div id="resultado-ternario"></div>
+
+                <h3>Switch</h3>
+
+                <p class="conteudo__texto">O switch é uma estrutura de condicional muito utilizada para evitar muitas utilizações suscessivas de blocos <code>if</code>/<code>else if</code>/<code>else</code>, deixando o código mais conciso. Ele é utilizado quando uma expressão necessita ter seu valor avalido e possui resultados diferentes de acordo com seu valor.</p>
+
+                <p class="conteudo__texto">A sua estrutura básica é:</p>
+                <p class="conteudo__texto"><code>switch (condição) {<br>&nbsp; case "opção1":<br>&nbsp; //bloco de código a ser executado caso a opção1 seja verdadeira <br>&nbsp; break; <br>&nbsp; case "opção2":<br>&nbsp; //bloco de código a ser executado caso a opção2 seja verdadeira <br>&nbsp; break; <br>&nbsp; ... <br>&nbsp; default: <br>&nbsp; //bloco de código a ser executado caso nenhuma das opções seja verdadeira. <br>&nbsp; break; <br>}</code></p>
+
+                <p class="conteudo__texto">Esta estrutura possui algumas palavras reservadas como o <code>switch</code>, que inicia a estrutura; o <code>case</code> que indica um possível valor da condição; o <code>break</code>, que faz com que demais opções não sejam testadas após o programa encontrar a verdadeira e o <code>default</code> que é um case particular em que nenhum dos cases testados retornaram verdadeiros, atuando como se fosse um <code>else</code>.</p>
+
+                <p class="conteudo__texto">Teste aqui a ação do switch, escolhendo uma das cores:</p>
+
+                <div class="conteudo__demonstracao">
+                    <input type="radio" id="cor1" name="cores">
+                    <label for="cor1"><div style="height: 2rem; width: 2rem; background-color: yellowgreen;"></div></label>
+                    
+                    <input type="radio" id="cor2" name="cores">
+                    <label for="cor2"><div style="height: 2rem; width: 2rem; background-color: aqua;"></div></label>
+                    
+                    <input type="radio" id="cor3" name="cores">
+                    <label for="cor3"><div style="height: 2rem; width: 2rem; background-color: pink;"></div></label>
+                    
+                    <input type="radio" id="cor4" name="cores">
+                    <label for="cor4"><div style="height: 2rem; width: 2rem; background-color: orangered;"></div></label>
+                </div>
+
+                <div id="resultado-switch"></div>
+            </article>
     
             <div class="artigo__info">
                 <div class="artigo__info__autor">

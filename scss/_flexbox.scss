@@ -1,9 +1,11 @@
 .conteudo__demonstracao {
     display: flex;
-    gap: 2rem;
+    gap: $espacamento-5;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: $espacamento-10;
+    @include body-system-regular(16);
 
     .conteudo__demonstracao__item {
         background-color: #4FD1C5;
@@ -16,19 +18,13 @@
             margin-bottom: 0.5rem;
             text-align: center;
         }
-    
-        select {
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            font-family: $fonte-tags;
-        }
     }
 
     .conteudo__demonstracao__flex-direction, .conteudo__demonstracao__justify-content, .conteudo__demonstracao__align-items, .conteudo__demonstracao__align-content, .conteudo__demonstracao__flex-wrap, .conteudo__demonstracao__gap-1, .conteudo__demonstracao__gap-2, .conteudo__demonstracao__align-self, .conteudo__demonstracao__flex-grow, .conteudo__demonstracao__flex-shrink, .conteudo__demonstracao__flex-basis, .conteudo__demonstracao__order {
         width: 10rem;
         height: 10rem;
         display: flex;
-        border: 1px solid $cor-fonte-principal; 
+        border: 1px solid $cor-neutra-1; 
     }
     
     .conteudo__demonstracao__direction--column {
@@ -59,7 +55,7 @@
     .conteudo__demonstracao__flex-grow {
         width: 20rem;
         div {
-            border: 1px solid $cor-fonte-principal;
+            border: 1px solid $cor-neutra-1;
         };
     
         .conteudo__demonstracao__item--2 {
@@ -75,7 +71,7 @@
         width: 20rem;
     
         div {
-            border: 1px solid $cor-fonte-principal;
+            border: 1px solid $cor-neutra-1;
             width: 150px;
         }
     
@@ -93,7 +89,7 @@
         gap: 1rem;
     
         div {
-            border: 1px solid $cor-fonte-principal;
+            border: 1px solid $cor-neutra-1;
         }
     
         .conteudo__demonstracao__item--2 {
@@ -124,9 +120,7 @@
 }
 
 .conteudo__legenda {
-    font-size: 1.4rem;
-    font-weight: 400;
-    text-align: center;
-    color: $cor-fonte-principal;
+    @include body-system-regular(14, center);
+    list-style: none;  
 }
 

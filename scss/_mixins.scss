@@ -20,6 +20,16 @@
     color: $color;   
 }
 
+@mixin headline-primary-medium($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
+    font-family: $fonte-headline;
+    font-size: (($tamanho-fonte-px)/10) + rem;
+    @include line-height($tamanho-fonte-px);  
+    font-weight: 500;
+    text-align: $text-align;
+    text-transform: $text-transform;
+    color: $color;   
+}
+
 @mixin headline-primary-semibold($tamanho-fonte-px, $text-align: left, $text-transform: initial, $color: $cor-neutra-1) {
     font-family: $fonte-headline;
     font-size: (($tamanho-fonte-px)/10) + rem;
