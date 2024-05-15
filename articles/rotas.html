@@ -48,7 +48,55 @@
             <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
             
             <article>
-                
+                <p class="conteudo__texto">Rotas em Angular são a ferramenta que possibilita que o usuário navegue por diferentes páginas da aplicação com mais fluidez, sem constantes recarregamentos da página. Esta ferramenta torna a aplicação uma SPA (Single Page Application), em que se pareiam rotas e componentes, renderizando um componente em específico a depender da rota acessada pelo usuário. As rotas são importantes para aumentar a performance da aplicação, possibilitando a utilização de lazy loading, além de facilitar a renderização com base em permissão com as guardas.</p>
+
+                <p class="conteudo__texto">Quando se cria uma nova aplicação com o Angular CLI, um arquivo para rotas será criado automaticamente: o app.routes.ts ou o app-routing.module.ts, caso a aplicação seja module-based, onde será criada grande parte do código que envolve o roteamento da aplicação.</p>
+
+                <!-- Arquivo rotas -->
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Para a criação das rotas, têm-se alguns passos essenciais: importar rotas no app.config.ts; criar um array de <code>Routes</code>; definir as rotas da aplicação e adicionar as rotas na aplicação. Os dois primeiros passos são feitos automaticamente pelo Angular CLI, restando ao desenvolvedor definir as rotas e componentes dentro do array de <code>Routes</code> e adicioná-las na aplicação. Cada rota é um objeto com duas propriedades: a rota a ser acessada e o componente a ser renderizado.</p>
+
+                <!-- Array routes -->
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <p>Para adicionar na aplicação as rotas definidas, é necessário utilizar o seletor <code>router-outlet</code> onde se deseja renderizar o componente definido em cada rota, além do atributo <code>routerLink</code> em âncoras (substituindo o <code>href</code>) para possibilitar a navegação para o usuário.</p>
+
+                <!-- routeroutlet + routerlink -->
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <h3>Lazy loading</h3>
+                <p class="conteudo__texto"></p>
+                <!-- rotas com lazy loading -->
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <h3>Rota coringa</h3>
+                <p class="conteudo__texto"></p>
+
+                <h3>Permissividade com guards</h3>
+                <p class="conteudo__texto"></p>
+
+                <h3><code>routerLink</code> com parâmetros</h3>
+                <p class="conteudo__texto"></p>
+                <!-- routerlink com parâmetros -->
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Portanto, com as funcionalidades citadas anteriormente, é possível criar uma navegação personalizada para a aplicação com melhor performance e mais segura em termos de permissão de usuários.</p>
             </article>
     
             <div class="artigo__info">
