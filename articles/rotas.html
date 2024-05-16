@@ -50,40 +50,46 @@
             <article>
                 <p class="conteudo__texto">Rotas em Angular são a ferramenta que possibilita que o usuário navegue por diferentes páginas da aplicação com mais fluidez, sem constantes recarregamentos da página. Esta ferramenta torna a aplicação uma SPA (Single Page Application), em que se pareiam rotas e componentes, renderizando um componente em específico a depender da rota acessada pelo usuário. As rotas são importantes para aumentar a performance da aplicação, possibilitando a utilização de lazy loading, além de facilitar a renderização com base em permissão com as guardas.</p>
 
-                <p class="conteudo__texto">Quando se cria uma nova aplicação com o Angular CLI, um arquivo para rotas será criado automaticamente: o app.routes.ts ou o app-routing.module.ts, caso a aplicação seja module-based, onde será criada grande parte do código que envolve o roteamento da aplicação.</p>
+                <p class="conteudo__texto">Quando se cria uma nova aplicação com o Angular CLI, um arquivo para rotas será criado automaticamente: o app.routes.ts ou, caso a aplicação seja module-based, o app-routing.module.ts, onde será criada grande parte do código que envolve o roteamento da aplicação.</p>
 
-                <!-- Arquivo rotas -->
                 <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
+                    <img src="../images/rotas-arquivos.png" alt="Imagem com os dois possíveis arquivos de rotas em Angular.">
+                    <figcaption>Possíveis arquivos de rotas em Angular.</figcaption>
                 </figure>
 
                 <p class="conteudo__texto">Para a criação das rotas, têm-se alguns passos essenciais: importar rotas no app.config.ts; criar um array de <code>Routes</code>; definir as rotas da aplicação e adicionar as rotas na aplicação. Os dois primeiros passos são feitos automaticamente pelo Angular CLI, restando ao desenvolvedor definir as rotas e componentes dentro do array de <code>Routes</code> e adicioná-las na aplicação. Cada rota é um objeto com duas propriedades: a rota a ser acessada e o componente a ser renderizado.</p>
 
-                <!-- Array routes -->
                 <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
+                    <img src="../images/rotas-array.png" alt="Imagem com código escrito na sintaxe do Angular definindo um array de rotas com 3 rotas, uma para página inicial, uma para uma página específica e uma rota coringa.">
+                    <figcaption>Array de rotas com definição de 3 rotas.</figcaption>
                 </figure>
 
-                <p>Para adicionar na aplicação as rotas definidas, é necessário utilizar o seletor <code>router-outlet</code> onde se deseja renderizar o componente definido em cada rota, além do atributo <code>routerLink</code> em âncoras (substituindo o <code>href</code>) para possibilitar a navegação para o usuário.</p>
+                <p class="conteudo__texto">Para adicionar na aplicação as rotas definidas, é necessário utilizar o seletor <code>router-outlet</code> onde se deseja renderizar o componente definido em cada rota, além do atributo <code>routerLink</code> em âncoras (substituindo o <code>href</code>) para possibilitar a navegação para o usuário.</p>
 
-                <!-- routeroutlet + routerlink -->
                 <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
+                    <img src="../images/rotas-linkeoutlet.png" alt="Imagem com código na sintaxe de template de Angular com a definição de uma navegação com 2 âncoras e a definição do router outlet, onde os componentes serão renderizados">
+                    <figcaption>Definição de uma navegação com 2 âncoras com <code>routerLink</code> e do <code>router-outlet</code>, onde os componentes serão renderizados</figcaption>
                 </figure>
 
                 <h3>Lazy loading</h3>
-                <p class="conteudo__texto"></p>
-                <!-- rotas com lazy loading -->
+                <p class="conteudo__texto">O lazy loading é um conceito que auxilia no aumento da performance da aplicação por meio de carregamento apenas daquilo que é necessário, ou seja, o componente associado a uma rota é carregado apenas quando aquela rota em específico é acionada. Como, anteriormente, as aplicações eram carregadas como um todo, fazendo com que esse processo pudesse demorar a depender do tamanho da aplicação, o lazy loading vem como uma forma de encapsular o carregamento, deixando esse processo mais eficiente.</p>
+
+                <p class="conteudo__texto">Para a criação da estrutura de rotas com lazy loading, é minimamente necessário um componente, um módulo para o componente, um módulo de roteamento para o componente e o módulo de roteamento da aplicação. O componente é criado e importado no módulo do componente (definido em declarations), o módulo de roteamento é criado e importado no módulo de componente (definido em imports) e, desta forma, a conexão entre os componentes e módulos para o roteamento está completo. O último passo é adicionar a sintaxe de lazy loading do módulo de roteamento da aplicação. Portanto, em resumo:</p>
+                
+                <ul class="conteudo__texto">
+                    <li>Os componentes necessários são criados e, em seguida, importados e declarados dentro do módulo do componente (modulo-principal.module.ts na propriedade declarations do decorator <code>@NgModules</code>).</li>
+                    <li>O módulo de roteamento é criado e, em seguida, importado e declarado dentro do módulo do componente (modulo-principal.module.ts na propriedade imports do decorator <code>@NgModules</code>). Neste módulo de roteamento, é onde ficará o array de <code>Routes</code> contendo as rotas possíveis dentro daquele componente, com a sintaxe usual das rotas (pares path/component).</li>
+                    <li>O módulo principal do componente, contendo os componentes e o módulo de roteamento importados, será carregado conforme acessado pelas rotas da aplicação.</li>
+                    <li>No componente de roteamento da aplicação, é incluída a sintaxe de lazy loading para carregamento do módulo principal do componente, que, por sua vez, terá toda a lógica de roteamento interno do component.</li>
+                </ul>
+                
                 <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
+                    <img src="../images/rotas-lazyloading.png" alt="Imagem com a sintaxe de lazy loading no arquivo de roteamento da aplicação.">
+                    <figcaption>Sintaxe de lazy loading nas rotas da aplicação.</figcaption>
                 </figure>
 
                 <h3>Rota coringa</h3>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">A aplicação deve saber lidar com usuários tentando acessar caminhos não existentes da aplicação. Para tal, existe a possibilidade de criar uma rota coringa com o path <code>**</code>, em que, qualquer caminho não existente que o usuário tente acessar, aparecerá um componente criado para lidar específicamente com esta situação.</p>
 
                 <h3>Permissividade com guards</h3>
                 <p class="conteudo__texto"></p>
