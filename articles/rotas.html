@@ -92,7 +92,14 @@
                 <p class="conteudo__texto">A aplicação deve saber lidar com usuários tentando acessar caminhos não existentes da aplicação. Para tal, existe a possibilidade de criar uma rota coringa com o path <code>**</code>, em que, qualquer caminho não existente que o usuário tente acessar, aparecerá um componente criado para lidar específicamente com esta situação.</p>
 
                 <h3>Permissividade com guards</h3>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Para lidar com permissões de acesso em diferentes partes da aplicação, se utilizam as chamadas guards de rotas. Para criação dessas guards, tem-se o comando <code>ng generate guard nome-guard</code>, em que nome-guard é um nome arbitrário. Neste arquivo, são definidas as funções de guard que se deseja utilizar, sendo uma das mais utilizadas a do tipo <code>canActivate</code>, que media permissões para entrar em uma rota.</p>
+
+                <p class="conteudo__texto">Criada a função, é necessário adicioná-la como propriedade na definição das rotas, sejam elas dentro do um componente ou na aplicação como um todo.</p>
+                
+                <figure>
+                    <img src="../images/rotas-guards.png" alt="Definição de uma rotas com a utilização de guards em uma delas">
+                    <figcaption>Sintaxe da definição de rotas com guards.</figcaption>
+                </figure>
 
                 <h3><code>routerLink</code> com parâmetros</h3>
                 <p class="conteudo__texto"></p>
