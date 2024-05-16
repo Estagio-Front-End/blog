@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Rotas em Angular</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+                <li><a href="../pages/angular.html">Angular</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                    <a href="../pages/angular.html">Angular</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+   
+    <main>
+        <section class="conteudo">
+            <h2 class="conteudo__titulo">Rotas em Angular</h2>
+            <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
+            
+            <article>
+                <p class="conteudo__texto">Rotas em Angular são a ferramenta que possibilita que o usuário navegue por diferentes páginas da aplicação com mais fluidez, sem constantes recarregamentos da página. Esta ferramenta torna a aplicação uma SPA (Single Page Application), em que se pareiam rotas e componentes, renderizando um componente em específico a depender da rota acessada pelo usuário. As rotas são importantes para aumentar a performance da aplicação, possibilitando a utilização de lazy loading, além de facilitar a renderização com base em permissão com as guards.</p>
+
+                <p class="conteudo__texto">Quando se cria uma nova aplicação com o Angular CLI, um arquivo para rotas será criado automaticamente: o app.routes.ts ou, caso a aplicação seja module-based, o app-routing.module.ts, onde será desenvolvido grande parte do código que envolve o roteamento da aplicação.</p>
+
+                <figure>
+                    <img src="../images/rotas-arquivos.png" alt="Imagem com os dois possíveis arquivos de rotas em Angular.">
+                    <figcaption>Possíveis arquivos de rotas em Angular.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Para a criação das rotas, têm-se alguns passos essenciais: importar rotas no app.config.ts; criar um array de <code>Routes</code>; definir as rotas da aplicação neste array e adicionar as rotas na aplicação. Os dois primeiros passos são feitos automaticamente pelo Angular CLI, restando ao desenvolvedor definir as rotas e componentes dentro do array de <code>Routes</code> e adicioná-las na aplicação. Cada rota é, inicialmente, um objeto com duas propriedades: a rota a ser acessada e o componente a ser renderizado.</p>
+
+                <figure>
+                    <img src="../images/rotas-array.png" alt="Imagem com código escrito na sintaxe do Angular definindo um array de rotas com 3 rotas, uma para página inicial, uma para uma página específica e uma rota coringa.">
+                    <figcaption>Array de rotas com definição de 3 rotas.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Para adicionar na aplicação as rotas definidas, é necessário utilizar o seletor <code>router-outlet</code> onde se deseja renderizar o componente definido em cada rota, além do atributo <code>routerLink</code> em âncoras (substituindo o <code>href</code>) para possibilitar a navegação por meio das diferentes rotas para o usuário.</p>
+
+                <figure>
+                    <img src="../images/rotas-linkeoutlet.png" alt="Imagem com código na sintaxe de template de Angular com a definição de uma navegação com 2 âncoras e a definição do router outlet, onde os componentes serão renderizados">
+                    <figcaption>Definição de uma navegação com 2 âncoras com <code>routerLink</code> e do <code>router-outlet</code>, onde os componentes serão renderizados.</figcaption>
+                </figure>
+
+                <h3>Lazy loading</h3>
+                <p class="conteudo__texto">O lazy loading é um conceito que auxilia no aumento da performance da aplicação por meio de carregamento apenas daquilo que é necessário, ou seja, o componente associado a uma rota é carregado apenas quando aquela rota em específico é acionada. Como, anteriormente, as aplicações eram carregadas como um todo, fazendo com que esse processo pudesse demorar a depender do tamanho da aplicação, o lazy loading vem como uma forma de utlizar a modularização do Angular a favor do carregamento, deixando esse processo mais eficiente.</p>
+
+                <p class="conteudo__texto">Para a criação da estrutura de rotas com lazy loading, é minimamente necessário um componente, um módulo para o componente, um módulo de roteamento para o componente e o módulo de roteamento da aplicação. O componente é criado e importado no módulo do componente, assim como o módulo de roteamento, e, desta forma, a conexão inicial entre os componentes e módulos para o roteamento está completo. O último passo é adicionar a sintaxe de lazy loading no módulo de roteamento da aplicação para que seja realizado o import do módulo do componente. Portanto, em resumo:</p>
+                
+                <ul class="conteudo__texto">
+                    <li>Os componentes necessários são criados e, em seguida, importados e declarados dentro do módulo do componente (na propriedade declarations do decorator <code>@NgModules</code>).</li>
+                    <li>O módulo de roteamento é criado e, em seguida, importado e declarado dentro do módulo do componente (na propriedade imports do decorator <code>@NgModules</code>). Neste módulo de roteamento, é onde ficará o array de <code>Routes</code> contendo as rotas possíveis dentro do componente pai, com a sintaxe usual das rotas (pares path/component).</li>
+                    <li>O módulo principal do componente, contendo os componentes e o módulo de roteamento importados, será carregado conforme acessado pelas rotas da aplicação.</li>
+                    <li>No componente de roteamento da aplicação, é incluída a sintaxe de lazy loading para carregamento do módulo principal do componente, que, por sua vez, terá toda a lógica de roteamento interno do componente.</li>
+                </ul>
+                
+                <figure>
+                    <img src="../images/rotas-lazyloading.png" alt="Imagem com a sintaxe de lazy loading no arquivo de roteamento da aplicação.">
+                    <figcaption>Sintaxe de lazy loading nas rotas da aplicação.</figcaption>
+                </figure>
+
+                <h3>Rota coringa</h3>
+                <p class="conteudo__texto">A aplicação deve saber lidar com usuários tentando acessar caminhos não existentes da aplicação. Para tal, existe a possibilidade de criar uma rota coringa com o path <code>**</code>, em que, qualquer caminho não existente que o usuário tente acessar, o usuário será "redirecionado" para esta rota, onde será renderizado um componente criado para lidar específicamente com esta situação.</p>
+
+                <h3>Permissividade com guards</h3>
+                <p class="conteudo__texto">Para lidar com permissões de acesso em diferentes partes da aplicação, se utilizam as chamadas guards de rotas. Para criação dessas guards, tem-se o comando <code>ng generate guard nome-guard</code>, em que nome-guard é um nome arbitrário. Neste arquivo, são definidas as funções de guard que se deseja utilizar, sendo uma das mais utilizadas a do tipo <code>canActivate</code>, que media permissões para entrar em uma rota.</p>
+
+                <p class="conteudo__texto">Criada a função, é necessário adicioná-la como propriedade na definição das rotas, sejam elas dentro do um componente ou na aplicação como um todo.</p>
+                
+                <figure>
+                    <img src="../images/rotas-guards.png" alt="Definição de uma rotas com a utilização de guards em uma delas">
+                    <figcaption>Sintaxe da definição de rotas com guards .</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Portanto, com as funcionalidades citadas anteriormente, é possível utilizar as rotas em Angular para criar uma navegação personalizada para a aplicação com melhor performance e mais segura em termos de permissão de usuários.</p>
+            </article>
+    
+            <div class="artigo__info">
+                <div class="artigo__info__autor">
+                    <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
+                    <div class="artigo__info__autor__nome">
+                        <p>Camila Matias</p>
+                        <span>Desenvolvedora Front End</span>
+                    </div>
+                </div>
+                <div class="artigo__data">
+                    <p>14 Mai</p>
+                </div>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
+</html>
