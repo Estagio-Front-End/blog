@@ -155,28 +155,29 @@
                     <li><span>flat():</span> este método cria um novo array, concatenando quaisquer elementos arrays no array original. Por exemplo, inserindo no código <code>[1,2,3,4,[5,6]].flat()</code> teremos um novo array <code>[1,2,3,4,5,6]</code>.</li>
                     <li><span>slice(posição inicial, posição final):</span> este método recorta e retorna uma parte do array, indicada pelas posições inicial e final. A posição final, assim como no método <code>fill()</code>, não é inclusiva.</li>
                 </ul>
-            </article>
-
+            
             <p class="conteudo__texto">Teste aqui os principais métodos de criação de novos arrays:</p>
-                <p class="conteudo__texto" id="array-criacao">Array inicial para os métodos (exceto <code>Array.of</code>, <code>Array.from</code> e <code>flat</code>):</p>
-                <div class="conteudo__demonstracao">
-                    <label for="input-criacao">Selecione um método a aplicar no array:</label>
-                    <div class="conteudo__demonstracao__selecao">
-                        <select name="input-criacao" id="input-criacao" onchange="criaArray(this.value)">
-                            <option value="">Selecione uma opção:</option>
-                            <option value="arrayfrom">Array.from("Camila")</option>
-                            <option value="arrayof">Array.of(true, 29, "Estagiária")</option>
-                            <option value="map">map(x => x*2)</option>
-                            <option value="filter">filter(x => x % 2 === 0)</option>
-                            <option value="join">join(", ")</option>
-                            <option value="concat">concat([8,9,10])</option>
-                            <option value="flat">[1,2,3,4,[5,6,7]].flat()</option>
-                            <option value="slice">slice(2,5)</option>
-                        </select>
-                    </div>
+            <p class="conteudo__texto" id="array-criacao">Array inicial para os métodos (exceto <code>Array.of</code>, <code>Array.from</code> e <code>flat</code>):</p>
+            
+            <div class="conteudo__demonstracao">
+                <label for="input-criacao">Selecione um método a aplicar no array:</label>
+                <div class="conteudo__demonstracao__selecao">
+                    <select name="input-criacao" id="input-criacao" onchange="criaArray(this.value)">
+                        <option value="">Selecione uma opção:</option>
+                        <option value="arrayfrom">Array.from("Camila")</option>
+                        <option value="arrayof">Array.of(true, 29, "Estagiária")</option>
+                        <option value="map">map(x => x*2)</option>
+                        <option value="filter">filter(x => x % 2 === 0)</option>
+                        <option value="join">join(", ")</option>
+                        <option value="concat">concat([8,9,10])</option>
+                        <option value="flat">[1,2,3,4,[5,6,7]].flat()</option>
+                        <option value="slice">slice(2,5)</option>
+                    </select>
                 </div>
+            </div>
                 <div class="conteudo__texto" id="resultado-criacao"></div>
-    
+            </article>
+            
             <div class="artigo__info">
                 <div class="artigo__info__autor">
                     <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
