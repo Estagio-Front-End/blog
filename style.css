@@ -14,6 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #1F2041;
 }
 
 a {
@@ -33,30 +34,15 @@ main {
   background-color: #1F2041;
 }
 
-header {
-  padding: 2rem;
-  position: sticky;
-  position: -webkit-sticky;
-  position: -ms-sticky;
-  position: -moz-sticky;
-  position: -o-sticky;
-  top: 0;
-  z-index: 1;
+main {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  background: #f6f6f6;
+  justify-content: center;
+  align-items: normal;
+  flex-direction: column;
 }
-
-h1 {
-  text-align: center;
-  font-size: 3rem;
-  font-family: "Roboto Slab", serif;
+main > h2 {
+  font-size: 2.5rem;
+  margin-top: 5rem;
 }
 
 blockquote {
@@ -2269,6 +2255,7 @@ input[type=text]:-webkit-autofill, input[type=text]:-webkit-autofill:hover, inpu
 
 header {
   padding: 2.4rem 4rem;
+  width: 100vw;
   position: sticky;
   position: -webkit-sticky;
   position: -ms-sticky;
@@ -2277,21 +2264,30 @@ header {
   top: 0;
   z-index: 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8rem;
   background-color: rgba(18, 19, 38, 0.5);
 }
+header img, header ul, header li, header div, header a, header span, header nav {
+  background-color: transparent;
+}
 header a[href="https://www.zappts.com.br/contato/"] {
   color: #1F2041;
+}
+header a[href="https://www.zappts.com.br/contato/"]:hover {
+  text-decoration: none;
 }
 
 .navegacao {
   display: flex;
   justify-content: center;
   align-items: normal;
+  flex-wrap: wrap;
 }
 .navegacao li {
+  list-style: none;
   border-radius: 1.2rem;
 }
 .navegacao li a {
@@ -2307,18 +2303,14 @@ header a[href="https://www.zappts.com.br/contato/"] {
   padding: 1.6rem;
 }
 .navegacao li:hover {
-  background-color: #1F2041;
+  background-color: #121326;
 }
 .navegacao li:hover a {
   font-weight: 800;
+  text-decoration: none;
 }
-@media screen and (max-width: 767px) {
-  .navegacao {
-    display: none;
-  }
-}
-@media screen and (768px <= width <= 1023px) {
-  .navegacao {
+@media screen and (1024px <= width <= 1365px) {
+  .navegacao .navegacao--hd {
     display: none;
   }
 }
@@ -2326,6 +2318,7 @@ header a[href="https://www.zappts.com.br/contato/"] {
 .idiomas {
   padding: 1.6rem;
   border-radius: 1.2rem;
+  cursor: pointer;
 }
 .idiomas ul {
   display: flex;
@@ -2349,7 +2342,70 @@ header a[href="https://www.zappts.com.br/contato/"] {
   letter-spacing: -0.03;
 }
 .idiomas:hover {
-  background-color: #1F2041;
+  background-color: #121326;
+}
+
+.header__acoes {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2.4rem;
+}
+@media screen and (768px <= width <= 1023px) {
+  .header__acoes {
+    justify-content: space-between;
+    width: 60%;
+  }
+}
+
+.header__acoes__menu {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.navegacao__hamburguer {
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.6rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+.navegacao__hamburguer:hover {
+  background-color: #121326;
+}
+.navegacao__hamburguer div {
+  width: 1.95rem;
+  border: 1.5px solid #FFFFFF;
+  border-radius: 2px;
+}
+@media screen and (768px <= width <= 1023px) {
+  .navegacao__hamburguer {
+    display: flex;
+  }
+}
+@media screen and (max-width: 767px) {
+  .navegacao__hamburguer {
+    display: flex;
+  }
+}
+
+.navegacao--mobile {
+  display: none;
+}
+@media screen and (768px <= width <= 1023px) {
+  .navegacao--mobile {
+    display: block;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 767px) {
+  .navegacao--mobile {
+    display: block;
+    position: absolute;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

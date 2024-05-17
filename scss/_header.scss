@@ -1,21 +1,32 @@
 header {
     padding: $espacamento-6 $espacamento-10;
+    width: 100vw;
     @include sticky();
     top: 0;
     z-index: 1;
-    @include flex(center, center);
+    @include flex(space-between, center);
+    flex-wrap: wrap;
     gap: $espacamento-20;
     background-color: rgba(18, 19, 38, 0.5);
 
+    img, ul, li, div, a, span, nav {
+        background-color: transparent;
+    }
+
     a[href="https://www.zappts.com.br/contato/"] {
         color: $cor-primaria;
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
 .navegacao {
     @include flex(center);
+    flex-wrap: wrap;
 
     li {
+        list-style: none;
         border-radius: $espacamento-3;
         a {
             @include headline-primary-regular(14, center, uppercase);
@@ -25,25 +36,33 @@ header {
         }
         
         &:hover {
-            background-color: $cor-primaria;
+            background-color: $cor-hover;
             a {   
                 font-weight: 800;
+                text-decoration: none; 
             }
         }
     }
 
-    @include responsividade("mobile"){
-        display: none;
-    }
+    // @include responsividade("mobile"){
+    //     display: none;
+    // }
 
-    @include responsividade("tablet"){
-        display: none;
+    // @include responsividade("tablet"){
+    //     display: none;
+    // }
+
+    .navegacao--hd {
+        @include responsividade("desktop") {
+            display: none;
+        }
     }
 }
 
 .idiomas {
     padding: $espacamento-4;
     border-radius: $espacamento-3;
+    cursor: pointer;
     
     ul {
         @include flex(center);
@@ -59,6 +78,62 @@ header {
     }
 
     &:hover{
-        background-color: $cor-primaria;
+        background-color: $cor-hover;
     }
 }
+
+.header__acoes {
+    @include flex(start, center);
+    gap: $espacamento-6;
+
+    @include responsividade("tablet") {
+        justify-content: space-between;
+        width: 60%;
+    }
+}
+
+.header__acoes__menu {
+    @include flex(start, center);
+    gap: $espacamento-4;
+}
+
+.navegacao__hamburguer {
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: $espacamento-4;
+    border-radius: $espacamento-3;
+    cursor: pointer;
+    display: none;
+
+    &:hover{
+        background-color: $cor-hover;
+    }
+    div {
+        width: 1.95rem;
+        border: 1.5px solid $cor-neutra-1;
+        border-radius: 2px;
+    }
+
+    @include responsividade ("tablet") {
+        display: flex;
+    }
+
+    @include responsividade ("mobile") {
+        display: flex;
+    }
+}
+
+.navegacao--mobile {
+    display: none;
+
+    @include responsividade("tablet") {
+        display: block;
+        position: absolute;
+    }
+
+    @include responsividade("mobile") {
+        display: block;
+        position: absolute;
+    }
+}
+

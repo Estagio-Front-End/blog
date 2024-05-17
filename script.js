@@ -82,6 +82,24 @@ Array.from(listaIdiomas.children).forEach((item) => {
 
 
 
+const menuDropdown = document.querySelector(".navegacao--mobile");
+window.addEventListener('resize', rearranjarMenu)
+
+function rearranjarMenu() {
+    if (window.innerWidth >= 1366) {
+
+    } else if (1024 <= window.innerWidth < 1366) {
+        
+    } else if (768 <= window.innerWidth < 1024) {
+        menuDropdown.appendChild(document.querySelector("header nav"));
+    } else if (window.innerWidth < 768) {
+        menuDropdown.appendChild(document.querySelector("header nav"));
+        menuDropdown.appendChild(document.querySelector(".idiomas"));
+        menuDropdown.appendChild(document.querySelector("a[href='https://www.zappts.com.br/contato/']"));
+    }
+}
+
+
 
 
 
