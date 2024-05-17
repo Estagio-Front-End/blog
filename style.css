@@ -2309,6 +2309,16 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   font-weight: 800;
   text-decoration: none;
 }
+@media screen and (max-width: 767px) {
+  .navegacao {
+    display: none;
+  }
+}
+@media screen and (768px <= width <= 1023px) {
+  .navegacao {
+    display: none;
+  }
+}
 @media screen and (1024px <= width <= 1365px) {
   .navegacao .navegacao--hd {
     display: none;
@@ -2354,7 +2364,12 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
 @media screen and (768px <= width <= 1023px) {
   .header__acoes {
     justify-content: space-between;
-    width: 60%;
+    width: 55%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header__acoes .idiomas, .header__acoes .header__acoes__menu a {
+    display: none;
   }
 }
 

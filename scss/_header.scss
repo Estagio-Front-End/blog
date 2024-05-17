@@ -44,13 +44,13 @@ header {
         }
     }
 
-    // @include responsividade("mobile"){
-    //     display: none;
-    // }
+    @include responsividade("mobile"){
+        display: none;
+    }
 
-    // @include responsividade("tablet"){
-    //     display: none;
-    // }
+    @include responsividade("tablet"){
+        display: none;
+    }
 
     .navegacao--hd {
         @include responsividade("desktop") {
@@ -88,7 +88,13 @@ header {
 
     @include responsividade("tablet") {
         justify-content: space-between;
-        width: 60%;
+        width: 55%;
+    }
+
+    .idiomas, .header__acoes__menu a {
+        @include responsividade("mobile") {
+            display: none;
+        }
     }
 }
 
