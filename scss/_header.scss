@@ -28,8 +28,9 @@ header {
     li {
         list-style: none;
         border-radius: $espacamento-3;
+        position: relative;
         a {
-            @include headline-primary-regular(14, center, uppercase);
+            @include headline-primary-regular(14, left, uppercase);
             letter-spacing: 0.05;
             display: inline-block;
             padding: $espacamento-4;
@@ -143,3 +144,21 @@ header {
     }
 }
 
+.navegacao__submenu {
+    position: absolute;
+    width: fit-content;
+    top: $espacamento-16;
+    background-color: $cor-hover;
+    border-radius: $espacamento-3;
+    @include body-system-semibold(12, left, uppercase);
+    
+    li a{
+        @include body-system-semibold(12, left, uppercase);
+        font-weight: 600;
+        &:hover{
+            font-weight: 600;
+            color: $cor-secundaria;
+        }
+    }
+    //display: none;
+}
