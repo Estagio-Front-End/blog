@@ -4,7 +4,7 @@ window.addEventListener('scroll', () => {
     : document.querySelector("header").style.backgroundColor = "rgba(18, 19, 38, 0.5)"
 }); 
 
-//Abre/fecha do menu de navegação do conteúdo
+//Abre/fecha do menu de navegação do conteúdo (somente em artigos)
 const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
 if (menuNavegacaoConteudo !== null) {
     const iconeNavegacaoConteudo = menuNavegacaoConteudo.querySelector("img");
@@ -17,7 +17,7 @@ if (menuNavegacaoConteudo !== null) {
     }
 } 
 
-//Navegação no conteúdo
+//Navegação no conteúdo (somente em artigos)
 const linksMenuNavegacao = document.querySelectorAll(".conteudo__navegacao__itens li a");
 
 if (linksMenuNavegacao !== null) {
@@ -37,6 +37,8 @@ if (linksMenuNavegacao !== null) {
         window.scrollTo(configScroll);
     }
 }
+
+//Funcionalidade de lista de idiomas dropdown + troca do idioma e rearranjo da lista
 
 let idiomas = [
     {
@@ -79,6 +81,8 @@ Array.from(listaIdiomas.children).forEach((item) => {
         item.style.display = "none";
     }
 })
+
+// Funcionalidade de rearranjo do menu para tablet e mobile
 
 // const menuDropdown = document.querySelector(".navegacao--mobile");
 // const headerAcoes = document.querySelector()
