@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>CSS Inline, Interno e Externo</title>
+    <title>Rotas em Angular</title>
 </head>
 <body>
     <header>
@@ -41,40 +41,69 @@
             <img src="../images/search-outline.png" alt="Imagem de uma lupa">
         </div>
     </header>
-    
+   
     <main>
         <section class="conteudo">
-            <h2 class="conteudo__titulo">CSS inline, interno e externo</h2>
-            
-            <span class="artigo__tag artigo__tag--css-basico">CSS BÁSICO</span>
+            <h2 class="conteudo__titulo">Rotas em Angular</h2>
+            <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
             
             <article>
-                <p class="conteudo__texto">O <abbr title="Cascading Style Sheets">CSS</abbr> é uma linguagem de estilo por meio da qual documentos em HTML ou XML tem sua apresentação para o usuário descrita. Existem 3 formas de adicionar a estilização à um documento HTML: de forma inline, interna ou externa.</p>
-                   
-            <p class="conteudo__texto">No CSS inline, a estilização a ser aplicada é descrita dentro da própria tag HTML que será estilizada, dentro do documento HTML, por meio do atributo <code>style</code>.</p>
+                <p class="conteudo__texto">Rotas em Angular são a ferramenta que possibilita que o usuário navegue por diferentes páginas da aplicação com mais fluidez, sem constantes recarregamentos da página. Esta ferramenta torna a aplicação uma SPA (Single Page Application), em que se pareiam rotas e componentes, renderizando um componente em específico a depender da rota acessada pelo usuário. As rotas são importantes para aumentar a performance da aplicação, possibilitando a utilização de lazy loading, além de facilitar a renderização com base em permissão com as guards.</p>
 
-            <figure>
-                <img src="../images/css-inline.png" alt="Linha de código CSS que reduz o comprimento de uma tag hr para 50% do comprimento da tag pai">
-                <figcaption>O atributo <code>style</code> na tag <code>hr</code> atribui uma estilização à tag, neste caso, de reduzir seu comprimento para 50% do comprimento da tag pai.</figcaption>
-            </figure>    
-    
-            <p class="conteudo__texto">No CSS interno, a estilização a ser aplicada é descrita dentro de uma tag <code>style</code>, posicionada entre as tags <code>head</code> e <code>body</code> do documento HTML. Para identificação das tags nas quais cada estilo será aplicado, são utilizados os seletores, classes ou ids utilizados no código HTML.</p>
-            
-            <figure>
-                <img src="../images/css-interno.png" alt="Bloco de código css que altera o peso da fonte de títulos em lista de descrições para negrito.">
-                <figcaption>No bloco de código inserido dentro da tag <code>style</code>, o peso da fonte de um título em lista de descrições é alterado para negrito.</figcaption>
-            </figure> 
-            
-            <p class="conteudo__texto">No CSS externo, a estilização a ser aplicada é descrita dentro de um documento com extensão <code>.css</code>, que fica à parte do documento HTML. Já que a descrição da estilização não fica inserida no documento HTML, é necessário que os documentos <code>.html</code> e <code>.css</code> sejam relacionados por meio de uma tag <code>link</code>, a ser inclusa dentro da tag <code>head</code> do documento HTML. Para identificação das tags a serem estilizadas, assim como no CSS interno, são utilizados seletores, classes e ids.</p>
-            
-            <figure>
-                <img src="../images/link-css-externo.png" alt="Tag link com a referenciação para o documento .css">
-                <figcaption>A tag <code>link</code> é a responsável por indicar o relacionamento entre uma folha de estilo e um documento html.</figcaption>
-            </figure>
-            
-            <p class="conteudo__texto">Atualmente, a melhor prática é utilizar o CSS externo, visto que mantém o código organizado para cada função (marcação e estilização) e permite a reutilização de código, em que uma folha de estilo (documento <code>.css</code>) pode ser aplicado para vários documentos HTML. A prática do CSS externo também traz vantagens para a manutenção do código, pois, ao necessitar de uma alteração, esta será feita em apenas um ponto do código, e não em vários, como aconteceria no CSS inline e no CSS interno.</p>
+                <p class="conteudo__texto">Quando se cria uma nova aplicação com o Angular CLI, um arquivo para rotas será criado automaticamente: o app.routes.ts ou, caso a aplicação seja module-based, o app-routing.module.ts, onde será desenvolvido grande parte do código que envolve o roteamento da aplicação.</p>
+
+                <figure>
+                    <img src="../images/rotas-arquivos.png" alt="Imagem com os dois possíveis arquivos de rotas em Angular.">
+                    <figcaption>Possíveis arquivos de rotas em Angular.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Para a criação das rotas, têm-se alguns passos essenciais: importar rotas no app.config.ts; criar um array de <code>Routes</code>; definir as rotas da aplicação neste array e adicionar as rotas na aplicação. Os dois primeiros passos são feitos automaticamente pelo Angular CLI, restando ao desenvolvedor definir as rotas e componentes dentro do array de <code>Routes</code> e adicioná-las na aplicação. Cada rota é, inicialmente, um objeto com duas propriedades: a rota a ser acessada e o componente a ser renderizado.</p>
+
+                <figure>
+                    <img src="../images/rotas-array.png" alt="Imagem com código escrito na sintaxe do Angular definindo um array de rotas com 3 rotas, uma para página inicial, uma para uma página específica e uma rota coringa.">
+                    <figcaption>Array de rotas com definição de 3 rotas.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Para adicionar na aplicação as rotas definidas, é necessário utilizar o seletor <code>router-outlet</code> onde se deseja renderizar o componente definido em cada rota, além do atributo <code>routerLink</code> em âncoras (substituindo o <code>href</code>) para possibilitar a navegação por meio das diferentes rotas para o usuário.</p>
+
+                <figure>
+                    <img src="../images/rotas-linkeoutlet.png" alt="Imagem com código na sintaxe de template de Angular com a definição de uma navegação com 2 âncoras e a definição do router outlet, onde os componentes serão renderizados">
+                    <figcaption>Definição de uma navegação com 2 âncoras com <code>routerLink</code> e do <code>router-outlet</code>, onde os componentes serão renderizados.</figcaption>
+                </figure>
+
+                <h3>Lazy loading</h3>
+                <p class="conteudo__texto">O lazy loading é um conceito que auxilia no aumento da performance da aplicação por meio de carregamento apenas daquilo que é necessário, ou seja, o componente associado a uma rota é carregado apenas quando aquela rota em específico é acionada. Como, anteriormente, as aplicações eram carregadas como um todo, fazendo com que esse processo pudesse demorar a depender do tamanho da aplicação, o lazy loading vem como uma forma de utlizar a modularização do Angular a favor do carregamento, deixando esse processo mais eficiente.</p>
+
+                <p class="conteudo__texto">Para a criação da estrutura de rotas com lazy loading, é minimamente necessário um componente, um módulo para o componente, um módulo de roteamento para o componente e o módulo de roteamento da aplicação. O componente é criado e importado no módulo do componente, assim como o módulo de roteamento, e, desta forma, a conexão inicial entre os componentes e módulos para o roteamento está completo. O último passo é adicionar a sintaxe de lazy loading no módulo de roteamento da aplicação para que seja realizado o import do módulo do componente. Portanto, em resumo:</p>
+                
+                <ul class="conteudo__texto">
+                    <li>Os componentes necessários são criados e, em seguida, importados e declarados dentro do módulo do componente (na propriedade declarations do decorator <code>@NgModules</code>).</li>
+                    <li>O módulo de roteamento é criado e, em seguida, importado e declarado dentro do módulo do componente (na propriedade imports do decorator <code>@NgModules</code>). Neste módulo de roteamento, é onde ficará o array de <code>Routes</code> contendo as rotas possíveis dentro do componente pai, com a sintaxe usual das rotas (pares path/component).</li>
+                    <li>O módulo principal do componente, contendo os componentes e o módulo de roteamento importados, será carregado conforme acessado pelas rotas da aplicação.</li>
+                    <li>No componente de roteamento da aplicação, é incluída a sintaxe de lazy loading para carregamento do módulo principal do componente, que, por sua vez, terá toda a lógica de roteamento interno do componente.</li>
+                </ul>
+                
+                <figure>
+                    <img src="../images/rotas-lazyloading.png" alt="Imagem com a sintaxe de lazy loading no arquivo de roteamento da aplicação.">
+                    <figcaption>Sintaxe de lazy loading nas rotas da aplicação.</figcaption>
+                </figure>
+
+                <h3>Rota coringa</h3>
+                <p class="conteudo__texto">A aplicação deve saber lidar com usuários tentando acessar caminhos não existentes da aplicação. Para tal, existe a possibilidade de criar uma rota coringa com o path <code>**</code>, em que, qualquer caminho não existente que o usuário tente acessar, o usuário será "redirecionado" para esta rota, onde será renderizado um componente criado para lidar específicamente com esta situação.</p>
+
+                <h3>Permissividade com guards</h3>
+                <p class="conteudo__texto">Para lidar com permissões de acesso em diferentes partes da aplicação, se utilizam as chamadas guards de rotas. Para criação dessas guards, tem-se o comando <code>ng generate guard nome-guard</code>, em que nome-guard é um nome arbitrário. Neste arquivo, são definidas as funções de guard que se deseja utilizar, sendo uma das mais utilizadas a do tipo <code>canActivate</code>, que media permissões para entrar em uma rota.</p>
+
+                <p class="conteudo__texto">Criada a função, é necessário adicioná-la como propriedade na definição das rotas, sejam elas dentro do um componente ou na aplicação como um todo.</p>
+                
+                <figure>
+                    <img src="../images/rotas-guards.png" alt="Definição de uma rotas com a utilização de guards em uma delas">
+                    <figcaption>Sintaxe da definição de rotas com guards .</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">Portanto, com as funcionalidades citadas anteriormente, é possível utilizar as rotas em Angular para criar uma navegação personalizada para a aplicação com melhor performance e mais segura em termos de permissão de usuários.</p>
             </article>
-            
+    
             <div class="artigo__info">
                 <div class="artigo__info__autor">
                     <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
@@ -84,11 +113,11 @@
                     </div>
                 </div>
                 <div class="artigo__data">
-                    <p>20 Fev</p>
+                    <p>14 Mai</p>
                 </div>
             </div>
         </section>
-        
+
         <section aria-label="Seção de Formulário" class="artigo__formulario">    
             <h2>Gostou do que leu? Deixe um comentário</h2>
             <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>

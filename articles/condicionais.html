@@ -47,113 +47,115 @@
             <h2 class="conteudo__titulo">Condicionais em Javascript</h2>
             <span class="artigo__tag artigo__tag--javascript">JAVASCRIPT</span>
             
-            <h3>Estruturas de condicionais</h3>
-            <p class="conteudo__texto">Condicionais em Javascript, como o nome já diz, são estruturas de condicional em que, caso uma condição seja verdadeira, um bloco de código será executado, caso contrário, a condição sendo falsa, outro bloco de código será executado. Estas estruturas utilizam dados do tipo booleano (<code>true</code> ou <code>false</code>) para avaliar as condições e, a depender do resultado, executam o código correspondente. As estruturas mais comuns são:</p>
-            
-            <div class="conteudo__demonstracao">
-                <input type="radio" name="condicionais" id="condicional-if">
-                <label for="condicional-if">Condicional somente com <code>if</code></label>
+            <article>
+                <h3>Estruturas de condicionais</h3>
+                <p class="conteudo__texto">Condicionais em Javascript, como o nome já diz, são estruturas de condicional em que, caso uma condição seja verdadeira, um bloco de código será executado, caso contrário, a condição sendo falsa, outro bloco de código será executado. Estas estruturas utilizam dados do tipo booleano (<code>true</code> ou <code>false</code>) para avaliar as condições e, a depender do resultado, executam o código correspondente. As estruturas mais comuns são:</p>
+                
+                <div class="conteudo__demonstracao">
+                    <input type="radio" name="condicionais" id="condicional-if">
+                    <label for="condicional-if">Condicional somente com <code>if</code></label>
 
-                <input type="radio" name="condicionais" id="condicional-if-else">
-                <label for="condicional-if-else">Condicional com <code>if</code> e <code>else</code></label>
+                    <input type="radio" name="condicionais" id="condicional-if-else">
+                    <label for="condicional-if-else">Condicional com <code>if</code> e <code>else</code></label>
 
-                <input type="radio" name="condicionais" id="condicional-else-if">
-                <label for="condicional-else-if">Condicionais com <code>else if</code></label>
+                    <input type="radio" name="condicionais" id="condicional-else-if">
+                    <label for="condicional-else-if">Condicionais com <code>else if</code></label>
 
-                <input type="radio" name="condicionais" id="condicional-aninhada">
-                <label for="condicional-aninhada">Condicionais aninhadas</label>
-            </div>
-            
-            <div class="conteudo__texto" id="resultado-condicionais"></div>
+                    <input type="radio" name="condicionais" id="condicional-aninhada">
+                    <label for="condicional-aninhada">Condicionais aninhadas</label>
+                </div>
+                
+                <div class="conteudo__texto" id="resultado-condicionais"></div>
 
-            <p class="conteudo__texto">Cada estrutura possui sua aplicação, e elas podem ser combinadas entre si, ou seja, uma estrutura de condicional pode ter cada uma das 4 partes mencionadas anteriormente. A única obrigatoriedade existente é que, para que se tenha uma estrutura <code>else</code>, <code>else if</code> ou aninhamento de condicionais, deve-se inicializar a estrutura com um <code>if</code>.</p>
+                <p class="conteudo__texto">Cada estrutura possui sua aplicação, e elas podem ser combinadas entre si, ou seja, uma estrutura de condicional pode ter cada uma das 4 partes mencionadas anteriormente. A única obrigatoriedade existente é que, para que se tenha uma estrutura <code>else</code>, <code>else if</code> ou aninhamento de condicionais, deve-se inicializar a estrutura com um <code>if</code>.</p>
 
-            <ul class="conteudo__texto">
-                <li><span>Estruturas somente com <code>if</code></span> testam somente uma expressão de condição (valor dentro dos parêntesis) e explicitam o código a ser executado apenas para o caso de a condição ser verdadeira.</li>
-                <li><span>Estruturas com <code>if</code> e <code>else</code></span> testam somente uma expressão de condição e explicitam o código a ser executado para o caso de a condição ser verdadeira (bloco de código dentro do par de chaves após o <code>if</code>) e para o caso de a condição ser falsa (bloco de código dentro do par de chaves após o <code>else</code>). Estruturas condicionais não podem ter mais de um <code>else</code>, portanto, caso seja necessário avaliar outras expressões, é necessário utilizar outras estruturas.</li>
-                <li><span>Estruturas com <code>if</code> e <code>else if</code></span> podem testar mais de uma expressão de condição, porém com a obrigatoriedade de que, para que a condição do <code>else if</code> seja avaliada, a condição do <code>if</code> deve ser falsa. Mais de um <code>else if</code> pode ser utilizado, até que todas as expressões a serem avaliadas sejam contempladas. No final deste tipo de estrutura, é possível, também, finalizar com um <code>else</code>, para contemplar casos em que nenhuma das condições avaliadas seja verdadeira.</li>
-                <li><span>Estruturas com <code>if</code> aninhados</span> podem testar mais de uma expressão de condição, porém com a obrigatoriedade de que, para que a condição do <code>if</code> mais interno seja avaliada, a condição do <code>if</code> mais externo deve ser verdadeira. Este tipo de estrutura também pode ser combinada com <code>else if</code> e <code>else</code>, a depender do tipo de condições a serem avaliadas.</li>
-            </ul>
+                <ul class="conteudo__texto">
+                    <li><span>Estruturas somente com <code>if</code></span> testam somente uma expressão de condição (valor dentro dos parêntesis) e explicitam o código a ser executado apenas para o caso de a condição ser verdadeira.</li>
+                    <li><span>Estruturas com <code>if</code> e <code>else</code></span> testam somente uma expressão de condição e explicitam o código a ser executado para o caso de a condição ser verdadeira (bloco de código dentro do par de chaves após o <code>if</code>) e para o caso de a condição ser falsa (bloco de código dentro do par de chaves após o <code>else</code>). Estruturas condicionais não podem ter mais de um <code>else</code>, portanto, caso seja necessário avaliar outras expressões, é necessário utilizar outras estruturas.</li>
+                    <li><span>Estruturas com <code>if</code> e <code>else if</code></span> podem testar mais de uma expressão de condição, porém com a obrigatoriedade de que, para que a condição do <code>else if</code> seja avaliada, a condição do <code>if</code> deve ser falsa. Mais de um <code>else if</code> pode ser utilizado, até que todas as expressões a serem avaliadas sejam contempladas. No final deste tipo de estrutura, é possível, também, finalizar com um <code>else</code>, para contemplar casos em que nenhuma das condições avaliadas seja verdadeira.</li>
+                    <li><span>Estruturas com <code>if</code> aninhados</span> podem testar mais de uma expressão de condição, porém com a obrigatoriedade de que, para que a condição do <code>if</code> mais interno seja avaliada, a condição do <code>if</code> mais externo deve ser verdadeira. Este tipo de estrutura também pode ser combinada com <code>else if</code> e <code>else</code>, a depender do tipo de condições a serem avaliadas.</li>
+                </ul>
 
-            <h3>Operadores de comparação</h3>
+                <h3>Operadores de comparação</h3>
 
-            <p class="conteudo__texto">Os operadores de comparação são muito utilizados para criar expressões a serem avaliadas nas estruturas condicionais. São exemplos destes operadores:</p>
+                <p class="conteudo__texto">Os operadores de comparação são muito utilizados para criar expressões a serem avaliadas nas estruturas condicionais. São exemplos destes operadores:</p>
 
-            <ul class="conteudo__texto">
-                <li><span>Maior que - <code>></code></span> avalia se um valor é maior que outro.</li>
-                <li><span>Menor que - <code><</code></span> avalia se um valor é menor que outro.</li>
-                <li><span>Maior ou igual a - <code>>=</code></span> avalia se um valor é maior ou igual a outro.</li>
-                <li><span>Menor ou igual a - <code><=</code></span> avalia se um valor é menor que outro.</li>
-                <li><span>Desigualdade - <code>!==</code></span> avalia se um valor é diferente de outro.</li>
-                <li><span>Igualdade estrita - <code>===</code></span> avalia se um valor é igual a outro. Ese operador é quase sempre o operador de igualdade correto a se usar.</li>
-                <li><span>Igualdade ampla - <code>==</code></span> avalia se um valor é igual a outro após a conversão dos valores para um tipo comum. Desta forma <code>"10" == 10</code> geraria um resultado <code>true</code>.</li>
-            </ul>
+                <ul class="conteudo__texto">
+                    <li><span>Maior que - <code>></code></span> avalia se um valor é maior que outro.</li>
+                    <li><span>Menor que - <code><</code></span> avalia se um valor é menor que outro.</li>
+                    <li><span>Maior ou igual a - <code>>=</code></span> avalia se um valor é maior ou igual a outro.</li>
+                    <li><span>Menor ou igual a - <code><=</code></span> avalia se um valor é menor que outro.</li>
+                    <li><span>Desigualdade - <code>!==</code></span> avalia se um valor é diferente de outro.</li>
+                    <li><span>Igualdade estrita - <code>===</code></span> avalia se um valor é igual a outro. Ese operador é quase sempre o operador de igualdade correto a se usar.</li>
+                    <li><span>Igualdade ampla - <code>==</code></span> avalia se um valor é igual a outro após a conversão dos valores para um tipo comum. Desta forma <code>"10" == 10</code> geraria um resultado <code>true</code>.</li>
+                </ul>
 
-            <p class="conteudo__texto">Teste aqui os operadores de comparação</p>
+                <p class="conteudo__texto">Teste aqui os operadores de comparação</p>
 
-             <div class="conteudo__demonstracao">
-                <label for="numero1-comparacao">Digite um número</label>
-                <input type="text" id="numero1-comparacao"/>
+                <div class="conteudo__demonstracao">
+                    <label for="numero1-comparacao">Digite um número</label>
+                    <input type="text" id="numero1-comparacao"/>
 
-                <div class="conteudo__demonstracao__selecao">
-                    <select name="operacoes-comparacao" id="operacoes-comparacao">
-                        <option value="maior">></option>
-                        
-                        <option value="menor"><</option>
-                        
-                        <option value="maior-igual">>=</option>
-                        
-                        <option value="menor-igual"><=</option>
-                        
-                        <option value="diferente">!==</option>
-                        
-                        <option value="igual">===</option>
-                    </select>
+                    <div class="conteudo__demonstracao__selecao">
+                        <select name="operacoes-comparacao" id="operacoes-comparacao">
+                            <option value="maior">></option>
+                            
+                            <option value="menor"><</option>
+                            
+                            <option value="maior-igual">>=</option>
+                            
+                            <option value="menor-igual"><=</option>
+                            
+                            <option value="diferente">!==</option>
+                            
+                            <option value="igual">===</option>
+                        </select>
+                    </div>
+
+                    <label for="numero2-comparacao">Digite outro número</label>
+                    <input type="text" id="numero2-comparacao"/>
+
+                    <button class="conteudo__demonstracao__botao" id="comparar-number">Comparar</button>
                 </div>
 
-                <label for="numero2-comparacao">Digite outro número</label>
-                <input type="text" id="numero2-comparacao"/>
+                <div id="resultado-operacao-comparacao"></div>
 
-                <button class="conteudo__demonstracao__botao" id="comparar-number">Comparar</button>
-            </div>
+                <h3>Operadores lógicos</h3>
 
-            <div id="resultado-operacao-comparacao"></div>
+                <p class="conteudo__texto">Os operadores lógicos são utilizados para junção de expressões a serem avaliadas, podendo, em alguns casos, substituir aninhamentos de estruturas com <code>if</code>. Os operadores lógicos são:</p>
 
-            <h3>Operadores lógicos</h3>
+                <ul class="conteudo__texto">
+                    <li><span>AND - <code>&&</code></span> atua como o conector "e", em que expressões conectadas por este operador devem todas retornar <code>true</code> individualmente para que a expressão completa seja considerada <code>true</code>.</li>
+                    <li><span>OR - <code>||</code></span> atua como o conector "ou", em que pelo menos uma das expressões conectadas por este operador deve retornar <code>true</code> individualmente para que a expressão completa seja considerada <code>true</code>.</li>
+                    <li><span>NOT - <code>!</code></span> atua como o operador "não", em que, expressões precedidas por <code>!</code> terão seu valor negado. Caso a expressão seja <code>true</code>, ela retornará <code>false</code> e vice-versa.</li>
+                </ul>
 
-            <p class="conteudo__texto">Os operadores lógicos são utilizados para junção de expressões a serem avaliadas, podendo, em alguns casos, substituir aninhamentos de estruturas com <code>if</code>. Os operadores lógicos são:</p>
+                <p class="conteudo__texto">Considerando a condicional a seguir: <br>
+                <code>if ((x === 5 || y >= 5) && !(z < 10)) { <br> &nbsp; //bloco de código <br> }</code>
+                </p>
 
-            <ul class="conteudo__texto">
-                <li><span>AND - <code>&&</code></span> atua como o conector "e", em que expressões conectadas por este operador devem todas retornar <code>true</code> individualmente para que a expressão completa seja considerada <code>true</code>.</li>
-                <li><span>OR - <code>||</code></span> atua como o conector "ou", em que pelo menos uma das expressões conectadas por este operador deve retornar <code>true</code> individualmente para que a expressão completa seja considerada <code>true</code>.</li>
-                <li><span>NOT - <code>!</code></span> atua como o operador "não", em que, expressões precedidas por <code>!</code> terão seu valor negado. Caso a expressão seja <code>true</code>, ela retornará <code>false</code> e vice-versa.</li>
-            </ul>
+                <p class="conteudo__texto">Para que o bloco de código seja executado, temos as seguintes condições:</p>
+                <ul class="conteudo__texto">
+                    <li>- Devido ao operador <code>&&</code>, as expressões (x === 5 || y >= 5) e !(z < 10) devem retornar, individualmente, <code>true</code>.</li>
+                    <li>- No primeiro parêntesis, devido ao operador <code>||</code>, qualquer uma das duas expressões sendo verdadeira, a expressão total será verdadeira.</li>
+                    <li>- No segundo parêntesis, devido ao operador <code>!</code>, a expressão z < 10 deve retornar <code>false</code> para que, com o operador de negação, a expressão total retorne <code>true</code>.</li>
+                </ul>
 
-            <p class="conteudo__texto">Considerando a condicional a seguir: <br>
-            <code>if ((x === 5 || y >= 5) && !(z < 10)) { <br> &nbsp; //bloco de código <br> }</code>
-            </p>
+                <p class="conteudo__texto">Teste aqui valores para que a condição retorne <code>true</code> e o bloco de código seja executado.</p>
 
-            <p class="conteudo__texto">Para que o bloco de código seja executado, temos as seguintes condições:</p>
-            <ul class="conteudo__texto">
-                <li>- Devido ao operador <code>&&</code>, as expressões (x === 5 || y >= 5) e !(z < 10) devem retornar, individualmente, <code>true</code>.</li>
-                <li>- No primeiro parêntesis, devido ao operador <code>||</code>, qualquer uma das duas expressões sendo verdadeira, a expressão total será verdadeira.</li>
-                <li>- No segundo parêntesis, devido ao operador <code>!</code>, a expressão z < 10 deve retornar <code>false</code> para que, com o operador de negação, a expressão total retorne <code>true</code>.</li>
-            </ul>
+                <div class="conteudo__demonstracao">
+                    <label for="input-x">Valor de x</label>
+                    <input type="text" id="input-x">
+                    
+                    <label for="input-y">Valor de y</label>
+                    <input type="text" id="input-y">
+                    
+                    <label for="input-z">Valor de z</label>
+                    <input type="text" id="input-z">
 
-            <p class="conteudo__texto">Teste aqui valores para que a condição retorne <code>true</code> e o bloco de código seja executado.</p>
-
-            <div class="conteudo__demonstracao">
-                <label for="input-x">Valor de x</label>
-                <input type="text" id="input-x">
-                
-                <label for="input-y">Valor de y</label>
-                <input type="text" id="input-y">
-                
-                <label for="input-z">Valor de z</label>
-                <input type="text" id="input-z">
-
-                <button class="conteudo__demonstracao__botao" id="testar-numeros">Testar</button>
-            </div>
+                    <button class="conteudo__demonstracao__botao" id="testar-numeros">Testar</button>
+                </div>
+            </article>
     
             <div class="artigo__info">
                 <div class="artigo__info__autor">

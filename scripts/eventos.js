@@ -59,7 +59,7 @@ function escureceFonte(evento) {
 }
 
 function clareiaFonte(evento) {
-    evento.target.style.color = "#5b5b5b";
+    evento.target.style.color = "white";
 }
 
 const inputExemploEventos = document.getElementById("nome-exemplo")

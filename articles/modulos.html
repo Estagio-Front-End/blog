@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>CSS Inline, Interno e Externo</title>
+    <title>Módulos em Angular</title>
 </head>
 <body>
     <header>
@@ -41,40 +41,61 @@
             <img src="../images/search-outline.png" alt="Imagem de uma lupa">
         </div>
     </header>
-    
+   
     <main>
         <section class="conteudo">
-            <h2 class="conteudo__titulo">CSS inline, interno e externo</h2>
-            
-            <span class="artigo__tag artigo__tag--css-basico">CSS BÁSICO</span>
+            <h2 class="conteudo__titulo">Módulos em Angular</h2>
+            <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
             
             <article>
-                <p class="conteudo__texto">O <abbr title="Cascading Style Sheets">CSS</abbr> é uma linguagem de estilo por meio da qual documentos em HTML ou XML tem sua apresentação para o usuário descrita. Existem 3 formas de adicionar a estilização à um documento HTML: de forma inline, interna ou externa.</p>
-                   
-            <p class="conteudo__texto">No CSS inline, a estilização a ser aplicada é descrita dentro da própria tag HTML que será estilizada, dentro do documento HTML, por meio do atributo <code>style</code>.</p>
+                <p class="conteudo__texto">Módulos em Angular são uma ferramenta de encapsulamento de código baseado em unidades coesas para cada função dentro da aplicação. Os módulos atuam como containers de componentes, diretivas e serviços, entre outros blocos de código, que atuam em um mesmo objetivo e/ou funcionalidade.</p>
 
-            <figure>
-                <img src="../images/css-inline.png" alt="Linha de código CSS que reduz o comprimento de uma tag hr para 50% do comprimento da tag pai">
-                <figcaption>O atributo <code>style</code> na tag <code>hr</code> atribui uma estilização à tag, neste caso, de reduzir seu comprimento para 50% do comprimento da tag pai.</figcaption>
-            </figure>    
-    
-            <p class="conteudo__texto">No CSS interno, a estilização a ser aplicada é descrita dentro de uma tag <code>style</code>, posicionada entre as tags <code>head</code> e <code>body</code> do documento HTML. Para identificação das tags nas quais cada estilo será aplicado, são utilizados os seletores, classes ou ids utilizados no código HTML.</p>
-            
-            <figure>
-                <img src="../images/css-interno.png" alt="Bloco de código css que altera o peso da fonte de títulos em lista de descrições para negrito.">
-                <figcaption>No bloco de código inserido dentro da tag <code>style</code>, o peso da fonte de um título em lista de descrições é alterado para negrito.</figcaption>
-            </figure> 
-            
-            <p class="conteudo__texto">No CSS externo, a estilização a ser aplicada é descrita dentro de um documento com extensão <code>.css</code>, que fica à parte do documento HTML. Já que a descrição da estilização não fica inserida no documento HTML, é necessário que os documentos <code>.html</code> e <code>.css</code> sejam relacionados por meio de uma tag <code>link</code>, a ser inclusa dentro da tag <code>head</code> do documento HTML. Para identificação das tags a serem estilizadas, assim como no CSS interno, são utilizados seletores, classes e ids.</p>
-            
-            <figure>
-                <img src="../images/link-css-externo.png" alt="Tag link com a referenciação para o documento .css">
-                <figcaption>A tag <code>link</code> é a responsável por indicar o relacionamento entre uma folha de estilo e um documento html.</figcaption>
-            </figure>
-            
-            <p class="conteudo__texto">Atualmente, a melhor prática é utilizar o CSS externo, visto que mantém o código organizado para cada função (marcação e estilização) e permite a reutilização de código, em que uma folha de estilo (documento <code>.css</code>) pode ser aplicado para vários documentos HTML. A prática do CSS externo também traz vantagens para a manutenção do código, pois, ao necessitar de uma alteração, esta será feita em apenas um ponto do código, e não em vários, como aconteceria no CSS inline e no CSS interno.</p>
+                <p class="conteudo__texto">Este conceito auxilia na modularização da aplicação, gerando containers funcionais e facilmente reutilizáveis, além de facilitar a manutenção do código, tornando a aplicação mais facilmente testável e escalável.</p>
+
+                <p class="conteudo__texto">Para criar um módulo, basta utilizar o comando <code>ng generate module nome-modulo</code>, em que nome-modulo é um nome arbitrário. Este comando gerará um arquivo com a extensão de TypeScript com o nome nome-modulo.module.ts. Até o Angular v16, aplicações criadas com o comando <code>ng new</code> geravam um arquivo app.module.ts por padrão, em que se poderia importar todos os componentes, diretivas e serviços, gerando um container que encapsula a aplicação como um todo. A partir do Angular v17, o padrão se tornou os componentes ditos "standalones", que não possuem módulos atrelados e podem ser utilizados na aplicação ou aninhados em outros componentes por meio de importação direta na propriedade imports dos componentes.</p>
+
+                <figure>
+                    <img src="../images/modulo-arquivo.png" alt="Imagem com um ícone do Angular seguido do nome do arquivo de módulo, funcionalidade.module.ts">
+                    <figcaption>Arquivo de módulo em Angular.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">A estrutura inicial de um módulo consiste em suas importações seguido de um decorator <code>@NgModule</code> com as propriedades do módulo e uma classe exportando este módulo.</p>
+
+                <figure>
+                    <img src="../images/modulo-estrutura.png" alt="Imagem com código escrito em TypeScript juntamente com a sintaxe de Angular para a criação de um módulo com a estrutura inicial mencionada no texto anterior.">
+                    <figcaption>Estrutura inicial de um módulo em Angular.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">As propriedades mais importantes do decorador são a declarations, que é um array com os componentes e diretivas utilizados dentro daquele módulo; o imports, um array com quaisquer outros módulos utilizados naquele módulo; o providers, um array com os services utilizados naquele módulo e o bootstrap, que é o componente principal da aplicação (em geral, o AppComponent criado por padrão pelo Angular CLI).</p>
+
+                <p class="conteudo__texto">Caso se queira reutilizar os componentes de um módulo em outro componente que não faça parte da descendência original dele, é possível exportar o componente com a propriedade exports no decorator <code>@NgModules</code> e importar o módulo original no módulo do componente em que se quer utilizar o componente original.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/modulo-export.png" alt="Imagem com código escrito em TypeScript juntamente com a sintaxe de Angular criando um módulo chamado ProductsModule que exporta o componente ProductItemComponent">
+                        <figcaption>Export de um componente de um módulo para utilização em outro local da aplicação.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/modulo-import.png" alt="Imagem com código escrito em TypeScript juntamente com a sintaxe de Angular importando o ProductsModule no AppModule.">
+                        <figcaption>Import do módulo que exporta o componente desejado em outro local da aplicação, para futuro uso do componente.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Nas imagens anteriores, é possível ver o trâmite de export/import entre módulos para utilização de um componente fora do escopo do seu módulo. Desta forma: </p> 
+                <ul class="conteudo__texto">
+                    <li>- Criando o ProductsModule</li>
+                    <li>- Declarando e exportando o ProductItemComponent no decorator <code>@NgModule</code> do ProductsModule</li>
+                    <li>- Importando o ProductsModule, por meio do import no arquivo e no decorator <code>@NgModule</code>, no AppModule</li>
+                    <li>- O AppModule tendo o AppComponent declarado no seu decorator <code>@NgModule</code></li>
+                </ul> 
+                <p class="conteudo__texto">é possível utilizar o ProductItemComponent dentro do AppComponent.</p>
+
+                <p class="conteudo__texto">Existem, também, módulos nativos do Angular que podem ser importados para utilizações específicas, como o BrowserModule, para renderização da aplicação em um navegador; o RouterModule, para criação de rotas da aplicação; o HttpClientModule, para comunicação com o servidor por meio do protocolo HTTP; o CommonModule, para utilizar diretivas como <code>NgIf</code> e <code>NgFor</code>; o ReactiveFormsModule, para construção de formulários reativos, entre outros.</p>
+
+                <p class="conteudo__texto">Portanto, criando, importando e utilizando módulos, é possível deixar a aplicação mais concisa e organizada na troca de informações e componentes entre funcionalidades, além de facilitar a manutenção e os testes por toda a aplicação, aumentando sua escalabilidade.</p>
             </article>
-            
+    
             <div class="artigo__info">
                 <div class="artigo__info__autor">
                     <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
@@ -84,11 +105,11 @@
                     </div>
                 </div>
                 <div class="artigo__data">
-                    <p>20 Fev</p>
+                    <p>10 Mai</p>
                 </div>
             </div>
         </section>
-        
+
         <section aria-label="Seção de Formulário" class="artigo__formulario">    
             <h2>Gostou do que leu? Deixe um comentário</h2>
             <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
