@@ -2255,7 +2255,7 @@ input[type=text]:-webkit-autofill, input[type=text]:-webkit-autofill:hover, inpu
 
 header {
   padding: 2.4rem 4rem;
-  width: 100vw;
+  max-width: 100vw;
   position: sticky;
   position: -webkit-sticky;
   position: -ms-sticky;
@@ -2266,8 +2266,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 8rem;
   background-color: rgba(18, 19, 38, 0.5);
 }
 header img, header ul, header li, header div, header a, header span, header nav {
@@ -2284,12 +2282,11 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   display: flex;
   justify-content: center;
   align-items: normal;
-  flex-wrap: wrap;
+  width: fit-content;
 }
 .navegacao li {
   list-style: none;
   border-radius: 1.2rem;
-  position: relative;
 }
 .navegacao li a {
   font-family: "Montserrat", sans-serif;
@@ -2324,6 +2321,9 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   .navegacao .navegacao--hd {
     display: none;
   }
+}
+.navegacao .ativo {
+  display: flex;
 }
 
 .idiomas {
@@ -2427,6 +2427,7 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  display: none;
 }
 .navegacao__submenu li a {
   display: flex;

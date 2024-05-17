@@ -4,6 +4,20 @@ window.addEventListener('scroll', () => {
     : document.querySelector("header").style.backgroundColor = "rgba(18, 19, 38, 0.5)"
 }); 
 
+const menuSolucoes = document.querySelector("#menu-solucoes");
+const menuSegmentos = document.querySelector("#menu-segmentos");
+const menuAreaTech = document.querySelector("#menu-areatech");
+
+const menusComSubmenus = [menuSolucoes, menuSegmentos, menuAreaTech]
+
+menusComSubmenus.forEach(menu => menu.addEventListener('mouseover', evento => {
+    let submenu = evento.target.parentElement.nextElementSibling;
+    submenu.style.display = "flex";
+    submenu.style.left = evento.target.parentElement.getBoundingClientRect().left + "px";
+}))
+
+//como fechar o submenu quando sai do menu sem ir pro submenu ou quando vai pro submenu, mas sai dele.
+
 //Abre/fecha do menu de navegação do conteúdo (somente em artigos)
 const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
 if (menuNavegacaoConteudo !== null) {
