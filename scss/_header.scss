@@ -29,6 +29,7 @@ header {
         list-style: none;
         border-radius: $espacamento-3;
         position: relative;
+        
         a {
             @include headline-primary-regular(14, left, uppercase);
             letter-spacing: 0.05;
@@ -38,6 +39,7 @@ header {
         
         &:hover {
             background-color: $cor-hover;
+            
             a {   
                 font-weight: 800;
                 text-decoration: none; 
@@ -130,35 +132,51 @@ header {
     }
 }
 
-.navegacao--mobile {
-    display: none;
+// .navegacao--mobile {
+//     display: none;
 
-    @include responsividade("tablet") {
-        display: block;
-        position: absolute;
-    }
+//     @include responsividade("tablet") {
+//         display: block;
+//         position: absolute;
+//     }
 
-    @include responsividade("mobile") {
-        display: block;
-        position: absolute;
-    }
-}
+//     @include responsividade("mobile") {
+//         display: block;
+//         position: absolute;
+//     }
+// }
 
 .navegacao__submenu {
     position: absolute;
     width: fit-content;
-    top: $espacamento-16;
+    top: $espacamento-22;
     background-color: $cor-hover;
     border-radius: $espacamento-3;
     @include body-system-semibold(12, left, uppercase);
-    
-    li a{
-        @include body-system-semibold(12, left, uppercase);
-        font-weight: 600;
-        &:hover{
-            font-weight: 600;
-            color: $cor-secundaria;
+    padding: $espacamento-4;
+    display: flex;
+    flex-direction: column;
+    gap: $espacamento-2;
+
+    li {   
+        a {
+            @include flex(start,center);
+            gap: $espacamento-2;
+            padding: $espacamento-2 0;
+            @include body-system-semibold(12, left, uppercase);
+            
+            &:hover {
+                @include body-system-semibold(12, left, uppercase, $cor-secundaria);   
+                svg path {
+                    stroke: $cor-secundaria;
+                }
+            }
+
+            svg {
+                background-color: $cor-hover;
+            }
         }
+
     }
     //display: none;
 }

@@ -2408,26 +2408,10 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   }
 }
 
-.navegacao--mobile {
-  display: none;
-}
-@media screen and (768px <= width <= 1023px) {
-  .navegacao--mobile {
-    display: block;
-    position: absolute;
-  }
-}
-@media screen and (max-width: 767px) {
-  .navegacao--mobile {
-    display: block;
-    position: absolute;
-  }
-}
-
 .navegacao__submenu {
   position: absolute;
   width: fit-content;
-  top: 6.4rem;
+  top: 8.8rem;
   background-color: #121326;
   border-radius: 1.2rem;
   font-family: "Open Sans", sans-serif;
@@ -2439,8 +2423,17 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   color: #FFFFFF;
   text-transform: uppercase;
   color: #FFFFFF;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 .navegacao__submenu li a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 0;
   font-family: "Open Sans", sans-serif;
   font-size: 1.2rem;
   line-height: 1.464rem;
@@ -2450,11 +2443,23 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   color: #FFFFFF;
   text-transform: uppercase;
   color: #FFFFFF;
-  font-weight: 600;
 }
 .navegacao__submenu li a:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.464rem;
   font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
   color: #F39200;
+  text-transform: uppercase;
+  color: #F39200;
+}
+.navegacao__submenu li a:hover svg path {
+  stroke: #F39200;
+}
+.navegacao__submenu li a svg {
+  background-color: #121326;
 }
 
 /*# sourceMappingURL=style.css.map */
