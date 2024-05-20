@@ -65,7 +65,30 @@
             </nav>
 
             <article>
-                
+                <p class="conteudo__texto">Services são uma ampla classificação que englobam quaisquer funcionalidades que um componente precisa, seja ela uma função, uma classe, uma comunicação com o backend, entre outros. Após criadas, estas funcionalidades são disponibilizadas para os componentes por meio da injeção de dependências, que é uma forma do Angular de disponibilizar recursos externos para um componente. Os services, em geral, são utilizados em múltiplas partes do código, de modo que uma das principais razões para o seu uso é a diminuição de duplicidade de códigos que tragam o mesmo resultado em diferentes partes da aplicação. É uma boa prática que um service tenha uma única funcionalidade, tornando o código mais conciso, legível e de alta manutenibilidade.</p>
+
+                <p>Para criar um service, é necessário apenas utilizar o comando <code>ng generate service nome-servico</code>, em que nome-servico é um nome arbitrário, ou sua abreviação <code>ng g s nome-servico</code>. Este comando irá gerar 2 arquivos: um nome-servico.service.ts, que conterá a lógica da funcionalidade do service criado, e o nome-servico.service.spec.ts, que trará os testes unitários referentes à funcionalidade do service criado.</p>
+
+                <figure>
+                    <img src="" alt="Imagem das linhas no terminal de comandos com o comando para a criação de um service chamado servico e as linhas de criação dos arquivos do service e de testes unitários.">
+                    <figcaption>Criação de um service no terminal de comandos.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">A estrutura inicial de um service possui as devidas importações, o decorator <code>@Injectable</code> e a classe exportada do service. No decorator, se tem onde o service pode ser utilizado. Por default, se tem a propriedade <code>providedIn: 'root'</code>, indicando que este service é visível para toda a aplicação e pode ser injetado em qualquer parte dela. Na classe, temos a lógica da funcionalidade do service que será utilizada em outros componentes.</p>
+
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <p class="conteudo__texto">É possível também que services dependam de outras services para funcionarem, como em ações de requisições HTTP. Neste caso, o construtor do service em questão deve conter como parâmetro o service inicial do qual ele necessita.</p>
+
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+                <p class="conteudo__texto">No componente, </p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
