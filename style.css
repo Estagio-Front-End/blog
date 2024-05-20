@@ -55,20 +55,8 @@ blockquote {
   background-color: #E5532D;
 }
 
-.artigo__tag--css-basico {
+.artigo__tag--css {
   background-color: #0095DA;
-}
-
-.artigo__tag--posicionamento {
-  background-color: #FF8F7C;
-}
-
-.artigo__tag--animacoes {
-  background-color: #F39200;
-}
-
-.artigo__tag--responsividade {
-  background-color: #1BB2BB;
 }
 
 .artigo__tag--javascript {
