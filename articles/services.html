@@ -58,37 +58,46 @@
             <nav class="conteudo__navegacao">
                 <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
                 <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
-                    <li class="conteudo__navegacao__item"><a href="#definicoes">Definições de deficiências</a></li>
-                    <li class="conteudo__navegacao__item"><a href="#elementos">Elementos de acessibilidade no desenvolvimento</a></li>
-                    <li class="conteudo__navegacao__item"><a href="#lighthouse">Lighthouse no Chrome DevTools</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#definicao">Definição de services</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#estrutura">Estrutura dos services</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#componente">Injeção de services em componentes</a></li>
                 </ol>
             </nav>
 
             <article>
-                <p class="conteudo__texto">Services são uma ampla classificação que englobam quaisquer funcionalidades que um componente precisa, seja ela uma função, uma classe, uma comunicação com o backend, entre outros. Após criadas, estas funcionalidades são disponibilizadas para os componentes por meio da injeção de dependências, que é uma forma do Angular de disponibilizar recursos externos para um componente. Os services, em geral, são utilizados em múltiplas partes do código, de modo que uma das principais razões para o seu uso é a diminuição de duplicidade de códigos que tragam o mesmo resultado em diferentes partes da aplicação. É uma boa prática que um service tenha uma única funcionalidade, tornando o código mais conciso, legível e de alta manutenibilidade.</p>
+                <p class="conteudo__texto" id="definicao">Services são uma ampla classificação que englobam quaisquer funcionalidades que um componente precisa, seja ela uma função, uma classe, uma comunicação com o backend, entre outros. Após criadas, estas funcionalidades são disponibilizadas para os componentes por meio da injeção de dependências, que é uma forma do Angular de disponibilizar recursos externos para um componente. Os services, em geral, são utilizados em múltiplas partes do código, de modo que uma das principais razões para o seu uso é a diminuição de duplicidade de códigos que tragam o mesmo resultado em diferentes partes da aplicação. É uma boa prática que um service tenha uma única funcionalidade, tornando o código mais conciso, legível e de alta manutenibilidade.</p>
 
                 <p>Para criar um service, é necessário apenas utilizar o comando <code>ng generate service nome-servico</code>, em que nome-servico é um nome arbitrário, ou sua abreviação <code>ng g s nome-servico</code>. Este comando irá gerar 2 arquivos: um nome-servico.service.ts, que conterá a lógica da funcionalidade do service criado, e o nome-servico.service.spec.ts, que trará os testes unitários referentes à funcionalidade do service criado.</p>
 
                 <figure>
-                    <img src="" alt="Imagem das linhas no terminal de comandos com o comando para a criação de um service chamado servico e as linhas de criação dos arquivos do service e de testes unitários.">
+                    <img src="../images/services-criacao.png" alt="Imagem das linhas no terminal de comandos com o comando para a criação de um service chamado servico e as linhas de criação dos arquivos do service e de testes unitários.">
                     <figcaption>Criação de um service no terminal de comandos.</figcaption>
                 </figure>
 
-                <p class="conteudo__texto">A estrutura inicial de um service possui as devidas importações, o decorator <code>@Injectable</code> e a classe exportada do service. No decorator, se tem onde o service pode ser utilizado. Por default, se tem a propriedade <code>providedIn: 'root'</code>, indicando que este service é visível para toda a aplicação e pode ser injetado em qualquer parte dela. Na classe, temos a lógica da funcionalidade do service que será utilizada em outros componentes.</p>
+                <p class="conteudo__texto" id="estrutura">A estrutura inicial de um service possui as devidas importações, o decorator <code>@Injectable</code> e a classe exportada do service. No decorator, se tem onde o service pode ser utilizado. Por default, se tem a propriedade <code>providedIn: 'root'</code>, indicando que este service é visível para toda a aplicação e pode ser injetado em qualquer parte dela. Na classe, temos a lógica da funcionalidade do service que será utilizada em outros componentes.</p>
 
                 <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
+                    <img src="../images/services-estrutura.png" alt="Imagem com código escrito na sintaxe do Angular com a estrutura inicial de um service.">
+                    <figcaption>Estrutura inicial de um service logo após criação pelo comando <code>ng g s nome-servico</code>.</figcaption>
                 </figure>
 
                 <p class="conteudo__texto">É possível também que services dependam de outras services para funcionarem, como em ações de requisições HTTP. Neste caso, o construtor do service em questão deve conter como parâmetro o service inicial do qual ele necessita.</p>
 
                 <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
+                    <img src="../images/services-aninhado.png" alt="Imagem com código escrito na sintaxe de Angular definindo um service e injetando outro service do core do Angular no service criado.">
+                    <figcaption>Injeção de services em outro service.</figcaption>
                 </figure>
 
-                <p class="conteudo__texto">No componente, </p>
+                <p class="conteudo__texto" id="componente">No componente, a injeção de dependência pode ser realizada de algumas formas. Para versões anteriores à v17 do Angular, a classe do service seria adicionado ao array da propriedade providers do <code>@NgModule</code> no arquivo de módulo do componente. A partir da v17, que não é module-based, a injeção é feita com importação direta do service no componente e instanciação no construtor da classe do componente.</p>
+
+                <figure>
+                    <img src="../images/services-injecao.png" alt="Imagem com código escrito na sintaxe de Angular definindo um componente e injetando um service em seu construtor.">
+                    <figcaption>Injeção de um service em um componente.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">É possível, também, injetar um service em um componente pelo método <code>inject()</code>, importando o service normalmente e, dentro da classe do componente, adicionando uma variável cujo valor é <code>inject(service)</code>.</p>
+
+                <p class="conteudo__texto">Portanto, criando, importando e injetando services em outros services ou em componentes, é possível criar funcionalidades de forma modularizada para que possam ser reutilizadas em diversas partes da aplicação, sem a necessidade de reescrever código. As services, conforme exibido, podem ser utilizadas para comunicações com o backend e com APIs externas por meio do HttpClient, assim como eventuais dados contidos na classe do service podem ser manipulados e compartilhados por componentes da aplicação, bastando que o service esteja importado e injetado nos componentes.</p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
