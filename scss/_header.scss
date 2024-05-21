@@ -25,23 +25,20 @@ header {
 
     li {
         list-style: none;
-        border-radius: $espacamento-3;
         
         a {
             @include headline-primary-regular(14, left, uppercase);
             letter-spacing: 0.05;
             display: inline-block;
             padding: $espacamento-4;
-        }
-        
-        &:hover {
-            background-color: $cor-hover;
+            border-radius: $espacamento-3;
             
-            a {   
+            &:hover {
+                background-color: $cor-hover;
                 font-weight: 800;
                 text-decoration: none; 
             }
-        }
+        }  
     }
 
     @include responsividade("mobile"){
@@ -151,11 +148,11 @@ header {
     position: absolute;
     width: fit-content;
     top: $espacamento-22;
+    padding: $espacamento-4;
     background-color: $cor-hover;
     border-radius: $espacamento-3;
     @include body-system-semibold(12, left, uppercase);
-    padding: $espacamento-4;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: $espacamento-2;
 
@@ -171,6 +168,7 @@ header {
                 svg path {
                     stroke: $cor-secundaria;
                 }
+
             }
 
             svg {
@@ -179,5 +177,4 @@ header {
         }
 
     }
-    display: none;
 }

@@ -9,12 +9,18 @@ const menuSegmentos = document.querySelector("#menu-segmentos");
 const menuAreaTech = document.querySelector("#menu-areatech");
 
 const menusComSubmenus = [menuSolucoes, menuSegmentos, menuAreaTech]
+const submenus = document.querySelectorAll("li[id^=menu] ul");
 
 menusComSubmenus.forEach(menu => menu.addEventListener('mouseover', evento => {
-    let submenu = evento.target.parentElement.nextElementSibling;
-    submenu.style.display = "flex";
+    let submenu = evento.target.nextElementSibling;
+    submenu.classList.add("ativo");
+    submenus.forEach(sub => {
+        sub === submenu ? sub.style.display = "flex" : sub.style.display = "none"
+    })
     submenu.style.left = evento.target.parentElement.getBoundingClientRect().left + "px";
 }))
+
+submenus.forEach(submenu => submenu.addEventListener('mouseleave', evento => evento.target.style.display = "none"))
 
 //como fechar o submenu quando sai do menu sem ir pro submenu ou quando vai pro submenu, mas sai dele.
 
