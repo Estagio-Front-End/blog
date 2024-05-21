@@ -48,7 +48,6 @@ menuHamburguer.addEventListener('click', () => {
     menuMobile.style.top = containerHeader.getBoundingClientRect().bottom + "px"
 })
 
-
 //Abre/fecha do menu de navegação do conteúdo (somente em artigos)
 const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
 if (menuNavegacaoConteudo !== null) {
