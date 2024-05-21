@@ -3,26 +3,34 @@ window.addEventListener('scroll', () => {
     ? document.querySelector("header").style.backgroundColor = "#1F2041" 
     : document.querySelector("header").style.backgroundColor = "rgba(18, 19, 38, 0.5)"
 }); 
-
-const menuSolucoes = document.querySelector("#menu-solucoes");
-const menuSegmentos = document.querySelector("#menu-segmentos");
-const menuAreaTech = document.querySelector("#menu-areatech");
-
-const menusComSubmenus = [menuSolucoes, menuSegmentos, menuAreaTech]
+const menusNavegacao = document.querySelectorAll(".navegacao li")
+const menusComSubmenu = document.querySelectorAll("li[id^=menu]")
 const submenus = document.querySelectorAll("li[id^=menu] ul");
+const submenusItens = document.querySelectorAll("li[id^=menu] ul li")
 
-menusComSubmenus.forEach(menu => menu.addEventListener('mouseover', evento => {
-    let submenu = evento.target.nextElementSibling;
-    submenu.classList.add("ativo");
-    submenus.forEach(sub => {
-        sub === submenu ? sub.style.display = "flex" : sub.style.display = "none"
-    })
-    submenu.style.left = evento.target.parentElement.getBoundingClientRect().left + "px";
-}))
+menusNavegacao.forEach(menu => menu.addEventListener('mouseover', evento => {
+    let menu = evento.target.parentElement;
+    console.log(menu)
+
+    if (Array.from(menusComSubmenu).includes(menu) || (Array.from(submenusItens).includes(menu))) {
+        let submenu = evento.target.nextElementSibling;
+        
+        if (Array.from(submenus).includes(submenu)) {
+            submenu.style.display = "flex";
+            submenus.forEach(sub => {
+                sub === submenu ? sub.style.display = "flex" : sub.style.display = "none"
+            })
+            submenu.style.left = evento.target.parentElement.getBoundingClientRect().left + "px";
+        } else if (Array.from(submenus).includes(evento.target)) {
+            evento.target.style.display = "flex"
+        }  
+    } else {
+        submenus.forEach(sub => sub.style.display = "none")
+    }
+})) 
 
 submenus.forEach(submenu => submenu.addEventListener('mouseleave', evento => evento.target.style.display = "none"))
-
-//como fechar o submenu quando sai do menu sem ir pro submenu ou quando vai pro submenu, mas sai dele.
+//document.querySelector("header").addEventListener('mouseleave', () => submenus.forEach(submenu => submenu.classList.remove("ativo")))
 
 //Abre/fecha do menu de navegação do conteúdo (somente em artigos)
 const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
