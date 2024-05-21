@@ -2434,6 +2434,9 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   border: 1.5px solid #FFFFFF;
   border-radius: 2px;
 }
+.navegacao__hamburguer div:first-child, .navegacao__hamburguer div:last-child {
+  position: relative;
+}
 @media screen and (768px <= width <= 1023px) {
   .navegacao__hamburguer {
     display: flex;
@@ -2444,23 +2447,258 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
     display: flex;
   }
 }
-.navegacao__hamburguer.ativo div:first-child, .navegacao__hamburguer.ativo div:last-child {
-  opacity: 0;
+.navegacao__hamburguer.ativo div:first-child {
+  animation: juntarMenuParaBaixo 0.5s ease-in-out forwards;
+  -webkit-animation: juntarMenuParaBaixo 0.5s ease-in-out forwards;
+  -moz-animation: juntarMenuParaBaixo 0.5s ease-in-out forwards;
+  -o-animation: juntarMenuParaBaixo 0.5s ease-in-out forwards;
+}
+.navegacao__hamburguer.ativo div:last-child {
+  animation: juntarMenuParaCima 0.5s ease-in-out forwards;
+  -webkit-animation: juntarMenuParaCima 0.5s ease-in-out forwards;
+  -moz-animation: juntarMenuParaCima 0.5s ease-in-out forwards;
+  -o-animation: juntarMenuParaCima 0.5s ease-in-out forwards;
+}
+.navegacao__hamburguer.inativo div:first-child {
+  animation: separarMenuParaCima 0.5s ease-in-out forwards;
+  -webkit-animation: separarMenuParaCima 0.5s ease-in-out forwards;
+  -moz-animation: separarMenuParaCima 0.5s ease-in-out forwards;
+  -o-animation: separarMenuParaCima 0.5s ease-in-out forwards;
+}
+.navegacao__hamburguer.inativo div:last-child {
+  animation: separarMenuParaBaixo 0.5s ease-in-out forwards;
+  -webkit-animation: separarMenuParaBaixo 0.5s ease-in-out forwards;
+  -moz-animation: separarMenuParaBaixo 0.5s ease-in-out forwards;
+  -o-animation: separarMenuParaBaixo 0.5s ease-in-out forwards;
 }
 
+@keyframes juntarMenuParaBaixo {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: 0.35rem;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes juntarMenuParaBaixo {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: 0.35rem;
+    opacity: 0;
+  }
+}
+@-moz-keyframes juntarMenuParaBaixo {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: 0.35rem;
+    opacity: 0;
+  }
+}
+@-o-keyframes juntarMenuParaBaixo {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: 0.35rem;
+    opacity: 0;
+  }
+}
+@keyframes juntarMenuParaCima {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+  to {
+    bottom: 0.35rem;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes juntarMenuParaCima {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+  to {
+    bottom: 0.35rem;
+    opacity: 0;
+  }
+}
+@-moz-keyframes juntarMenuParaCima {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+  to {
+    bottom: 0.35rem;
+    opacity: 0;
+  }
+}
+@-o-keyframes juntarMenuParaCima {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+  to {
+    bottom: 0.35rem;
+    opacity: 0;
+  }
+}
+@keyframes separarMenuParaCima {
+  from {
+    top: 0.35rem;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes separarMenuParaCima {
+  from {
+    top: 0.35rem;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-moz-keyframes separarMenuParaCima {
+  from {
+    top: 0.35rem;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-o-keyframes separarMenuParaCima {
+  from {
+    top: 0.35rem;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes separarMenuParaBaixo {
+  from {
+    bottom: 0.35rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes separarMenuParaBaixo {
+  from {
+    bottom: 0.35rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@-moz-keyframes separarMenuParaBaixo {
+  from {
+    bottom: 0.35rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@-o-keyframes separarMenuParaBaixo {
+  from {
+    bottom: 0.35rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
 .navegacao--mobile {
   position: absolute;
   right: 0;
   width: 100vw;
-  padding: 0;
-  height: 100px;
-  background-color: white;
+  background-color: #1F2041;
+}
+.navegacao--mobile li a {
+  display: inline-block;
+  width: 100%;
+  padding: 2.4rem 1.6rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.708rem;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
 }
 .navegacao--mobile.inativo {
   display: none;
 }
 .navegacao--mobile.ativo {
-  display: block;
+  animation: abrirMenuMobile 0.5s ease-in-out forwards;
+}
+.navegacao--mobile .navegacao--mobile__submenu {
+  display: none;
+}
+
+@keyframes abrirMenuMobile {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+@-webkit-keyframes abrirMenuMobile {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+@-moz-keyframes abrirMenuMobile {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+@-o-keyframes abrirMenuMobile {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

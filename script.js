@@ -2,8 +2,8 @@ const containerHeader = document.querySelector("header");
 
 window.addEventListener('scroll', () => {
     (window.scrollY > 0) 
-    ? document.querySelector("header").style.backgroundColor = "#1F2041" 
-    : document.querySelector("header").style.backgroundColor = "rgba(18, 19, 38, 0.5)"
+    ? containerHeader.style.backgroundColor = "#1F2041" 
+    : containerHeader.style.backgroundColor = "rgba(18, 19, 38, 0.5)"
 }); 
 
 const menusNavegacao = document.querySelectorAll(".navegacao li")
@@ -43,10 +43,23 @@ const menuHamburguer = document.querySelector("#hamburguer-icone")
 const menuMobile = document.querySelector(".navegacao--mobile")
 
 menuHamburguer.addEventListener('click', () => {
-    menuHamburguer.classList.toggle("ativo");
-    menuMobile.classList.toggle("ativo");
-    menuMobile.style.top = containerHeader.getBoundingClientRect().bottom + "px"
+    toggleAnimacaoMenuHamburguer()
+    toggleVisaoMenuMobile()
 })
+
+function toggleAnimacaoMenuHamburguer() {
+    menuHamburguer.classList.toggle("ativo");
+    
+    menuHamburguer.classList.length === 1 
+    ? menuHamburguer.classList.add("inativo")
+    : menuHamburguer.classList.remove("inativo")
+}
+
+function toggleVisaoMenuMobile() {
+    menuMobile.classList.toggle("ativo");
+    menuMobile.classList.toggle("inativo");
+    menuMobile.style.top = containerHeader.offsetHeight - 1 + "px"
+}
 
 //Abre/fecha do menu de navegação do conteúdo (somente em artigos)
 const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
@@ -71,7 +84,7 @@ if (linksMenuNavegacao !== null) {
         evento.preventDefault();
         const linkDesejado = evento.currentTarget.getAttribute("href");
         const secaoDesejada = document.querySelector(linkDesejado);
-        const headerMaisEspacamento = document.querySelector("header").offsetHeight + 20;
+        const headerMaisEspacamento = containerHeader.offsetHeight + 20;
         
         const configScroll = {
             left: 0,
