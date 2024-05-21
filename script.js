@@ -30,7 +30,11 @@ menusNavegacao.forEach(menu => menu.addEventListener('mouseover', evento => {
     } else {
         submenus.forEach(sub => sub.style.display = "none")
     }
-})) 
+}))
+
+document.querySelector("main").addEventListener('mouseover', () => {
+    submenus.forEach(sub => sub.style.display = "none")
+})
 
 submenus.forEach(submenu => submenu.addEventListener('mouseleave', evento => evento.target.style.display = "none"))
 
