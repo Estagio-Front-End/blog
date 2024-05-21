@@ -54,9 +54,40 @@ header {
             display: none;
         }
     }
+}
 
-    .ativo {
-        display: flex;
+.navegacao__submenu {
+    position: absolute;
+    width: fit-content;
+    top: $espacamento-22;
+    padding: $espacamento-4;
+    background-color: $cor-hover;
+    border-radius: $espacamento-3;
+    @include body-system-semibold(12, left, uppercase);
+    display: none;
+    flex-direction: column;
+    gap: $espacamento-2;
+
+    li {   
+        a {
+            @include flex(start,center);
+            gap: $espacamento-2;
+            padding: $espacamento-2 0;
+            @include body-system-semibold(12, left, uppercase);
+            
+            &:hover {
+                @include body-system-semibold(12, left, uppercase, $cor-secundaria);   
+                svg path {
+                    stroke: $cor-secundaria;
+                }
+
+            }
+
+            svg {
+                background-color: $cor-hover;
+            }
+        }
+
     }
 }
 
@@ -128,53 +159,31 @@ header {
     @include responsividade ("mobile") {
         display: flex;
     }
-}
 
-// .navegacao--mobile {
-//     display: none;
-
-//     @include responsividade("tablet") {
-//         display: block;
-//         position: absolute;
-//     }
-
-//     @include responsividade("mobile") {
-//         display: block;
-//         position: absolute;
-//     }
-// }
-
-.navegacao__submenu {
-    position: absolute;
-    width: fit-content;
-    top: $espacamento-22;
-    padding: $espacamento-4;
-    background-color: $cor-hover;
-    border-radius: $espacamento-3;
-    @include body-system-semibold(12, left, uppercase);
-    display: none;
-    flex-direction: column;
-    gap: $espacamento-2;
-
-    li {   
-        a {
-            @include flex(start,center);
-            gap: $espacamento-2;
-            padding: $espacamento-2 0;
-            @include body-system-semibold(12, left, uppercase);
-            
-            &:hover {
-                @include body-system-semibold(12, left, uppercase, $cor-secundaria);   
-                svg path {
-                    stroke: $cor-secundaria;
-                }
-
-            }
-
-            svg {
-                background-color: $cor-hover;
-            }
-        }
-
+    &.ativo {
+        div {
+            &:first-child, &:last-child {
+            opacity: 0;
+            }  
+        } 
     }
 }
+
+.navegacao--mobile {
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    padding: 0;
+    height: 100px;
+    background-color: white;
+    
+    &.inativo {
+        display: none;
+    }
+
+    &.ativo {
+        display: block;
+        
+    }
+}
+

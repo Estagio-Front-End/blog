@@ -2308,8 +2308,59 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
     display: none;
   }
 }
-.navegacao .ativo {
+
+.navegacao__submenu {
+  position: absolute;
+  width: fit-content;
+  top: 8.8rem;
+  padding: 1.6rem;
+  background-color: #121326;
+  border-radius: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.464rem;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  display: none;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.navegacao__submenu li a {
   display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.464rem;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.navegacao__submenu li a:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.464rem;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  color: #F39200;
+  text-transform: uppercase;
+  color: #F39200;
+}
+.navegacao__submenu li a:hover svg path {
+  stroke: #F39200;
+}
+.navegacao__submenu li a svg {
+  background-color: #121326;
 }
 
 .idiomas {
@@ -2393,59 +2444,23 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
     display: flex;
   }
 }
+.navegacao__hamburguer.ativo div:first-child, .navegacao__hamburguer.ativo div:last-child {
+  opacity: 0;
+}
 
-.navegacao__submenu {
+.navegacao--mobile {
   position: absolute;
-  width: fit-content;
-  top: 8.8rem;
-  padding: 1.6rem;
-  background-color: #121326;
-  border-radius: 1.2rem;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.464rem;
-  font-weight: 600;
-  text-align: left;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  color: #FFFFFF;
+  right: 0;
+  width: 100vw;
+  padding: 0;
+  height: 100px;
+  background-color: white;
+}
+.navegacao--mobile.inativo {
   display: none;
-  flex-direction: column;
-  gap: 0.8rem;
 }
-.navegacao__submenu li a {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem 0;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.464rem;
-  font-weight: 600;
-  text-align: left;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  color: #FFFFFF;
-}
-.navegacao__submenu li a:hover {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.464rem;
-  font-weight: 600;
-  text-align: left;
-  text-transform: uppercase;
-  color: #F39200;
-  text-transform: uppercase;
-  color: #F39200;
-}
-.navegacao__submenu li a:hover svg path {
-  stroke: #F39200;
-}
-.navegacao__submenu li a svg {
-  background-color: #121326;
+.navegacao--mobile.ativo {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

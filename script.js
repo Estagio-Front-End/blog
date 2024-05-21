@@ -1,8 +1,11 @@
+const containerHeader = document.querySelector("header");
+
 window.addEventListener('scroll', () => {
     (window.scrollY > 0) 
     ? document.querySelector("header").style.backgroundColor = "#1F2041" 
     : document.querySelector("header").style.backgroundColor = "rgba(18, 19, 38, 0.5)"
 }); 
+
 const menusNavegacao = document.querySelectorAll(".navegacao li")
 const menusComSubmenu = document.querySelectorAll("li[id^=menu]")
 const submenus = document.querySelectorAll("li[id^=menu] ul");
@@ -30,7 +33,17 @@ menusNavegacao.forEach(menu => menu.addEventListener('mouseover', evento => {
 })) 
 
 submenus.forEach(submenu => submenu.addEventListener('mouseleave', evento => evento.target.style.display = "none"))
-//document.querySelector("header").addEventListener('mouseleave', () => submenus.forEach(submenu => submenu.classList.remove("ativo")))
+
+//Abre/fecha menu tablet/mobile
+const menuHamburguer = document.querySelector("#hamburguer-icone")
+const menuMobile = document.querySelector(".navegacao--mobile")
+
+menuHamburguer.addEventListener('click', () => {
+    menuHamburguer.classList.toggle("ativo");
+    menuMobile.classList.toggle("ativo");
+    menuMobile.style.top = containerHeader.getBoundingClientRect().bottom + "px"
+})
+
 
 //Abre/fecha do menu de navegação do conteúdo (somente em artigos)
 const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
