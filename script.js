@@ -1,5 +1,4 @@
 const containerHeader = document.querySelector("header");
-
 window.addEventListener('scroll', () => {
     (window.scrollY > 0) 
     ? containerHeader.style.backgroundColor = "#1F2041" 
@@ -95,7 +94,7 @@ if (linksMenuNavegacao !== null) {
     }
 }
 
-//Funcionalidade de lista de idiomas dropdown + troca do idioma e rearranjo da lista
+//Funcionalidade de lista de idiomas dropdown + troca do idioma e rearranjo da lista (incompleto)
 let idiomas = [
     {
         nome: "PT", 
@@ -142,16 +141,17 @@ Array.from(listaIdiomas.children).forEach((item) => {
 const containerAcoesMobile = document.querySelector(".header__acoes--mobile");
 const containerIdiomas = document.querySelector(".header__acoes");
 const containerAcoes = document.querySelector(".header__acoes__menu");
-window.addEventListener('resize', rearranjarMenu)
-window.addEventListener('load', rearranjarMenu)
 
-function rearranjarMenu() {
-    if (window.innerWidth < 768) {
+window.addEventListener('resize', evento => rearranjarMenu(evento.target.document.body.clientWidth))
+window.addEventListener('load', evento => rearranjarMenu(evento.target.body.clientWidth))
+
+function rearranjarMenu(larguraViewport) {
+    if (larguraViewport < 768) {
         containerAcoesMobile.appendChild(document.querySelector(".idiomas"));
         containerAcoesMobile.appendChild(document.querySelector("a[href='https://www.zappts.com.br/contato/']"));
     } else {
-        containerIdiomas.firstChild = document.querySelector(".idiomas");
-        containerAcoes.firstChild = document.querySelector("a[href='https://www.zappts.com.br/contato/']")
+        containerIdiomas.prepend(document.querySelector(".idiomas"));  
+        containerAcoes.prepend(document.querySelector("a[href='https://www.zappts.com.br/contato/']"));
     }
 }
 
