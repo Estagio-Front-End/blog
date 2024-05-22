@@ -312,6 +312,10 @@ header {
         @include flex(space-between, center);
         padding: $espacamento-2 $espacamento-4 $espacamento-2 0; 
     
+        .idiomas ul li:hover, .idiomas ul li span:hover, .idiomas ul li img:hover {
+            background-color: $cor-hover;
+        }
+
         a {
             width: 45%;
             color: $cor-primaria;

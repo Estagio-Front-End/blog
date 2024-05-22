@@ -2741,6 +2741,9 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   align-items: center;
   padding: 0.8rem 1.6rem 0.8rem 0;
 }
+.navegacao--mobile .header__acoes--mobile .idiomas ul li:hover, .navegacao--mobile .header__acoes--mobile .idiomas ul li span:hover, .navegacao--mobile .header__acoes--mobile .idiomas ul li img:hover {
+  background-color: #121326;
+}
 .navegacao--mobile .header__acoes--mobile a {
   width: 45%;
   color: #1F2041;
