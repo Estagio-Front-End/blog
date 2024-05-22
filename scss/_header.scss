@@ -241,11 +241,12 @@ header {
     }
 
     li a {
-        display: inline-block;
+        @include flex(space-between, center);
         width: 100%;
         padding: $espacamento-6 $espacamento-4;
         @include headline-primary-medium(14, start, uppercase); 
         letter-spacing: 0.05;
+
 
         &:hover {
             text-decoration: none;
@@ -263,12 +264,51 @@ header {
         animation: abrirMenuMobile 0.5s ease-in-out forwards;
     }
 
-    .navegacao--mobile__submenu {
-        display: none;
-    }
-
     @include responsividade ("mobile") {
         position: relative;    
+    }
+
+    .navegacao--mobile__submenu {
+        display: none;
+        li a {
+            @include flex(start, center);
+            padding-left: $espacamento-8;
+            gap: $espacamento-2;
+        }
+
+        &.ativo {
+            display: flex;
+            flex-direction: column;
+            @include animation(abrirMenu .5s forwards);
+        }
+
+        &.inativo {
+            display: none;
+        }
+    }
+
+    .navegacao--mobile__icone {
+        &.ativo {
+            @include animation(abrirIcone .3s forwards);
+        }
+
+        &.inativo {
+            @include animation(fecharIcone .3s forwards);
+        }
+    }
+
+    .header__acoes--mobile {
+        @include flex(space-between, center);
+        padding: $espacamento-2 $espacamento-4 $espacamento-2 0; 
+    
+        a {
+            width: 45%;
+            color: $cor-primaria;
+    
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
 
@@ -282,16 +322,3 @@ header {
     }
 }
 
-.header__acoes--mobile {
-    @include flex(space-between, center);
-    padding: $espacamento-2 $espacamento-4 $espacamento-2 0; 
-
-    a {
-        width: 50%;
-        color: $cor-primaria;
-
-        &:hover {
-            text-decoration: none;
-        }
-    }
-}

@@ -63,6 +63,15 @@ function toggleVisaoMenuMobile() {
    : menuMobile.style.top = 0;
 }
 
+const submenusMobile = document.querySelectorAll(".navegacao--mobile__submenu")
+submenusMobile.forEach(sub => sub.previousElementSibling.addEventListener('click', evento => {
+    evento.preventDefault();
+    sub.classList.toggle("ativo");
+    sub.classList.toggle("inativo");
+    sub.previousElementSibling.querySelector("img").classList.toggle("ativo");
+    sub.previousElementSibling.querySelector("img").classList.toggle("inativo");
+}))
+
 //Abre/fecha do menu de navegação do conteúdo (somente em artigos)
 const menuNavegacaoConteudo = document.querySelector('#menu-navegacao-conteudo');
 if (menuNavegacaoConteudo !== null) {
