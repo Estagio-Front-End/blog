@@ -59,7 +59,7 @@ function toggleVisaoMenuMobile() {
     menuMobile.classList.toggle("inativo");
     
    (window.document.body.clientWidth >= 768) 
-   ? menuMobile.style.top = containerHeader.offsetHeight - 1 + "px"
+   ? menuMobile.style.top = containerHeader.offsetHeight - 1 + "px" 
    : menuMobile.style.top = 0;
 }
 

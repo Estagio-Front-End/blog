@@ -232,15 +232,27 @@ header {
 
 .navegacao--mobile {
     position: absolute;
-    right: 0;
+    left: 0;
     width: 100vw;
     background-color: $cor-primaria;
+
+    ul {
+        list-style: none;
+    }
 
     li a {
         display: inline-block;
         width: 100%;
         padding: $espacamento-6 $espacamento-4;
-        @include headline-primary-medium(14, left, uppercase); 
+        @include headline-primary-medium(14, start, uppercase); 
+        letter-spacing: 0.05;
+
+        &:hover {
+            text-decoration: none;
+            background-color: $cor-hover;
+            @include headline-primary-bolder(14, start, uppercase);
+            border-radius: $espacamento-3;
+        }
     }
     
     &.inativo {
@@ -272,9 +284,14 @@ header {
 
 .header__acoes--mobile {
     @include flex(space-between, center);
-    padding: 0 $espacamento-4 $espacamento-2 $espacamento-4;
+    padding: $espacamento-2 $espacamento-4 $espacamento-2 0; 
 
     a {
         width: 50%;
+        color: $cor-primaria;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }

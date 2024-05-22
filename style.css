@@ -2634,9 +2634,12 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
 }
 .navegacao--mobile {
   position: absolute;
-  right: 0;
+  left: 0;
   width: 100vw;
   background-color: #1F2041;
+}
+.navegacao--mobile ul {
+  list-style: none;
 }
 .navegacao--mobile li a {
   display: inline-block;
@@ -2646,9 +2649,22 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   font-size: 1.4rem;
   line-height: 1.708rem;
   font-weight: 500;
-  text-align: left;
+  text-align: start;
   text-transform: uppercase;
   color: #FFFFFF;
+  letter-spacing: 0.05;
+}
+.navegacao--mobile li a:hover {
+  text-decoration: none;
+  background-color: #121326;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.708rem;
+  font-weight: 800;
+  text-align: start;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border-radius: 1.2rem;
 }
 .navegacao--mobile.inativo {
   display: none;
@@ -2709,10 +2725,14 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.6rem 0.8rem 1.6rem;
+  padding: 0.8rem 1.6rem 0.8rem 0;
 }
 .header__acoes--mobile a {
   width: 50%;
+  color: #1F2041;
+}
+.header__acoes--mobile a:hover {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
