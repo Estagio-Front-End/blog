@@ -2367,6 +2367,22 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   padding: 1.6rem;
   border-radius: 1.2rem;
   cursor: pointer;
+  position: absolute;
+  right: 120%;
+  top: 0;
+  z-index: 2;
+}
+@media screen and (768px <= width <= 1023px) {
+  .idiomas {
+    right: 160%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .idiomas {
+    position: relative;
+    right: 0;
+    top: 0;
+  }
 }
 .idiomas ul {
   display: flex;
@@ -2374,6 +2390,15 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   align-items: normal;
   flex-direction: column;
   gap: 1.2rem;
+}
+.idiomas ul .idiomas__outros li, .idiomas ul .idiomas__outros img, .idiomas ul .idiomas__outros span {
+  background-color: #121326 !important;
+}
+.idiomas ul .idiomas__outros.ativo {
+  display: flex;
+}
+.idiomas ul .idiomas__outros.inativo {
+  display: none;
 }
 .idiomas ul li {
   font-family: "Montserrat", sans-serif;
@@ -2392,22 +2417,29 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
 .idiomas:hover {
   background-color: #121326;
 }
+.idiomas .idiomas__icone.ativo {
+  animation: abrirIcone 0.3s forwards;
+  -webkit-animation: abrirIcone 0.3s forwards;
+  -moz-animation: abrirIcone 0.3s forwards;
+  -o-animation: abrirIcone 0.3s forwards;
+}
+.idiomas .idiomas__icone.inativo {
+  animation: fecharIcone 0.3s forwards;
+  -webkit-animation: fecharIcone 0.3s forwards;
+  -moz-animation: fecharIcone 0.3s forwards;
+  -o-animation: fecharIcone 0.3s forwards;
+}
 
 .header__acoes {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 2.4rem;
+  position: relative;
 }
 @media screen and (768px <= width <= 1023px) {
   .header__acoes {
     justify-content: space-between;
-    width: 55%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .header__acoes .idiomas, .header__acoes .header__acoes__menu a {
-    display: none;
   }
 }
 
@@ -2740,6 +2772,11 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 1.6rem 0.8rem 0;
+}
+@media screen and (768px <= width <= 1023px) {
+  .navegacao--mobile .header__acoes--mobile {
+    display: none;
+  }
 }
 .navegacao--mobile .header__acoes--mobile .idiomas ul li:hover, .navegacao--mobile .header__acoes--mobile .idiomas ul li span:hover, .navegacao--mobile .header__acoes--mobile .idiomas ul li img:hover {
   background-color: #121326;

@@ -95,11 +95,38 @@ header {
     padding: $espacamento-4;
     border-radius: $espacamento-3;
     cursor: pointer;
+    position: absolute;
+    right: 120%;
+    top: 0;
+    z-index: 2;
+
+    @include responsividade("tablet") {
+        right: 160%;
+    }
+
+    @include responsividade("mobile") {
+        position: relative;
+        right: 0;
+        top: 0;
+    }
     
     ul {
         @include flex(center);
         flex-direction: column;
         gap: $espacamento-3;
+
+        .idiomas__outros{
+            li, img, span {
+                background-color: $cor-hover !important;
+            }
+            &.ativo {
+                display: flex;
+            }
+
+            &.inativo {
+                display: none;
+            }
+        }
     }
 
     ul li {
@@ -112,21 +139,25 @@ header {
     &:hover{
         background-color: $cor-hover;
     }
+
+    .idiomas__icone {
+        &.ativo {
+            @include animation(abrirIcone .3s forwards);
+        }
+
+        &.inativo {
+            @include animation(fecharIcone .3s forwards);
+        }
+    }
 }
 
 .header__acoes {
     @include flex(start, center);
     gap: $espacamento-6;
+    position: relative;
 
     @include responsividade("tablet") {
         justify-content: space-between;
-        width: 55%;
-    }
-
-    .idiomas, .header__acoes__menu a {
-        @include responsividade("mobile") {
-            display: none;
-        }
     }
 }
 
@@ -311,6 +342,10 @@ header {
     .header__acoes--mobile {
         @include flex(space-between, center);
         padding: $espacamento-2 $espacamento-4 $espacamento-2 0; 
+
+        @include responsividade("tablet") {
+            display: none;
+        }
     
         .idiomas ul li:hover, .idiomas ul li span:hover, .idiomas ul li img:hover {
             background-color: $cor-hover;

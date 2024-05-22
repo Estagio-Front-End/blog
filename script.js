@@ -12,7 +12,6 @@ const submenusItens = document.querySelectorAll("li[id^=menu] ul li")
 
 menusNavegacao.forEach(menu => menu.addEventListener('mouseover', evento => {
     let menu = evento.target.parentElement;
-    console.log(menu)
 
     if (Array.from(menusComSubmenu).includes(menu) || (Array.from(submenusItens).includes(menu))) {
         let submenu = evento.target.nextElementSibling;
@@ -127,27 +126,33 @@ let idiomas = [
         textoAltIcone: "Alterar idioma para espanhol"
     }]
 
-let listaIdiomas = document.querySelector(".idiomas ul");
-let idiomasItens = listaIdiomas.querySelectorAll("li span");
+const listaIdiomas = document.querySelector(".idiomas ul");
+const idiomasItens = listaIdiomas.querySelectorAll("li span");
 
-idiomasItens.forEach((item, index) => item.innerText = idiomas[index].nome);
+function popularListaIdiomas() {
+    idiomasItens.forEach((item, index) => item.innerText = idiomas[index].nome);
+    listaIdiomas.querySelectorAll(".idiomas__item__imagem").forEach((imagem, index) => {
+        if(location.pathname.includes("index.html")) {
+            imagem.setAttribute('src', idiomas[index].iconeIndex);
+        } else {
+            imagem.setAttribute('src', idiomas[index].icone);
+        }
+        imagem.setAttribute('alt', idiomas[index].textoAltIcone);
+    })
+}
 
-listaIdiomas.querySelectorAll(".idiomas__item__imagem").forEach((imagem, index) => {
-    if(location.pathname.includes("index.html")) {
-        imagem.setAttribute('src', idiomas[index].iconeIndex);
-    } else {
-        imagem.setAttribute('src', idiomas[index].icone);
-    }
-    imagem.setAttribute('alt', idiomas[index].textoAltIcone);
-})
+popularListaIdiomas();
 
-Array.from(listaIdiomas.children).forEach((item) => {
-    if (item.className.includes("idiomas__item--ativo")) {
-        item.style.display = "flex";
-    } else {
-        item.style.display = "none";
-    }
-})
+const idiomasIcone = document.querySelector(".idiomas__icone");
+idiomasIcone.parentElement.addEventListener('click', toggleVisaoIdiomas)
+
+function toggleVisaoIdiomas() {
+    idiomasIcone.classList.toggle("ativo");
+    idiomasIcone.classList.toggle("inativo");
+    document.querySelector(".idiomas__outros").classList.toggle("ativo"); 
+    document.querySelector(".idiomas__outros").classList.toggle("inativo");
+}
+
 
 // Funcionalidade de rearranjo do menu para mobile
 const containerAcoesMobile = document.querySelector(".header__acoes--mobile");
