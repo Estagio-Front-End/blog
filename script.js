@@ -96,7 +96,6 @@ if (linksMenuNavegacao !== null) {
 }
 
 //Funcionalidade de lista de idiomas dropdown + troca do idioma e rearranjo da lista
-
 let idiomas = [
     {
         nome: "PT", 
@@ -139,25 +138,22 @@ Array.from(listaIdiomas.children).forEach((item) => {
     }
 })
 
-// Funcionalidade de rearranjo do menu para tablet e mobile
+// Funcionalidade de rearranjo do menu para mobile
+const containerAcoesMobile = document.querySelector(".header__acoes--mobile");
+const containerIdiomas = document.querySelector(".header__acoes");
+const containerAcoes = document.querySelector(".header__acoes__menu");
+window.addEventListener('resize', rearranjarMenu)
+window.addEventListener('load', rearranjarMenu)
 
-// const menuDropdown = document.querySelector(".navegacao--mobile");
-// const headerAcoes = document.querySelector()
-// window.addEventListener('resize', rearranjarMenu)
-
-// function rearranjarMenu() {
-//     if (window.innerWidth >= 1366) {
-//         console.log(window.innerWidth)
-//     } else if (1024 <= window.innerWidth < 1366) {
-//         console.log(window.innerWidth)
-//     } else if (768 <= window.innerWidth < 1024) {
-//         menuDropdown.appendChild(document.querySelector("header nav"));
-//     } else if (window.innerWidth < 768) {
-//         menuDropdown.appendChild(document.querySelector("header nav"));
-//         menuDropdown.appendChild(document.querySelector(".idiomas"));
-//         menuDropdown.appendChild(document.querySelector("a[href='https://www.zappts.com.br/contato/']"));
-//     }
-// }
+function rearranjarMenu() {
+    if (window.innerWidth < 768) {
+        containerAcoesMobile.appendChild(document.querySelector(".idiomas"));
+        containerAcoesMobile.appendChild(document.querySelector("a[href='https://www.zappts.com.br/contato/']"));
+    } else {
+        containerIdiomas.firstChild = document.querySelector(".idiomas");
+        containerAcoes.firstChild = document.querySelector("a[href='https://www.zappts.com.br/contato/']")
+    }
+}
 
 
 

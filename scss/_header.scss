@@ -265,3 +265,12 @@ header {
         max-height: 1000px;
     }
 }
+
+.header__acoes--mobile {
+    @include flex(space-between, center);
+    padding: 0 $espacamento-4 $espacamento-2 $espacamento-4;
+
+    a {
+        width: 50%;
+    }
+}

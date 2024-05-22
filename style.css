@@ -2700,5 +2700,14 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
     max-height: 1000px;
   }
 }
+.header__acoes--mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.6rem 0.8rem 1.6rem;
+}
+.header__acoes--mobile a {
+  width: 50%;
+}
 
 /*# sourceMappingURL=style.css.map */
