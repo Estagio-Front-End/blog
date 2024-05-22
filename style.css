@@ -2659,6 +2659,11 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
 .navegacao--mobile .navegacao--mobile__submenu {
   display: none;
 }
+@media screen and (max-width: 767px) {
+  .navegacao--mobile {
+    position: relative;
+  }
+}
 
 @keyframes abrirMenuMobile {
   from {

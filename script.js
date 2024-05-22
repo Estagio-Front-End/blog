@@ -57,7 +57,10 @@ function toggleAnimacaoMenuHamburguer() {
 function toggleVisaoMenuMobile() {
     menuMobile.classList.toggle("ativo");
     menuMobile.classList.toggle("inativo");
-    menuMobile.style.top = containerHeader.offsetHeight - 1 + "px"
+    
+   (window.document.body.clientWidth >= 768) 
+   ? menuMobile.style.top = containerHeader.offsetHeight - 1 + "px"
+   : menuMobile.style.top = 0;
 }
 
 //Abre/fecha do menu de navegação do conteúdo (somente em artigos)
@@ -147,9 +150,11 @@ window.addEventListener('load', evento => rearranjarMenu(evento.target.body.clie
 
 function rearranjarMenu(larguraViewport) {
     if (larguraViewport < 768) {
+        document.querySelector("main").prepend(menuMobile)
         containerAcoesMobile.appendChild(document.querySelector(".idiomas"));
         containerAcoesMobile.appendChild(document.querySelector("a[href='https://www.zappts.com.br/contato/']"));
     } else {
+        containerHeader.appendChild(menuMobile);
         containerIdiomas.prepend(document.querySelector(".idiomas"));  
         containerAcoes.prepend(document.querySelector("a[href='https://www.zappts.com.br/contato/']"));
     }

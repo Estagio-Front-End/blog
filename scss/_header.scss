@@ -254,6 +254,10 @@ header {
     .navegacao--mobile__submenu {
         display: none;
     }
+
+    @include responsividade ("mobile") {
+        position: relative;    
+    }
 }
 
 @include keyframes(abrirMenuMobile) {
