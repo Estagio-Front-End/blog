@@ -2686,8 +2686,31 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   display: flex;
   justify-content: start;
   align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.464rem;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  letter-spacing: 0.05;
   padding-left: 3.2rem;
   gap: 0.8rem;
+}
+.navegacao--mobile .navegacao--mobile__submenu li a:hover {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.464rem;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  color: #F39200;
+}
+.navegacao--mobile .navegacao--mobile__submenu li a:hover svg {
+  background-color: #121326;
+}
+.navegacao--mobile .navegacao--mobile__submenu li a:hover svg path {
+  stroke: #F39200;
 }
 .navegacao--mobile .navegacao--mobile__submenu.ativo {
   display: flex;

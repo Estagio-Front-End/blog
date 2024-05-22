@@ -247,7 +247,6 @@ header {
         @include headline-primary-medium(14, start, uppercase); 
         letter-spacing: 0.05;
 
-
         &:hover {
             text-decoration: none;
             background-color: $cor-hover;
@@ -272,8 +271,20 @@ header {
         display: none;
         li a {
             @include flex(start, center);
+            @include headline-primary-medium(12, left, uppercase);
+            letter-spacing: 0.05;
             padding-left: $espacamento-8;
             gap: $espacamento-2;
+
+            &:hover {
+                @include headline-primary-medium(12, left, uppercase, $cor-secundaria);
+                svg {
+                    background-color: $cor-hover;
+                    path {
+                        stroke: $cor-secundaria;
+                    }
+                }    
+            }
         }
 
         &.ativo {
