@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Services em Angular</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Blog</h1>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/html.html">HTML</a></li>
+                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
+                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
+                <li><a href="../pages/animacoes.html">Animações</a></li>
+                <li><a href="../pages/responsividade.html">Responsividade</a></li>
+                <li><a href="../pages/javascript.html">Javascript</a></li>
+                <li><a href="../pages/angular.html">Angular</a></li>
+            </ul>
+
+            <div class="navegacao--responsiva">
+                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
+                <nav class="navegacao__listagem--responsiva">
+                    <a href="../index.html">Início</a>
+                    <a href="../pages/html.html">HTML</a>
+                    <a href="../pages/css-basico.html">CSS Básico</a>
+                    <a href="../pages/posicionamento.html">Posicionamento</a>
+                    <a href="../pages/animacoes.html">Animações</a>
+                    <a href="../pages/responsividade.html">Responsividade</a>
+                    <a href="../pages/javascript.html">Javascript</a>
+                    <a href="../pages/angular.html">Angular</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
+            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        </div>
+    </header>
+   
+    <main>
+        <div class="imagem__principal">
+            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Features-Angular_Services.PNG" alt="Imagem com fundo branco e 8 ícones indicando conceitos e funções dos services em angular: services são uma classe decorada com @Injectible, compartilham código, contém as regras de negócio, interagem com o backend, compartilham dados entre componentes, são da arquitetura singleton e são registrados em módulos ou componentes.">
+        </div>
+
+        <section class="conteudo">    
+            <h2 class="conteudo__titulo">Services em Angular</h2>
+            <p class="conteudo__preview">Descubra como os services no Angular simplificam o desenvolvimento, reduzindo a repetição de código e permitindo a criação de funcionalidades modulares. Explore como a injeção de dependências facilita a integração desses serviços em toda a sua aplicação!</p>
+            <div class="conteudo__info">
+                <p><span>Por Camila Matias |</span> Desenvolvedora Front End</p>
+                <p>Publicado: 20 Maio 2024</p>
+            </div>
+            
+            <nav class="conteudo__navegacao">
+                <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
+                <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
+                    <li class="conteudo__navegacao__item"><a href="#definicao">Definição de services</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#estrutura">Estrutura dos services</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#componente">Injeção de services em componentes</a></li>
+                </ol>
+            </nav>
+
+            <article>
+                <p class="conteudo__texto" id="definicao">Services é uma ampla classificação que engloba quaisquer funcionalidades que um componente precisa, seja ela uma função, uma classe, uma comunicação com o backend, entre outros. Após criadas, estas funcionalidades são disponibilizadas para os componentes por meio da injeção de dependências, que é uma forma do Angular de disponibilizar recursos externos para um componente. Os services, em geral, são utilizados em múltiplas partes do código, de modo que uma das principais razões para o seu uso é a diminuição de duplicidade de códigos que tragam o mesmo resultado em diferentes partes da aplicação. É uma boa prática que um service tenha uma única funcionalidade, tornando o código mais conciso, legível e de alta manutenibilidade.</p>
+
+                <p>Para criar um service, é necessário apenas utilizar o comando <code>ng generate service nome-servico</code>, em que nome-servico é um nome arbitrário, ou sua abreviação <code>ng g s nome-servico</code>. Este comando irá gerar 2 arquivos: um nome-servico.service.ts, que conterá a lógica da funcionalidade do service criado, e o nome-servico.service.spec.ts, que trará os testes unitários referentes à funcionalidade do service criado.</p>
+
+                <figure>
+                    <img src="../images/services-criacao.png" alt="Imagem das linhas no terminal de comandos com o comando para a criação de um service chamado servico e as linhas de criação dos arquivos do service e de testes unitários.">
+                    <figcaption>Criação de um service no terminal de comandos.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto" id="estrutura">A estrutura inicial de um service possui as devidas importações, o decorator obrigatório <code>@Injectable</code> e a classe exportada do service. No decorator, tem-se onde o service pode ser utilizado e sua obrigatoriedade deriva da necessidade de mostrar ao Angular que aquele código é injetável em outro service ou componente. Por default, se tem a propriedade <code>providedIn: 'root'</code>, indicando que este service é visível para toda a aplicação e pode ser injetado em qualquer parte dela. Na classe, temos a lógica da funcionalidade do service que será utilizada em outros componentes.</p>
+
+                <figure>
+                    <img src="../images/services-estrutura.png" alt="Imagem com código escrito na sintaxe do Angular com a estrutura inicial de um service.">
+                    <figcaption>Estrutura inicial de um service logo após criação pelo comando <code>ng g s nome-servico</code>.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">É possível também que services dependam de outras services para funcionarem, como funcionalidades que utilizem requisições HTTP necessitam do HttpClient. Neste caso, o construtor do service em questão deve conter como parâmetro o service inicial do qual ele necessita. Desta forma, é possível utilizar os métodos necessários, possibilitando a criação da funcionalidade desejada.</p>
+
+                <figure>
+                    <img src="../images/services-aninhado.png" alt="Imagem com código escrito na sintaxe de Angular definindo um service e injetando outro service do core do Angular no service criado.">
+                    <figcaption>Injeção de services em outro service.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto" id="componente">No componente, a injeção de dependência pode ser realizada de algumas formas. Para versões anteriores à v17 do Angular, a classe do service é adicionada ao array da propriedade providers do <code>@NgModule</code>, no arquivo de módulo do componente. A partir da v17, que não é module-based, a injeção é feita com importação direta do service no componente e instanciação no construtor da classe do componente.</p>
+
+                <figure>
+                    <img src="../images/services-injecao.png" alt="Imagem com código escrito na sintaxe de Angular definindo um componente e injetando um service em seu construtor.">
+                    <figcaption>Injeção de um service em um componente.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto">É possível, também, injetar um service em um componente pelo método <code>inject()</code>, importando o service normalmente e, dentro da classe do componente, adicionando uma variável cujo valor é <code>inject(service)</code>.</p>
+
+                <p class="conteudo__texto">Portanto, criando, importando e injetando services em outros services ou em componentes, é possível criar funcionalidades de forma modularizada para que possam ser reutilizadas em diversas partes da aplicação, sem a necessidade de reescrever código. Os services, conforme exibido, podem ser utilizados para comunicações com o backend e com APIs externas por meio da injeção do HttpClient, assim como eventuais dados contidos na classe do service podem ser manipulados e compartilhados por componentes da aplicação, bastando que o service esteja importado e injetado nos componentes.</p>
+            </article>
+    
+            <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
+                <span class="artigo__tag artigo__tag--angular">Angular</span>
+                
+                <div class="conteudo__stats">
+                    <div aria-label="Stats do Artigo">
+                        <div>
+                            <span>144</span>
+                            <img src="../images/icone-visualizacoes.svg" alt="Quantidade de visualizações do artigo">
+                        </div>
+                        <div>
+                            <span>20</span>
+                            <img src="../images/icone-comentarios.svg" alt="Quantidade de comentários sobre o artigo">
+                        </div>
+                        <div>
+                            <span>5</span>
+                            <img src="../images/icone-envios.svg" alt="Quantidade de compartilhamentos do artigo">
+                        </div>
+                    </div>
+
+                    <div aria-label="Ações no artigo">
+                        <button><img src="../images/icone-envios.svg" alt="Compartilhar artigo"></button>
+                        <button><img src="../images/icone-salvar.svg" alt="Salvar artigo"></button>
+                        <button><img src="../images/icone-curtir.svg" alt="Curtir artigo"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo__autor">
+                <img src="../images/foto-autor.jpeg" alt="Foto da autora do artigo Camila Matias que tem pele clara, cabelo castanho escuro e usa blusa e óculos pretos.">
+                <p>Olá, sou a Camila Matias! Desenvolvedora Front End apaixonada pela arte de dar vida aos designs e interfaces digitais. Especializada em Produtividade. Transformando conceitos abstratos em experiências visuais envolventes e funcionais. ✨🚀 #Desenvolvedora #DesenvolvimentoFrontEnd #Inovação</p>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
+</html>
