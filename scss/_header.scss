@@ -116,9 +116,6 @@ header {
         gap: $espacamento-3;
 
         .idiomas__outros{
-            li, img, span {
-                background-color: $cor-hover !important;
-            }
             &.ativo {
                 display: flex;
             }
@@ -345,10 +342,6 @@ header {
 
         @include responsividade("tablet") {
             display: none;
-        }
-    
-        .idiomas ul li:hover, .idiomas ul li span:hover, .idiomas ul li img:hover {
-            background-color: $cor-hover;
         }
 
         a {

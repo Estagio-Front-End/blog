@@ -1,8 +1,13 @@
 const containerHeader = document.querySelector("header");
+
 window.addEventListener('scroll', () => {
-    (window.scrollY > 0) 
-    ? containerHeader.style.backgroundColor = "#1F2041" 
-    : containerHeader.style.backgroundColor = "rgba(18, 19, 38, 0.5)"
+    if (window.scrollY > 0) {
+        containerHeader.style.backgroundColor = "#1F2041"
+        listaIdiomas.parentElement.style.backgroundColor = "#1F2041"
+    } else {
+        containerHeader.style.backgroundColor = "rgba(18, 19, 38, 0.5)"
+        listaIdiomas.parentElement.style.backgroundColor = "rgba(18, 19, 38, 0.1)"
+    } 
 }); 
 
 const menusNavegacao = document.querySelectorAll(".navegacao li")
@@ -151,8 +156,15 @@ function toggleVisaoIdiomas() {
     idiomasIcone.classList.toggle("inativo");
     document.querySelector(".idiomas__outros").classList.toggle("ativo"); 
     document.querySelector(".idiomas__outros").classList.toggle("inativo");
+    
+    if (idiomasIcone.classList.contains("ativo")) { 
+        document.querySelector(".idiomas").style.backgroundColor = "#121326";
+    } else if (window.scrollY === 0) {
+        listaIdiomas.parentElement.style.backgroundColor = "transparent"
+    } else {
+        listaIdiomas.parentElement.style.backgroundColor = "#1F2041"
+    }
 }
-
 
 // Funcionalidade de rearranjo do menu para mobile
 const containerAcoesMobile = document.querySelector(".header__acoes--mobile");

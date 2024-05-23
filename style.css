@@ -2391,9 +2391,6 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   flex-direction: column;
   gap: 1.2rem;
 }
-.idiomas ul .idiomas__outros li, .idiomas ul .idiomas__outros img, .idiomas ul .idiomas__outros span {
-  background-color: #121326 !important;
-}
 .idiomas ul .idiomas__outros.ativo {
   display: flex;
 }
@@ -2777,9 +2774,6 @@ header a[href="https://www.zappts.com.br/contato/"]:hover {
   .navegacao--mobile .header__acoes--mobile {
     display: none;
   }
-}
-.navegacao--mobile .header__acoes--mobile .idiomas ul li:hover, .navegacao--mobile .header__acoes--mobile .idiomas ul li span:hover, .navegacao--mobile .header__acoes--mobile .idiomas ul li img:hover {
-  background-color: #121326;
 }
 .navegacao--mobile .header__acoes--mobile a {
   width: 45%;
