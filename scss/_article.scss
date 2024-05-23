@@ -603,3 +603,39 @@ article, article a {
     }
 }
 
+//Carrossel
+
+.artigo__indicacoes {
+    width: 100vw;
+    padding: $espacamento-20 $espacamento-11 0 $espacamento-11;
+    
+    h2 {
+       grid-column: 1 / span 3;
+       @include headline-primary-bold(24); 
+    }
+
+    .artigo__carrossel {
+        background-image: url(../images/bg-carrossel-artigo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-position-y: bottom;
+        height: 484px;
+        width: 100vw;
+        position: relative;
+        right: $espacamento-11;
+        @include estrutura-grid(12, $espacamento-6);
+        
+        @include responsividade ("desktop") {
+            @include estrutura-grid(8, $espacamento-6);
+        } 
+        
+        @include responsividade ("tablet") {
+            @include estrutura-grid(8, $espacamento-6);
+        } 
+    
+        @include responsividade ("mobile") {
+            @include estrutura-grid(4, $espacamento-6);
+        }
+    }
+}
+
