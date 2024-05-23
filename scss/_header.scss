@@ -1,0 +1,367 @@
+header {
+    padding: $espacamento-6 $espacamento-10;
+    max-width: 100vw;
+    @include sticky();
+    top: 0;
+    z-index: 1;
+    @include flex(space-between, center);
+    background-color: rgba(18, 19, 38, 0.5);
+
+    img, ul, li, div, a, span, nav {
+        background-color: transparent;
+    }
+
+    a[href="https://www.zappts.com.br/contato/"] {
+        color: $cor-primaria;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.navegacao {
+    @include flex(center);
+    width: fit-content;
+
+    li {
+        list-style: none;
+        
+        a {
+            @include headline-primary-regular(14, left, uppercase);
+            letter-spacing: 0.05;
+            display: inline-block;
+            padding: $espacamento-4;
+            border-radius: $espacamento-3;
+            
+            &:hover {
+                background-color: $cor-hover;
+                font-weight: 800;
+                text-decoration: none; 
+            }
+        }  
+    }
+
+    @include responsividade("mobile"){
+        display: none;
+    }
+
+    @include responsividade("tablet"){
+        display: none;
+    }
+
+    .navegacao--hd {
+        @include responsividade("desktop") {
+            display: none;
+        }
+    }
+}
+
+.navegacao__submenu {
+    position: absolute;
+    width: fit-content;
+    top: $espacamento-22;
+    padding: $espacamento-4;
+    background-color: $cor-hover;
+    border-radius: $espacamento-3;
+    @include body-system-semibold(12, left, uppercase);
+    display: none;
+    flex-direction: column;
+    gap: $espacamento-2;
+
+    li {   
+        a {
+            @include flex(start,center);
+            gap: $espacamento-2;
+            padding: $espacamento-2 0;
+            @include body-system-semibold(12, left, uppercase);
+            
+            &:hover {
+                @include body-system-semibold(12, left, uppercase, $cor-secundaria);   
+                svg path {
+                    stroke: $cor-secundaria;
+                }
+
+            }
+
+            svg {
+                background-color: $cor-hover;
+            }
+        }
+
+    }
+}
+
+.idiomas {
+    padding: $espacamento-4;
+    border-radius: $espacamento-3;
+    cursor: pointer;
+    position: absolute;
+    right: 120%;
+    top: 0;
+    z-index: 2;
+
+    @include responsividade("tablet") {
+        right: 160%;
+    }
+
+    @include responsividade("mobile") {
+        position: relative;
+        right: 0;
+        top: 0;
+    }
+    
+    ul {
+        @include flex(center);
+        flex-direction: column;
+        gap: $espacamento-3;
+
+        .idiomas__outros{
+            &.ativo {
+                display: flex;
+            }
+
+            &.inativo {
+                display: none;
+            }
+        }
+    }
+
+    ul li {
+        @include headline-primary-bold(14, left, uppercase);
+        @include flex(left, center);
+        gap: $espacamento-3;
+        letter-spacing: -0.03;
+    }
+
+    &:hover{
+        background-color: $cor-hover;
+    }
+
+    .idiomas__icone {
+        &.ativo {
+            @include animation(abrirIcone .3s forwards);
+        }
+
+        &.inativo {
+            @include animation(fecharIcone .3s forwards);
+        }
+    }
+}
+
+.header__acoes {
+    @include flex(start, center);
+    gap: $espacamento-6;
+    position: relative;
+
+    @include responsividade("tablet") {
+        justify-content: space-between;
+    }
+}
+
+.header__acoes__menu {
+    @include flex(start, center);
+    gap: $espacamento-4;
+}
+
+.navegacao__hamburguer {
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: $espacamento-4;
+    border-radius: $espacamento-3;
+    cursor: pointer;
+    display: none;
+
+    &:hover{
+        background-color: $cor-hover;
+    }
+    div {
+        width: 1.95rem;
+        border: 1.5px solid $cor-neutra-1;
+        border-radius: 2px;
+
+        &:first-child, &:last-child {
+            position: relative;
+        }
+    }
+
+    @include responsividade ("tablet") {
+        display: flex;
+    }
+
+    @include responsividade ("mobile") {
+        display: flex;
+    }
+    
+
+    &.ativo {
+        div {
+            &:first-child {
+                @include animation(juntarMenuParaBaixo 0.5s ease-in-out forwards);
+            }
+
+            &:last-child {
+                @include animation(juntarMenuParaCima 0.5s ease-in-out forwards);
+            }
+        } 
+    }
+
+    &.inativo {
+        div {
+            &:first-child {
+                @include animation(separarMenuParaCima 0.5s ease-in-out forwards);
+            }
+
+            &:last-child {
+                @include animation(separarMenuParaBaixo 0.5s ease-in-out forwards);
+            }
+        } 
+    }
+}
+
+@include keyframes(juntarMenuParaBaixo) {
+    from {
+        top: 0;
+        opacity: 1;
+    } to {
+        top: 0.35rem;
+        opacity: 0;
+    }
+}
+
+@include keyframes(juntarMenuParaCima) {
+    from {
+        bottom: 0;
+        opacity: 1;
+    } to {
+        bottom: 0.35rem;
+        opacity: 0;
+    }
+}
+
+@include keyframes(separarMenuParaCima) {
+    from {
+        top: 0.35rem;
+        opacity: 0;
+    } to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@include keyframes(separarMenuParaBaixo) {
+    from {
+        bottom: 0.35rem;
+        opacity: 0;
+    } to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+.navegacao--mobile {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    background-color: $cor-primaria;
+
+    ul {
+        list-style: none;
+    }
+
+    li a {
+        @include flex(space-between, center);
+        width: 100%;
+        padding: $espacamento-6 $espacamento-4;
+        @include headline-primary-medium(14, start, uppercase); 
+        letter-spacing: 0.05;
+
+        &:hover {
+            text-decoration: none;
+            background-color: $cor-hover;
+            @include headline-primary-bolder(14, start, uppercase);
+            border-radius: $espacamento-3;
+        }
+    }
+    
+    &.inativo {
+        display: none;
+    }
+
+    &.ativo {
+        animation: abrirMenuMobile 0.5s ease-in-out forwards;
+    }
+
+    @include responsividade ("mobile") {
+        position: relative;    
+    }
+
+    .navegacao--mobile__submenu {
+        display: none;
+        li a {
+            @include flex(start, center);
+            @include headline-primary-medium(12, left, uppercase);
+            letter-spacing: 0.05;
+            padding-left: $espacamento-8;
+            gap: $espacamento-2;
+
+            &:hover {
+                @include headline-primary-medium(12, left, uppercase, $cor-secundaria);
+                svg {
+                    background-color: $cor-hover;
+                    path {
+                        stroke: $cor-secundaria;
+                    }
+                }    
+            }
+        }
+
+        &.ativo {
+            display: flex;
+            flex-direction: column;
+            @include animation(abrirMenu .5s forwards);
+        }
+
+        &.inativo {
+            display: none;
+        }
+    }
+
+    .navegacao--mobile__icone {
+        &.ativo {
+            @include animation(abrirIcone .3s forwards);
+        }
+
+        &.inativo {
+            @include animation(fecharIcone .3s forwards);
+        }
+    }
+
+    .header__acoes--mobile {
+        @include flex(space-between, center);
+        padding: $espacamento-2 $espacamento-4 $espacamento-2 0; 
+
+        @include responsividade("tablet") {
+            display: none;
+        }
+
+        a {
+            width: 45%;
+            color: $cor-primaria;
+    
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@include keyframes(abrirMenuMobile) {
+    from {
+        opacity: 0;
+        max-height: 0;
+    } to {
+        opacity: 1;
+        max-height: 1000px;
+    }
+}
+

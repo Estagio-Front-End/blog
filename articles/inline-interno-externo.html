@@ -8,37 +8,160 @@
 </head>
 <body>
     <header>
-        <h1>CSS Blog</h1>
+        <a href="https://www.zappts.com.br/"><img src="../images/logo-zappts.svg" alt="Ir para a página inicial do site da Zappts"></a>
+        
         <nav>
             <ul class="navegacao">
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="../pages/html.html">HTML</a></li>
-                <li><a href="../pages/css-basico.html">CSS Básico</a></li>
-                <li><a href="../pages/posicionamento.html">Posicionamento</a></li>
-                <li><a href="../pages/animacoes.html">Animações</a></li>
-                <li><a href="../pages/responsividade.html">Responsividade</a></li>
-                <li><a href="../pages/javascript.html">Javascript</a></li>
-                <li><a href="../pages/angular.html">Angular</a></li>
+                <li><a href="https://www.zappts.com.br/">Início</a></li>
+                <li class="navegacao--desktop"><a href="#">Sobre</a></li>
+                <li class="navegacao--hd" id="menu-solucoes">
+                    <a href="https://www.zappts.com.br/nossas-solucoes/">Soluções</a>
+                    <ul class="navegacao__submenu" id="submenu-solucoes">
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Experimentação e Inovação</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Produtos e Soluções Digitais</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Dados, BI & IA</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.zappts.com.br/cases-de-sucesso/">Cases</a></li>
+                <li class="navegacao--hd" id="menu-segmentos">
+                    <a href="https://www.zappts.com.br/segmentos/">Segmentos</a>
+                    <ul class="navegacao__submenu">
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Financeiro e Seguro</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Indústria</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Varejo</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Serviços</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Energia</a></li>
+                    </ul>
+                </li>
+                <li id="menu-areatech">
+                    <a href="../index.html">Área Tech</a>
+                    <ul class="navegacao__submenu">
+                        <li><a href="https://zappts.com.br/blog/"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Blog</a></li>
+                        <li><a href="../pages/html.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>HTML</a></li>
+                        <li><a href="../pages/css.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>CSS</a></li>
+                        <li><a href="../pages/javascript.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Javascript</a></li>
+                        <li><a href="../pages/angular.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Angular</a></li>
+                    </ul>
+                </li>
+                
+                <li class="navegacao--hd"><a href="https://www.zappts.com.br/carreira/">Carreira</a></li>
             </ul>
-
-            <div class="navegacao--responsiva">
-                <button class="navegacao__botao--responsiva"><img src="../images/barra-de-menu.png" alt="Ícone de menu" class="navegacao__imagem--responsiva"></button>
-                <nav class="navegacao__listagem--responsiva">
-                    <a href="../index.html">Início</a>
-                    <a href="../pages/html.html">HTML</a>
-                    <a href="../pages/css-basico.html">CSS Básico</a>
-                    <a href="../pages/posicionamento.html">Posicionamento</a>
-                    <a href="../pages/animacoes.html">Animações</a>
-                    <a href="../pages/responsividade.html">Responsividade</a>
-                    <a href="../pages/javascript.html">Javascript</a>
-                    <a href="../pages/angular.html">Angular</a>
-                </nav>
-            </div>
         </nav>
+        
+        <div class="header__acoes">
+            <div class="idiomas" aria-label="Seleção de idioma do site">
+                <ul>
+                    <li class="idiomas__item--ativo"><img class="idiomas__item__imagem" src="" alt=""><span></span><img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar lista de idiomas disponíveis" class="idiomas__icone inativo"></li>
+                    <ul class="idiomas__outros inativo">
+                        <li><img class="idiomas__item__imagem" src="" alt=""><span></span></li>
+                        <li><img class="idiomas__item__imagem" src="" alt=""><span></span></li>
+                    </ul>
+                </ul>
+            </div>
+            
+            <div class="header__acoes__menu">
+                <a href="https://www.zappts.com.br/contato/" class="botao__primario">Contato</a>
+                
+                <div aria-label="Abrir ou fechar menu hamburguer" class="navegacao__hamburguer" id="hamburguer-icone">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
 
-        <div class="pesquisa">
-            <input type="search" name="pesquisa" placeholder="Pesquisar" class="pesquisa__item">
-            <img src="../images/search-outline.png" alt="Imagem de uma lupa">
+        <div aria-label="Navegação para dispositivos tablet e mobile" class="navegacao--mobile inativo">
+            <nav>
+                <ul>
+                    <li><a href="https://www.zappts.com.br/">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li>
+                        <a href="https://www.zappts.com.br/nossas-solucoes/">Soluções<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Experimentação e Inovação</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Produtos e Soluções Digitais</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Dados, BI & IA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.zappts.com.br/cases-de-sucesso/">Cases</a></li>
+                    <li>
+                        <a href="https://www.zappts.com.br/segmentos/">Segmentos<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Financeiro e Seguro</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Indústria</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Varejo</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Serviços</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Energia</a></li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <a href="../index.html">Área Tech<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Blog</a></li>
+                            <li><a href="../pages/html.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>HTML</a></li>
+                            <li><a href="../pages/css.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>CSS</a></li>
+                            <li><a href="../pages/javascript.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Javascript</a></li>
+                            <li><a href="../pages/angular.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Angular</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="https://www.zappts.com.br/carreira/">Carreira</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__acoes--mobile"></div>
         </div>
     </header>
     
@@ -46,7 +169,7 @@
         <section class="conteudo">
             <h2 class="conteudo__titulo">CSS inline, interno e externo</h2>
             
-            <span class="artigo__tag artigo__tag--css-basico">CSS BÁSICO</span>
+            <span class="artigo__tag artigo__tag--css">CSS</span>
             
             <article>
                 <p class="conteudo__texto">O <abbr title="Cascading Style Sheets">CSS</abbr> é uma linguagem de estilo por meio da qual documentos em HTML ou XML tem sua apresentação para o usuário descrita. Existem 3 formas de adicionar a estilização à um documento HTML: de forma inline, interna ou externa.</p>
