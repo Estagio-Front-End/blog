@@ -617,32 +617,52 @@ article, article a {
     .artigo__carrossel {
         background: center no-repeat url(../images/bg-carrossel-artigo.png);
         background-size: cover;
-        height: 60rem;
+        height: 55rem;
         width: 100vw;
-        right: $espacamento-11;
+        margin: 0 $espacamento-11;
+        overflow-x: hidden;
         position: relative;
 
         .container {
             margin: 0 $espacamento-11;
             width: 95%;
-            height: 200px;
-            position: absolute; 
+            height: 500px;
+            position: relative; 
             overflow: hidden;
-            top: 40px;
+            top: 1.5rem;
         }
             
         .inner-container {
             display: flex;
-            gap: 10px;
+            gap: $espacamento-6;
             pointer-events: none;
             position: absolute;
         }
             
         .item {
-            height: 200px;
-            width: 400px;
-            border-radius: 5px;
-            background-color: lightgrey;
+            @include box-shadow(4px 5px 13px 0px #0000001A, 14px 19px 24px 0px #00000017, 32px 43px 32px 0px #0000000D,58px 76px 38px 0px #00000003, 90px 119px 42px 0px #00000000);
+            background-color: $cor-primaria;
+            border-radius: $espacamento-3;
+            display: flex;
+            flex-direction: column;
+            width: 40rem;
+            height: 50rem;
+
+            >img {
+                height: 30%;
+            }
+
+            >div {
+                display: flex;
+                flex-direction: column;
+                gap: $espacamento-4;
+                padding: $espacamento-4;
+
+                img {
+                    height: 7.6rem;
+                    width: 7.6rem;
+                }
+            }
         }
     }
 }

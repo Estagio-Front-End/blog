@@ -1226,30 +1226,51 @@ article li, article p, article blockquote, article a li, article a p, article a 
 .artigo__indicacoes .artigo__carrossel {
   background: center no-repeat url(../images/bg-carrossel-artigo.png);
   background-size: cover;
-  height: 60rem;
+  height: 55rem;
   width: 100vw;
-  right: 4.4rem;
+  margin: 0 4.4rem;
+  overflow-x: hidden;
   position: relative;
 }
 .artigo__indicacoes .artigo__carrossel .container {
   margin: 0 4.4rem;
   width: 95%;
-  height: 200px;
-  position: absolute;
+  height: 500px;
+  position: relative;
   overflow: hidden;
-  top: 40px;
+  top: 1.5rem;
 }
 .artigo__indicacoes .artigo__carrossel .inner-container {
   display: flex;
-  gap: 10px;
+  gap: 2.4rem;
   pointer-events: none;
   position: absolute;
 }
 .artigo__indicacoes .artigo__carrossel .item {
-  height: 200px;
-  width: 400px;
-  border-radius: 5px;
-  background-color: lightgrey;
+  box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.1019607843), 14px 19px 24px 0px rgba(0, 0, 0, 0.0901960784), 32px 43px 32px 0px rgba(0, 0, 0, 0.0509803922), 58px 76px 38px 0px rgba(0, 0, 0, 0.0117647059), 90px 119px 42px 0px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.1019607843), 14px 19px 24px 0px rgba(0, 0, 0, 0.0901960784), 32px 43px 32px 0px rgba(0, 0, 0, 0.0509803922), 58px 76px 38px 0px rgba(0, 0, 0, 0.0117647059), 90px 119px 42px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.1019607843), 14px 19px 24px 0px rgba(0, 0, 0, 0.0901960784), 32px 43px 32px 0px rgba(0, 0, 0, 0.0509803922), 58px 76px 38px 0px rgba(0, 0, 0, 0.0117647059), 90px 119px 42px 0px rgba(0, 0, 0, 0);
+  -ms-box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.1019607843), 14px 19px 24px 0px rgba(0, 0, 0, 0.0901960784), 32px 43px 32px 0px rgba(0, 0, 0, 0.0509803922), 58px 76px 38px 0px rgba(0, 0, 0, 0.0117647059), 90px 119px 42px 0px rgba(0, 0, 0, 0);
+  -o-box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.1019607843), 14px 19px 24px 0px rgba(0, 0, 0, 0.0901960784), 32px 43px 32px 0px rgba(0, 0, 0, 0.0509803922), 58px 76px 38px 0px rgba(0, 0, 0, 0.0117647059), 90px 119px 42px 0px rgba(0, 0, 0, 0);
+  background-color: #1F2041;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  height: 50rem;
+}
+.artigo__indicacoes .artigo__carrossel .item > img {
+  height: 30%;
+}
+.artigo__indicacoes .artigo__carrossel .item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+.artigo__indicacoes .artigo__carrossel .item > div img {
+  height: 7.6rem;
+  width: 7.6rem;
 }
 
 .conteudo__botao {
