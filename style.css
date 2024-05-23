@@ -1224,38 +1224,32 @@ article li, article p, article blockquote, article a li, article a p, article a 
   color: #FFFFFF;
 }
 .artigo__indicacoes .artigo__carrossel {
-  background-image: url(../images/bg-carrossel-artigo.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position-y: bottom;
-  height: 484px;
+  background: center no-repeat url(../images/bg-carrossel-artigo.png);
+  background-size: cover;
+  height: 60rem;
   width: 100vw;
-  position: relative;
   right: 4.4rem;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 2.4rem;
+  position: relative;
 }
-@media screen and (1024px <= width <= 1365px) {
-  .artigo__indicacoes .artigo__carrossel {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 2.4rem;
-  }
+.artigo__indicacoes .artigo__carrossel .container {
+  margin: 0 4.4rem;
+  width: 95%;
+  height: 200px;
+  position: absolute;
+  overflow: hidden;
+  top: 40px;
 }
-@media screen and (768px <= width <= 1023px) {
-  .artigo__indicacoes .artigo__carrossel {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 2.4rem;
-  }
+.artigo__indicacoes .artigo__carrossel .inner-container {
+  display: flex;
+  gap: 10px;
+  pointer-events: none;
+  position: absolute;
 }
-@media screen and (max-width: 767px) {
-  .artigo__indicacoes .artigo__carrossel {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 2.4rem;
-  }
+.artigo__indicacoes .artigo__carrossel .item {
+  height: 200px;
+  width: 400px;
+  border-radius: 5px;
+  background-color: lightgrey;
 }
 
 .conteudo__botao {
