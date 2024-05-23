@@ -1,17 +1,11 @@
-header {
-    padding: 2rem;
-    @include sticky();
-    top: 0;
-    z-index: 1;
-    @include flex(space-between, center);
-    @include box-shadow(0 3px 6px rgba(0,0,0,0.16));
-    background: $cor-fundo-principal;
-}
+main {
+    @include flex(center);
+    flex-direction: column;
 
-h1 {
-    text-align: center;
-    font-size: 3rem;
-    font-family: $fonte-titulos;
+    >h2{
+        font-size: 2.5rem;
+        margin-top: 5rem;
+    }
 }
 
 blockquote {
@@ -24,20 +18,8 @@ blockquote {
     background-color: corTag("html");
 }
 
-.artigo__tag--css-basico {
-    background-color: corTag("css-basico");
-}
-
-.artigo__tag--posicionamento {
-    background-color: corTag("posicionamento");
-}
-
-.artigo__tag--animacoes {
-    background-color: corTag("animacoes");
-}
-
-.artigo__tag--responsividade {
-    background-color: corTag("responsividade");
+.artigo__tag--css {
+    background-color: corTag("css");
 }
 
 .artigo__tag--javascript {
@@ -46,87 +28,6 @@ blockquote {
 
 .artigo__tag--angular {
     background-color: corTag("angular");
-}
-
-.navegacao {
-    @include flex(center);
-    gap: 3rem;
-    font-size: 1.6rem;
-
-    a {
-        &:hover {
-            font-weight: 700;
-        }
-    }
-
-    @include responsividade("mobile"){
-        display: none;
-    }
-
-    @include responsividade("tablet"){
-        display: none;
-    }
-}
-
-.navegacao--responsiva{
-    display: none;
-    position: relative;
-
-    @include responsividade("mobile"){
-        display: block;
-    }
-
-    @include responsividade("tablet"){
-        display: block;
-    }
-}
-
-.navegacao__botao--responsiva {
-    align-self: center;
-    border: none;
-}
-
-.navegacao__imagem--responsiva {
-    height: 4rem;
-    width: 4rem;
-    border-radius: 0;
-
-    @include responsividade ("tablet"){
-        max-width: 100%;
-    }
-}
-
-.navegacao__listagem--responsiva {
-    display: none;
-    position: absolute;
-    top: 6rem;
-
-    a {
-        display: block;
-        padding: 1.5rem 2rem;
-        font-size: 1.6rem;
-        font-weight: 600;
-    }
-}
-
-.pesquisa {
-    position: relative;
-
-    img {
-        position: absolute;
-        right: 5%;
-        top: 0.5rem;
-    }
-}
-
-.pesquisa__item {
-    padding: 0.5rem 1rem;
-    border: 0.2rem solid $cor-fonte-sec;
-    border-radius: 0.5rem;
-
-    @include responsividade("mobile") {
-        width: 30vw;
-    }
 }
 
 .artigo {
