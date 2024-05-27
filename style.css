@@ -1142,7 +1142,6 @@ article li, article p, article blockquote, article a li, article a p, article a 
   -moz-box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.1019607843), 14px 19px 24px 0px rgba(0, 0, 0, 0.0901960784), 32px 43px 32px 0px rgba(0, 0, 0, 0.0509803922), 58px 76px 38px 0px rgba(0, 0, 0, 0.0117647059), 90px 119px 42px 0px rgba(0, 0, 0, 0);
   -ms-box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.1019607843), 14px 19px 24px 0px rgba(0, 0, 0, 0.0901960784), 32px 43px 32px 0px rgba(0, 0, 0, 0.0509803922), 58px 76px 38px 0px rgba(0, 0, 0, 0.0117647059), 90px 119px 42px 0px rgba(0, 0, 0, 0);
   -o-box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.1019607843), 14px 19px 24px 0px rgba(0, 0, 0, 0.0901960784), 32px 43px 32px 0px rgba(0, 0, 0, 0.0509803922), 58px 76px 38px 0px rgba(0, 0, 0, 0.0117647059), 90px 119px 42px 0px rgba(0, 0, 0, 0);
-  background-color: #1F2041;
   border-radius: 1.2rem;
   display: flex;
   flex-direction: column;

@@ -186,18 +186,6 @@ function rearranjarMenu(larguraViewport) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 //carrossel
 
 let container = document.querySelector(".container");
