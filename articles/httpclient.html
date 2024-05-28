@@ -181,14 +181,25 @@
             <nav class="conteudo__navegacao">
                 <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
                 <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
-                    <li class="conteudo__navegacao__item"><a href="#">Ponto 1</a></li>
-                    <li class="conteudo__navegacao__item"><a href="#">Ponto 1</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#definicoes">Protocolo HTTP e o HttpClient</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#metodos">Métodos HTTP em Angular</a></li>
                     <li class="conteudo__navegacao__item"><a href="#">Ponto 1</a></li>
                 </ol>
             </nav>
 
             <article>
-                
+                <p class="conteudo__texto" id="definicoes">O protocolo HTTP é o principal protocolo utilizado em comunicações de aplicações com APIs externas ou para realizar chamadas para o backend. As interfaces mais utilizadas atualmente para utilização desse protocolo são a XMLHttpRequest e a Fetch API. O Angular, porém, possui uma API própria, baseada no XMLHttpRequest, chamada HttpClient.</p>
+
+                <p class="conteudo__texto">Para a utilização dessa API, ela deve ser disponibilizada para a aplicação por meio da sua injeção como uma dependência. Primeiramente se adiciona a função <code>provideHttpClient()</code> no array de providers do arquivo <code>app.config.ts</code>, de configurações gerais do projeto. O HttpClient pode, então, ser injetado no componente ou service a ser utilizado por meio do construtor da classe do componente ou service que irá utilizar o protocolo HTTP. Apesar de ser baseada no XMLHttpRequest, é possível adicionar a feature opcional <code>withFetch()</code> nos argumentos de <code>provideHttpClient()</code> para utilizar o HttpClient com a Fetch API.</p>
+
+                <p class="conteudo__texto">Com o HttpClient injetado, é possível realizar requisições com os métodos desta API, que retornam sempre um Observable. Neste contexto, um Observable é como um esqueleto da requisição HTTP, que será enviada e emitirá a resposta retornada pelo servidor mediante a utilização do método <code>subscribe()</code>. Cada utilização deste método corresponde à uma requisição e não há limitações de utilização dele referente à um Observable.</p>
+
+                <figure id="metodos">
+                    <img src="../images/http-metodos.png" alt="Imagem com fundo preto e código em sintaxe de Angular e TypeScript definindo quatro funções chamadas buscarInformacao, alterarInformacao, deletarInformacao e adicionarInformacao que utilizam os métodos GET, PUT, DELETE e POST do protocolo HTTP por meio do HttpClient, respectivamente.">
+                    <figcaption>Métodos GET, PUT, DELETE e POST do protocolo HTTP com HttpClient.</figcaption>
+                </figure>
+
+                <p class="conteudo__texto"></p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
