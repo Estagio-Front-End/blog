@@ -188,9 +188,35 @@
             </nav>
 
             <article>
-                <p id="definicao"></p>
-                <h3 id="pipes-angular">Pipes do Angular</h2>
-                <h3 id="pipes-custom">Pipes customizados</h2>
+                <p class="conteudo__texto" id="definicao">Pipes, no Angular, são funções capazes de transformar dados de acordo com o que se deseja, seja uma data, uma frase, um valor monetário, entre outros, dentro do template de um componente. O Angular possui vários pipes já embutidos, porém também dá ao desenvolvedor a possibilidade de criar seus próprios pipes.</p>
+
+                <p class="conteudo__texto">Para utilizar os pipes, basta importar e adicionar os nomes dos pipes que se deseja utilizar no imports do componente (versões acima da 16) ou do módulo associado ao componente em que se deseja utilizar os pipes.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/pipes-import.png" alt="Imagem com fundo preto e código escrito na sintaxe de Angular definindo um componente chamado PraticaPipesComponent que, dentro de seu imports, possui os pipes de Data, Uppercase, Lowercase e Monetário.">
+                        <figcaption>Importação dos pipes de Data, Uppercase, Lowercase e Monetário do Angular em sua versão 17.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Como os pipes são do módulo common do Angular, também é possível importar apenas o <code>CommonModule</code> e ter acesso à todos os pipes implicitamente. A documentação da API do Angular possui, na seção common, todos os pipes, suas descrições e explicações de uso.</p>
+
+                <h3 id="pipes-angular">Pipes do Angular</h3>
+                <p class="conteudo__texto">Como mencionado anteriormente, o Angular possui alguns pipes embutidos em sua API. Os mais comumente utilizados são:</p>
+
+                <ul class="conteudo__texto">
+                    <li>DatePipe:</li>
+                    <li>UpperCasePipe:</li>
+                    <li>LowerCasePipe:</li>
+                    <li>CurrencyPipe:</li>
+                    <li>DecimalPipe:</li>
+                    <li>PercentPipe:</li>
+                    <li>SlicePipe:</li>
+                    <li>AsyncPipe:</li>
+                    <li>JsonPipe:</li>
+                </ul>
+
+                <h3 id="pipes-custom">Pipes customizados</h3>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
