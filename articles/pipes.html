@@ -202,19 +202,26 @@
                 <p class="conteudo__texto">Como os pipes são do módulo common do Angular, também é possível importar apenas o <code>CommonModule</code> e ter acesso à todos os pipes implicitamente. A documentação da API do Angular possui, na seção common, todos os pipes, suas descrições e explicações de uso.</p>
 
                 <h3 id="pipes-angular">Pipes do Angular</h3>
-                <p class="conteudo__texto">Como mencionado anteriormente, o Angular possui alguns pipes embutidos em sua API. Os mais comumente utilizados são:</p>
+                <p class="conteudo__texto">Como mencionado anteriormente, o Angular possui alguns pipes embutidos em sua API. Para a utilização de um pipe dentro de um template, é necessário, após o valor que se deseja transformar, incluir o caractere <code>|</code>, chamado de pipe, o tipo de pipe que se deseja utilizar e, se necessário, os argumentos cabíveis. Os mais comumente utilizados são:</p>
 
                 <ul class="conteudo__texto">
-                    <li>DatePipe:</li>
-                    <li>UpperCasePipe:</li>
-                    <li>LowerCasePipe:</li>
-                    <li>CurrencyPipe:</li>
-                    <li>DecimalPipe:</li>
+                    <li>DatePipe: transforma datas para variados formatos contendo manipulação de dia, mês, ano, hora, dia da semana, entre outros. Para utilização, se inclui <code>| date : argumentos (ex: "dd/MM/yyyy")</code>.</li>
+                    <li>UpperCasePipe: transforma um texto para que esteja com todas as letras em maiúsculo. Para utilização, se inclui <code>| uppercase</code>.</li>
+                    <li>LowerCasePipe: transforma um texto para que esteja com todas as letras em minúsculo. Para utilização, se inclui <code>| lowercase</code>.</li>
+                    <li>CurrencyPipe: transforma um número em uma string com a indicação monetária. Para utilização, se inclui <code>| currency : argumentos</code>.</li>
+                    <li>DecimalPipe: transforma um número com casas decimais de acordo com a regra explicitada. Para utilização, se inclui <code>| number : regra</code></li>
                     <li>PercentPipe:</li>
                     <li>SlicePipe:</li>
                     <li>AsyncPipe:</li>
                     <li>JsonPipe:</li>
                 </ul>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/pipe-utilizacao.png" alt="Imagem com fundo preto e código escrito na sintaxe de template Angular para a utilização dos vários tipos de pipes descritos.">
+                        <figcaption>Utilização de pipes em um template.</figcaption>
+                    </figure>
+                </div>
 
                 <h3 id="pipes-custom">Pipes customizados</h3>
                 <p class="conteudo__texto">O Angular também permite que sejam criados pipes customizados para que o próprio desenvolvedor defina como será a transformação do dado que passará pelo pipe. Para criar um pipe, basta utilizar o comando <code>ng generate pipe nome-pipe</code>, em que nome-pipe é um nome arbitrário, ou utilizar o seu shorthand <code>ng g p nome-pipe</code>. Este comando criará 2 arquivos, um nome-pipe.pipe.ts, que conterá a lógica do pipe criado e o nome-pipe.pipe.spec.ts, que conterá os testes unitários acerca da lógica do pipe criado.</p>
