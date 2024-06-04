@@ -217,6 +217,25 @@
                 </ul>
 
                 <h3 id="pipes-custom">Pipes customizados</h3>
+                <p class="conteudo__texto">O Angular também permite que sejam criados pipes customizados para que o próprio desenvolvedor defina como será a transformação do dado que passará pelo pipe. Para criar um pipe, basta utilizar o comando <code>ng generate pipe nome-pipe</code>, em que nome-pipe é um nome arbitrário, ou utilizar o seu shorthand <code>ng g p nome-pipe</code>. Este comando criará 2 arquivos, um nome-pipe.pipe.ts, que conterá a lógica do pipe criado e o nome-pipe.pipe.spec.ts, que conterá os testes unitários acerca da lógica do pipe criado.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/pipe-custom-criar.png" alt="Imagem com fundo preto e linhas do terminal de comando para a criação de um pipe e a geração dos dois arquivos de pipes, o de lógica e o de testes.">
+                        <figcaption>Criação de um pipe customizado.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">A estrutura inicial de um arquivo de pipe contém os imports necessários, o decorator <code>@Pipe</code>, onde estará a nomenclatura do pipe e a classe, que conterá toda a lógica de transformação de dados. Esta transformação se dá pelo método <code>transform</code>, que recebe o valor a ser transformado e quaisquer argumentos necessários para a transformação, e retorna o dado modificado.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/pipe-custom-estrutura.png" alt="Imagem com fundo preto e código escrito em sintaxe Angular definindo a estrutura de um pipe com seus imports, decorator e classe.">
+                        <figcaption>Estrutura de um pipe recém criado.</figcaption>
+                    </figure>
+                </div>
+
+                <p>Para a utilização do pipe customizado em um template, basta importar sua classe no componente em que se quer utilizá-lo e inserí-lo no template como qualquer outro pipe, utilizando o nome que foi dado no decorator <code>@Pipe</code>.</p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
