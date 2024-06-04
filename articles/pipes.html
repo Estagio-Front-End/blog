@@ -188,9 +188,9 @@
             </nav>
 
             <article>
-                <p class="conteudo__texto" id="definicao">Pipes, no Angular, são funções capazes de transformar dados de acordo com o que se deseja, seja uma data, uma frase, um valor monetário, entre outros, dentro do template de um componente. O Angular possui vários pipes já embutidos, porém também dá ao desenvolvedor a possibilidade de criar seus próprios pipes.</p>
+                <p class="conteudo__texto" id="definicao">Pipes, no Angular, são funções capazes de transformar dados de acordo com uma regra específica, sejam estes dados uma data, uma frase, um valor monetário, entre outros, dentro do template de um componente. O Angular possui vários pipes já embutidos, porém também dá ao desenvolvedor a possibilidade de criar seus próprios pipes.</p>
 
-                <p class="conteudo__texto">Para utilizar os pipes, basta importar e adicionar os nomes dos pipes que se deseja utilizar no imports do componente (versões acima da 16) ou do módulo associado ao componente em que se deseja utilizar os pipes.</p>
+                <p class="conteudo__texto">Para utilizar os pipes, basta importar e adicionar os nomes dos pipes que se deseja utilizar no imports do componente (a partir da v17) ou do módulo associado ao componente em que se deseja utilizar os pipes.</p>
 
                 <div class="conteudo__figuras">
                     <figure>
@@ -226,7 +226,7 @@
                 </div>
 
                 <h3 id="pipes-custom">Pipes customizados</h3>
-                <p class="conteudo__texto">O Angular também permite que sejam criados pipes customizados para que o próprio desenvolvedor defina como será a transformação do dado que passará pelo pipe. Para criar um pipe, basta utilizar o comando <code>ng generate pipe nome-pipe</code>, em que nome-pipe é um nome arbitrário, ou utilizar o seu shorthand <code>ng g p nome-pipe</code>. Este comando criará 2 arquivos, um nome-pipe.pipe.ts, que conterá a lógica do pipe criado e o nome-pipe.pipe.spec.ts, que conterá os testes unitários acerca da lógica do pipe criado.</p>
+                <p class="conteudo__texto">O Angular também permite que sejam criados pipes customizados para que o próprio desenvolvedor defina como será a transformação dos dados. Para criar um pipe, basta utilizar o comando <code>ng generate pipe nome-pipe</code>, em que nome-pipe é um nome arbitrário, ou utilizar o seu shorthand <code>ng g p nome-pipe</code>. Este comando criará 2 arquivos, um nome-pipe.pipe.ts, que conterá a lógica do pipe criado e o nome-pipe.pipe.spec.ts, que conterá os testes unitários acerca da lógica do pipe criado.</p>
 
                 <div class="conteudo__figuras">
                     <figure>
@@ -244,7 +244,7 @@
                     </figure>
                 </div>
 
-                <p>Para a utilização do pipe customizado em um template, basta importar sua classe no componente em que se quer utilizá-lo e inserí-lo no template como qualquer outro pipe, utilizando o nome que foi dado no decorator <code>@Pipe</code>.</p>
+                <p>Para a utilização do pipe customizado em um template, basta importar sua classe no componente em que se quer utilizá-lo e inserí-lo no template como qualquer outro pipe, utilizando o caractére <code>|</code>, o nome que foi dado no decorator <code>@Pipe</code> e os argumentos definidos, se necessário.</p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
