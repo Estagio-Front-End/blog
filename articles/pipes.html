@@ -208,13 +208,15 @@
                     <li>DatePipe: transforma datas para variados formatos contendo manipulação de dia, mês, ano, hora, dia da semana, entre outros. Para utilização, se inclui <code>| date : argumentos (ex: "dd/MM/yyyy")</code>.</li>
                     <li>UpperCasePipe: transforma um texto para que esteja com todas as letras em maiúsculo. Para utilização, se inclui <code>| uppercase</code>.</li>
                     <li>LowerCasePipe: transforma um texto para que esteja com todas as letras em minúsculo. Para utilização, se inclui <code>| lowercase</code>.</li>
-                    <li>CurrencyPipe: transforma um número em uma string com a indicação monetária. Para utilização, se inclui <code>| currency : argumentos</code>.</li>
-                    <li>DecimalPipe: transforma um número com casas decimais de acordo com a regra explicitada. Para utilização, se inclui <code>| number : regra</code></li>
-                    <li>PercentPipe:</li>
-                    <li>SlicePipe:</li>
-                    <li>AsyncPipe:</li>
-                    <li>JsonPipe:</li>
+                    <li>CurrencyPipe: transforma um número em uma string com a indicação monetária. Para utilização, se inclui <code>| currency : argumentos (ex: "BRL" para real brasileiro)</code>.</li>
+                    <li>DecimalPipe: transforma um número com casas decimais de acordo com a regra explicitada. Para utilização, se inclui <code>| number : regra (ex: "2.0-2" para 2 números antes da vírgula e até 2 casas decimais)</code></li>
+                    <li>PercentPipe: transforma um número para seu equivalente em porcentagem. Para utilização, se inclui <code>| percent</code>.</li>
+                    <li>SlicePipe: transforma um array trazendo um recorte do array original. Para utilização, se inclui <code>| slice : início:fim (ex: 2:6 para trazer do elemento de índice 2 ao elemento de índice 5)</code>.</li>
+                    <li>JsonPipe: torna os dados no formato JSON visíveis, em vez de retornar o <code>object Object</code>. Para utilização, se inclui <code>| json</code>.</li>
+                    <li>AsyncPipe: inscreve automaticamente um Observable ou uma Promise, de modo que é muito utilizado para detectar de forma automática mudanças em dados assíncronos. Para utilização, se inclui <code>| async</code>.</li>
                 </ul>
+
+                <p>É possível encadear pipes, porém é necessário ter cuidado com a ordem de transformações para que não se realize transformações indesejadas ou crie ordens que não são possíveis de serem executadas.</p>
 
                 <div class="conteudo__figuras">
                     <figure>
