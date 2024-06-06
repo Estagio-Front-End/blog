@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Diretivas em Angular</title>
+</head>
+<body>
+    <header>
+        <a href="https://www.zappts.com.br/"><img src="../images/logo-zappts.svg" alt="Ir para a página inicial do site da Zappts"></a>
+        
+        <nav>
+            <ul class="navegacao">
+                <li><a href="https://www.zappts.com.br/">Início</a></li>
+                <li class="navegacao--desktop"><a href="#">Sobre</a></li>
+                <li class="navegacao--hd" id="menu-solucoes">
+                    <a href="https://www.zappts.com.br/nossas-solucoes/">Soluções</a>
+                    <ul class="navegacao__submenu" id="submenu-solucoes">
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Experimentação e Inovação</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Produtos e Soluções Digitais</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Dados, BI & IA</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.zappts.com.br/cases-de-sucesso/">Cases</a></li>
+                <li class="navegacao--hd" id="menu-segmentos">
+                    <a href="https://www.zappts.com.br/segmentos/">Segmentos</a>
+                    <ul class="navegacao__submenu">
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Financeiro e Seguro</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Indústria</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Varejo</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Serviços</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Energia</a></li>
+                    </ul>
+                </li>
+                <li id="menu-areatech">
+                    <a href="../index.html">Área Tech</a>
+                    <ul class="navegacao__submenu">
+                        <li><a href="https://zappts.com.br/blog/"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Blog</a></li>
+                        <li><a href="../pages/html.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>HTML</a></li>
+                        <li><a href="../pages/css.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>CSS</a></li>
+                        <li><a href="../pages/javascript.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Javascript</a></li>
+                        <li><a href="../pages/angular.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Angular</a></li>
+                    </ul>
+                </li>
+                
+                <li class="navegacao--hd"><a href="https://www.zappts.com.br/carreira/">Carreira</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header__acoes">
+            <div class="idiomas" aria-label="Seleção de idioma do site">
+                <ul>
+                    <li class="idiomas__item--ativo"><img class="idiomas__item__imagem" src="" alt=""><span></span><img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar lista de idiomas disponíveis" class="idiomas__icone inativo"></li>
+                    <ul class="idiomas__outros inativo">
+                        <li><img class="idiomas__item__imagem" src="" alt=""><span></span></li>
+                        <li><img class="idiomas__item__imagem" src="" alt=""><span></span></li>
+                    </ul>
+                </ul>
+            </div>
+            
+            <div class="header__acoes__menu">
+                <a href="https://www.zappts.com.br/contato/" class="botao__primario">Contato</a>
+                
+                <div aria-label="Abrir ou fechar menu hamburguer" class="navegacao__hamburguer" id="hamburguer-icone">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-label="Navegação para dispositivos tablet e mobile" class="navegacao--mobile inativo">
+            <nav>
+                <ul>
+                    <li><a href="https://www.zappts.com.br/">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li>
+                        <a href="https://www.zappts.com.br/nossas-solucoes/">Soluções<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Experimentação e Inovação</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Produtos e Soluções Digitais</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Dados, BI & IA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.zappts.com.br/cases-de-sucesso/">Cases</a></li>
+                    <li>
+                        <a href="https://www.zappts.com.br/segmentos/">Segmentos<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Financeiro e Seguro</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Indústria</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Varejo</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Serviços</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Energia</a></li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <a href="../index.html">Área Tech<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Blog</a></li>
+                            <li><a href="../pages/html.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>HTML</a></li>
+                            <li><a href="../pages/css.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>CSS</a></li>
+                            <li><a href="../pages/javascript.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Javascript</a></li>
+                            <li><a href="../pages/angular.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Angular</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="https://www.zappts.com.br/carreira/">Carreira</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__acoes--mobile"></div>
+        </div>
+    </header>
+   
+    <main>
+        <div class="imagem__principal">
+            <img src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F852eh0bq3dzz3lg3270m.png" alt="Imagem com fundo azul e, no centro, a logo do Angular com uma seta indicando a conexão entre angular e o DOM com os dizeres 'DOM Manipulation' em cima da seta. No centro inferior, os dizeres 'Angular Directives'">
+        </div>
+
+        <section class="conteudo">    
+            <h2 class="conteudo__titulo">Diretivas em Angular</h2>
+            <p class="conteudo__preview">Explore o mundo das diretivas no Angular e descubra como elas tornam a criação de aplicações web mais dinâmica e intuitiva. Com esses marcadores, você pode facilmente estender o HTML, dando vida aos seus componentes e simplificando sua experiência de desenvolvimento.</p>
+            <div class="conteudo__info">
+                <p><span>Por Camila Matias |</span> Desenvolvedora Front End</p>
+                <p>Publicado: 06 Jun 2024</p>
+            </div>
+            
+            <nav class="conteudo__navegacao">
+                <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
+                <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
+                    <li class="conteudo__navegacao__item"><a href="#definicoes">Definições</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#estruturais">Diretivas Estruturais</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#atributos">Diretivas de Atributo</a></li>
+                </ol>
+            </nav>
+
+            <article>
+                <p class="conteudo__texto" id="definicoes">Diretivas em Angular são funcionalidades que permitem a manipulação do DOM por meio de condicionais, controles de fluxo e mudança na aparência. A partir da versão 17 do Angular, as diretivas não são mais padrão, visto a criação do novo control flow, mas aplicações legadas conterão estes comandos para a realização de atividades relacionadas à manipulação do DOM.</p>
+
+                <p class="conteudo__texto">As diretivas podem ser classificadas em dois tipos: diretivas estruturais e diretivas de atributo. As diretivas estruturais modelam e remodelam o DOM de acordo com condiconais e controle de fluxo, ao passo que as diretivas de atributo modificam aparência e comportamento de elementos, componentes ou outras diretivas.</p>
+
+                <h3 id="estruturais">Diretivas Estruturais</h3>
+                <h4>*ngIf</h4>
+                <p class="conteudo__texto">A diretiva <code>*ngIf</code> cria um controle de fluxo em que um elemento é renderizado ou não de acordo com uma condição. Para criar um bloco de <code>else</code>, é possível utilizar a palavra reservada <code>else</code> logo após a condição do <code>ngIf</code> e indicar como referencia uma variável de template. Esta variável de template, por sua vez, estará associdada à um <code>ng-template</code> contendo o código que será renderizado caso o bloco <code>else</code> seja acionado.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngif.png" alt="">
+                        <figcaption>Uso da diretiva <code>ngIf</code> com criação de bloco de <code>else</code>, assumindo a existência das variáveis "valorIf" e "acaoBotao" no arquivo TypeScript do componente.</figcaption>
+                    </figure>
+                </div>
+                
+                <h4>*ngSwitch</h4>
+                <p class="conteudo__texto">A diretiva <code>*ngSwitch</code> cria um controle de fluxo em que um elemento é renderizado ou não de acordo com o valor de uma condição. Se utiliza o <code>[ngSwitch]</code> com a condição em um container e, dentro dele, se inclui os <code>*ngSwitchCase</code> para cada caso e o <code>*ngSwitchDefault</code>, que representa o valor default.</p>
+                
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngswitch.png" alt="">
+                        <figcaption>Uso da diretiva <code>ngSwitch</code>, assumindo a existência de uma variável "valorSwitch" no arquivo TypeScript do componente.</figcaption>
+                    </figure>
+                </div>
+                
+                <h4>*ngFor</h4>
+                <p class="conteudo__texto">A diretiva <code>*ngFor</code> cria uma iteração por um elemento array ou array-like, em que cada elemento será renderizado de acordo com o template definido. Esta diretiva permite tanto que se utilize o valor do elemento no array quanto seu índice, basta que ambos sejam declarados na aplicação da diretiva.</p>
+                
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngfor.png" alt="">
+                        <figcaption>Uso da diretiva ngFor, assumindo a existência de um array "posts" no arquivo TypeScript do componente.</figcaption>
+                    </figure>
+                </div>
+
+                <h3 id="atributos">Diretivas de Atributos</h3>
+                <h4>NgClass</h4>
+                <h4>NgStyle</h4>
+                <h4>NgModel</h4>
+                <h4>ng-template</h4>
+                <h4>ng-content</h4>
+            </article>
+    
+            <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
+                <span class="artigo__tag artigo__tag--angular">Angular</span>
+                
+                <div class="conteudo__stats">
+                    <div aria-label="Stats do Artigo">
+                        <div>
+                            <span>144</span>
+                            <img src="../images/icone-visualizacoes.svg" alt="Quantidade de visualizações do artigo">
+                        </div>
+                        <div>
+                            <span>20</span>
+                            <img src="../images/icone-comentarios.svg" alt="Quantidade de comentários sobre o artigo">
+                        </div>
+                        <div>
+                            <span>5</span>
+                            <img src="../images/icone-envios.svg" alt="Quantidade de compartilhamentos do artigo">
+                        </div>
+                    </div>
+
+                    <div aria-label="Ações no artigo">
+                        <button><img src="../images/icone-envios.svg" alt="Compartilhar artigo"></button>
+                        <button><img src="../images/icone-salvar.svg" alt="Salvar artigo"></button>
+                        <button><img src="../images/icone-curtir.svg" alt="Curtir artigo"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo__autor">
+                <img src="../images/foto-autor.jpeg" alt="Foto da autora do artigo Camila Matias que tem pele clara, cabelo castanho escuro e usa blusa e óculos pretos.">
+                <p>Olá, sou a Camila Matias! Desenvolvedora Front End apaixonada pela arte de dar vida aos designs e interfaces digitais. Especializada em Produtividade. Transformando conceitos abstratos em experiências visuais envolventes e funcionais. ✨🚀 #Desenvolvedora #DesenvolvimentoFrontEnd #Inovação</p>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
+</html>
