@@ -225,10 +225,10 @@
 
                 <h3 id="atributos">Diretivas de Atributos</h3>
                 <h4>NgClass</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">A diretiva NgClass modifica as classes de um elemento com base em uma expressão ou método. Isso fará com que o estilo seja modificado de acordo com o resultado da expressão ou método, em geral um dado do tipo <code>boolean</code> (<code>true</code>/<code>false</code>). O estilo inicial pode ser setado no <code>ngOnInit</code> e ser modificado por uma ação do usuário.</p>
 
                 <h4>NgStyle</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">A diretiva <code>NgStyle</code> modifica diretamente as propriedades de estilo de um elemento com base em um método. O estilo inicial pode ser setado no <code>ngOnInit</code> e ser modificado por uma ação do usuário.</p>
 
                 <div class="conteudo__figuras">
                     <figure>
@@ -238,10 +238,17 @@
                 </div>
 
                 <h4>NgModel</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">A diretiva <code>NgModel</code> cria uma conexão de dados de via dupla (two-way data binding), em que se pode coletar uma informação do usuário, mostrá-la na página em tempo real e atualizá-la logo que o usuário fizer alguma alteração.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngmodel.png" alt="">
+                        <figcaption>Uso da diretiva <code>NgModel</code>, assumindo a existência de uma variável "inputModel" no arquivo TypeScript do componente. </figcaption>
+                    </figure>
+                </div>
                 
                 <h4>ng-template</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">O <code>ng-template</code> atua como um container que não será renderizado automaticamente pelo Angular. Em geral, é utilizado em conjunto com diretivas estruturais, que serão os comandos que dirão se esse bloco de código será renderizado ou não. No exemplo dado para a diretiva <code>*ngIf</code>, o bloco de <code>else</code> é encapsulado por um <code>ng-template</code>, pois o código contido neste container não é renderizado automaticamente e a diretiva irá indicar se ele será renderizado em algum momento ou não.</p>
                 
                 <h4>ng-content</h4>
                 <p class="conteudo__texto">O <code>ng-content</code> atua como um elemento do Angular que não será renderizado no DOM, mas serve para adicionar uma diretiva a um elemento ou grupo de elementos que não possua um único elemento pai no qual adicionar a diretiva. No exemplo exibido para o <code>NgSwitch</code> a div que encapsula os switch cases e o default pode ser um <code>ng-content</code>, visto que não é estritamente necessário que o parágrafo resultante tenha um elemento pai no DOM.</p>
