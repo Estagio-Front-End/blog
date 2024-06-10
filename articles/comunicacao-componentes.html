@@ -217,7 +217,21 @@
                 </div>
                 
                 <h4>Setter</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">A sintaxe de setter se adiciona ao decorator <code>@Input</code> quando é necessária a interceptação do dado recebido pelo componente pai para alguma validação. Neste caso, após o decorator, é definida uma função <code>set</code> para a atribuição de valor do input.</p>
+                <p class="conteudo__texto">No componente pai, o atributo por onde o dado será transmitido terá o nome do setter e, no template do componente filho, o dado será exibida por meio do nome da variável inicialmente declarada.</p>
+                <p class="conteudo__texto">Com signals, a sintaxe é bastante similar. As grandes diferenças são na declaração inicial da variável, que deve ser declarada como signal e na atribuição de valor no setter, visto que a signal API possui um método <code>set</code> pelo qual se atribui um valor ao signal.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacao-setter-semsig.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo um input com setter chamado cargo do tipo string sem utilizar signals.">
+                        <figcaption>Sintaxe do <code>@Input</code> com setter no componente filho sem signals.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacao-setter-comsig.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo um input com setter chamado nome do tipo string utilizando signals.">
+                        <figcaption>Sintaxe do <code>@Input</code> com setter no componente filho com signals.</figcaption>
+                    </figure>
+                </div>
                 
                 <h4>Local/template variables</h4>
                 <p class="conteudo__texto"></p>
