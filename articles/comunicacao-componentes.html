@@ -184,7 +184,6 @@
                     <li class="conteudo__navegacao__item"><a href="#introducao">Introdução</a></li>
                     <li class="conteudo__navegacao__item"><a href="#paifilho">Comunicações de pai para filho</a></li>
                     <li class="conteudo__navegacao__item"><a href="#filhopai">Comunicações de filho para pai</a></li>
-                    <li class="conteudo__navegacao__item"><a href="#compartilhamento">Compartilhamento de dados</a></li>
                     <li class="conteudo__navegacao__item"><a href="#mudancas">Detecção de mudanças</a></li>
                 </ol>
             </nav>
@@ -257,9 +256,49 @@
                 <p class="conteudo__texto">A principal forma de passar informações de filho para pai é o <code>@Output</code> atrelado com o conceito de emissão de eventos.</p>
 
                 <h4>@Output</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">O processo de compartilhamento de dados pelo <code>@Output</code> possui 3 passos fundamentais: a emissão do dado pelo componente filho, a preparação para recebimento do dado pelo componente pai e o link de comunicação no template do componente pai.</p>
 
-                <h3 id="compartilhamento">Compartilhamento de dados</h3>
+                <p class="conteudo__texto">No primeiro passo, se cria uma variável de tipo <code>EventEmitter</code>, que será responsável por emitir, do componente filho, os dados a serem compartilhados. O dado pode ser, então, emitido pelo método <code>emit()</code> do <code>EventEmitter</code>. Essa emissão pode ser feita assim que o componente filho é inicializado (pelo <code>ngOnInit</code>) ou uma lógica de método emitidor + ação do usuário pode ser criada para a emissão deste dado.</p>
+
+                <p class="conteudo__texto">No segundo passo, temos a criação de uma função no componente pai que receberá o evento emitido pelo componente filho com os dados compartilhados e utilizará estes dados para quaisquer funcionalidades necessárias, além de uma variável no próprio componente pai que irá receber estes dados.</p>
+
+                <p class="conteudo__texto">No terceiro e último passo, temos a conexão entre a emissão e recebimento do evento. Na tag do componente filho dentro do template do componente pai, temos na emissão do evento, a função do componente pai receberá o argumento <code>$event</code>, que conterá o dado enviado. Desta forma, é possível utilizar o dado enviado pelo componente filho no template do componente pai.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacoes-output-filho.png" alt="">
+                        <figcaption>Passo 1: criação do <code>EventEmitter</code> e emissão do evento com o dado a ser compartilhado no componente filho (sem signals).</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacoes-output-pai.png" alt="">
+                        <figcaption>Passo 2: criação de método e variável para recebimento do dado no componente pai (sem signals).</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacoes-output-template.png" alt="">
+                        <figcaption>Passo 3: comunicação entre emissão e recebimento do dado e exibição do dado no template do componente pai (sem signals).</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Com signals, temos mudança de sintaxe em todos os passos. No passo 1, a sintaxe fica reduzida com o método <code>output()</code> para a criação do <code>EventEmitter</code>, ou, neste caso, o <code>OutputEmitterRef</code>. No passo 2, a criação de um método não é estritamente necessária, visto que a signal API possui o método <code>set()</code>. Desta forma, teríamos, na forma mais básica, apenas a inicialização da variável no passo 2 e o passo 3 tendo, como método receptor do dado, o método <code>set()</code> do signal criado no passo 2.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacoes-output-filhocomsig.png" alt="">
+                        <figcaption>Passo 1: criação do <code>OutputEmitterRef</code> e emissão do evento com o dado a ser compartilhado no componente filho (com signals).</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacoes-output-paicomsig.png" alt="">
+                        <figcaption>Passo 2: criação de variável para recebimento do dado no componente pai (com signals).</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacoes-output-templatecomsig.png" alt="">
+                        <figcaption>Passo 3: comunicação entre emissão e recebimento do dado e exibição do dado no template do componente pai (com signals).</figcaption>
+                    </figure>
+                </div>
 
                 <h3 id="mudancas">Detecção de mudanças</h3>
                 
