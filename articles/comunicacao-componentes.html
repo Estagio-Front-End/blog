@@ -233,11 +233,25 @@
                     </figure>
                 </div>
                 
-                <h4>Local/template variables</h4>
-                <p class="conteudo__texto"></p>
+                <h4>Local variables</h4>
+                <p class="conteudo__texto">As local variables são uma forma de fazer referência ao elemento no template. Sua sintaxe é simplesmente adicionar uma <code>#</code> seguido do nome que se quer dar à variável como um atributo do elemento que se quer referenciar, como em <code>#componentefilho</code>, neste caso. Desta forma, é possível que o componente pai acesse propriedades e métodos do componente filho utilizando a notação de ponto diretamente no template, como ilustrado na imagem a seguir.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacao-localvariable.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo uma comunicação entre componentes com local variables para que o componente pai possa utilizar métodos e propriedades do componente filho.">
+                        <figcaption>Comunicação entre componentes com local variables.</figcaption>
+                    </figure>
+                </div>
                 
                 <h4>@ViewChild</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">O <code>@ViewChild</code> é uma forma de comunicação entre componentes que se assemelha com as local variables, porém atua onde estas não atuam: no arquivo TypeScript do componente pai. A sintaxe é iniciada pelo decorator <code>@ViewChild</code>, seguido do nome do componente filho entre parêntesis e o nome pelo qual se quer chamar o componente filho dentro do componente pai e atribuído com o componente filho. Criando esta conexão, é possível que o componente pai acesse propriedades e métodos do componente filho dentro de seu próprio arquivo de lógica, por meio da notação de ponto.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacao-viewchild.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo uma comunicação entre componentes com @ViewChild para que o componente pai possa utilizar métodos e propriedades do componente filho.">
+                        <figcaption>Comunicação entre componentes com <code>@ViewChild</code>.</figcaption>
+                    </figure>
+                </div>
 
                 <h3 id="filhopai">Comunicações de filho para pai</h3>
                 <p class="conteudo__texto">A principal forma de passar informações de filho para pai é o <code>@Output</code> atrelado com o conceito de emissão de eventos.</p>
