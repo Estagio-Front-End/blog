@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Services em Angular</title>
+    <title>Comunicação entre Componentes em Angular</title>
 </head>
 <body>
     <header>
@@ -167,7 +167,7 @@
    
     <main>
         <div class="imagem__principal">
-            <img src="" alt="">
+            <img src="https://miro.medium.com/v2/resize:fit:946/1*753JJ76QFUy8TTcqxhIjRw.png" alt="Imagem mostrando 2 grupos de um componente pai com 2 componentes filhos e suas comunicações entre grupos e entre componentes.">
         </div>
 
         <section class="conteudo">    
@@ -198,7 +198,23 @@
                 <p class="conteudo__texto">As principais formas de passar informações de pai para filho são o <code>@Input</code>, o setter, as local variables ou template variables, e o <code>@ViewChild</code>.</p>
 
                 <h4>@Input</h4>
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">Para que o componente pai possa repassar informações para o elemento filho, deve-se incluir o decorator <code>@Input</code>, seguido de uma variável tipada com atribuição ou não de valor inicial. Nas opções do decorator, é possível torná-lo obrigatório com o <code>required = "true"</code> e dar um novo nome pelo qual esse input será chamado no elemento pai com o <code>alias</code>, entre outras opções.</p>
+
+                <p class="conteudo__texto">No elemento pai, é possível passar a informação de 2 formas. Ambas serão inclusas na tag do elemento filho como um atributo, mas o valor pode ser passado estaticamente no template, como <code>valor = "dado a ser passado"</code> ou uma variável pode ser criada no arquivo TypeScript do elemento pai e o valor pode ser passado dinamicamente, como <code>valor = {{ variavel }}</code>.</p>
+
+                <p class="conteudo__texto">Com signals, a sintaxe fica levemente mais enxuta devido a existência da função <code>input()</code> que retorna um <code>WritableSignal</code>. No template do componente filho, no uso da variável, em vez de termos a chamada normal à uma variável, temos uma chamada ao signal <code>idade()</code>, visto que um signal é uma função getter e precisa ser chamada para que seu valor seja lido.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacao-input-semsig.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo um input chamado nome do tipo string sem utilizar signals.">
+                        <figcaption>Sintaxe do <code>@Input</code> no componente filho sem signals.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacao-input-comsig.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo um input chamado idade do tipo number utilizando signals.">
+                        <figcaption>Sintaxe do <code>@Input</code> no componente filho com signals.</figcaption>
+                    </figure>
+                </div>
                 
                 <h4>Setter</h4>
                 <p class="conteudo__texto"></p>
