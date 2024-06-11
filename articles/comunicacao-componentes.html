@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Comunicação entre Componentes em Angular</title>
+</head>
+<body>
+    <header>
+        <a href="https://www.zappts.com.br/"><img src="../images/logo-zappts.svg" alt="Ir para a página inicial do site da Zappts"></a>
+        
+        <nav>
+            <ul class="navegacao">
+                <li><a href="https://www.zappts.com.br/">Início</a></li>
+                <li class="navegacao--desktop"><a href="#">Sobre</a></li>
+                <li class="navegacao--hd" id="menu-solucoes">
+                    <a href="https://www.zappts.com.br/nossas-solucoes/">Soluções</a>
+                    <ul class="navegacao__submenu" id="submenu-solucoes">
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Experimentação e Inovação</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Produtos e Soluções Digitais</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Dados, BI & IA</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.zappts.com.br/cases-de-sucesso/">Cases</a></li>
+                <li class="navegacao--hd" id="menu-segmentos">
+                    <a href="https://www.zappts.com.br/segmentos/">Segmentos</a>
+                    <ul class="navegacao__submenu">
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Financeiro e Seguro</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Indústria</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Varejo</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Serviços</a></li>
+                        <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Energia</a></li>
+                    </ul>
+                </li>
+                <li id="menu-areatech">
+                    <a href="../index.html">Área Tech</a>
+                    <ul class="navegacao__submenu">
+                        <li><a href="https://zappts.com.br/blog/"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Blog</a></li>
+                        <li><a href="../pages/html.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>HTML</a></li>
+                        <li><a href="../pages/css.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>CSS</a></li>
+                        <li><a href="../pages/javascript.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Javascript</a></li>
+                        <li><a href="../pages/angular.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>Angular</a></li>
+                    </ul>
+                </li>
+                
+                <li class="navegacao--hd"><a href="https://www.zappts.com.br/carreira/">Carreira</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header__acoes">
+            <div class="idiomas" aria-label="Seleção de idioma do site">
+                <ul>
+                    <li class="idiomas__item--ativo"><img class="idiomas__item__imagem" src="" alt=""><span></span><img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar lista de idiomas disponíveis" class="idiomas__icone inativo"></li>
+                    <ul class="idiomas__outros inativo">
+                        <li><img class="idiomas__item__imagem" src="" alt=""><span></span></li>
+                        <li><img class="idiomas__item__imagem" src="" alt=""><span></span></li>
+                    </ul>
+                </ul>
+            </div>
+            
+            <div class="header__acoes__menu">
+                <a href="https://www.zappts.com.br/contato/" class="botao__primario">Contato</a>
+                
+                <div aria-label="Abrir ou fechar menu hamburguer" class="navegacao__hamburguer" id="hamburguer-icone">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-label="Navegação para dispositivos tablet e mobile" class="navegacao--mobile inativo">
+            <nav>
+                <ul>
+                    <li><a href="https://www.zappts.com.br/">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li>
+                        <a href="https://www.zappts.com.br/nossas-solucoes/">Soluções<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Experimentação e Inovação</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Produtos e Soluções Digitais</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Dados, BI & IA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.zappts.com.br/cases-de-sucesso/">Cases</a></li>
+                    <li>
+                        <a href="https://www.zappts.com.br/segmentos/">Segmentos<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Financeiro e Seguro</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Indústria</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Varejo</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Serviços</a></li>
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Energia</a></li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <a href="../index.html">Área Tech<img src="../images/icon-menu-idiomas.svg" alt="Abrir ou fechar submenu" class="navegacao--mobile__icone inativo"></a>
+                        <ul class="navegacao--mobile__submenu inativo">
+                            <li><a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Blog</a></li>
+                            <li><a href="../pages/html.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>HTML</a></li>
+                            <li><a href="../pages/css.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>CSS</a></li>
+                            <li><a href="../pages/javascript.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Javascript</a></li>
+                            <li><a href="../pages/angular.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3.33317L10.6667 7.99984L6 12.6665" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Angular</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="https://www.zappts.com.br/carreira/">Carreira</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__acoes--mobile"></div>
+        </div>
+    </header>
+   
+    <main>
+        <div class="imagem__principal">
+            <img src="https://miro.medium.com/v2/resize:fit:946/1*753JJ76QFUy8TTcqxhIjRw.png" alt="Imagem mostrando 2 grupos de um componente pai com 2 componentes filhos e suas comunicações entre grupos e entre componentes.">
+        </div>
+
+        <section class="conteudo">    
+            <h2 class="conteudo__titulo">Comunicação entre Componentes em Angular</h2>
+            <p class="conteudo__preview">Descubra como maximizar a eficiência da comunicação entre componentes no Angular, desvendando estratégias e melhores práticas em nosso artigo especializado. Aprofunde-se na arquitetura do framework e otimize a interação entre elementos para desenvolvimento web mais fluido e organizado.</p>
+            <div class="conteudo__info">
+                <p><span>Por Camila Matias |</span> Desenvolvedora Front End</p>
+                <p>Publicado: 10 Junho 2024</p>
+            </div>
+            
+            <nav class="conteudo__navegacao">
+                <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
+                <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
+                    <li class="conteudo__navegacao__item"><a href="#introducao">Introdução</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#paifilho">Comunicações de pai para filho</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#filhopai">Comunicações de filho para pai</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#mudancas">Detecção de mudanças</a></li>
+                </ol>
+            </nav>
+
+            <article>
+                <p class="conteudo__texto" id="introducao">A comunicação entre componentes é um conceito importante na construção de aplicações por permitir o compartilhamento de dados, a coordenação entre componentes e transmissão de uma interface mais fluida para o usuário. Existem várias formas de comunicação que se dividem em duas categorias: comunicações de (componente) pai para (componente) filho e comunicações de filho para pai.</p>
+
+                <p class="conteudo__texto">Com a introdução do conceito de signals na versão 17 do Angular, a sintaxe da comunicação entre componentes pode ter algumas diferenças entre versões. Este novo conceito, porém, traz ganhos em performance e facilidade na comunicação entre componentes.</p>
+
+                <h3 id="paifilho">Comunicações de pai para filho</h3>
+                <p class="conteudo__texto">As principais formas de passar informações de pai para filho são o <code>@Input</code>, o setter, as local variables ou template variables, e o <code>@ViewChild</code>.</p>
+
+                <h4>@Input</h4>
+                <p class="conteudo__texto">Para que o componente pai possa repassar informações para o elemento filho, deve-se incluir o decorator <code>@Input</code>, seguido de uma variável tipada com atribuição ou não de valor inicial. Nas opções do decorator, é possível torná-lo obrigatório com o <code>required = "true"</code> e dar um novo nome pelo qual esse input será chamado no elemento pai com o <code>alias</code>, entre outras opções.</p>
+
+                <p class="conteudo__texto">No elemento pai, é possível passar a informação de 2 formas. Ambas serão inclusas na tag do elemento filho como um atributo, mas o valor pode ser passado estaticamente no template, como <code>valor = "dado a ser passado"</code> ou uma variável pode ser criada no arquivo TypeScript do elemento pai e o valor pode ser passado dinamicamente, como <code>valor = {{ variavel }}</code>.</p>
+
+                <p class="conteudo__texto">Com signals, a sintaxe fica levemente mais enxuta devido a existência da função <code>input()</code> que retorna um <code>WritableSignal</code>. No template do componente filho, no uso da variável, em vez de termos a chamada normal à uma variável, temos uma chamada ao signal <code>idade()</code>, visto que um signal é uma função getter e precisa ser chamada para que seu valor seja lido.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacao-input-semsig.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo um input chamado nome do tipo string sem utilizar signals.">
+                        <figcaption>Sintaxe do <code>@Input</code> no componente filho sem signals.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacao-input-comsig.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo um input chamado idade do tipo number utilizando signals.">
+                        <figcaption>Sintaxe do <code>@Input</code> no componente filho com signals.</figcaption>
+                    </figure>
+                </div>
+                
+                <h4>Setter</h4>
+                <p class="conteudo__texto">A sintaxe de setter se adiciona ao decorator <code>@Input</code> quando é necessária a interceptação do dado recebido pelo componente pai para alguma validação. Neste caso, após o decorator, é definida uma função <code>set</code> para a atribuição de valor do input.</p>
+                <p class="conteudo__texto">No componente pai, o atributo por onde o dado será transmitido terá o nome do setter e, no template do componente filho, o dado será exibida por meio do nome da variável inicialmente declarada.</p>
+                <p class="conteudo__texto">Com signals, a sintaxe é bastante similar. As grandes diferenças são na declaração inicial da variável, que deve ser declarada como signal e na atribuição de valor no setter, visto que a signal API possui um método <code>set</code> pelo qual se atribui um valor ao signal.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacao-setter-semsig.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo um input com setter chamado cargo do tipo string sem utilizar signals.">
+                        <figcaption>Sintaxe do <code>@Input</code> com setter no componente filho sem signals.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacao-setter-comsig.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo um input com setter chamado nome do tipo string utilizando signals.">
+                        <figcaption>Sintaxe do <code>@Input</code> com setter no componente filho com signals.</figcaption>
+                    </figure>
+                </div>
+                
+                <h4>Local variables</h4>
+                <p class="conteudo__texto">As local variables são uma forma de fazer referência ao elemento no template. Sua sintaxe é simplesmente adicionar uma <code>#</code> seguido do nome que se quer dar à variável como um atributo do elemento que se quer referenciar, como em <code>#componentefilho</code>, neste caso. Desta forma, é possível que o componente pai acesse propriedades e métodos do componente filho utilizando a notação de ponto diretamente no template, como ilustrado na imagem a seguir.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacao-localvariable.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo uma comunicação entre componentes com local variables para que o componente pai possa utilizar métodos e propriedades do componente filho.">
+                        <figcaption>Comunicação entre componentes com local variables.</figcaption>
+                    </figure>
+                </div>
+                
+                <h4>@ViewChild</h4>
+                <p class="conteudo__texto">O <code>@ViewChild</code> é uma forma de comunicação entre componentes que se assemelha com as local variables, porém atua onde estas não atuam: no arquivo TypeScript do componente pai. A sintaxe é iniciada pelo decorator <code>@ViewChild</code>, seguido do nome do componente filho entre parêntesis e o nome pelo qual se quer chamar o componente filho dentro do componente pai e atribuído com o componente filho. Criando esta conexão, é possível que o componente pai acesse propriedades e métodos do componente filho dentro de seu próprio arquivo de lógica, por meio da notação de ponto.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacao-viewchild.png" alt="Imagem com fundo preto e código na sintaxe Angular escrito definindo uma comunicação entre componentes com @ViewChild para que o componente pai possa utilizar métodos e propriedades do componente filho.">
+                        <figcaption>Comunicação entre componentes com <code>@ViewChild</code>.</figcaption>
+                    </figure>
+                </div>
+
+                <h3 id="filhopai">Comunicações de filho para pai</h3>
+                <p class="conteudo__texto">A principal forma de passar informações de filho para pai é o <code>@Output</code> atrelado com o conceito de emissão de eventos.</p>
+
+                <h4>@Output</h4>
+                <p class="conteudo__texto">O processo de compartilhamento de dados pelo <code>@Output</code> possui 3 passos fundamentais: a emissão do dado pelo componente filho, a preparação para recebimento do dado pelo componente pai e o link de comunicação no template do componente pai.</p>
+
+                <p class="conteudo__texto">No primeiro passo, se cria uma variável de tipo <code>EventEmitter</code>, que será responsável por emitir, do componente filho, os dados a serem compartilhados. O dado pode ser, então, emitido pelo método <code>emit()</code> do <code>EventEmitter</code>. Essa emissão pode ser feita assim que o componente filho é inicializado (pelo <code>ngOnInit</code>) ou uma lógica de método emitidor + ação do usuário pode ser criada para a emissão deste dado.</p>
+
+                <p class="conteudo__texto">No segundo passo, temos a criação de uma função no componente pai que receberá o evento emitido pelo componente filho com os dados compartilhados e utilizará estes dados para quaisquer funcionalidades necessárias, além de uma variável no próprio componente pai que irá receber estes dados.</p>
+
+                <p class="conteudo__texto">No terceiro e último passo, temos a conexão entre a emissão e recebimento do evento. Na tag do componente filho dentro do template do componente pai, temos na emissão do evento, a função do componente pai receberá o argumento <code>$event</code>, que conterá o dado enviado. Desta forma, é possível utilizar o dado enviado pelo componente filho no template do componente pai.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacoes-output-filho.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criação do EventEmitter e emissão do dado.">
+                        <figcaption>Passo 1: criação do <code>EventEmitter</code> e emissão do evento com o dado a ser compartilhado no componente filho (sem signals).</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacoes-output-pai.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criação de método de recebimento de valor no componente pai.">
+                        <figcaption>Passo 2: criação de método e variável para recebimento do dado no componente pai (sem signals).</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacoes-output-template.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para comunicar emissão e recebimento de dados entre os componentes.">
+                        <figcaption>Passo 3: comunicação entre emissão e recebimento do dado e exibição do dado no template do componente pai (sem signals).</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Com signals, temos mudança de sintaxe em todos os passos. No passo 1, a sintaxe fica reduzida com o método <code>output()</code> para a criação do <code>EventEmitter</code>, ou, neste caso, o <code>OutputEmitterRef</code>. No passo 2, a criação de um método não é estritamente necessária, visto que a signal API possui o método <code>set()</code>. Desta forma, teríamos, na forma mais básica, apenas a inicialização da variável no passo 2 e o passo 3 tendo, como método receptor do dado, o método <code>set()</code> do signal criado no passo 2.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/comunicacoes-output-filhocomsig.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criação do OutputEmitterRef e emissão do dado.">
+                        <figcaption>Passo 1: criação do <code>OutputEmitterRef</code> e emissão do evento com o dado a ser compartilhado no componente filho (com signals).</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacoes-output-paicomsig.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criação de variável de recebimento do dado.">
+                        <figcaption>Passo 2: criação de variável para recebimento do dado no componente pai (com signals).</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/comunicacoes-output-templatecomsig.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para comunicação entre emissão e recebimento do dado entre os componentes.">
+                        <figcaption>Passo 3: comunicação entre emissão e recebimento do dado e exibição do dado no template do componente pai (com signals).</figcaption>
+                    </figure>
+                </div>
+
+                <h3 id="mudancas">Detecção de mudanças</h3>
+                <p class="conteudo__texto">Para detecção e reação à mudanças de dados advindos de um input, o Angular possui um método no ciclo de vida de um componente chamada <code>ngOnChanges</code>, que dispara antes mesmo do <code>ngOnInit</code> e a cada vez que um dado de input (comunicação entre componentes, não confundir com tag input de HTML!) é modificado.</p>
+
+                <p class="conteudo__texto">Como o input é um tipo de comunicação de pai para filho, o <code>ngOnChanges</code> lida com modificações feitas pelo componente pai, mas que são refletidas e manipuladas no componente filho. Este método, que possui um argumento do tipo <code>SimpleChanges</code> pode, também, permitir que se faça um acompanhamento das mudanças com suas propriedades e métodos: <code>currentValue</code>, <code>previousValue</code> e <code>isFirstChange</code>.</p>
+
+                <p class="conteudo__texto">Desta forma, uma ação do usuário pode disparar uma mudança em uma variável do componente pai que é passada, por meio de data binding, para o componente filho. O componente filho recebe este esta mudança e o <code>ngOnChanges</code> cria o objeto com as propriedades e método supracitados, podendo estes serem acessados e utilizados na lógica do componente filho.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/onchanges-filho-ts.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criar o input cujas mudanças serão detectadas e lidar com estas mudanças.">
+                        <figcaption>Arquivo <code>.ts</code> do componente filho utilizando <code>ngOnChanges</code> para verificar mudança de entrada e saída em um sistema.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/onchanges-filho-template.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para mostrar os valores do objeto de mudança.">
+                        <figcaption>Template do componente filho utilizando <code>ngOnChanges</code> para verificar mudança de entrada e saída em um sistema.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/onchanges-pai-ts.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para definir os métodos que irão modificar o input do componente filho.">
+                        <figcaption>Arquivo <code>.ts</code> do componente pai definindo as mudanças que serão captadas pelo <code>ngOnChanges</code> para verificar mudança de entrada e saída em um sistema.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/onchanges-pai-template.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para definir as ações de usuário que dispararão as mudanças a serem captadas pelo componente filho.">
+                        <figcaption>Template do componente pai definindo as mudanças que serão captadas pelo <code>ngOnChanges</code> para verificar mudança de entrada e saída em um sistema.</figcaption>
+                    </figure>
+                </div>                
+            </article>
+    
+            <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
+                <span class="artigo__tag artigo__tag--angular">Angular</span>
+                
+                <div class="conteudo__stats">
+                    <div aria-label="Stats do Artigo">
+                        <div>
+                            <span>144</span>
+                            <img src="../images/icone-visualizacoes.svg" alt="Quantidade de visualizações do artigo">
+                        </div>
+                        <div>
+                            <span>20</span>
+                            <img src="../images/icone-comentarios.svg" alt="Quantidade de comentários sobre o artigo">
+                        </div>
+                        <div>
+                            <span>5</span>
+                            <img src="../images/icone-envios.svg" alt="Quantidade de compartilhamentos do artigo">
+                        </div>
+                    </div>
+
+                    <div aria-label="Ações no artigo">
+                        <button><img src="../images/icone-envios.svg" alt="Compartilhar artigo"></button>
+                        <button><img src="../images/icone-salvar.svg" alt="Salvar artigo"></button>
+                        <button><img src="../images/icone-curtir.svg" alt="Curtir artigo"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo__autor">
+                <img src="../images/foto-autor.jpeg" alt="Foto da autora do artigo Camila Matias que tem pele clara, cabelo castanho escuro e usa blusa e óculos pretos.">
+                <p>Olá, sou a Camila Matias! Desenvolvedora Front End apaixonada pela arte de dar vida aos designs e interfaces digitais. Especializada em Produtividade. Transformando conceitos abstratos em experiências visuais envolventes e funcionais. ✨🚀 #Desenvolvedora #DesenvolvimentoFrontEnd #Inovação</p>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
+            
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
+                    
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
+                    
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div aria-label="Listas do Footer" class="footer__listas">
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">Zappts</li>
+                
+                <li class="footer__listagem__item"><a href="#">Sobre</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Política de Privacidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Contato</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Soluções</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Experimentação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Transformação Digital</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Serviços Especializados</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Áreas de Atuação</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Financeiro</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Seguros</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Varejo</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Indústrias</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo"><a href="#">Carreira</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Vagas</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Somos a Zappts</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Nossos Benefícios</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Diversidade</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Fale com um profissional</a></li>
+            </ul>
+            
+            <ul class="footer__listagem">
+                <li class="footer__listagem__titulo">E Mais</li>
+                
+                <li class="footer__listagem__item"><a href="#">Open Insurance</a></li>
+                
+                <li class="footer__listagem__item"><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div aria-label="Redes sociais" class="footer__redes">
+            <p>Nossas redes</p>
+            <div aria-label="Ícones de Redes Sociais">
+                <a href="#"><img src="../images/icone-facebook.svg" alt="Ir para Facebook da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-youtube.svg" alt="Ir para Youtube da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-instagram.svg" alt="Ir para Instagram da Zappts"></a>
+                
+                <a href="#"><img src="../images/icone-linkedin.svg" alt="Ir para LinkedIn da Zappts"></a>
+            </div>
+        </div>
+
+        <p class="footer__codigo-conduta"><a href="#">Código de Ética e Conduta & Política Anti-Corrupção</a></p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
+</html>
