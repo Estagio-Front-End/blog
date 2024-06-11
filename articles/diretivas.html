@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Angular</title>
+    <title>Diretivas em Angular</title>
 </head>
 <body>
     <header>
@@ -164,202 +164,162 @@
             <div class="header__acoes--mobile"></div>
         </div>
     </header>
-
+   
     <main>
-        <h2 class="titulo">Angular</h2>
+        <div class="imagem__principal">
+            <img src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F852eh0bq3dzz3lg3270m.png" alt="Imagem com fundo azul e, no centro, a logo do Angular com uma seta indicando a conexão entre angular e o DOM com os dizeres 'DOM Manipulation' em cima da seta. No centro inferior, os dizeres 'Angular Directives'">
+        </div>
 
-        <section class="listagem-artigos">
-            <article class="listagem-artigos__card">
-                <a href="../articles/componentes.html">
-                    <img src="https://dotnettutorials.net/wp-content/uploads/2018/08/Angular-Components.png" alt="Imagem com o código básico de um componente em Angular e as partes de importação, adição de metadados e criação de classe identificadas.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Componentes em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>07 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+        <section class="conteudo">    
+            <h2 class="conteudo__titulo">Diretivas em Angular</h2>
+            <p class="conteudo__preview">Explore o mundo das diretivas no Angular e descubra como elas tornam a criação de aplicações web mais dinâmica e intuitiva. Com esses marcadores, você pode facilmente estender o HTML, dando vida aos seus componentes e simplificando sua experiência de desenvolvimento.</p>
+            <div class="conteudo__info">
+                <p><span>Por Camila Matias |</span> Desenvolvedora Front End</p>
+                <p>Publicado: 06 Jun 2024</p>
+            </div>
             
-            <article class="listagem-artigos__card">
-                <a href="../articles/interfaces.html">
-                    <img src="https://qph.cf2.quoracdn.net/main-qimg-dbcb10bdfb81df38733b4a23a9d1187d" alt="Imagem com código em TypeScript definindo uma interface de usuário contendo propriedades como primeiro nome e último nome.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Interfaces em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>09 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+            <nav class="conteudo__navegacao">
+                <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
+                <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
+                    <li class="conteudo__navegacao__item"><a href="#definicoes">Definições</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#estruturais">Diretivas Estruturais</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#atributos">Diretivas de Atributo</a></li>
+                </ol>
+            </nav>
 
-            <article class="listagem-artigos__card">
-                <a href="../articles/modulos.html">
-                    <img src="https://miro.medium.com/v2/resize:fit:1171/1*MvxlnyUiWSvXvb_2FS3YOA.png" alt="Imagem com fundo branco e uma caixa quadrada escrito Modules no centro com setas indicando os itens que podem representar imports, exports, providers e bootstraps/declares.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Módulos em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
+            <article>
+                <p class="conteudo__texto" id="definicoes">Diretivas em Angular são funcionalidades que permitem a manipulação do DOM por meio de condicionais, controles de fluxo e mudança na aparência. A partir da versão 17 do Angular, as diretivas não são mais padrão, visto a criação do novo control flow, mas aplicações legadas conterão estes comandos para a realização de atividades relacionadas à manipulação do DOM.</p>
+
+                <p class="conteudo__texto">As diretivas podem ser classificadas em dois tipos: diretivas estruturais e diretivas de atributo. As diretivas estruturais modelam e remodelam o DOM de acordo com condiconais e controle de fluxo, ao passo que as diretivas de atributo modificam aparência e comportamento de elementos, componentes ou outras diretivas.</p>
+
+                <h3 id="estruturais">Diretivas Estruturais</h3>
+                <h4>*ngIf</h4>
+                <p class="conteudo__texto">A diretiva <code>*ngIf</code> cria um controle de fluxo em que um elemento é renderizado ou não de acordo com uma condição. Para criar um bloco de <code>else</code>, é possível utilizar a palavra reservada <code>else</code> logo após a condição do <code>ngIf</code> e indicar como referencia uma variável de template. Esta variável de template, por sua vez, estará associdada à um <code>ng-template</code> contendo o código que será renderizado caso o bloco <code>else</code> seja acionado.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngif.png" alt="Imagem com fundo preto e código escrito na sintaxe de template Angular definindo a renderização de um valor por meio da diretiva NgIf.">
+                        <figcaption>Uso da diretiva <code>ngIf</code> com criação de bloco de <code>else</code>, assumindo a existência das variáveis "valorIf" e "acaoBotao" no arquivo TypeScript do componente.</figcaption>
+                    </figure>
+                </div>
+                
+                <h4>*ngSwitch</h4>
+                <p class="conteudo__texto">A diretiva <code>*ngSwitch</code> cria um controle de fluxo em que um elemento é renderizado ou não de acordo com o valor de uma condição. Se utiliza o <code>[ngSwitch]</code> com a condição em um container e, dentro dele, se inclui os <code>*ngSwitchCase</code> para cada caso e o <code>*ngSwitchDefault</code>, que representa o valor default.</p>
+                
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngswitch.png" alt="Imagem com fundo preto e código escrito na sintaxe de template Angular definindo a renderização de um valor por meio da diretiva NgSwitch.">
+                        <figcaption>Uso da diretiva <code>ngSwitch</code>, assumindo a existência de uma variável "valorSwitch" no arquivo TypeScript do componente.</figcaption>
+                    </figure>
+                </div>
+                
+                <h4>*ngFor</h4>
+                <p class="conteudo__texto">A diretiva <code>*ngFor</code> cria uma iteração por um elemento array ou array-like, em que cada elemento será renderizado de acordo com o template definido. Esta diretiva permite tanto que se utilize o valor do elemento no array quanto seu índice, basta que ambos sejam declarados na aplicação da diretiva.</p>
+                
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngfor.png" alt="Imagem com fundo preto e código escrito na sintaxe de template Angular definindo a renderização de uma lista de valores por meio da diretiva NgFor.">
+                        <figcaption>Uso da diretiva ngFor, assumindo a existência de um array "posts" no arquivo TypeScript do componente.</figcaption>
+                    </figure>
+                </div>
+
+                <h3 id="atributos">Diretivas de Atributos</h3>
+                <h4>NgClass</h4>
+                <p class="conteudo__texto">A diretiva NgClass modifica as classes de um elemento com base em uma expressão ou método. Isso fará com que o estilo seja modificado de acordo com o resultado da expressão ou método, em geral um dado do tipo <code>boolean</code> (<code>true</code>/<code>false</code>). O estilo inicial pode ser setado no <code>ngOnInit</code> e ser modificado por uma ação do usuário.</p>
+
+                <h4>NgStyle</h4>
+                <p class="conteudo__texto">A diretiva <code>NgStyle</code> modifica diretamente as propriedades de estilo de um elemento com base em um método. O estilo inicial pode ser setado no <code>ngOnInit</code> e ser modificado por uma ação do usuário.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngclassestyle.png" alt="Imagem com fundo preto e código escrito na sintaxe de template Angular definindo a modificação do estilo de um botão com base na ação do usuário por meio das diretivas NgClass e NgStyle.">
+                        <figcaption>Uso de <code>NgClass</code> e <code>NgStyle</code> para alterar o estilo de um botão, assumindo a existência das variáveis "valorClass" e "padding" no arquivo TypeScript do componente.</figcaption>
+                    </figure>
+                </div>
+
+                <h4>NgModel</h4>
+                <p class="conteudo__texto">A diretiva <code>NgModel</code> cria uma conexão de dados de via dupla (two-way data binding), em que se pode coletar uma informação do usuário, mostrá-la na página em tempo real e atualizá-la logo que o usuário fizer alguma alteração.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngmodel.png" alt="Imagem com fundo preto e código escrito na sintaxe de template Angular definindo o input e renderização de um valor por meio da diretiva NgModel.">
+                        <figcaption>Uso da diretiva <code>NgModel</code>, assumindo a existência de uma variável "inputModel" no arquivo TypeScript do componente. </figcaption>
+                    </figure>
+                </div>
+                
+                <h4>ng-template</h4>
+                <p class="conteudo__texto">O <code>ng-template</code> atua como um container que não será renderizado automaticamente pelo Angular. Em geral, é utilizado em conjunto com diretivas estruturais, que serão os comandos que dirão se esse bloco de código será renderizado ou não. No exemplo dado para a diretiva <code>*ngIf</code>, o bloco de <code>else</code> é encapsulado por um <code>ng-template</code>, pois o código contido neste container não é renderizado automaticamente e a diretiva irá indicar se ele será renderizado em algum momento ou não.</p>
+                
+                <h4>ng-content</h4>
+                <p class="conteudo__texto">O <code>ng-content</code> atua como um elemento do Angular que não será renderizado no DOM, mas serve para adicionar uma diretiva a um elemento ou grupo de elementos que não possua um único elemento pai no qual adicionar a diretiva. No exemplo exibido para o <code>NgSwitch</code> a div que encapsula os switch cases e o default pode ser um <code>ng-content</code>, visto que não é estritamente necessário que o parágrafo resultante tenha um elemento pai no DOM.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/diretivas-ngcontainer.png" alt="Imagem com fundo preto e código escrito na sintaxe de template Angular definindo o encapsulamento de elementos por meio da diretiva ng-content.">
+                        <figcaption>Uso do <code>ng-content</code>.</figcaption>
+                    </figure>
+                </div>
+            </article>
+    
+            <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
+                <span class="artigo__tag artigo__tag--angular">Angular</span>
+                
+                <div class="conteudo__stats">
+                    <div aria-label="Stats do Artigo">
+                        <div>
+                            <span>144</span>
+                            <img src="../images/icone-visualizacoes.svg" alt="Quantidade de visualizações do artigo">
                         </div>
-                        
-                        <div class="artigo__data">
-                            <p>10 Mai</p>
+                        <div>
+                            <span>20</span>
+                            <img src="../images/icone-comentarios.svg" alt="Quantidade de comentários sobre o artigo">
+                        </div>
+                        <div>
+                            <span>5</span>
+                            <img src="../images/icone-envios.svg" alt="Quantidade de compartilhamentos do artigo">
                         </div>
                     </div>
-                </a>
-            </article> 
+
+                    <div aria-label="Ações no artigo">
+                        <button><img src="../images/icone-envios.svg" alt="Compartilhar artigo"></button>
+                        <button><img src="../images/icone-salvar.svg" alt="Salvar artigo"></button>
+                        <button><img src="../images/icone-curtir.svg" alt="Curtir artigo"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo__autor">
+                <img src="../images/foto-autor.jpeg" alt="Foto da autora do artigo Camila Matias que tem pele clara, cabelo castanho escuro e usa blusa e óculos pretos.">
+                <p>Olá, sou a Camila Matias! Desenvolvedora Front End apaixonada pela arte de dar vida aos designs e interfaces digitais. Especializada em Produtividade. Transformando conceitos abstratos em experiências visuais envolventes e funcionais. ✨🚀 #Desenvolvedora #DesenvolvimentoFrontEnd #Inovação</p>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
             
-            <article class="listagem-artigos__card">
-                <a href="../articles/rotas.html">
-                    <img src="https://miro.medium.com/v2/resize:fit:1000/0*tjHPRoTbmmVDrSW3.jpg" alt="Imagem com um poste de direções apontando para a esquerda e para a direita com o logotipo do Angular no topo.">
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
                     
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
                     
-                    <h2>Rotas em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>14 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/services.html">
-                    <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Features-Angular_Services.PNG" alt="Imagem com fundo branco e 8 ícones indicando conceitos e funções dos services em angular: services são uma classe decorada com @Injectible, compartilham código, contém as regras de negócio, interagem com o backend, compartilham dados entre componentes, são da arquitetura singleton e são registrados em módulos ou componentes.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Services em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>20 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/httpclient.html">
-                    <img src="https://wetry.tech/assets/img/angular-posts/http-client/principal.png" alt="Imagem com a logo do Angular como imagem de fundo e, no centro, um ícone que representa comunicação de dados com o nome HttpClient embaixo.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Http no Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>27 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/pipes.html">
-                    <img src="https://miro.medium.com/v2/resize:fit:2000/0*ZfMKCbta5KvtdaYa" alt="Imagem mostrando o input de uma data em um cubo identificado como o Angular pipe, tendo seu output mostrado como a idade de uma pessoa. A imagem também mostra o código em sintaxe de Angular para que essa informação de idade seja mostrada com todas as letras em maiúsculo.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Pipes em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>03 Jun</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/diretivas.html">
-                    <img src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F852eh0bq3dzz3lg3270m.png" alt="Imagem com fundo azul e, no centro, a logo do Angular com uma seta indicando a conexão entre angular e o DOM com os dizeres 'DOM Manipulation' em cima da seta. No centro inferior, os dizeres 'Angular Directives'">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Diretivas em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>06 Jun</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
         </section>
     </main>
     <footer>
@@ -436,4 +396,5 @@
     </footer>
 </body>
 <script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
 </html>
