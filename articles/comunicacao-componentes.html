@@ -266,17 +266,17 @@
 
                 <div class="conteudo__figuras">
                     <figure>
-                        <img src="../images/comunicacoes-output-filho.png" alt="">
+                        <img src="../images/comunicacoes-output-filho.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criação do EventEmitter e emissão do dado.">
                         <figcaption>Passo 1: criação do <code>EventEmitter</code> e emissão do evento com o dado a ser compartilhado no componente filho (sem signals).</figcaption>
                     </figure>
 
                     <figure>
-                        <img src="../images/comunicacoes-output-pai.png" alt="">
+                        <img src="../images/comunicacoes-output-pai.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criação de método de recebimento de valor no componente pai.">
                         <figcaption>Passo 2: criação de método e variável para recebimento do dado no componente pai (sem signals).</figcaption>
                     </figure>
 
                     <figure>
-                        <img src="../images/comunicacoes-output-template.png" alt="">
+                        <img src="../images/comunicacoes-output-template.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para comunicar emissão e recebimento de dados entre os componentes.">
                         <figcaption>Passo 3: comunicação entre emissão e recebimento do dado e exibição do dado no template do componente pai (sem signals).</figcaption>
                     </figure>
                 </div>
@@ -285,23 +285,49 @@
 
                 <div class="conteudo__figuras">
                     <figure>
-                        <img src="../images/comunicacoes-output-filhocomsig.png" alt="">
+                        <img src="../images/comunicacoes-output-filhocomsig.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criação do OutputEmitterRef e emissão do dado.">
                         <figcaption>Passo 1: criação do <code>OutputEmitterRef</code> e emissão do evento com o dado a ser compartilhado no componente filho (com signals).</figcaption>
                     </figure>
 
                     <figure>
-                        <img src="../images/comunicacoes-output-paicomsig.png" alt="">
+                        <img src="../images/comunicacoes-output-paicomsig.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criação de variável de recebimento do dado.">
                         <figcaption>Passo 2: criação de variável para recebimento do dado no componente pai (com signals).</figcaption>
                     </figure>
 
                     <figure>
-                        <img src="../images/comunicacoes-output-templatecomsig.png" alt="">
+                        <img src="../images/comunicacoes-output-templatecomsig.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para comunicação entre emissão e recebimento do dado entre os componentes.">
                         <figcaption>Passo 3: comunicação entre emissão e recebimento do dado e exibição do dado no template do componente pai (com signals).</figcaption>
                     </figure>
                 </div>
 
                 <h3 id="mudancas">Detecção de mudanças</h3>
-                
+                <p class="conteudo__texto">Para detecção e reação à mudanças de dados advindos de um input, o Angular possui um método no ciclo de vida de um componente chamada <code>ngOnChanges</code>, que dispara antes mesmo do <code>ngOnInit</code> e a cada vez que um dado de input (comunicação entre componentes, não confundir com tag input de HTML!) é modificado.</p>
+
+                <p class="conteudo__texto">Como o input é um tipo de comunicação de pai para filho, o <code>ngOnChanges</code> lida com modificações feitas pelo componente pai, mas que são refletidas e manipuladas no componente filho. Este método, que possui um argumento do tipo <code>SimpleChanges</code> pode, também, permitir que se faça um acompanhamento das mudanças com suas propriedades e métodos: <code>currentValue</code>, <code>previousValue</code> e <code>isFirstChange</code>.</p>
+
+                <p class="conteudo__texto">Desta forma, uma ação do usuário pode disparar uma mudança em uma variável do componente pai que é passada, por meio de data binding, para o componente filho. O componente filho recebe este esta mudança e o <code>ngOnChanges</code> cria o objeto com as propriedades e método supracitados, podendo estes serem acessados e utilizados na lógica do componente filho.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/onchanges-filho-ts.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para criar o input cujas mudanças serão detectadas e lidar com estas mudanças.">
+                        <figcaption>Arquivo <code>.ts</code> do componente filho utilizando <code>ngOnChanges</code> para verificar mudança de entrada e saída em um sistema.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/onchanges-filho-template.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para mostrar os valores do objeto de mudança.">
+                        <figcaption>Template do componente filho utilizando <code>ngOnChanges</code> para verificar mudança de entrada e saída em um sistema.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/onchanges-pai-ts.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para definir os métodos que irão modificar o input do componente filho.">
+                        <figcaption>Arquivo <code>.ts</code> do componente pai definindo as mudanças que serão captadas pelo <code>ngOnChanges</code> para verificar mudança de entrada e saída em um sistema.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/onchanges-pai-template.png" alt="Imagem com fundo preto e código escrito em sintaxe de Angular para definir as ações de usuário que dispararão as mudanças a serem captadas pelo componente filho.">
+                        <figcaption>Template do componente pai definindo as mudanças que serão captadas pelo <code>ngOnChanges</code> para verificar mudança de entrada e saída em um sistema.</figcaption>
+                    </figure>
+                </div>                
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
