@@ -181,15 +181,60 @@
             <nav class="conteudo__navegacao">
                 <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
                 <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
-                    <li class="conteudo__navegacao__item"><a href="">Ponto</a></li>
-                    <li class="conteudo__navegacao__item"><a href="">Ponto</a></li>
-                    <li class="conteudo__navegacao__item"><a href="">Ponto</a></li>
-                    <li class="conteudo__navegacao__item"><a href="">Ponto</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#intro">Introdução</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#http">HttpClient e Async Pipe</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#subject">Subject e BehaviorSubject</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#signal">Signals</a></li>
                 </ol>
             </nav>
 
             <article>
+                <p class="conteudo__texto" id="intro">Os services, em Angular, são uma ferramenta importantíssima para compartilhamento de dados. Em componentes que não possuem conexão hierárquica, principalmente, esta ferramenta auxilia a manter diferentes partes da aplicação com uma única fonte de dados, o que gera um código com maior manutenibilidade e menor propensão a erros.</p>
+
+                <p class="conteudo__texto" id="http">Uma das grandes utilidades dos services em Angular é a utilização do HttpClient para a realização de requisições HTTP. Dado que o HttpClient foi incluso nos providers do <code>app.config</code>, os métodos foram inicialmente definidos dentro da service, e a service foi injetada no componente, é possível dispor os dados resultantes de um método GET, por exemplo, de duas formas:</p>
+
+                <ul class="conteudo__texto">
+                    <li>Com o <code>subscribe</code>, gerando a resposta da requisição, atribuindo-a à uma variável e inserindo essa variável no template com o double moustache ou de qualquer outra forma que se deseje.</li>
+                    <li>Com o async pipe, em que não se faz o subscribe diretamente (o pipe irá realizar este trabalho). É necessário apenas que o Observable da requisição seja atribuído à uma variável e esta seja inserida no template com o async pipe. Quando a requisição estiver completa, o conteúdo irá automaticamente ser disposto na tela. Para alguns tipos de resposta, pode ser necessário associar o async pipe com o json pipe para que os dados sejam corretamente exibidos.</li>
+                </ul>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/coms-async-pipe.png" alt="Imagem com fundo preto definindo um parágrafo em um template que receberá um Observable que passará pelo async pipe e pelo json pipe para exibir resultados quando uma requisição HTTP for concluída.">
+                        <figcaption>Utilização do async pipe em uma variável do tipo Observable em associação com um json pipe.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Com um mesmo service sendo injetado em diferentes componentes, diferentes partes da aplicação sempre possuirão os mesmos dados, o que previne inconsistências e traz uma experiência mais fluida ao usuário.</p>
+
+                <p class="conteudo__texto" id="subject">Além de dados provenientes de requisições HTTP, os services podem ser veículos para outros tipos de comunicações entre componentes, como as com Subjects e BehaviorSubjects. Os Subjects são um tipo de Observable que podem emitir eventos ou valores para vários observadores de uma vez só (o chamado multicast) usando a função next(), porém apenas após a inscrição. BehaviorSubjects, por sua vez, são tipos de Subject que requerem valores iniciais e em que os "inscritos", ao se inscreverem, recebem automaticamente o último valor repassado pelo BehaviorSubject.</p>
+
+                <p class="conteudo__texto">Estes dois artefatos são utilizados para repasse de uma mesma informação (o Subject/BehaviorSubject) para vários componentes (os inscritos), porém o Subject é utilizado quando não há uma preocupação com o estado inicial do dado e o BehaviorSubject, quando há.</p>
+
+                <p>Para criar uma comunicação entre componentes via service com Subject ou BehaviorSubject !!!!!!!!!!!! </p>
                 
+                <p class="conteudo__texto" id="signal">Com a atualização para a versão 17 do Angular e a elevação do status do conceito dos Signals, se tornou importante avaliar se a programação reativa realizada com RxJS (Observables, Subject e BehaviorSubject) não seria melhor realizada com signals. A resposta definitiva depende do caso e do programador, mas já se veem ganhos na facilidade de escrita de código, principalmente para programadores iniciantes em Angular.</p>
+
+                <p>Para criar uma comunicação entre componentes com signals via services, basta que se defina no service o signal inicial e um método de alteração deste. Injetando e !!!!!!!!!!!!!!  </p>
+
+                <div>
+                    <figure>
+                        <img src="../images/coms-service.png" alt="">
+                        <figcaption>Criação de um Service com a inicialização dos 3 tipos de dados e seus métodos de alteração.</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <img src="../images/coms-editor.png" alt="">
+                        <figcaption>Criação de um componente que poderá editar estes dados a partir da injeção do Service criado.</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <img src="../images/coms-visualizador.png" alt="">
+                        <figcaption>Criação de um componente que irá exibir estes dados a partir da injeção do Service criado.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">!!!! explicação do template do código</p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
