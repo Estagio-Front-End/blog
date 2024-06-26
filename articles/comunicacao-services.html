@@ -211,11 +211,11 @@
 
                 <p class="conteudo__texto">Estes dois artefatos são utilizados para repasse de uma mesma informação (o Subject/BehaviorSubject) para vários componentes (os inscritos), porém o Subject é utilizado quando não há uma preocupação com o estado inicial do dado e o BehaviorSubject, quando há.</p>
 
-                <p>Para criar uma comunicação entre componentes via service com Subject ou BehaviorSubject !!!!!!!!!!!! </p>
+                <p>Para criar uma comunicação entre componentes via service com Subject ou BehaviorSubject, basta que um dado destes tipos seja inicializado no service e que os componentes a exibirem os dados criados façam o subscribe do Subject ou do BehaviorSubject (dado que o service esteja injetado nos componentes). Com o subscribe feito, quando algum componente editar o dado, este será atualizado também no service, que irá possibilitar o repasse da atualização para quaisquer componentes que tiverem feito o subscribe.</p>
                 
-                <p class="conteudo__texto" id="signal">Com a atualização para a versão 17 do Angular e a elevação do status do conceito dos Signals, se tornou importante avaliar se a programação reativa realizada com RxJS (Observables, Subject e BehaviorSubject) não seria melhor realizada com signals. A resposta definitiva depende do caso e do programador, mas já se veem ganhos na facilidade de escrita de código, principalmente para programadores iniciantes em Angular.</p>
+                <p class="conteudo__texto" id="signal">Com a atualização para a versão 17 do Angular e a elevação do status do conceito dos Signals, se tornou importante avaliar se a programação reativa realizada com RxJS (Observables, Subject e BehaviorSubject) não seria melhor realizada com signals. A resposta definitiva depende do caso e do programador, mas já se vêem ganhos na facilidade de escrita de código, principalmente para programadores iniciantes em Angular.</p>
 
-                <p>Para criar uma comunicação entre componentes com signals via services, basta que se defina no service o signal inicial e um método de alteração deste. Injetando e !!!!!!!!!!!!!!  </p>
+                <p>Para criar uma comunicação entre componentes com signals via services, basta que se defina no service o signal inicial. Injetando o service nos componentes a exibirem os dados e inicializando variáveis que apontem para o dado advindo do service, caso um componente utilize o método set() para modificar o signal, esta modificação será repassada por meio do service.</p>
 
                 <div>
                     <figure>
@@ -234,7 +234,7 @@
                     </figure>
                 </div>
 
-                <p class="conteudo__texto">!!!! explicação do template do código</p>
+                <p class="conteudo__texto">Com a criação de um service com a inicialização dos dados e métodos de alteração e um componente de edição com o service injetado, qualquer componente criado para exibição dos dados que fizer o subscribe nos Subject e BehaviorSubject, além do apontamento para o signal em uma variável, poderá receber quaisquer alterações realizadas pelo componente editor. Este componente editor, por sua vez, terá inputs de texto para coleta do valor pelo usuário, por exemplo, e botões para chamada das funções de alteração.</p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
