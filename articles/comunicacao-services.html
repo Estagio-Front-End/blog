@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Angular</title>
+    <title>Comunicação com Services em Angular</title>
 </head>
 <body>
     <header>
@@ -164,250 +164,138 @@
             <div class="header__acoes--mobile"></div>
         </div>
     </header>
-
+   
     <main>
-        <h2 class="titulo">Angular</h2>
+        <div class="imagem__principal">
+            <img src="https://media.licdn.com/dms/image/D4D12AQGqAKr07z-htA/article-cover_image-shrink_600_2000/0/1691312487793?e=2147483647&v=beta&t=xy_ChbPN6wDqLelOPdOkD-BHdF6tDC716AdIm6QtlqU" alt="Imagem mostrando 4 componentes apontando para um único círculo representando um service.">
+        </div>
 
-        <section class="listagem-artigos">
-            <article class="listagem-artigos__card">
-                <a href="../articles/componentes.html">
-                    <img src="https://dotnettutorials.net/wp-content/uploads/2018/08/Angular-Components.png" alt="Imagem com o código básico de um componente em Angular e as partes de importação, adição de metadados e criação de classe identificadas.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Componentes em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>07 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+        <section class="conteudo">    
+            <h2 class="conteudo__titulo">Comunicação com Services em Angular</h2>
+            <p class="conteudo__preview">Explore como os Services em Angular facilitam o compartilhamento eficiente de dados entre componentes, utilizando Subjects e BehaviorSubjects ou Signals para garantir um código mais sustentável e menos propenso a erros.</p>
+            <div class="conteudo__info">
+                <p><span>Por Camila Matias |</span> Desenvolvedora Front End</p>
+                <p>Publicado: 24 Junho 2024</p>
+            </div>
             
-            <article class="listagem-artigos__card">
-                <a href="../articles/interfaces.html">
-                    <img src="https://qph.cf2.quoracdn.net/main-qimg-dbcb10bdfb81df38733b4a23a9d1187d" alt="Imagem com código em TypeScript definindo uma interface de usuário contendo propriedades como primeiro nome e último nome.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Interfaces em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>09 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+            <nav class="conteudo__navegacao">
+                <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
+                <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
+                    <li class="conteudo__navegacao__item"><a href="#intro">Introdução</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#http">HttpClient e Async Pipe</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#subject">Subject e BehaviorSubject</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#signal">Signals</a></li>
+                </ol>
+            </nav>
 
-            <article class="listagem-artigos__card">
-                <a href="../articles/modulos.html">
-                    <img src="https://miro.medium.com/v2/resize:fit:1171/1*MvxlnyUiWSvXvb_2FS3YOA.png" alt="Imagem com fundo branco e uma caixa quadrada escrito Modules no centro com setas indicando os itens que podem representar imports, exports, providers e bootstraps/declares.">
+            <article>
+                <p class="conteudo__texto" id="intro">Os services, em Angular, são uma ferramenta importantíssima para compartilhamento de dados. Em componentes que não possuem conexão hierárquica, principalmente, esta ferramenta auxilia a manter diferentes partes da aplicação com uma única fonte de dados, o que gera um código com maior manutenibilidade e menor propensão a erros.</p>
+
+                <p class="conteudo__texto" id="http">Uma das grandes utilidades dos services em Angular é a utilização do HttpClient para a realização de requisições HTTP. Dado que o HttpClient foi incluso nos providers do <code>app.config</code>, os métodos foram inicialmente definidos dentro da service, e a service foi injetada no componente, é possível dispor os dados resultantes de um método GET, por exemplo, de duas formas:</p>
+
+                <ul class="conteudo__texto">
+                    <li>Com o <code>subscribe</code>, gerando a resposta da requisição, atribuindo-a à uma variável e inserindo essa variável no template com o double moustache ou de qualquer outra forma que se deseje.</li>
+                    <li>Com o async pipe, em que não se faz o subscribe diretamente (o pipe irá realizar este trabalho). É necessário apenas que o Observable da requisição seja atribuído à uma variável e esta seja inserida no template com o async pipe. Quando a requisição estiver completa, o conteúdo irá automaticamente ser disposto na tela. Para alguns tipos de resposta, pode ser necessário associar o async pipe com o json pipe para que os dados sejam corretamente exibidos.</li>
+                </ul>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/coms-async-pipe.png" alt="Imagem com fundo preto definindo um parágrafo em um template que receberá um Observable que passará pelo async pipe e pelo json pipe para exibir resultados quando uma requisição HTTP for concluída.">
+                        <figcaption>Utilização do async pipe em uma variável do tipo Observable em associação com um json pipe.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Com um mesmo service sendo injetado em diferentes componentes, diferentes partes da aplicação sempre possuirão os mesmos dados, o que previne inconsistências e traz uma experiência mais fluida ao usuário.</p>
+
+                <p class="conteudo__texto" id="subject">Além de dados provenientes de requisições HTTP, os services podem ser veículos para outros tipos de comunicações entre componentes, como as com Subjects e BehaviorSubjects. Os Subjects são um tipo de Observable que podem emitir eventos ou valores para vários observadores de uma vez só (o chamado multicast) usando a função next(), porém apenas após a inscrição. BehaviorSubjects, por sua vez, são tipos de Subject que requerem valores iniciais e em que os "inscritos", ao se inscreverem, recebem automaticamente o último valor repassado pelo BehaviorSubject.</p>
+
+                <p class="conteudo__texto">Estes dois artefatos são utilizados para repasse de uma mesma informação (o Subject/BehaviorSubject) para vários componentes (os inscritos), porém o Subject é utilizado quando não há uma preocupação com o estado inicial do dado e o BehaviorSubject, quando há.</p>
+
+                <p>Para criar uma comunicação entre componentes via service com Subject ou BehaviorSubject, basta que um dado destes tipos seja inicializado no service e que os componentes a exibirem os dados criados façam o subscribe do Subject ou do BehaviorSubject (dado que o service esteja injetado nos componentes). Com o subscribe feito, quando algum componente editar o dado, este será atualizado também no service, que irá possibilitar o repasse da atualização para quaisquer componentes que tiverem feito o subscribe.</p>
+                
+                <p class="conteudo__texto" id="signal">Com a atualização para a versão 17 do Angular e a elevação do status do conceito dos Signals, se tornou importante avaliar se a programação reativa realizada com RxJS (Observables, Subject e BehaviorSubject) não seria melhor realizada com signals. A resposta definitiva depende do caso e do programador, mas já se vêem ganhos na facilidade de escrita de código, principalmente para programadores iniciantes em Angular.</p>
+
+                <p>Para criar uma comunicação entre componentes com signals via services, basta que se defina no service o signal inicial. Injetando o service nos componentes a exibirem os dados e inicializando variáveis que apontem para o dado advindo do service, caso um componente utilize o método set() para modificar o signal, esta modificação será repassada por meio do service.</p>
+
+                <div class="conteudo__figuras">
+                    <figure>
+                        <img src="../images/coms-service.png" alt="Imagem com fundo preto definindo um Service na sintaxe de Angular para a criação de 3 tipos de dados, um Subject, um BehaviorSubject e um Signal, além de 3 funções para alteração de cada tipo de dado.">
+                        <figcaption>Criação de um Service com a inicialização dos 3 tipos de dados e seus métodos de alteração.</figcaption>
+                    </figure>
                     
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
+                    <figure>
+                        <img src="../images/coms-editor.png" alt="Imagem com fundo preto definindo um Componente na sintaxe de Angular para a injeção do Service criado e utilização das funções de alteração dos 3 tipos de dados de acordo com input do usuário.">
+                        <figcaption>Criação de um componente que poderá editar estes dados a partir da injeção do Service criado.</figcaption>
+                    </figure>
                     
-                    <h2>Módulos em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
+                    <figure>
+                        <img src="../images/coms-visualizador.png" alt="Imagem com fundo preto definindo um Componente na sintaxe de Angular para a injeção do Service criado e exibição dos dados repassados pelo Service.">
+                        <figcaption>Criação de um componente que irá exibir estes dados a partir da injeção do Service criado.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Com a criação de um service com a inicialização dos dados e métodos de alteração e um componente de edição com o service injetado, qualquer componente criado para exibição dos dados que fizer o subscribe nos Subject e BehaviorSubject, além do apontamento para o signal em uma variável, poderá receber quaisquer alterações realizadas pelo componente editor. Este componente editor, por sua vez, terá inputs de texto para coleta do valor pelo usuário, por exemplo, e botões para chamada das funções de alteração.</p>
+            </article>
+    
+            <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
+                <span class="artigo__tag artigo__tag--angular">Angular</span>
+                
+                <div class="conteudo__stats">
+                    <div aria-label="Stats do Artigo">
+                        <div>
+                            <span>144</span>
+                            <img src="../images/icone-visualizacoes.svg" alt="Quantidade de visualizações do artigo">
                         </div>
-                        
-                        <div class="artigo__data">
-                            <p>10 Mai</p>
+                        <div>
+                            <span>20</span>
+                            <img src="../images/icone-comentarios.svg" alt="Quantidade de comentários sobre o artigo">
+                        </div>
+                        <div>
+                            <span>5</span>
+                            <img src="../images/icone-envios.svg" alt="Quantidade de compartilhamentos do artigo">
                         </div>
                     </div>
-                </a>
-            </article> 
+
+                    <div aria-label="Ações no artigo">
+                        <button><img src="../images/icone-envios.svg" alt="Compartilhar artigo"></button>
+                        <button><img src="../images/icone-salvar.svg" alt="Salvar artigo"></button>
+                        <button><img src="../images/icone-curtir.svg" alt="Curtir artigo"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo__autor">
+                <img src="../images/foto-autor.jpeg" alt="Foto da autora do artigo Camila Matias que tem pele clara, cabelo castanho escuro e usa blusa e óculos pretos.">
+                <p>Olá, sou a Camila Matias! Desenvolvedora Front End apaixonada pela arte de dar vida aos designs e interfaces digitais. Especializada em Produtividade. Transformando conceitos abstratos em experiências visuais envolventes e funcionais. ✨🚀 #Desenvolvedora #DesenvolvimentoFrontEnd #Inovação</p>
+            </div>
+        </section>
+
+        <section aria-label="Seção de Formulário" class="artigo__formulario">    
+            <h2>Gostou do que leu? Deixe um comentário</h2>
+            <p>Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados *</p>
+            <form id="formulario-comentario" name="formulario-comentario">
+                <div aria-label="Informações do Usuário" class="artigo__formulario__usuario">
+                    <input type="text" name="nome" id="nome" placeholder="*Nome Completo...">
             
-            <article class="listagem-artigos__card">
-                <a href="../articles/rotas.html">
-                    <img src="https://miro.medium.com/v2/resize:fit:1000/0*tjHPRoTbmmVDrSW3.jpg" alt="Imagem com um poste de direções apontando para a esquerda e para a direita com o logotipo do Angular no topo.">
+                    <span aria-label="Erro no campo nome" id="erro-nome" class="artigo__formulario__item--erro">*Por favor insira o nome completo</span>
+            
+                    <input type="text" name="email" id="email" placeholder="*Email...">
+            
+                    <span aria-label="Erro no campo email" id="erro-email" class="artigo__formulario__item--erro">*Por favor insira um e-mail válido</span>
+                </div>
                     
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
+                <textarea name="comentario" id="comentario" placeholder="*Escreva seu comentário..." maxlenght="500" rows="5"></textarea>
                     
-                    <h2>Rotas em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>14 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/services.html">
-                    <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Features-Angular_Services.PNG" alt="Imagem com fundo branco e 8 ícones indicando conceitos e funções dos services em angular: services são uma classe decorada com @Injectible, compartilham código, contém as regras de negócio, interagem com o backend, compartilham dados entre componentes, são da arquitetura singleton e são registrados em módulos ou componentes.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Services em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>20 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/httpclient.html">
-                    <img src="https://wetry.tech/assets/img/angular-posts/http-client/principal.png" alt="Imagem com a logo do Angular como imagem de fundo e, no centro, um ícone que representa comunicação de dados com o nome HttpClient embaixo.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Http no Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>27 Mai</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/pipes.html">
-                    <img src="https://miro.medium.com/v2/resize:fit:2000/0*ZfMKCbta5KvtdaYa" alt="Imagem mostrando o input de uma data em um cubo identificado como o Angular pipe, tendo seu output mostrado como a idade de uma pessoa. A imagem também mostra o código em sintaxe de Angular para que essa informação de idade seja mostrada com todas as letras em maiúsculo.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Pipes em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>03 Jun</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/diretivas.html">
-                    <img src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F852eh0bq3dzz3lg3270m.png" alt="Imagem com fundo azul e, no centro, a logo do Angular com uma seta indicando a conexão entre angular e o DOM com os dizeres 'DOM Manipulation' em cima da seta. No centro inferior, os dizeres 'Angular Directives'">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Diretivas em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>06 Jun</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/comunicacao-componentes.html">
-                    <img src="https://miro.medium.com/v2/resize:fit:946/1*753JJ76QFUy8TTcqxhIjRw.png" alt="Imagem mostrando 2 grupos de um componente pai com 2 componentes filhos e suas comunicações entre grupos e entre componentes.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Comunicação entre Componentes em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>10 Jun</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="listagem-artigos__card">
-                <a href="../articles/comunicacao-services.html">
-                    <img src="https://media.licdn.com/dms/image/D4D12AQGqAKr07z-htA/article-cover_image-shrink_600_2000/0/1691312487793?e=2147483647&v=beta&t=xy_ChbPN6wDqLelOPdOkD-BHdF6tDC716AdIm6QtlqU" alt="Imagem mostrando 4 componentes apontando para um único círculo representando um service.">
-                    
-                    <span class="artigo__tag artigo__tag--angular">ANGULAR</span>
-                    
-                    <h2>Comunicação com Services em Angular</h2>
-                    
-                    <div class="artigo__info">
-                        <div class="artigo__info__autor">
-                            <img src="../images/foto-autor.jpeg" alt="Foto de Camila, autora do artigo, uma mulher de cabelos marrons, pele clara, camisa preta e óculos de grau com armação preta">
-                            <div class="artigo__info__autor__nome">
-                                <p>Camila Matias</p>
-                                <span>Desenvolvedora Front End</span>
-                            </div>
-                        </div>
-                        
-                        <div class="artigo__data">
-                            <p>24 Jun</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+                <span aria-label="Erro no campo comentário" id="erro-comentario" class="artigo__formulario__item--erro">*Preencha o campo para poder enviá-lo</span> 
+                
+                <div aria-label="Pergunta de salvar informações para próximos comentários" class="artigo__formulario__salvar">
+                    <input type="checkbox" name="salvar-info" id="salvar-info">
+                    <button type="button" id="salvar-info-botao"><img src="../images/checkbox-vazio.svg" alt="Clique para salvar suas informações para próximos comentários." id="salvar-info-imagem"></button>
+                    <label for="salvar-info">Salve meu nome, e-mail neste navegador para a próxima vez que eu comentar.</label>
+                </div>
+                       
+                <button disabled type="submit" class="botao__primario" id="botao-enviar-comentario">Enviar Comentários</button>
+            </form>
         </section>
     </main>
     <footer>
@@ -484,4 +372,5 @@
     </footer>
 </body>
 <script src="../script.js"></script>
+<script src="../scripts/formulario.js"></script>
 </html>
