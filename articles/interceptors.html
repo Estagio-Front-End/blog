@@ -182,14 +182,34 @@
                 <p class="conteudo__navegacao__titulo" id="menu-navegacao-conteudo">Navegue pelo conteúdo <img src="../images/icone-abrir-menu.svg" alt="Ícone de abrir e fechar o menu de navegação" class="conteudo__navegacao__icone--inativo"></p>
                 <ol class="conteudo__navegacao__itens conteudo__navegacao__itens--inativo">
                     <li class="conteudo__navegacao__item"><a href="#introducao">Introdução</a></li>
-                    <li class="conteudo__navegacao__item"><a href="">Ponto</a></li>
+                    <li class="conteudo__navegacao__item"><a href="#criacao">Criação e estrutura de um interceptor</a></li>
                     <li class="conteudo__navegacao__item"><a href="">Ponto</a></li>
                     <li class="conteudo__navegacao__item"><a href="">Ponto</a></li>
                 </ol>
             </nav>
 
             <article>
+                <p class="conteudo__texto" id="introducao">Os interceptors são uma ferramenta do Angular que permite, como o nome já denota, uma interceptação de requisições e respostas HTTP antes que elas cheguem ao seu destino final. Esta ferramenta atua como um middleware em que se pode alterar headers e dados de payloads de requisições ou de respostas, além de possibilitar o tratamento de erros. Esta atuação se dá de forma global na aplicação a partir de um arquivo criado por meio da Angular CLI, o que facilita futuras manutenções do código, visto que centraliza a lógica em um só local.</p>
 
+                <p>Para criar um interceptor, basta utilizar o comando <code>ng generate interceptor nome-interceptor</code> em que nome-interceptor é um nome arbitrário. Este comando criará dois arquivos: um com extensão <code>.ts</code>, que conterá a estrutura e lógica do interceptor criado e um com a extensão <code>.spec.ts</code>, onde poderão ser inclusos os testes unitários acerca do interceptor.</p>
+
+                <div>
+                    <figure>
+                        <img src="../images/interceptor-criar.png" alt="Imagem do terminal de comando com o comando para a criação de um interceptor chamado auth ">
+                        <figcaption>Criação de um interceptor chamado auth por meio do terminal de comando.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto"></p>
+
+                <div class="conteudo__texto">
+                    <figure>
+                        <img src="../images/interceptor-estrutura.png" alt="Imagem do editor de código VS Code com código na sintaxe do Angular com Typescript definindo a estrutura inicial de um interceptor.">
+                        <figcaption>Estrutura inicial de um interceptor logo após a sua criação.</figcaption>
+                    </figure>
+                </div>
+
+                <p>Uma das grandes aplicações dos interceptors em Angular</p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
