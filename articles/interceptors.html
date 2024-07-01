@@ -200,7 +200,7 @@
                     </figure>
                 </div>
 
-                <p class="conteudo__texto"></p>
+                <p class="conteudo__texto">A estrutura inicial de um interceptor consiste na importação da interface de HttpInterceptor na qual o interceptor se baseia e na exportação da função que conterá a lógica de interceptação, que recebe como parâmetros iniciais a requisição HTTP e o método next de repasse da requisição interceptada.</p>
 
                 <div class="conteudo__texto">
                     <figure>
@@ -209,7 +209,43 @@
                     </figure>
                 </div>
 
-                <p>Uma das grandes aplicações dos interceptors em Angular</p>
+                <p class="conteudo__texto">Para que qualquer lógica escrita na função interceptadora seja aplicada, é necessário indicar, nos providers da aplicação, que o HttpClient será utilizado com interceptors e quais serão utilizados. Desta forma, a aplicação entenderá que deverá passar toda requisição pelos interceptors indicados e as interceptações criadas serão aplicadas.</p>
+                
+                <div>
+                    <figure>
+                        <img src="../images/interceptor-config.png" alt="Imagem do editor de código VS Code com código na sintaxe do Angular com Typescript indicando que o pacote HttpClient será utilizado com interceptors, especificamente o authInterceptor criado anteriormente.">
+                        <figcaption>Indicação da utilização do authInterceptor na aplicação.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Uma das grandes aplicações dos interceptors em Angular é a de autenticação de usuários em aplicações. Quando se faz o login em uma aplicação, em geral, um serviço providencia um token de autenticação que deve ser propagado por toda requisição que o usuário fizer, mostrando à aplicação que este está logado e apto a acessar a aplicação. A forma de fazer isso é, após gerado o token e armazenado no <code>localStorage</code>, por exemplo, a cada requisição, adicionar um <code>header</code> que contém o token fornecido para identificar o usuário. Isto, se faz por meio de interceptors.</p>
+
+                <div>
+                    <figure>
+                        <img src="../images/interceptors-auth.png" alt="Imagem do editor de código VS Code com código na sintaxe do Angular com Typescript definindo uma função que intercepta requisições HTTP, as clona, adiciona um header contendo um token de autenticação e as repassa para o próximo handler.">
+                        <figcaption>Função (interceptor) para interceptação de requisições e adição do header com token de autenticação.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto">Desta forma, é possível ver na aba "Network" do navegador que toda requisição HTTP realizada terá, em seu Header, um campo com o token indicado pelo interceptor. Como isto foi feito globalmente, não é necessário ir em cada ponto de requisição da aplicação, de modo que se algo na lógica de interceptação precisar ser modificado, é necessário realizar esta modificação apenas no interceptor, e não em todos os pontos em que se faz uma requisição HTTP na aplicação.</p>
+
+                <div>
+                    <figure>
+                        <img src="../images/interceptor-resultado.png" alt="Imagem da aba Network do navegador mostrando os Headers de uma requisição HTTP contendo o header incluído pelo interceptor.">
+                        <figcaption>Resultado da adição de header pelo interceptor.</figcaption>
+                    </figure>
+                </div>
+                
+                <p class="conteudo__texto"></p>
+                
+                <div>
+                    <figure>
+                        <img src="" alt="">
+                        <figcaption></figcaption>
+                    </figure>
+                </div>
+
+                <p class="conteudo__texto"></p>
             </article>
     
             <div class="conteudo__tags-stats" aria-label="Tags e Stats do Artigo">
